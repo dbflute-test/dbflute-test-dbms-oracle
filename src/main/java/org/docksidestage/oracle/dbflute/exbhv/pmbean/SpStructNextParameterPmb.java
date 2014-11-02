@@ -1,0 +1,17 @@
+package org.docksidestage.oracle.dbflute.exbhv.pmbean;
+
+import org.docksidestage.oracle.dbflute.bsbhv.pmbean.BsSpStructNextParameterPmb;
+
+/**
+ * <!-- df:beginClassDescription -->
+ * The typed parameter-bean of SpStructNextParameter. <br>
+ * This is related to "<span style="color: #AD4747">SP_STRUCT_NEXT_PARAMETER</span>". <br>
+ * <!-- df:endClassDescription -->
+ * <p>
+ * You can implement your original methods here.
+ * This class remains when re-generating.
+ * </p>
+ * @author oracleman
+ */
+public class SpStructNextParameterPmb extends BsSpStructNextParameterPmb {
+}

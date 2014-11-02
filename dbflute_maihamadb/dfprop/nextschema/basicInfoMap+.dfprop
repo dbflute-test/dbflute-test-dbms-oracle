@@ -1,0 +1,4 @@
+map:{
+    ; projectSchemaXMLFilePath = ./schema/project-schema-newurayasudb.xml
+    ; projectSchemaHistoryFilePath = ./schema/project-schema-newurayasudb.diffmap
+}

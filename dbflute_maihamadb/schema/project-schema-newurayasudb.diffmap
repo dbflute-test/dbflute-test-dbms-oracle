@@ -1,0 +1,122 @@
+map:{
+    ; 2014/11/02 18:52:35 = map:{
+        ; diffDate = 2014/11/02 18:52:35
+        ; tableDiff = map:{
+            ; NEXT_SCHEMA_PRODUCT = map:{
+                ; tableName = NEXT_SCHEMA_PRODUCT
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; REGISTER_DATETIME = map:{
+                        ; columnName = REGISTER_DATETIME
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = TIMESTAMP(3)
+                            ; previous = DATE
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 11, 3
+                            ; previous = 7
+                        }
+                    }
+                    ; UPDATE_DATETIME = map:{
+                        ; columnName = UPDATE_DATETIME
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = TIMESTAMP(3)
+                            ; previous = DATE
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 11, 3
+                            ; previous = 7
+                        }
+                    }
+                }
+            }
+            ; NEXT_SYNONYM_PRODUCT = map:{
+                ; tableName = NEXT_SYNONYM_PRODUCT
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; REGISTER_DATETIME = map:{
+                        ; columnName = REGISTER_DATETIME
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = TIMESTAMP(3)
+                            ; previous = DATE
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 11, 3
+                            ; previous = 7
+                        }
+                    }
+                    ; UPDATE_DATETIME = map:{
+                        ; columnName = UPDATE_DATETIME
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = TIMESTAMP(3)
+                            ; previous = DATE
+                        }
+                        ; columnSizeDiff = map:{
+                            ; next = 11, 3
+                            ; previous = 7
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ; 2013/10/08 21:48:28 = map:{
+        ; diffDate = 2013/10/08 21:48:28
+        ; tableCount = map:{
+            ; next = 10
+            ; previous = 6
+        }
+        ; tableDiff = map:{
+            ; NEXT_SYNONYM_PRODUCT = map:{
+                ; tableName = NEXT_SYNONYM_PRODUCT
+                ; diffType = ADD
+            }
+            ; NEXT_SYNONYM_SECRET = map:{
+                ; tableName = NEXT_SYNONYM_SECRET
+                ; diffType = ADD
+            }
+            ; NEXT_SYNONYM_SECRET_AUTH = map:{
+                ; tableName = NEXT_SYNONYM_SECRET_AUTH
+                ; diffType = ADD
+            }
+            ; NEXT_SCHEMA_PRODUCT = map:{
+                ; tableName = NEXT_SCHEMA_PRODUCT
+                ; diffType = ADD
+            }
+            ; NEXT_SCHEMA_SECRET = map:{
+                ; tableName = NEXT_SCHEMA_SECRET
+                ; diffType = CHANGE
+                ; foreignKeyDiff = map:{
+                    ; FK_NEXT_SCHEMA_SECRET = map:{
+                        ; constraintName = FK_NEXT_SCHEMA_SECRET
+                        ; diffType = ADD
+                    }
+                }
+            }
+            ; WHITE_SAME_NAME_REF = map:{
+                ; tableName = WHITE_SAME_NAME_REF
+                ; diffType = CHANGE
+                ; foreignKeyDiff = map:{
+                    ; FK_WHITE_SAME_NAME_REF = map:{
+                        ; constraintName = FK_WHITE_SAME_NAME_REF
+                        ; diffType = ADD
+                    }
+                }
+            }
+            ; WHITE_SAME_NAME_REF_REF = map:{
+                ; tableName = WHITE_SAME_NAME_REF_REF
+                ; diffType = CHANGE
+                ; foreignKeyDiff = map:{
+                    ; FK_WHITE_SAME_NAME_REF_REF = map:{
+                        ; constraintName = FK_WHITE_SAME_NAME_REF_REF
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
+}

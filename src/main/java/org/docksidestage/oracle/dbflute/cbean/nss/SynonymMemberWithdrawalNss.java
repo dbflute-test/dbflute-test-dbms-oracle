@@ -1,0 +1,55 @@
+package org.docksidestage.oracle.dbflute.cbean.nss;
+
+import org.docksidestage.oracle.dbflute.cbean.cq.SynonymMemberWithdrawalCQ;
+
+/**
+ * The nest select set-upper of SYNONYM_MEMBER_WITHDRAWAL.
+ * @author oracleman
+ */
+public class SynonymMemberWithdrawalNss {
+
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    protected SynonymMemberWithdrawalCQ _query;
+    public SynonymMemberWithdrawalNss(SynonymMemberWithdrawalCQ query) { _query = query; }
+    public boolean hasConditionQuery() { return _query != null; }
+
+    // ===================================================================================
+    //                                                                     Nested Relation
+    //                                                                     ===============
+    /**
+     * With nested relation columns to select clause. <br>
+     * (会員)MEMBER_VENDOR_SYNONYM by my MEMBER_ID, named 'memberVendorSynonym'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MemberVendorSynonymNss withMemberVendorSynonym() {
+        _query.xdoNss(() -> _query.queryMemberVendorSynonym());
+        return new MemberVendorSynonymNss(_query.queryMemberVendorSynonym());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * WITHDRAWAL_REASON by my WITHDRAWAL_REASON_CODE, named 'withdrawalReason'.
+     */
+    public void withWithdrawalReason() {
+        _query.xdoNss(() -> _query.queryWithdrawalReason());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * (会員)SYNONYM_MEMBER by my MEMBER_ID, named 'synonymMember'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public SynonymMemberNss withSynonymMember() {
+        _query.xdoNss(() -> _query.querySynonymMember());
+        return new SynonymMemberNss(_query.querySynonymMember());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * (会員)VENDOR_SYNONYM_MEMBER by my MEMBER_ID, named 'vendorSynonymMember'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public VendorSynonymMemberNss withVendorSynonymMember() {
+        _query.xdoNss(() -> _query.queryVendorSynonymMember());
+        return new VendorSynonymMemberNss(_query.queryVendorSynonymMember());
+    }
+}
