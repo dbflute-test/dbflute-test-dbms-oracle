@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.CustomizeEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.docksidestage.oracle.dbflute.exentity.customize.*;
 
 /**
@@ -246,6 +247,7 @@ public abstract class BsNestedBarBean extends AbstractEntity implements Customiz
      * [get] BAR_DATE: {DATE} <br>
      * @return The value of the column 'BAR_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getBarDate() {
         checkSpecifiedProperty("barDate");
         return _barDate;

@@ -7,6 +7,7 @@ import org.dbflute.Entity;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.DomainEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.dbflute.optional.OptionalEntity;
 import org.docksidestage.oracle.dbflute.allcommon.EntityDefinedCommonColumn;
 import org.docksidestage.oracle.dbflute.allcommon.DBMetaInstanceHandler;
@@ -516,6 +517,7 @@ public abstract class BsVendorSynonymMember extends AbstractEntity implements Do
      * わからない場合はnull
      * @return The value of the column 'BIRTHDATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getBirthdate() {
         checkSpecifiedProperty("birthdate");
         return _birthdate;

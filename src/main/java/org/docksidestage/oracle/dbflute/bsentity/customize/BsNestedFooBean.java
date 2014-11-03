@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.CustomizeEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.docksidestage.oracle.dbflute.exentity.customize.*;
 
 /**
@@ -238,6 +239,7 @@ public abstract class BsNestedFooBean extends AbstractEntity implements Customiz
      * [get] FOO_DATE: {DATE} <br>
      * @return The value of the column 'FOO_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getFooDate() {
         checkSpecifiedProperty("fooDate");
         return _fooDate;

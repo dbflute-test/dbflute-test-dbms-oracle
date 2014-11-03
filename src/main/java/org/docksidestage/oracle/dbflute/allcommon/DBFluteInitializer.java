@@ -2,7 +2,6 @@ package org.docksidestage.oracle.dbflute.allcommon;
 
 import org.dbflute.bhv.core.context.ConditionBeanContext;
 import org.dbflute.dbway.DBDef;
-import org.dbflute.jdbc.DataSourceHandler;
 import org.dbflute.s2dao.extension.TnSqlLogRegistry;
 import org.dbflute.system.DBFluteSystem;
 
@@ -94,30 +93,6 @@ public class DBFluteInitializer {
 
     protected void loadCoolClasses() { // for S2Container 
         ConditionBeanContext.loadCoolClasses(); // against the ClassLoader Headache!
-    }
-
-    /**
-     * Set up the handler of data source to the configuration of DBFlute. <br>
-     * If it uses commons-DBCP, it needs to arrange some for transaction.
-     * <ul>
-     *     <li>A. To use DataSourceUtils which is Spring Framework class.</li>
-     *     <li>B. To use TransactionConnection that is original class and doesn't close really.</li>
-     * </ul>
-     * If you use a transaction library which has a data source which supports transaction,
-     * It doesn't need these arrangement. (For example, the framework 'Atomikos') <br>
-     * This method should be executed when application is initialized.
-     * @param dataSourceFqcn The FQCN of data source. (NotNull)
-     */
-    protected void setupDataSourceHandler(String dataSourceFqcn) { // for Spring
-        final DBFluteConfig config = DBFluteConfig.getInstance();
-        final DataSourceHandler dataSourceHandler = config.getDataSourceHandler();
-        if (dataSourceHandler != null) {
-            return;
-        }
-        if (dataSourceFqcn.startsWith("org.apache.commons.dbcp.")) {
-            config.unlock();
-            config.setDataSourceHandler(new DBFluteConfig.SpringTransactionalDataSourceHandler());
-        }
     }
 
     /**

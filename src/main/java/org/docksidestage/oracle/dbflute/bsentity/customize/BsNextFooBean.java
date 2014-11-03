@@ -249,6 +249,7 @@ public abstract class BsNextFooBean extends AbstractEntity implements CustomizeE
      * [get] FOO_DATE: {DATE} <br>
      * @return The value of the column 'FOO_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getFooDate() {
         checkSpecifiedProperty("fooDate");
         return _fooDate;

@@ -249,6 +249,7 @@ public abstract class BsBarBean extends AbstractEntity implements CustomizeEntit
      * [get] BAR_DATE: {DATE} <br>
      * @return The value of the column 'BAR_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getBarDate() {
         checkSpecifiedProperty("barDate");
         return _barDate;

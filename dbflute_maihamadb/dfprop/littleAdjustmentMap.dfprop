@@ -47,6 +47,9 @@ map:{
     # compile compatible (false if compatible)
     ; isAvailableJava8TimeLocalDateEntity = true
 
+    # the test of date style
+    ; isOracleDateTreatedAsDate = true
+
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # o isAvailableAddingSchemaToTableSqlName: (NotRequired - Default 'false')
     #   [true]

@@ -249,6 +249,7 @@ public abstract class BsCorgeBean extends AbstractEntity implements CustomizeEnt
      * [get] CORGE_DATE: {DATE} <br>
      * @return The value of the column 'CORGE_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getCorgeDate() {
         checkSpecifiedProperty("corgeDate");
         return _corgeDate;

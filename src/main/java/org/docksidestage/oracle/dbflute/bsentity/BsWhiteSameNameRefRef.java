@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.DomainEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.docksidestage.oracle.dbflute.allcommon.DBMetaInstanceHandler;
 import org.docksidestage.oracle.dbflute.exentity.*;
 
@@ -204,6 +205,7 @@ public abstract class BsWhiteSameNameRefRef extends AbstractEntity implements Do
      * [get] REF_REF_DATE: {NotNull, DATE(7)} <br>
      * @return The value of the column 'REF_REF_DATE'. (basically NotNull if selected: for the constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getRefRefDate() {
         checkSpecifiedProperty("refRefDate");
         return _refRefDate;

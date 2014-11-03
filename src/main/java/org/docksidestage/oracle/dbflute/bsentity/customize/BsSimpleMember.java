@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.CustomizeEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.docksidestage.oracle.dbflute.exentity.customize.*;
 
 /**
@@ -214,6 +215,7 @@ public abstract class BsSimpleMember extends AbstractEntity implements Customize
      * [get] BIRTHDATE: {DATE(7)} <br>
      * @return The value of the column 'BIRTHDATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getBirthdate() {
         checkSpecifiedProperty("birthdate");
         return _birthdate;

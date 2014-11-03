@@ -24,8 +24,10 @@ import org.dbflute.jdbc.ValueType;
 import org.dbflute.outsidesql.factory.OutsideSqlExecutorFactory;
 import org.dbflute.s2dao.valuetype.TnValueTypes;
 import org.dbflute.s2dao.valuetype.plugin.OracleAgent;
-import org.dbflute.s2dao.valuetype.plugin.OracleDateType;
 import org.dbflute.s2dao.valuetype.plugin.OracleArrayType;
+import org.dbflute.s2dao.valuetype.plugin.OracleDateAsDateType;
+import org.dbflute.s2dao.valuetype.plugin.OracleDateAsTimestampType;
+import org.dbflute.s2dao.valuetype.plugin.OracleDateType;
 import org.dbflute.s2dao.valuetype.plugin.OracleStructType;
 import org.dbflute.system.QLog;
 import org.dbflute.system.XLog;
@@ -125,6 +127,7 @@ public class DBFluteConfig {
 
         // treats as uses Oracle date of database native JDBC to get best performances
         TnValueTypes.registerBasicValueType(DBDef.Oracle, java.util.Date.class, new ImplementedOracleDateType());
+        TnValueTypes.registerPluginValueType(DBDef.Oracle, "oracleDateType", new ImplementedOracleDateAsDateType());
     }
 
     // ===================================================================================
@@ -764,29 +767,6 @@ public class DBFluteConfig {
     //                                                                   Implemented Class
     //                                                                   =================
     // -----------------------------------------------------
-    //                                                Spring
-    //                                                ------
-    public static class SpringTransactionalDataSourceHandler implements DataSourceHandler {
-
-        public Connection getConnection(DataSource ds) throws SQLException {
-            final Connection conn = getConnectionFromUtils(ds);
-            if (isConnectionTransactional(conn, ds)) {
-                return new NotClosingConnectionWrapper(conn);
-            } else {
-                return conn;
-            }
-        }
-
-        public Connection getConnectionFromUtils(DataSource ds) {
-            throw new IllegalStateException("This method is only for Spring Framework.");
-        }
-
-        public boolean isConnectionTransactional(Connection conn, DataSource ds) {
-            throw new IllegalStateException("This method is only for Spring Framework.");
-        }
-    }
-
-    // -----------------------------------------------------
     //                                                Oracle
     //                                                ------
     public static class ImplementedOracleAgent implements OracleAgent {
@@ -836,11 +816,27 @@ public class DBFluteConfig {
         }
     }
 
+    public static class ImplementedOracleDateAsDateType extends OracleDateAsDateType {
+
+        @Override
+        protected OracleAgent createOracleAgent() {
+            return createImplementedOracleAgent();
+        }
+    }
+
+    public static class ImplementedOracleDateAsTimestampType extends OracleDateAsTimestampType {
+
+        @Override
+        protected OracleAgent createOracleAgent() {
+            return createImplementedOracleAgent();
+        }
+    }
+
     public static class ImplementedOracleDateType extends OracleDateType {
 
         @Override
         protected OracleAgent createOracleAgent() {
-            return new ImplementedOracleAgent();
+            return createImplementedOracleAgent();
         }
     }
 
@@ -852,7 +848,7 @@ public class DBFluteConfig {
 
         @Override
         protected OracleAgent createOracleAgent() {
-            return new ImplementedOracleAgent();
+            return createImplementedOracleAgent();
         }
     }
 
@@ -864,8 +860,12 @@ public class DBFluteConfig {
 
         @Override
         protected OracleAgent createOracleAgent() {
-            return new ImplementedOracleAgent();
+            return createImplementedOracleAgent();
         }
+    }
+
+    protected static ImplementedOracleAgent createImplementedOracleAgent() {
+        return new ImplementedOracleAgent();
     }
 
     // -----------------------------------------------------
@@ -917,13 +917,13 @@ public class DBFluteConfig {
     public static class ImplementedSQLExceptionDigger implements SQLExceptionDigger {
 
         public SQLException digUp(Throwable cause) {
-            SQLException found = resolveS2DBCP(cause);
-            if (found != null) {
-                return found;
+            SQLException s2found = resolveS2DBCP(cause);
+            if (s2found != null) {
+                return s2found;
             }
-            found = resolveDefault(cause);
-            if (found != null) {
-                return found;
+            SQLException defaultFound = resolveDefault(cause);
+            if (defaultFound != null) {
+                return defaultFound;
             }
             return null;
         }
@@ -946,4 +946,12 @@ public class DBFluteConfig {
             return null;
         }
     }
+
+    // ===================================================================================
+    //                                                                       Very Internal
+    //                                                                       =============
+    // very internal (for suppressing warn about 'Not Use Import')
+    protected String xTms() { return Timestamp.class.getName(); }
+    protected String xDSc() { return DataSource.class.getName(); }
+    protected String xSQLEx() { return SQLException.class.getName(); }
 }

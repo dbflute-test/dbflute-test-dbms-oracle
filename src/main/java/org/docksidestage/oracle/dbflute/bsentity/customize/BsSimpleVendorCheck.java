@@ -785,6 +785,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
      * [get] TYPE_OF_DATE: {DATE(7)} <br>
      * @return The value of the column 'TYPE_OF_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getTypeOfDate() {
         checkSpecifiedProperty("typeOfDate");
         return _typeOfDate;
