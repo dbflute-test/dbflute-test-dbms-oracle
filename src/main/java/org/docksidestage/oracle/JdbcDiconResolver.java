@@ -33,7 +33,7 @@ public class JdbcDiconResolver {
         final File buildDir = DfResourceUtil.getBuildDir(JdbcDiconResolver.class);
         final String dispatchPath;
         try {
-            final String dfpropDir = "../../dbflute_exampledb/dfprop";
+            final String dfpropDir = "../../dbflute_maihamadb/dfprop";
             dispatchPath = buildDir.getCanonicalPath() + "/" + dfpropDir + "/local-" + property + ".txt";
         } catch (IOException e) {
             String msg = "Failed to get canonical path from the dir: " + buildDir;

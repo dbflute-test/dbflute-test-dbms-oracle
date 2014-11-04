@@ -1,19 +1,17 @@
 package org.docksidestage.oracle.unit;
 
 import org.dbflute.bhv.BehaviorSelector;
+import org.dbflute.bhv.BehaviorWritable;
+import org.dbflute.bhv.writable.DeleteOption;
+import org.dbflute.cbean.ConditionBean;
 import org.dbflute.utflute.seasar.ContainerTestCase;
-import org.docksidestage.oracle.dbflute.cbean.MemberAddressCB;
-import org.docksidestage.oracle.dbflute.cbean.MemberLoginCB;
-import org.docksidestage.oracle.dbflute.cbean.MemberSecurityCB;
-import org.docksidestage.oracle.dbflute.cbean.MemberServiceCB;
-import org.docksidestage.oracle.dbflute.cbean.MemberWithdrawalCB;
-import org.docksidestage.oracle.dbflute.cbean.PurchaseCB;
 import org.docksidestage.oracle.dbflute.exbhv.MemberAddressBhv;
 import org.docksidestage.oracle.dbflute.exbhv.MemberLoginBhv;
 import org.docksidestage.oracle.dbflute.exbhv.MemberSecurityBhv;
 import org.docksidestage.oracle.dbflute.exbhv.MemberServiceBhv;
 import org.docksidestage.oracle.dbflute.exbhv.MemberWithdrawalBhv;
 import org.docksidestage.oracle.dbflute.exbhv.PurchaseBhv;
+import org.docksidestage.oracle.dbflute.exbhv.PurchasePaymentBhv;
 
 /**
  * The test base of application for Basic Example.
@@ -24,36 +22,21 @@ public abstract class UnitContainerTestCase extends ContainerTestCase {
 
     private BehaviorSelector _behaviorSelector;
 
+    protected void deleteAll(Class<? extends BehaviorWritable> clazz) {
+        BehaviorWritable bhv = _behaviorSelector.select(clazz);
+        ConditionBean cb = bhv.newConditionBean();
+        bhv.rangeRemove(cb, new DeleteOption<ConditionBean>().allowNonQueryDelete());
+    }
+
     protected void deleteMemberReferrer() {
-        {
-            MemberAddressBhv bhv = _behaviorSelector.select(MemberAddressBhv.class);
-            MemberAddressCB cb = bhv.newConditionBean();
-            bhv.varyingQueryDelete(cb, op -> op.allowNonQueryDelete());
-        }
-        {
-            MemberLoginBhv bhv = _behaviorSelector.select(MemberLoginBhv.class);
-            MemberLoginCB cb = bhv.newConditionBean();
-            bhv.varyingQueryDelete(cb, op -> op.allowNonQueryDelete());
-        }
-        {
-            MemberSecurityBhv bhv = _behaviorSelector.select(MemberSecurityBhv.class);
-            MemberSecurityCB cb = bhv.newConditionBean();
-            bhv.varyingQueryDelete(cb, op -> op.allowNonQueryDelete());
-        }
-        {
-            MemberServiceBhv bhv = _behaviorSelector.select(MemberServiceBhv.class);
-            MemberServiceCB cb = bhv.newConditionBean();
-            bhv.varyingQueryDelete(cb, op -> op.allowNonQueryDelete());
-        }
-        {
-            MemberWithdrawalBhv bhv = _behaviorSelector.select(MemberWithdrawalBhv.class);
-            MemberWithdrawalCB cb = bhv.newConditionBean();
-            bhv.varyingQueryDelete(cb, op -> op.allowNonQueryDelete());
-        }
-        {
-            PurchaseBhv bhv = _behaviorSelector.select(PurchaseBhv.class);
-            PurchaseCB cb = bhv.newConditionBean();
-            bhv.varyingQueryDelete(cb, op -> op.allowNonQueryDelete());
-        }
+        deleteAll(MemberAddressBhv.class);
+        // TODO jflute test: following in Oracle
+        //deleteAll(MemberFollowingBhv.class);
+        deleteAll(MemberLoginBhv.class);
+        deleteAll(MemberServiceBhv.class);
+        deleteAll(MemberSecurityBhv.class);
+        deleteAll(MemberWithdrawalBhv.class);
+        deleteAll(PurchasePaymentBhv.class);
+        deleteAll(PurchaseBhv.class);
     }
 }

@@ -362,7 +362,7 @@ public class VendorLargeDataTest extends UnitContainerTestCase {
         final String outputDir;
         {
             String canonicalPath = DfResourceUtil.getBuildDir(this.getClass()).getCanonicalPath();
-            outputDir = canonicalPath + "/../../dbflute_exampledb/playsql/data/ut/tsv/UTF-8";
+            outputDir = canonicalPath + "/../../dbflute_maihamadb/playsql/data/ut/tsv/UTF-8";
         }
         final List<VendorLargeData> dataList = new ArrayList<VendorLargeData>();
         for (int i = 0; i < dataSize; i++) {

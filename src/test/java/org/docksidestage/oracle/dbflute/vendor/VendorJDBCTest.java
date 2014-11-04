@@ -520,7 +520,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
     //                                                ------
     public void test_CallableStatement_STRUCT_next_basic() throws Exception {
         // ## Arrange ##
-        String typeName = "NEXTEXAMPLEDB.NEXT_FOO_BEAN";
+        String typeName = "NEWURAYASUDB.NEXT_FOO_BEAN";
         Connection conn = null;
         CallableStatement cs = null;
         ResultSet rs = null;

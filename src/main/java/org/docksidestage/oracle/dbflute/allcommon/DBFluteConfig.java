@@ -121,7 +121,7 @@ public class DBFluteConfig {
             // date formatting has two points:
             //   o the DATE type of Oracle has seconds  
             //   o it uses a date literal of Oracle
-            _logDatePattern = "timestamp $df:{yyyy-MM-dd HH:mm:ss}";
+            _logDatePattern = "date $df:{yyyy-MM-dd}";
             _logTimestampPattern = "timestamp $df:{" + DisplaySqlBuilder.DEFAULT_TIMESTAMP_FORMAT + "}";
         }
 
