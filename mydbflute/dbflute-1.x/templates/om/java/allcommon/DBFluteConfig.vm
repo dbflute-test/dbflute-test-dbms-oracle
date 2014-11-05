@@ -161,7 +161,7 @@ public class ${glDBFluteConfig} {
 #if ($database.needsDateTreatedAsLocalDateTime())
             _logDatePattern = "timestamp $df:{yyyy-MM-dd HH:mm:ss}";
 #else
-            _logDatePattern = "date $df:{yyyy-MM-dd}";
+            _logDatePattern = "date $df:{yyyy-MM-dd}"; // but treated as date by your setting
 #end
             _logTimestampPattern = "timestamp $df:{" + DisplaySqlBuilder.DEFAULT_TIMESTAMP_FORMAT + "}";
         }
@@ -1103,4 +1103,5 @@ public class ${glDBFluteConfig} {
     protected String xTms() { return Timestamp.class.getName(); }
     protected String xDSc() { return DataSource.class.getName(); }
     protected String xSQLEx() { return SQLException.class.getName(); }
+    protected String xDSqB() { return DisplaySqlBuilder.class.getName(); }
 }
