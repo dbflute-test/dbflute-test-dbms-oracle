@@ -330,7 +330,8 @@ public class BsSynonymExceptCB extends AbstractConditionBean {
          */
         public HpSDRFunction<SynonymRefExceptCB, SynonymExceptCQ> derivedSynonymRefExcept() {
             assertDerived("synonymRefExceptList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsderiveSynonymRefExceptList(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<SynonymRefExceptCB> sq, SynonymExceptCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveSynonymRefExceptList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).
@@ -338,7 +339,8 @@ public class BsSynonymExceptCB extends AbstractConditionBean {
          */
         public HpSDRFunction<SynonymExceptCB, SynonymExceptCQ> myselfDerived() {
             assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<SynonymExceptCB> sq, SynonymExceptCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
         }
     }
 

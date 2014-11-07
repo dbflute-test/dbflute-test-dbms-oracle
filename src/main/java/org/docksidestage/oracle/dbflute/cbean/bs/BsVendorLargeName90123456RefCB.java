@@ -372,7 +372,8 @@ public class BsVendorLargeName90123456RefCB extends AbstractConditionBean {
          */
         public HpSDRFunction<VendorLargeName90123456RefCB, VendorLargeName90123456RefCQ> myselfDerived() {
             assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<VendorLargeName90123456RefCB> sq, VendorLargeName90123456RefCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
         }
     }
 

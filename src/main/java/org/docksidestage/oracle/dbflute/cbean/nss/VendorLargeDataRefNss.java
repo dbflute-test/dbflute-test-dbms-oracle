@@ -11,7 +11,7 @@ public class VendorLargeDataRefNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected VendorLargeDataRefCQ _query;
+    protected final VendorLargeDataRefCQ _query;
     public VendorLargeDataRefNss(VendorLargeDataRefCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

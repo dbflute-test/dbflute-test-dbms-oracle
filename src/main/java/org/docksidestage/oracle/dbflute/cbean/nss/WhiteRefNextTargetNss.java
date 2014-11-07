@@ -11,7 +11,7 @@ public class WhiteRefNextTargetNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected WhiteRefNextTargetCQ _query;
+    protected final WhiteRefNextTargetCQ _query;
     public WhiteRefNextTargetNss(WhiteRefNextTargetCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

@@ -11,7 +11,7 @@ public class SynonymMemberNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected SynonymMemberCQ _query;
+    protected final SynonymMemberCQ _query;
     public SynonymMemberNss(SynonymMemberCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

@@ -489,7 +489,8 @@ public class BsSynonymMemberCB extends AbstractConditionBean {
          */
         public HpSDRFunction<SynonymMemberLoginCB, SynonymMemberCQ> derivedSynonymMemberLogin() {
             assertDerived("synonymMemberLoginList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsderiveSynonymMemberLoginList(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<SynonymMemberLoginCB> sq, SynonymMemberCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveSynonymMemberLoginList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).
@@ -497,7 +498,8 @@ public class BsSynonymMemberCB extends AbstractConditionBean {
          */
         public HpSDRFunction<SynonymMemberCB, SynonymMemberCQ> myselfDerived() {
             assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<SynonymMemberCB> sq, SynonymMemberCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
         }
     }
 

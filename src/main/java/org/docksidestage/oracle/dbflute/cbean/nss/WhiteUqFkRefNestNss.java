@@ -11,7 +11,7 @@ public class WhiteUqFkRefNestNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected WhiteUqFkRefNestCQ _query;
+    protected final WhiteUqFkRefNestCQ _query;
     public WhiteUqFkRefNestNss(WhiteUqFkRefNestCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

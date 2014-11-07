@@ -348,7 +348,8 @@ public class BsWithdrawalReasonCB extends AbstractConditionBean {
          */
         public HpSDRFunction<MemberWithdrawalCB, WithdrawalReasonCQ> derivedMemberWithdrawal() {
             assertDerived("memberWithdrawalList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsderiveMemberWithdrawalList(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<MemberWithdrawalCB> sq, WithdrawalReasonCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveMemberWithdrawalList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
@@ -364,7 +365,8 @@ public class BsWithdrawalReasonCB extends AbstractConditionBean {
          */
         public HpSDRFunction<SynonymMemberWithdrawalCB, WithdrawalReasonCQ> derivedSynonymMemberWithdrawal() {
             assertDerived("synonymMemberWithdrawalList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsderiveSynonymMemberWithdrawalList(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<SynonymMemberWithdrawalCB> sq, WithdrawalReasonCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveSynonymMemberWithdrawalList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).
@@ -372,7 +374,8 @@ public class BsWithdrawalReasonCB extends AbstractConditionBean {
          */
         public HpSDRFunction<WithdrawalReasonCB, WithdrawalReasonCQ> myselfDerived() {
             assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<WithdrawalReasonCB> sq, WithdrawalReasonCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
         }
     }
 

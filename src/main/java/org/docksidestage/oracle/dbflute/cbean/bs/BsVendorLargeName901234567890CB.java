@@ -330,7 +330,8 @@ public class BsVendorLargeName901234567890CB extends AbstractConditionBean {
          */
         public HpSDRFunction<VendorLargeName90123456RefCB, VendorLargeName901234567890CQ> derivedVendorLargeName90123456Ref() {
             assertDerived("vendorLargeName90123456RefList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsderiveVendorLargeName90123456RefList(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<VendorLargeName90123456RefCB> sq, VendorLargeName901234567890CQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveVendorLargeName90123456RefList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).
@@ -338,7 +339,8 @@ public class BsVendorLargeName901234567890CB extends AbstractConditionBean {
          */
         public HpSDRFunction<VendorLargeName901234567890CB, VendorLargeName901234567890CQ> myselfDerived() {
             assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<VendorLargeName901234567890CB> sq, VendorLargeName901234567890CQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
         }
     }
 

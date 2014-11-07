@@ -11,7 +11,7 @@ public class VendorSynonymMemberNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected VendorSynonymMemberCQ _query;
+    protected final VendorSynonymMemberCQ _query;
     public VendorSynonymMemberNss(VendorSynonymMemberCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 
