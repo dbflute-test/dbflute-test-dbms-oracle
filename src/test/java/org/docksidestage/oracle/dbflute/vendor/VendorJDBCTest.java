@@ -28,9 +28,9 @@ import org.dbflute.exception.SQLFailureException;
 import org.dbflute.hook.CallbackContext;
 import org.dbflute.hook.SqlLogHandler;
 import org.dbflute.hook.SqlLogInfo;
-import org.dbflute.utflute.core.thread.ThreadFireExecution;
-import org.dbflute.utflute.core.thread.ThreadFireOption;
-import org.dbflute.utflute.core.thread.ThreadFireResource;
+import org.dbflute.utflute.core.cannonball.CannonballCar;
+import org.dbflute.utflute.core.cannonball.CannonballOption;
+import org.dbflute.utflute.core.cannonball.CannonballRun;
 import org.dbflute.util.DfTypeUtil;
 import org.docksidestage.oracle.dbflute.allcommon.CDef;
 import org.docksidestage.oracle.dbflute.bsentity.dbmeta.MemberDbm;
@@ -40,7 +40,6 @@ import org.docksidestage.oracle.dbflute.exbhv.pmbean.PurchaseMaxPriceMemberPmb;
 import org.docksidestage.oracle.dbflute.exbhv.pmbean.SpInOutParameterPmb;
 import org.docksidestage.oracle.dbflute.exentity.Member;
 import org.docksidestage.oracle.unit.UnitContainerTestCase;
-import org.seasar.extension.dbcp.ConnectionWrapper;
 
 /**
  * @author jflute
@@ -57,8 +56,8 @@ public class VendorJDBCTest extends UnitContainerTestCase {
     //                                                                       Query Timeout
     //                                                                       =============
     public void test_QueryTimeout_insert() throws Exception {
-        threadFire(new ThreadFireExecution<Void>() {
-            public Void execute(ThreadFireResource resource) {
+        cannonball(new CannonballRun() {
+            public void drive(CannonballCar car) {
                 final long threadId = Thread.currentThread().getId();
                 if (threadId % 2 == 0) {
                     Member member = new Member();
@@ -75,9 +74,8 @@ public class VendorJDBCTest extends UnitContainerTestCase {
                     sleep(1000);
                     memberBhv.varyingInsert(member, op -> op.configure(conf -> conf.queryTimeout(1)));
                 }
-                return null;
             }
-        }, new ThreadFireOption().threadCount(2).repeatCount(1).expectExceptionAny("ORA-01013"));
+        }, new CannonballOption().threadCount(2).repeatCount(1).expectExceptionAny("ORA-01013"));
     }
 
     // ===================================================================================
@@ -396,7 +394,8 @@ public class VendorJDBCTest extends UnitContainerTestCase {
         try {
             conn = getDataSource().getConnection();
             cs = conn.prepareCall("{call SP_TABLE_MANUAL_PARAMETER(?, ?)}");
-            Connection physConn = ((ConnectionWrapper) conn).getPhysicalConnection();
+            log(conn.getClass());
+            Connection physConn = digUpPhysicalConnection(conn);
             ArrayDescriptor oracleDesc = ArrayDescriptor.createDescriptor(typeName, physConn);
             ARRAY oracleArray = new ARRAY(oracleDesc, physConn, new String[] { "foo", "bar" });
             cs.setObject(1, oracleArray, Types.ARRAY);
@@ -450,7 +449,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
         try {
             conn = getDataSource().getConnection();
             cs = conn.prepareCall("{call SP_TABLE_PACKED_PARAMETER(?, ?)}");
-            Connection physConn = ((ConnectionWrapper) conn).getPhysicalConnection();
+            Connection physConn = digUpPhysicalConnection(conn);
             try {
                 ArrayDescriptor oracleDesc = ArrayDescriptor.createDescriptor(typeName, physConn);
                 fail("oracleDesc=" + oracleDesc);
@@ -486,7 +485,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
         try {
             conn = getDataSource().getConnection();
             cs = conn.prepareCall("{call SP_TABLE_VARIOUS_PARAMETER(?, ?)}");
-            Connection physConn = ((ConnectionWrapper) conn).getPhysicalConnection();
+            Connection physConn = digUpPhysicalConnection(conn);
             ArrayDescriptor oracleDesc = ArrayDescriptor.createDescriptor(typeName, physConn);
             try {
                 ARRAY oracleArray = new ARRAY(oracleDesc, physConn, new String[] { "foo", "bar" });
@@ -526,7 +525,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
         try {
             conn = getDataSource().getConnection();
             cs = conn.prepareCall("{call SP_STRUCT_NEXT_PARAMETER(?, ?)}");
-            Connection physConn = ((ConnectionWrapper) conn).getPhysicalConnection();
+            Connection physConn = digUpPhysicalConnection(conn);
             StructDescriptor oracleDesc = StructDescriptor.createDescriptor(typeName, physConn);
             Object[] attrs = new Object[] { 1, "next", new BigDecimal("2.3"), null, null, null };
             STRUCT oracleStruct = new STRUCT(oracleDesc, physConn, attrs);
@@ -558,7 +557,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
         try {
             conn = getDataSource().getConnection();
             cs = conn.prepareCall("{call SP_STRUCT_SYNONYM_PARAMETER(?, ?)}");
-            Connection physConn = ((ConnectionWrapper) conn).getPhysicalConnection();
+            Connection physConn = digUpPhysicalConnection(conn);
             StructDescriptor oracleDesc = StructDescriptor.createDescriptor(typeName, physConn);
             Object[] attrs = new Object[] { 1, "synonym", new BigDecimal("2.3"), null, null, null };
             STRUCT oracleStruct = new STRUCT(oracleDesc, physConn, attrs);

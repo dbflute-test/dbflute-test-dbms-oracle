@@ -180,7 +180,7 @@ map:{
     #  But you need to make SQL files at 'exbhv' under the set package
     #  if you use BehaviorQueryPath (MemberBhv_selectSimpleMember.sql).
     #
-    #; sqlPackage = $$PACKAGE_BASE$$
+    ; sqlPackage = $$PACKAGE_BASE$$
     # - - - - - - - - - -/
 }
 # ----------------/

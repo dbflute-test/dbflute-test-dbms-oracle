@@ -1,0 +1,52 @@
+map:{
+    ; 2014/11/09 12:50:51 = map:{
+        ; diffDate = 2014/11/09 12:50:51
+        ; tableDiff = map:{
+            ; STATION = map:{
+                ; tableName = STATION
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; HOME_COUNT = map:{
+                        ; columnName = HOME_COUNT
+                        ; diffType = ADD
+                    }
+                    ; WORKING_KILOMETER = map:{
+                        ; columnName = WORKING_KILOMETER
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
+    ; 2014/11/09 04:35:24 = map:{
+        ; diffDate = 2014/11/09 04:35:24
+        ; tableDiff = map:{
+            ; STATION = map:{
+                ; tableName = STATION
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; REGISTER_DATETIME = map:{
+                        ; columnName = REGISTER_DATETIME
+                        ; diffType = DELETE
+                    }
+                    ; REGISTER_TRACE = map:{
+                        ; columnName = REGISTER_TRACE
+                        ; diffType = DELETE
+                    }
+                    ; UPDATE_DATETIME = map:{
+                        ; columnName = UPDATE_DATETIME
+                        ; diffType = DELETE
+                    }
+                    ; UPDATE_TRACE = map:{
+                        ; columnName = UPDATE_TRACE
+                        ; diffType = DELETE
+                    }
+                    ; VERSION_NO = map:{
+                        ; columnName = VERSION_NO
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+}

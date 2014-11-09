@@ -34,8 +34,7 @@ import org.dbflute.system.XLog;
 import org.dbflute.twowaysql.DisplaySqlBuilder;
 import org.dbflute.twowaysql.style.BoundDateDisplayTimeZoneProvider;
 import org.dbflute.util.DfReflectionUtil;
-import org.seasar.extension.dbcp.ConnectionWrapper;
-import org.seasar.framework.exception.SQLRuntimeException;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 
 /**
  * @author oracleman
@@ -84,7 +83,7 @@ public class DBFluteConfig {
     protected DataSourceHandler _dataSourceHandler;
     protected PhysicalConnectionDigger _physicalConnectionDigger;
     protected SQLExceptionDigger _sqlExceptionDigger;
-    protected String _outsideSqlPackage;
+    protected String _outsideSqlPackage = "org.docksidestage.oracle.dbflute";
     protected boolean _useSqlLogRegistry = false;
     protected MappingDateTimeZoneProvider _mappingDateTimeZoneProvider;
 
@@ -767,6 +766,29 @@ public class DBFluteConfig {
     //                                                                   Implemented Class
     //                                                                   =================
     // -----------------------------------------------------
+    //                                                Spring
+    //                                                ------
+    public static class SpringTransactionalDataSourceHandler implements DataSourceHandler {
+
+        public Connection getConnection(DataSource ds) throws SQLException {
+            final Connection conn = getConnectionFromUtils(ds);
+            if (isConnectionTransactional(conn, ds)) {
+                return new NotClosingConnectionWrapper(conn);
+            } else {
+                return conn;
+            }
+        }
+
+        public Connection getConnectionFromUtils(DataSource ds) {
+            return DataSourceUtils.getConnection(ds);
+        }
+
+        public boolean isConnectionTransactional(Connection conn, DataSource ds) {
+            return DataSourceUtils.isConnectionTransactional(conn, ds);
+        }
+    }
+
+    // -----------------------------------------------------
     //                                                Oracle
     //                                                ------
     public static class ImplementedOracleAgent implements OracleAgent {
@@ -875,7 +897,6 @@ public class DBFluteConfig {
 
         public Connection digUp(Connection conn) throws SQLException {
             Connection digged = unwrap(conn);
-            digged = resolveS2DBCP(digged);
             digged = resolveCommonsDBCP(digged);
             return digged;
         }
@@ -883,13 +904,6 @@ public class DBFluteConfig {
         protected Connection unwrap(Connection conn) {
             if (conn instanceof NotClosingConnectionWrapper) {
                 return ((NotClosingConnectionWrapper)conn).getActualConnection();
-            }
-            return conn;
-        }
-
-        protected Connection resolveS2DBCP(Connection conn) {
-            if (conn instanceof ConnectionWrapper) {
-                return ((ConnectionWrapper)conn).getPhysicalConnection();
             }
             return conn;
         }
@@ -917,23 +931,9 @@ public class DBFluteConfig {
     public static class ImplementedSQLExceptionDigger implements SQLExceptionDigger {
 
         public SQLException digUp(Throwable cause) {
-            SQLException s2found = resolveS2DBCP(cause);
-            if (s2found != null) {
-                return s2found;
-            }
             SQLException defaultFound = resolveDefault(cause);
             if (defaultFound != null) {
                 return defaultFound;
-            }
-            return null;
-        }
-
-        protected SQLException resolveS2DBCP(Throwable cause) {
-            if (cause instanceof SQLRuntimeException) {
-                Throwable nestedCause = ((SQLRuntimeException)cause).getCause();
-                if (nestedCause instanceof SQLException) {
-                    return (SQLException)nestedCause;
-                }
             }
             return null;
         }

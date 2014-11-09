@@ -23,16 +23,10 @@ import org.dbflute.optional.RelationOptionalFactory;
 import org.dbflute.outsidesql.OutsideSqlOption;
 import org.dbflute.outsidesql.factory.DefaultOutsideSqlExecutorFactory;
 import org.dbflute.outsidesql.factory.OutsideSqlExecutorFactory;
-import org.dbflute.helper.beans.factory.DfBeanDescFactory;
 import org.dbflute.s2dao.extension.TnBeanMetaDataFactoryExtension;
 import org.dbflute.s2dao.jdbc.TnStatementFactoryImpl;
 import org.dbflute.s2dao.metadata.TnBeanMetaDataFactory;
 import org.dbflute.twowaysql.factory.SqlAnalyzerFactory;
-
-import org.seasar.framework.container.annotation.tiger.Binding;
-import org.seasar.framework.container.annotation.tiger.BindingType;
-import org.seasar.framework.util.Disposable;
-import org.seasar.framework.util.DisposableUtil;
 
 /**
  * @author oracleman
@@ -439,26 +433,7 @@ public class ImplementedInvokerAssistant implements InvokerAssistant {
     //                                                                             =======
     /** {@inheritDoc} */
     public void toBeDisposable(final DisposableProcess callerProcess) { // for HotDeploy
-        if (_disposable) {
-            return;
-        }
-        synchronized (this) {
-            if (_disposable) {
-                return;
-            }
-            DisposableUtil.add(new Disposable() {
-                public void dispose() {
-                    callerProcess.dispose();
-                    _disposable = false;
-                }
-            });
-            DisposableUtil.add(new Disposable() {
-                public void dispose() {
-                    DfBeanDescFactory.clear();
-                }
-            });
-            _disposable = true;
-        }
+        // do nothing: unsupported at this DI container
     }
 
     public boolean isDisposable() {
@@ -477,7 +452,6 @@ public class ImplementedInvokerAssistant implements InvokerAssistant {
     // so this variable is actually unused in this class
     // (needs to be injected only when the DI container
     // is set by its DI setting file)
-    @Binding(bindingType=BindingType.MUST)
     public void setIntroduction(DBFluteInitializer introduction) {
         _introduction = introduction;
     }

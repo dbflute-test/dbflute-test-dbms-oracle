@@ -13,10 +13,10 @@
 	<inceptionYear>2014</inceptionYear>
 
 	<properties>
-		<seasar.version>2.4.46</seasar.version>
 		<dbflute.version>1.1.0-pilotC-SNAPSHOT</dbflute.version>
 		<oracle.jdbc.version>11.1.0.6.0-Production+</oracle.jdbc.version>
-		<utflute.version>0.5.0-pilotB-SNAPSHOT</utflute.version>
+		<spring.version>4.1.1.RELEASE</spring.version>
+		<utflute.version>0.5.0-pilotC-SNAPSHOT</utflute.version>
 	</properties>
 
 	<licenses>
@@ -132,33 +132,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>maven.seasar.org</id>
-			<name>The Seasar Foundation Maven2 Repository</name>
-			<url>http://maven.seasar.org/maven2</url>
-		</repository>
-	    <repository>
-	      <snapshots>
-	        <enabled>true</enabled>
-	      </snapshots>
-	      <id>snapshot.maven.seasar.org</id>
-	      <name>The Seasar Foundation Maven2 Snapshot Repository</name>
-	      <url>http://maven.seasar.org/maven2-snapshot</url>
-	    </repository>
 	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>mave.seaser.org</id>
-			<name>The Seasar Foundation Maven2 Repository</name>
-			<url>http://maven.seasar.org/maven2</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>snapshot.mave.seaser.org</id>
-			<name>The Seasar Foundation Maven2 Repository</name>
-			<url>http://maven.seasar.org/maven2-snapshot</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<dependencies>
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -178,45 +152,26 @@
 			<systemPath>${basedir}/lib/ojdbc.jar</systemPath>
 		</dependency>
 
-		<!-- seasar -->
+		<!-- spring -->
 		<dependency>
-			<groupId>org.seasar.container</groupId>
-			<artifactId>s2-tiger</artifactId>
-			<version>${seasar.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.easymock</groupId>
-					<artifactId>easymock</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- servlet -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.4</version>
-			<scope>provided</scope> 
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.0</version>
-			<scope>provided</scope> 
-		</dependency>
-
-	    <!-- j2ee -->
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-jta_1.1_spec</artifactId>
-			<version>1.0</version>
-			<scope>runtime</scope>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-ejb_3.0_spec</artifactId>
-			<version>1.0</version>
-			<scope>runtime</scope>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.3</version>
 		</dependency>
 
 		<!-- logging -->
@@ -232,14 +187,14 @@
 		<!--                                                                       = = = = -->
         <dependency>
             <groupId>org.dbflute.utflute</groupId>
-            <artifactId>utflute-seasar</artifactId>
+            <artifactId>utflute-spring</artifactId>
             <version>${utflute.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.2</version>
+            <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
 	</dependencies>

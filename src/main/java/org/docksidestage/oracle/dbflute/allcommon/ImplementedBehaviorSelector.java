@@ -14,8 +14,7 @@ import org.dbflute.util.DfTraceViewUtil;
 import org.dbflute.util.DfTypeUtil;
 import org.dbflute.util.Srl;
 
-import org.seasar.framework.container.S2Container;
-import org.seasar.framework.container.ComponentNotFoundRuntimeException;
+import org.springframework.context.ApplicationContext;
 
 /**
  * The implementation of behavior selector.
@@ -35,8 +34,8 @@ public class ImplementedBehaviorSelector implements BehaviorSelector {
     /** The concurrent cache of behavior. */
     protected final Map<Class<? extends BehaviorReadable>, BehaviorReadable> _behaviorCache = newConcurrentHashMap();
 
-    /** The container of Seasar. */
-    protected S2Container _container;
+    /** The container of Spring. */
+    protected ApplicationContext _container;
 
     // ===================================================================================
     //                                                                          Initialize
@@ -140,19 +139,7 @@ public class ImplementedBehaviorSelector implements BehaviorSelector {
     protected <COMPONENT> COMPONENT getComponent(Class<COMPONENT> componentType) { // only for behavior
         assertObjectNotNull("componentType", componentType);
         assertObjectNotNull("_container", _container);
-        try {
-		    return (COMPONENT)_container.getComponent(componentType);
-		} catch (ComponentNotFoundRuntimeException e) { // Normally it doesn't come.
-		    final COMPONENT component;
-		    try {
-		        // for HotDeploy Mode
-		        component = (COMPONENT)_container.getRoot().getComponent(componentType);
-		    } catch (ComponentNotFoundRuntimeException ignored) {
-		        throw e;
-		    }
-		    _container = _container.getRoot(); // Change container.
-		    return component;
-		}
+		return (COMPONENT)_container.getBean(replace(initUncap(toClassTitle(componentType)), "$", ""));
     }
 
     // ===================================================================================
@@ -218,7 +205,7 @@ public class ImplementedBehaviorSelector implements BehaviorSelector {
     // ===================================================================================
     //                                                                            Accessor
     //                                                                            ========
-    public void setContainer(S2Container container) {
+    public void setContainer(ApplicationContext container) {
         this._container = container;
     }
 }

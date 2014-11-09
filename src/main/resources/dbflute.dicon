@@ -6,62 +6,12 @@
     <include path="j2ee.dicon"/>
 
     <!-- The components of DBFlute Runtime. -->
-    <component name="introduction" class="org.docksidestage.oracle.dbflute.allcommon.DBFluteInitializer"/>
-    <component name="invokerAssistant" class="org.docksidestage.oracle.dbflute.allcommon.ImplementedInvokerAssistant"/>
-    <component name="commonColumnAutoSetupper" class="org.docksidestage.oracle.dbflute.allcommon.ImplementedCommonColumnAutoSetupper"/>
-    <component name="behaviorSelector" class="org.docksidestage.oracle.dbflute.allcommon.ImplementedBehaviorSelector"/>
+    <component name="introduction" class="org.docksidestage.oracle.dbflute.resortlinedb.allcommon.RsclDBFluteInitializer"/>
+    <component name="invokerAssistant" class="org.docksidestage.oracle.dbflute.resortlinedb.allcommon.RsclImplementedInvokerAssistant"/>
+    <component name="commonColumnAutoSetupper" class="org.docksidestage.oracle.dbflute.resortlinedb.allcommon.RsclImplementedCommonColumnAutoSetupper"/>
+    <component name="behaviorSelector" class="org.docksidestage.oracle.dbflute.resortlinedb.allcommon.RsclImplementedBehaviorSelector"/>
     <component name="behaviorCommandInvoker" class="org.dbflute.bhv.core.BehaviorCommandInvoker"/>
 
     <!-- The components of Behavior. -->
-    <component name="memberBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberBhv"/>
-    <component name="memberAddressBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberAddressBhv"/>
-    <component name="memberLoginBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberLoginBhv"/>
-    <component name="memberSecurityBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberSecurityBhv"/>
-    <component name="memberServiceBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberServiceBhv"/>
-    <component name="memberStatusBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberStatusBhv"/>
-    <component name="memberVendorSynonymBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberVendorSynonymBhv"/>
-    <component name="memberWithdrawalBhv" class="org.docksidestage.oracle.dbflute.exbhv.MemberWithdrawalBhv"/>
-    <component name="productBhv" class="org.docksidestage.oracle.dbflute.exbhv.ProductBhv"/>
-    <component name="productCategoryBhv" class="org.docksidestage.oracle.dbflute.exbhv.ProductCategoryBhv"/>
-    <component name="productStatusBhv" class="org.docksidestage.oracle.dbflute.exbhv.ProductStatusBhv"/>
-    <component name="purchaseBhv" class="org.docksidestage.oracle.dbflute.exbhv.PurchaseBhv"/>
-    <component name="purchasePaymentBhv" class="org.docksidestage.oracle.dbflute.exbhv.PurchasePaymentBhv"/>
-    <component name="regionBhv" class="org.docksidestage.oracle.dbflute.exbhv.RegionBhv"/>
-    <component name="serviceRankBhv" class="org.docksidestage.oracle.dbflute.exbhv.ServiceRankBhv"/>
-    <component name="summaryMemberPurchaseBhv" class="org.docksidestage.oracle.dbflute.exbhv.SummaryMemberPurchaseBhv"/>
-    <component name="summaryProductBhv" class="org.docksidestage.oracle.dbflute.exbhv.SummaryProductBhv"/>
-    <component name="synonymExceptBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymExceptBhv"/>
-    <component name="synonymMemberBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymMemberBhv"/>
-    <component name="synonymMemberLoginBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymMemberLoginBhv"/>
-    <component name="synonymMemberWithdrawalBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymMemberWithdrawalBhv"/>
-    <component name="synonymNextLinkSecretBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymNextLinkSecretBhv"/>
-    <component name="synonymNextLinkSynonymBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymNextLinkSynonymBhv"/>
-    <component name="synonymNextLinkTableBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymNextLinkTableBhv"/>
-    <component name="synonymNextSameNameFkBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymNextSameNameFkBhv"/>
-    <component name="synonymNextSecretAuthBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymNextSecretAuthBhv"/>
-    <component name="synonymProductBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymProductBhv"/>
-    <component name="synonymProductStatusBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymProductStatusBhv"/>
-    <component name="synonymRefExceptBhv" class="org.docksidestage.oracle.dbflute.exbhv.SynonymRefExceptBhv"/>
-    <component name="vendorDollarBhv" class="org.docksidestage.oracle.dbflute.exbhv.Vendor$DollarBhv"/>
-    <component name="vendorCheckBhv" class="org.docksidestage.oracle.dbflute.exbhv.VendorCheckBhv"/>
-    <component name="vendorLargeDataBhv" class="org.docksidestage.oracle.dbflute.exbhv.VendorLargeDataBhv"/>
-    <component name="vendorLargeDataRefBhv" class="org.docksidestage.oracle.dbflute.exbhv.VendorLargeDataRefBhv"/>
-    <component name="vendorLargeName901234567890Bhv" class="org.docksidestage.oracle.dbflute.exbhv.VendorLargeName901234567890Bhv"/>
-    <component name="vendorLargeName90123456RefBhv" class="org.docksidestage.oracle.dbflute.exbhv.VendorLargeName90123456RefBhv"/>
-    <component name="vendorSynonymMemberBhv" class="org.docksidestage.oracle.dbflute.exbhv.VendorSynonymMemberBhv"/>
-    <component name="whiteDiffWorldBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteDiffWorldBhv"/>
-    <component name="whiteRefNextExceptBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteRefNextExceptBhv"/>
-    <component name="whiteRefNextTargetBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteRefNextTargetBhv"/>
-    <component name="whiteRefTargetBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteRefTargetBhv"/>
-    <component name="whiteSameNameBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteSameNameBhv"/>
-    <component name="whiteSameNameRefRefBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteSameNameRefRefBhv"/>
-    <component name="whiteTargetBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteTargetBhv"/>
-    <component name="whiteUqFkBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteUqFkBhv"/>
-    <component name="whiteUqFkRefBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteUqFkRefBhv"/>
-    <component name="whiteUqFkRefNestBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteUqFkRefNestBhv"/>
-    <component name="whiteUqFkWithoutPkBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteUqFkWithoutPkBhv"/>
-    <component name="whiteUqFkWithoutPkRefBhv" class="org.docksidestage.oracle.dbflute.exbhv.WhiteUqFkWithoutPkRefBhv"/>
-    <component name="withdrawalReasonBhv" class="org.docksidestage.oracle.dbflute.exbhv.WithdrawalReasonBhv"/>
-    <component name="nextSchemaProductBhv" class="org.docksidestage.oracle.dbflute.exbhv.NextSchemaProductBhv"/>
-    <component name="nextSchemaProductStatusBhv" class="org.docksidestage.oracle.dbflute.exbhv.NextSchemaProductStatusBhv"/>
+    <component name="rsclStationBhv" class="org.docksidestage.oracle.dbflute.resortlinedb.exbhv.RsclStationBhv"/>
 </components>

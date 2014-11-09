@@ -1,8 +1,7 @@
 package org.docksidestage.oracle.dbflute.allcommon;
 
-import org.dbflute.bhv.core.context.ConditionBeanContext;
 import org.dbflute.dbway.DBDef;
-import org.dbflute.s2dao.extension.TnSqlLogRegistry;
+import org.dbflute.jdbc.DataSourceHandler;
 import org.dbflute.system.DBFluteSystem;
 
 import org.slf4j.Logger;
@@ -22,14 +21,21 @@ public class DBFluteInitializer {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
+    protected final String _dataSourceFqcn;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
     /**
      * Constructor, which initializes various components.
+     * @param dataSource The instance of data source. (NotNull)
      */
-    public DBFluteInitializer() {
+    public DBFluteInitializer(javax.sql.DataSource dataSource) {
+        if (dataSource == null) {
+            String msg = "The argument 'dataSource' should not be null!";
+            throw new IllegalArgumentException(msg);
+        }
+        _dataSourceFqcn = dataSource.getClass().getName();
         announce();
         prologue();
         standBy();
@@ -51,8 +57,7 @@ public class DBFluteInitializer {
      * with calling super.prologue() in it.
      */
     protected void prologue() {
-        handleSqlLogRegistry();
-        loadCoolClasses();
+        setupDataSourceHandler(_dataSourceFqcn);
         adjustDBFluteSystem();
     }
 
@@ -71,28 +76,28 @@ public class DBFluteInitializer {
     // ===================================================================================
     //                                                                            Contents
     //                                                                            ========
-    protected void handleSqlLogRegistry() { // for S2Container
-        if (DBFluteConfig.getInstance().isUseSqlLogRegistry()) {
-            final StringBuilder sb = new StringBuilder();
-            sb.append("{SqlLog Information}").append(ln());
-            sb.append("  [SqlLogRegistry]").append(ln());
-            if (TnSqlLogRegistry.setupSqlLogRegistry()) {
-                sb.append("    ...Setting up sqlLogRegistry(org.seasar.extension.jdbc)").append(ln());
-                sb.append("    because the property 'useSqlLogRegistry' of the config of DBFlute is true");
-            } else {
-                sb.append("    The sqlLogRegistry(org.seasar.extension.jdbc) is not supported at the version");
-            }
-           _log.info(sb.toString());
-        } else {
-            final Object sqlLogRegistry = TnSqlLogRegistry.findContainerSqlLogRegistry();
-            if (sqlLogRegistry != null) {
-                TnSqlLogRegistry.closeRegistration();
-            }
+    /**
+     * Set up the handler of data source to the configuration of DBFlute. <br>
+     * If it uses commons-DBCP, it needs to arrange some for transaction.
+     * <ul>
+     *     <li>A. To use DataSourceUtils which is Spring Framework class.</li>
+     *     <li>B. To use TransactionConnection that is original class and doesn't close really.</li>
+     * </ul>
+     * If you use a transaction library which has a data source which supports transaction,
+     * It doesn't need these arrangement. (For example, the framework 'Atomikos') <br>
+     * This method should be executed when application is initialized.
+     * @param dataSourceFqcn The FQCN of data source. (NotNull)
+     */
+    protected void setupDataSourceHandler(String dataSourceFqcn) { // for Spring
+        final DBFluteConfig config = DBFluteConfig.getInstance();
+        final DataSourceHandler dataSourceHandler = config.getDataSourceHandler();
+        if (dataSourceHandler != null) {
+            return;
         }
-    }
-
-    protected void loadCoolClasses() { // for S2Container 
-        ConditionBeanContext.loadCoolClasses(); // against the ClassLoader Headache!
+        if (dataSourceFqcn.startsWith("org.apache.commons.dbcp.")) {
+            config.unlock();
+            config.setDataSourceHandler(new DBFluteConfig.SpringTransactionalDataSourceHandler());
+        }
     }
 
     /**

@@ -35,17 +35,12 @@ map:{
     # _/_/_/_/_/_/_/_/_/
     # compile compatible (true if compatible)
     ; isMakeDirectConditionBeanSetup = true
-    ; isAvailableSelectEntityPlainReturn = false
-    ; isAvailableRelationPlainEntity = false
     ; isMakeConditionQueryPrefixSearch = true
     ; isMakeConditionQueryDateFromTo = true
     ; isMakeDirectConditionOptionSetup = true
     ; isMakeDirectConditionManualOrder = true
     ; isCompatibleLoadReferrerOldOption = true
     ; isCompatibleOutsideSqlSqlCommentCheckDefault = true
-
-    # compile compatible (false if compatible)
-    ; isAvailableJava8TimeLocalDateEntity = true
 
     # the test of date style
     ; isOracleDateTreatedAsDate = true

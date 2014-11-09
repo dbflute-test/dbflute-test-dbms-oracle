@@ -28,7 +28,8 @@ map:{
     #  the SQL for your DBFlute project.
     #  Your possible choices are:
     #
-    #    h2, derby, mysql, postgresql, oracle, db2, mssql,
+    #    mysql, postgresql, oracle, db2, sqlserver,
+    #    h2, derby, (sqlite, firebird, msaccess)
     # 
     ; database = oracle
     # - - - - - - - - - -/
@@ -38,7 +39,7 @@ map:{
     #  The target language.
     #  Your possible choices are:
     # 
-    #       java, csharp
+    #       java, csharp, scala
     # 
     ; targetLanguage = java
     # - - - - - - - - - -/
@@ -49,9 +50,9 @@ map:{
     #  If your target language is 'csharp', you can specify 'seasar' only.
     #  Your possible choices are:
     # 
-    #       seasar, spring, lucy, guice, slim3
+    #       spring, guice, seasar, cdi
     # 
-    ; targetContainer = seasar
+    ; targetContainer = spring
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -63,13 +64,13 @@ map:{
     #  If this property is specified and detail package properties is not specified, 
     #  Then the packages of generated class are as follows:
     #
-    #  ex) packageBase = com.example.dbflute.basic.dbflute
-    #        baseCommonPackage       --> com.example.dbflute.basic.dbflute.allcommon
-    #        baseBehaviorPackage     --> com.example.dbflute.basic.dbflute.bsbhv
-    #        baseEntityPackage       --> com.example.dbflute.basic.dbflute.bsentity
-    #        conditionBeanPackage    --> com.example.dbflute.basic.dbflute.cbean
-    #        extendedBehaviorPackage --> com.example.dbflute.basic.dbflute.exbhv
-    #        extendedEntityPackage   --> com.example.dbflute.basic.dbflute.exentity
+    #  ex) packageBase = org.docksidestage.dbflute
+    #        baseCommonPackage       --> org.docksidestage.dbflute.allcommon
+    #        baseBehaviorPackage     --> org.docksidestage.dbflute.bsbhv
+    #        baseEntityPackage       --> org.docksidestage.dbflute.bsentity
+    #        conditionBeanPackage    --> org.docksidestage.dbflute.cbean
+    #        extendedBehaviorPackage --> org.docksidestage.dbflute.exbhv
+    #        extendedEntityPackage   --> org.docksidestage.dbflute.exentity
     #
     #  The detail package properties:
     #
