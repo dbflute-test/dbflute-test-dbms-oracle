@@ -60,10 +60,12 @@ public abstract class BsMemberVendorSynonymBhv extends AbstractBehaviorWritable<
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public MemberVendorSynonymDbm getDBMeta() { return MemberVendorSynonymDbm.getInstance(); }
+    public MemberVendorSynonymDbm asDBMeta() { return MemberVendorSynonymDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "MEMBER_VENDOR_SYNONYM"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -433,7 +435,7 @@ public abstract class BsMemberVendorSynonymBhv extends AbstractBehaviorWritable<
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

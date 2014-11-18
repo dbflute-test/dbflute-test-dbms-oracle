@@ -82,24 +82,16 @@ public abstract class BsSpResultSetParameterWithCurMember extends AbstractEntity
     protected String _memberStatusCode;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "SpResultSetParameterWithCurMember";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "spResultSetParameterWithCurMember";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.SpResultSetParameterWithCurMemberDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "SpResultSetParameterWithCurMember";
     }
 
     // ===================================================================================
@@ -141,7 +133,7 @@ public abstract class BsSpResultSetParameterWithCurMember extends AbstractEntity
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _memberId);
         hs = xCH(hs, _memberName);
         hs = xCH(hs, _birthdate);

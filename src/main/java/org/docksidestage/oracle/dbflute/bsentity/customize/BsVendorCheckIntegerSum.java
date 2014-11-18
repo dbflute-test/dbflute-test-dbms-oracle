@@ -61,24 +61,16 @@ public abstract class BsVendorCheckIntegerSum extends AbstractEntity implements 
     protected java.math.BigDecimal _integerNonDigitSum;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "VendorCheckIntegerSum";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "vendorCheckIntegerSum";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.VendorCheckIntegerSumDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "VendorCheckIntegerSum";
     }
 
     // ===================================================================================
@@ -116,7 +108,7 @@ public abstract class BsVendorCheckIntegerSum extends AbstractEntity implements 
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _integerNonDigitSum);
         return hs;
     }

@@ -73,24 +73,16 @@ public abstract class BsSynonymProductStatus extends AbstractEntity implements D
     protected Integer _displayOrder;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "SYNONYM_PRODUCT_STATUS";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "synonymProductStatus";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -160,7 +152,7 @@ public abstract class BsSynonymProductStatus extends AbstractEntity implements D
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _productStatusCode);
         return hs;
     }

@@ -3,17 +3,18 @@ package org.docksidestage.oracle.dbflute.resola.allcommon;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
-import org.dbflute.bhv.BehaviorSelector;
 import org.dbflute.bhv.core.BehaviorCommandInvoker;
 import org.dbflute.bhv.core.InvokerAssistant;
-import org.dbflute.hook.CommonColumnAutoSetupper;
 import org.docksidestage.oracle.dbflute.resola.allcommon.ResolaDBFluteInitializer;
 import org.docksidestage.oracle.dbflute.resola.exbhv.*;
 
 /**
+ * The Java configuration of DBFlute beans for Spring Framework. <br>
+ * You can inject them by importing this class in your auto configuration class.
  * @author DBFlute(AutoGenerator)
  */
 @Configuration
@@ -22,42 +23,24 @@ public class ResolaDBFluteBeansJavaConfig {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    // *according to dependency order
-    // and all injections use 'Resource' annotation to keep the order
-    // probably 'Resource' is processed before 'Autowired'
-    // besides, 'Resource' finds by name (specified or field name) first
-    // but secondly finds by type (only once so not case with small performance)
-    @Resource
-    protected ApplicationContext _xcontainer;
+    @Autowired
+    protected ApplicationContext _container;
 
-    // injections are on name basic here for multiple DB
     @Resource(name="resolaDataSource")
-    protected DataSource dataSource;
-
-    @Resource(name="resolaInvokerAssistant")
-    protected InvokerAssistant invokerAssistant;
-
-    @Resource(name="resolaBehaviorCommandInvoker")
-    protected BehaviorCommandInvoker behaviorCommandInvoker;
-
-    @Resource(name="resolaBehaviorSelector")
-    protected BehaviorSelector behaviorSelector;
-
-    @Resource(name="resolaCommonColumnAutoSetupper")
-    protected CommonColumnAutoSetupper commonColumnAutoSetupper;
+    protected DataSource _dataSource; // name basis here for multiple DB
 
     // ===================================================================================
     //                                                                   Runtime Component
     //                                                                   =================
     @Bean(name="resolaIntroduction")
     public ResolaDBFluteInitializer createDBFluteInitializer() {
-        return new org.docksidestage.oracle.dbflute.resola.allcommon.ResolaDBFluteInitializer(dataSource);
+        return new org.docksidestage.oracle.dbflute.resola.allcommon.ResolaDBFluteInitializer(_dataSource);
     }
 
     @Bean(name="resolaInvokerAssistant")
     public InvokerAssistant createImplementedInvokerAssistant() {
         ResolaImplementedInvokerAssistant assistant = newImplementedInvokerAssistant();
-        assistant.setDataSource(dataSource);
+        assistant.setDataSource(_dataSource);
         return assistant;
     }
 
@@ -68,7 +51,7 @@ public class ResolaDBFluteBeansJavaConfig {
     @Bean(name="resolaBehaviorCommandInvoker")
     public BehaviorCommandInvoker createBehaviorCommandInvoker() {
         BehaviorCommandInvoker invoker = newBehaviorCommandInvoker();
-        invoker.setInvokerAssistant(invokerAssistant);
+        invoker.setInvokerAssistant(createImplementedInvokerAssistant());
         return invoker;
     }
 
@@ -79,7 +62,7 @@ public class ResolaDBFluteBeansJavaConfig {
     @Bean(name="resolaBehaviorSelector")
     public ResolaImplementedBehaviorSelector createImplementedBehaviorSelector() {
         ResolaImplementedBehaviorSelector selector = newImplementedBehaviorSelector();
-        selector.setContainer(_xcontainer);
+        selector.setContainer(_container);
         return selector;
     }
 
@@ -102,8 +85,8 @@ public class ResolaDBFluteBeansJavaConfig {
     @Bean(name="resolaStationBhv")
     public ResolaStationBhv createResolaStationBhv() {
         ResolaStationBhv bhv = newResolaStationBhv();
-        bhv.setBehaviorCommandInvoker(behaviorCommandInvoker); bhv.setBehaviorSelector(behaviorSelector);
-        bhv.setCommonColumnAutoSetupper(commonColumnAutoSetupper);
+        bhv.setBehaviorCommandInvoker(createBehaviorCommandInvoker()); bhv.setBehaviorSelector(createImplementedBehaviorSelector());
+        bhv.setCommonColumnAutoSetupper(createImplementedCommonColumnAutoSetupper());
         return bhv;
     }
     protected ResolaStationBhv newResolaStationBhv() { return new ResolaStationBhv(); }

@@ -60,10 +60,12 @@ public abstract class BsPurchaseBhv extends AbstractBehaviorWritable<Purchase, P
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public PurchaseDbm getDBMeta() { return PurchaseDbm.getInstance(); }
+    public PurchaseDbm asDBMeta() { return PurchaseDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "PURCHASE"; }
 
     // ===================================================================================
     //                                                                        New Instance

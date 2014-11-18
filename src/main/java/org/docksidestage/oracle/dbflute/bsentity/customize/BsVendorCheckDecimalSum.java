@@ -61,24 +61,16 @@ public abstract class BsVendorCheckDecimalSum extends AbstractEntity implements 
     protected java.math.BigDecimal _decimalDigitSum;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "VendorCheckDecimalSum";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "vendorCheckDecimalSum";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.VendorCheckDecimalSumDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "VendorCheckDecimalSum";
     }
 
     // ===================================================================================
@@ -116,7 +108,7 @@ public abstract class BsVendorCheckDecimalSum extends AbstractEntity implements 
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _decimalDigitSum);
         return hs;
     }

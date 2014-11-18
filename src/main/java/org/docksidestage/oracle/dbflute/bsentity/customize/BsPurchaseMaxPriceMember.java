@@ -81,24 +81,16 @@ public abstract class BsPurchaseMaxPriceMember extends AbstractEntity implements
     protected java.math.BigDecimal _rn;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "PurchaseMaxPriceMember";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "purchaseMaxPriceMember";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.PurchaseMaxPriceMemberDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "PurchaseMaxPriceMember";
     }
 
     // ===================================================================================
@@ -140,7 +132,7 @@ public abstract class BsPurchaseMaxPriceMember extends AbstractEntity implements
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _memberId);
         hs = xCH(hs, _memberName);
         hs = xCH(hs, _purchaseMaxPrice);

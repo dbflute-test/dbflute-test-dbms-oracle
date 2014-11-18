@@ -60,10 +60,12 @@ public abstract class BsProductBhv extends AbstractBehaviorWritable<Product, Pro
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public ProductDbm getDBMeta() { return ProductDbm.getInstance(); }
+    public ProductDbm asDBMeta() { return ProductDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "PRODUCT"; }
 
     // ===================================================================================
     //                                                                        New Instance

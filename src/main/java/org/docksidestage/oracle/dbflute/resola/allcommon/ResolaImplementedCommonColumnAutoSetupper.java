@@ -37,6 +37,6 @@ public class ResolaImplementedCommonColumnAutoSetupper implements CommonColumnAu
     }
 
     protected void logSettingUp(ResolaEntityDefinedCommonColumn entity, String keyword) {
-        _log.debug("...Setting up column columns of " + entity.getTableDbName() + " before " + keyword);
+        _log.debug("...Setting up column columns of " + entity.asTableDbName() + " before " + keyword);
     }
 }

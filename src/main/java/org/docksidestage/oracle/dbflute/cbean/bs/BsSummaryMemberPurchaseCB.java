@@ -61,17 +61,14 @@ public class BsSummaryMemberPurchaseCB extends AbstractConditionBean {
     }
 
     // ===================================================================================
-    //                                                                     DBMeta Provider
-    //                                                                     ===============
+    //                                                                             DB Meta
+    //                                                                             =======
     @Override
     protected DBMetaProvider getDBMetaProvider() {
         return DBMetaInstanceHandler.getProvider(); // as default
     }
 
-    // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
-    public String getTableDbName() {
+    public String asTableDbName() {
         return "SUMMARY_MEMBER_PURCHASE";
     }
 
@@ -79,12 +76,12 @@ public class BsSummaryMemberPurchaseCB extends AbstractConditionBean {
     //                                                                 PrimaryKey Handling
     //                                                                 ===================
     public ConditionBean addOrderBy_PK_Asc() {
-        String msg = "The table has no primary-keys: " + getTableDbName();
+        String msg = "The table has no primary-keys: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 
     public ConditionBean addOrderBy_PK_Desc() {
-        String msg = "The table has no primary-keys: " + getTableDbName();
+        String msg = "The table has no primary-keys: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

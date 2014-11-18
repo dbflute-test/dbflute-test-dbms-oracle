@@ -87,24 +87,16 @@ public abstract class BsNextFooBean extends AbstractEntity implements CustomizeE
     protected String _fooClob;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "NEXT_FOO_BEAN";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "nextFooBean";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.NextFooBeanDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "NEXT_FOO_BEAN";
     }
 
     // ===================================================================================
@@ -147,7 +139,7 @@ public abstract class BsNextFooBean extends AbstractEntity implements CustomizeE
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _fooId);
         hs = xCH(hs, _fooName);
         hs = xCH(hs, _fooDecimal);

@@ -157,6 +157,7 @@ map:{
             ; tableExceptList = list:{}
             ; tableTargetList = list:{}
             ; isDropAllTable = true
+            ; isSuppressConnectionFailure = true
         }
         ; map:{
             #; url = ... // same as main
@@ -165,9 +166,8 @@ map:{
             ; propertiesMap = map:{includeSynonyms=true}
             ; schema = DIFFWORLDDB
             ; objectTypeTargetList = list:{TABLE;VIEW;SYNONYM}
-            ; tableExceptList = list:{}
-            ; tableTargetList = list:{}
             ; isDropAllTable = true
+            ; isSuppressConnectionFailure = true
         }
     }
     # - - - - - - - - - -/

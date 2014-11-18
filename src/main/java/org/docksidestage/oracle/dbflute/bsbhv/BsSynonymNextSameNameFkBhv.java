@@ -60,10 +60,12 @@ public abstract class BsSynonymNextSameNameFkBhv extends AbstractBehaviorWritabl
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SynonymNextSameNameFkDbm getDBMeta() { return SynonymNextSameNameFkDbm.getInstance(); }
+    public SynonymNextSameNameFkDbm asDBMeta() { return SynonymNextSameNameFkDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SYNONYM_NEXT_SAME_NAME_FK"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsSynonymNextSameNameFkBhv extends AbstractBehaviorWritabl
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

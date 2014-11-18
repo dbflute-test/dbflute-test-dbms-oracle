@@ -463,6 +463,7 @@ public class ProcedureCallTest extends UnitContainerTestCase {
         fooBean.setFooId(1);
         fooBean.setFooName("foo");
         fooBean.setFooDecimal(new BigDecimal("3.4"));
+        // TODO jflute test: oracle Struct
         //fooBean.setFooDate(toLocalDate("2010-11-20 12:34:56"));
         fooBean.setFooTimestamp(toLocalDateTime("2010-11-21 02:13:45.852"));
         // CLOB is unsupported
@@ -471,7 +472,6 @@ public class ProcedureCallTest extends UnitContainerTestCase {
         assertNull(pmb.getVOutFooBean());
 
         // ## Act ##
-        // TODO jflute oracle
         vendorCheckBhv.outsideSql().call(pmb);
 
         // ## Assert ##

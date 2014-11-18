@@ -25,6 +25,7 @@ public class WxMultipleDBResolaOracleTest extends UnitResolaContainerTestCase {
     private ResolaStationBhv resolaStationBhv;
 
     public void test_acceesible() throws Exception {
+        // TODO jflute test: oracle only one test OK but batch test NG
         checkSelectToMainSchema();
         ResolaStation registered = registerTestStation();
         checkSelectToMainSchema();

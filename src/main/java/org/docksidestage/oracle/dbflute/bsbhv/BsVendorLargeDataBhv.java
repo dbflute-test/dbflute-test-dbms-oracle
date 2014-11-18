@@ -60,10 +60,12 @@ public abstract class BsVendorLargeDataBhv extends AbstractBehaviorWritable<Vend
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public VendorLargeDataDbm getDBMeta() { return VendorLargeDataDbm.getInstance(); }
+    public VendorLargeDataDbm asDBMeta() { return VendorLargeDataDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "VENDOR_LARGE_DATA"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -433,7 +435,7 @@ public abstract class BsVendorLargeDataBhv extends AbstractBehaviorWritable<Vend
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

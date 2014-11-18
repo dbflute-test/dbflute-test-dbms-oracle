@@ -59,8 +59,8 @@ public class VendorLargeName901234567890Dbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnVendorLargeName901234567Id = cci("VENDOR_LARGE_NAME_901234567_ID", "VENDOR_LARGE_NAME_901234567_ID", null, null, Long.class, "vendorLargeName901234567Id", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, "vendorLargeName90123456RefList", null);
-    protected final ColumnInfo _columnVendorLargeName9012345Name = cci("VENDOR_LARGE_NAME_9012345_NAME", "VENDOR_LARGE_NAME_9012345_NAME", null, null, String.class, "vendorLargeName9012345Name", null, false, false, true, "VARCHAR2", 32, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnVendorLargeName901234567Id = cci("VENDOR_LARGE_NAME_901234567_ID", "VENDOR_LARGE_NAME_901234567_ID", null, null, Long.class, "vendorLargeName901234567Id", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, "vendorLargeName90123456RefList", null, false);
+    protected final ColumnInfo _columnVendorLargeName9012345Name = cci("VENDOR_LARGE_NAME_9012345_NAME", "VENDOR_LARGE_NAME_9012345_NAME", null, null, String.class, "vendorLargeName9012345Name", null, false, false, true, "VARCHAR2", 32, 0, null, false, null, null, null, null, null, false);
 
     /**
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}

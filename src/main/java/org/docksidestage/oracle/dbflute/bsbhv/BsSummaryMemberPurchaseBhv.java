@@ -59,10 +59,12 @@ public abstract class BsSummaryMemberPurchaseBhv extends AbstractBehaviorReadabl
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SummaryMemberPurchaseDbm getDBMeta() { return SummaryMemberPurchaseDbm.getInstance(); }
+    public SummaryMemberPurchaseDbm asDBMeta() { return SummaryMemberPurchaseDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SUMMARY_MEMBER_PURCHASE"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -378,7 +380,7 @@ public abstract class BsSummaryMemberPurchaseBhv extends AbstractBehaviorReadabl
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

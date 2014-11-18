@@ -60,10 +60,12 @@ public abstract class BsSynonymNextSecretAuthBhv extends AbstractBehaviorWritabl
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SynonymNextSecretAuthDbm getDBMeta() { return SynonymNextSecretAuthDbm.getInstance(); }
+    public SynonymNextSecretAuthDbm asDBMeta() { return SynonymNextSecretAuthDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SYNONYM_NEXT_SECRET_AUTH"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsSynonymNextSecretAuthBhv extends AbstractBehaviorWritabl
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

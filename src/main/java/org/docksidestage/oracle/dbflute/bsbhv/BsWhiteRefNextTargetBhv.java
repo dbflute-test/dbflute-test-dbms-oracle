@@ -60,10 +60,12 @@ public abstract class BsWhiteRefNextTargetBhv extends AbstractBehaviorWritable<W
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public WhiteRefNextTargetDbm getDBMeta() { return WhiteRefNextTargetDbm.getInstance(); }
+    public WhiteRefNextTargetDbm asDBMeta() { return WhiteRefNextTargetDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "WHITE_REF_NEXT_TARGET"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsWhiteRefNextTargetBhv extends AbstractBehaviorWritable<W
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

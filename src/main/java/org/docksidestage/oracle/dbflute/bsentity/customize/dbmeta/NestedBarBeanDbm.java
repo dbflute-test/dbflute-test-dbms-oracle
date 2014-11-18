@@ -66,14 +66,14 @@ public class NestedBarBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnBarId = cci("BAR_ID", "BAR_ID", null, null, Integer.class, "barId", null, false, false, false, "NUMBER", 8, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnBarName = cci("BAR_NAME", "BAR_NAME", null, null, String.class, "barName", null, false, false, false, "VARCHAR2", 20, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnBarDate = cci("BAR_DATE", "BAR_DATE", null, null, java.time.LocalDate.class, "barDate", null, false, false, false, "DATE", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnBarList = cci("BAR_LIST", "BAR_LIST", null, null, List.class, "barList", null, false, false, false, "BAR_TABLE", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnBazBean1 = cci("BAZ_BEAN1", "BAZ_BEAN1", null, null, NestedBazBean.class, "bazBean1", null, false, false, false, "NESTED_BAZ_BEAN", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnBazBean2 = cci("BAZ_BEAN2", "BAZ_BEAN2", null, null, NestedBazBean.class, "bazBean2", null, false, false, false, "NESTED_BAZ_BEAN", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnQuxList = cci("QUX_LIST", "QUX_LIST", null, null, List.class, "quxList", null, false, false, false, "QUX_TABLE", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnQuuxList = cci("QUUX_LIST", "QUUX_LIST", null, null, List.class, "quuxList", null, false, false, false, "QUUX_TABLE", null, null, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnBarId = cci("BAR_ID", "BAR_ID", null, null, Integer.class, "barId", null, false, false, false, "NUMBER", 8, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarName = cci("BAR_NAME", "BAR_NAME", null, null, String.class, "barName", null, false, false, false, "VARCHAR2", 20, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarDate = cci("BAR_DATE", "BAR_DATE", null, null, java.time.LocalDate.class, "barDate", null, false, false, false, "DATE", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarList = cci("BAR_LIST", "BAR_LIST", null, null, List.class, "barList", null, false, false, false, "BAR_TABLE", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBazBean1 = cci("BAZ_BEAN1", "BAZ_BEAN1", null, null, NestedBazBean.class, "bazBean1", null, false, false, false, "NESTED_BAZ_BEAN", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBazBean2 = cci("BAZ_BEAN2", "BAZ_BEAN2", null, null, NestedBazBean.class, "bazBean2", null, false, false, false, "NESTED_BAZ_BEAN", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnQuxList = cci("QUX_LIST", "QUX_LIST", null, null, List.class, "quxList", null, false, false, false, "QUX_TABLE", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnQuuxList = cci("QUUX_LIST", "QUUX_LIST", null, null, List.class, "quuxList", null, false, false, false, "QUUX_TABLE", null, null, null, false, null, null, null, null, null, false);
 
     /**
      * BAR_ID: {NUMBER(8)}

@@ -68,24 +68,16 @@ public abstract class BsNextSchemaProductStatus extends AbstractEntity implement
     protected String _productStatusName;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "NEXT_SCHEMA_PRODUCT_STATUS";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "nextSchemaProductStatus";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -175,7 +167,7 @@ public abstract class BsNextSchemaProductStatus extends AbstractEntity implement
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _productStatusCode);
         return hs;
     }

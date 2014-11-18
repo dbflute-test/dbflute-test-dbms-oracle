@@ -60,10 +60,12 @@ public abstract class BsWhiteUqFkRefNestBhv extends AbstractBehaviorWritable<Whi
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public WhiteUqFkRefNestDbm getDBMeta() { return WhiteUqFkRefNestDbm.getInstance(); }
+    public WhiteUqFkRefNestDbm asDBMeta() { return WhiteUqFkRefNestDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "WHITE_UQ_FK_REF_NEST"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsWhiteUqFkRefNestBhv extends AbstractBehaviorWritable<Whi
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

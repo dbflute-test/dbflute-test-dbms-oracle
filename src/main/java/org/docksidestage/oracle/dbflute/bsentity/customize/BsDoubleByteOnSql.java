@@ -71,24 +71,16 @@ public abstract class BsDoubleByteOnSql extends AbstractEntity implements Custom
     protected String _memberStatusName;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "DoubleByteOnSql";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "doubleByteOnSql";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.DoubleByteOnSqlDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "DoubleByteOnSql";
     }
 
     // ===================================================================================
@@ -128,7 +120,7 @@ public abstract class BsDoubleByteOnSql extends AbstractEntity implements Custom
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _memberId);
         hs = xCH(hs, _memberNameWithSpace);
         hs = xCH(hs, _memberStatusName);

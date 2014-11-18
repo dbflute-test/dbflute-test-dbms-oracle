@@ -60,9 +60,9 @@ public class SynonymNextLinkSecretDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnSecretCode = cci("SECRET_CODE", "SECRET_CODE", null, null, String.class, "secretCode", null, true, false, true, "CHAR", 3, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnSecretName = cci("SECRET_NAME", "SECRET_NAME", null, null, String.class, "secretName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnSecretAuthCode = cci("SECRET_AUTH_CODE", "SECRET_AUTH_CODE", null, null, String.class, "secretAuthCode", null, false, false, false, "CHAR", 3, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnSecretCode = cci("SECRET_CODE", "SECRET_CODE", null, null, String.class, "secretCode", null, true, false, true, "CHAR", 3, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnSecretName = cci("SECRET_NAME", "SECRET_NAME", null, null, String.class, "secretName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnSecretAuthCode = cci("SECRET_AUTH_CODE", "SECRET_AUTH_CODE", null, null, String.class, "secretAuthCode", null, false, false, false, "CHAR", 3, 0, null, false, null, null, null, null, null, false);
 
     /**
      * SECRET_CODE: {PK, NotNull, CHAR(3)}

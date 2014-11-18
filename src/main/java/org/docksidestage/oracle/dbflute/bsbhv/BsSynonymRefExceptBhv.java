@@ -60,10 +60,12 @@ public abstract class BsSynonymRefExceptBhv extends AbstractBehaviorWritable<Syn
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SynonymRefExceptDbm getDBMeta() { return SynonymRefExceptDbm.getInstance(); }
+    public SynonymRefExceptDbm asDBMeta() { return SynonymRefExceptDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SYNONYM_REF_EXCEPT"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsSynonymRefExceptBhv extends AbstractBehaviorWritable<Syn
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

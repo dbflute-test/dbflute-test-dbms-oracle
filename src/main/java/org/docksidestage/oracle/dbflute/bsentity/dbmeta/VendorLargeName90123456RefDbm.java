@@ -73,9 +73,9 @@ public class VendorLargeName90123456RefDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnVendorLargeName90123RefId = cci("VENDOR_LARGE_NAME_90123_REF_ID", "VENDOR_LARGE_NAME_90123_REF_ID", null, null, Long.class, "vendorLargeName90123RefId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnVendorLargeName901RefName = cci("VENDOR_LARGE_NAME_901_REF_NAME", "VENDOR_LARGE_NAME_901_REF_NAME", null, null, String.class, "vendorLargeName901RefName", null, false, false, true, "VARCHAR2", 32, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnVendorLargeName901234567Id = cci("VENDOR_LARGE_NAME_901234567_ID", "VENDOR_LARGE_NAME_901234567_ID", null, null, Long.class, "vendorLargeName901234567Id", null, false, false, false, "NUMBER", 16, 0, null, false, null, null, "vendorLargeName901234567890", null, null);
+    protected final ColumnInfo _columnVendorLargeName90123RefId = cci("VENDOR_LARGE_NAME_90123_REF_ID", "VENDOR_LARGE_NAME_90123_REF_ID", null, null, Long.class, "vendorLargeName90123RefId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnVendorLargeName901RefName = cci("VENDOR_LARGE_NAME_901_REF_NAME", "VENDOR_LARGE_NAME_901_REF_NAME", null, null, String.class, "vendorLargeName901RefName", null, false, false, true, "VARCHAR2", 32, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnVendorLargeName901234567Id = cci("VENDOR_LARGE_NAME_901234567_ID", "VENDOR_LARGE_NAME_901234567_ID", null, null, Long.class, "vendorLargeName901234567Id", null, false, false, false, "NUMBER", 16, 0, null, false, null, null, "vendorLargeName901234567890", null, null, false);
 
     /**
      * VENDOR_LARGE_NAME_90123_REF_ID: {PK, NotNull, NUMBER(16)}
@@ -127,7 +127,7 @@ public class VendorLargeName90123456RefDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignVendorLargeName901234567890() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnVendorLargeName901234567Id(), VendorLargeName901234567890Dbm.getInstance().columnVendorLargeName901234567Id());
-        return cfi("FK_VENDOR_LARGE_NAME_$$$_REF", "vendorLargeName901234567890", this, VendorLargeName901234567890Dbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "vendorLargeName90123456RefList");
+        return cfi("FK_VENDOR_LARGE_NAME_$$$_REF", "vendorLargeName901234567890", this, VendorLargeName901234567890Dbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "vendorLargeName90123456RefList", false);
     }
 
     // -----------------------------------------------------

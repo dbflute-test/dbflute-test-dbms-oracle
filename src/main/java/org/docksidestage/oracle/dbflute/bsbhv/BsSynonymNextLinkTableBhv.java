@@ -60,10 +60,12 @@ public abstract class BsSynonymNextLinkTableBhv extends AbstractBehaviorWritable
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SynonymNextLinkTableDbm getDBMeta() { return SynonymNextLinkTableDbm.getInstance(); }
+    public SynonymNextLinkTableDbm asDBMeta() { return SynonymNextLinkTableDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SYNONYM_NEXT_LINK_TABLE"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsSynonymNextLinkTableBhv extends AbstractBehaviorWritable
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

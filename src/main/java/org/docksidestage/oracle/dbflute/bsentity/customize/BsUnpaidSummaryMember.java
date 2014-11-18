@@ -77,24 +77,16 @@ public abstract class BsUnpaidSummaryMember extends AbstractEntity implements Cu
     protected String _statusName;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "UnpaidSummaryMember";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "unpaidSummaryMember";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.UnpaidSummaryMemberDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "UnpaidSummaryMember";
     }
 
     // ===================================================================================
@@ -187,7 +179,7 @@ public abstract class BsUnpaidSummaryMember extends AbstractEntity implements Cu
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _unpaidManId);
         return hs;
     }

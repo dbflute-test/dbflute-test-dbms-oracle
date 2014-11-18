@@ -60,10 +60,12 @@ public abstract class BsVendorLargeName90123456RefBhv extends AbstractBehaviorWr
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public VendorLargeName90123456RefDbm getDBMeta() { return VendorLargeName90123456RefDbm.getInstance(); }
+    public VendorLargeName90123456RefDbm asDBMeta() { return VendorLargeName90123456RefDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "VENDOR_LARGE_NAME_90123456_REF"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsVendorLargeName90123456RefBhv extends AbstractBehaviorWr
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

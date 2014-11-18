@@ -60,10 +60,12 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public WhiteTargetDbm getDBMeta() { return WhiteTargetDbm.getInstance(); }
+    public WhiteTargetDbm asDBMeta() { return WhiteTargetDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "WHITE_TARGET"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

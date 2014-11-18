@@ -60,10 +60,12 @@ public abstract class BsSynonymMemberWithdrawalBhv extends AbstractBehaviorWrita
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SynonymMemberWithdrawalDbm getDBMeta() { return SynonymMemberWithdrawalDbm.getInstance(); }
+    public SynonymMemberWithdrawalDbm asDBMeta() { return SynonymMemberWithdrawalDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SYNONYM_MEMBER_WITHDRAWAL"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsSynonymMemberWithdrawalBhv extends AbstractBehaviorWrita
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

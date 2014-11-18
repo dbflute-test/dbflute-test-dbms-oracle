@@ -60,10 +60,12 @@ public abstract class ResolaBsStationBhv extends AbstractBehaviorWritable<Resola
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public ResolaStationDbm getDBMeta() { return ResolaStationDbm.getInstance(); }
+    public ResolaStationDbm asDBMeta() { return ResolaStationDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "STATION"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -280,7 +282,7 @@ public abstract class ResolaBsStationBhv extends AbstractBehaviorWritable<Resola
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

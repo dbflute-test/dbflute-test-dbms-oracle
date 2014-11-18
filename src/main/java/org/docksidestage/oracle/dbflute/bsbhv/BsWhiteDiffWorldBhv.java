@@ -60,10 +60,12 @@ public abstract class BsWhiteDiffWorldBhv extends AbstractBehaviorWritable<White
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public WhiteDiffWorldDbm getDBMeta() { return WhiteDiffWorldDbm.getInstance(); }
+    public WhiteDiffWorldDbm asDBMeta() { return WhiteDiffWorldDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "WHITE_DIFF_WORLD"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsWhiteDiffWorldBhv extends AbstractBehaviorWritable<White
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

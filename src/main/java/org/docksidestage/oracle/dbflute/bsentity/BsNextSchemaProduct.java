@@ -116,24 +116,16 @@ public abstract class BsNextSchemaProduct extends AbstractEntity implements Doma
     protected java.math.BigDecimal _versionNo;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "NEXT_SCHEMA_PRODUCT";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "nextSchemaProduct";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -193,7 +185,7 @@ public abstract class BsNextSchemaProduct extends AbstractEntity implements Doma
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _productId);
         return hs;
     }

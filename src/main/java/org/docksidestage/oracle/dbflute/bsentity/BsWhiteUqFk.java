@@ -67,24 +67,16 @@ public abstract class BsWhiteUqFk extends AbstractEntity implements DomainEntity
     protected String _uqFkCode;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "WHITE_UQ_FK";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "whiteUqFk";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -174,7 +166,7 @@ public abstract class BsWhiteUqFk extends AbstractEntity implements DomainEntity
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _uqFkId);
         return hs;
     }

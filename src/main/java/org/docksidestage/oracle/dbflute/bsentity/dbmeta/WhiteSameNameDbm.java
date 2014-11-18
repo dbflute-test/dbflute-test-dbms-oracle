@@ -59,8 +59,8 @@ public class WhiteSameNameDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnSameNameId = cci("SAME_NAME_ID", "SAME_NAME_ID", null, null, Long.class, "sameNameId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnSameNameName = cci("SAME_NAME_NAME", "SAME_NAME_NAME", null, null, String.class, "sameNameName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnSameNameId = cci("SAME_NAME_ID", "SAME_NAME_ID", null, null, Long.class, "sameNameId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnSameNameName = cci("SAME_NAME_NAME", "SAME_NAME_NAME", null, null, String.class, "sameNameName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null, false);
 
     /**
      * SAME_NAME_ID: {PK, NotNull, NUMBER(16)}
