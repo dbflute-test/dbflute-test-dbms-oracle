@@ -666,11 +666,7 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
      * <span style="color: #3F7E5E">//whiteUqFkRef.set...;</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * whiteUqFkRef.<span style="color: #CC4747">setVersionNo</span>(value);
-     * try {
-     *     <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">update</span>(whiteUqFkRef);
-     * } catch (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">update</span>(whiteUqFkRef);
      * </pre>
      * @param whiteUqFkRef The entity of update. (NotNull, PrimaryKeyNotNull)
      * @throws EntityAlreadyDeletedException When the entity has already been deleted. (not found)
@@ -831,9 +827,9 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//whiteUqFkRef.setVersionNo(value);</span>
-     * WhiteUqFkRefCB cb = <span style="color: #70226C">new</span> WhiteUqFkRefCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">queryUpdate</span>(whiteUqFkRef, cb);
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">queryUpdate</span>(whiteUqFkRef, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param whiteUqFkRef The entity that contains update values. (NotNull, PrimaryKeyNullAllowed)
      * @param cbLambda The callback for condition-bean of WhiteUqFkRef. (NotNull)
@@ -873,9 +869,9 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
     /**
      * Delete the several entities by query. (NonExclusiveControl)
      * <pre>
-     * WhiteUqFkRefCB cb = new WhiteUqFkRefCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">queryDelete</span>(whiteUqFkRef, cb);
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">queryDelete</span>(whiteUqFkRef, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param cbLambda The callback for condition-bean of WhiteUqFkRef. (NotNull)
      * @return The deleted count.
@@ -915,10 +911,10 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
      * <span style="color: #3F7E5E">// if auto-increment, you don't need to set the PK value</span>
      * whiteUqFkRef.setFoo...(value);
      * whiteUqFkRef.setBar...(value);
-     * InsertOption&lt;WhiteUqFkRefCB&gt; option = new InsertOption&lt;WhiteUqFkRefCB&gt;();
-     * <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
-     * option.disableCommonColumnAutoSetup();
-     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingInsert</span>(whiteUqFkRef, option);
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingInsert</span>(whiteUqFkRef, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
+     *     <span style="color: #553000">op</span>.disableCommonColumnAutoSetup();
+     * });
      * ... = whiteUqFkRef.getPK...(); <span style="color: #3F7E5E">// if auto-increment, you can get the value after</span>
      * </pre>
      * @param whiteUqFkRef The entity of insert. (NotNull, PrimaryKeyNullAllowed: when auto-increment)
@@ -939,18 +935,12 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
      * whiteUqFkRef.setOther...(value); <span style="color: #3F7E5E">// you should set only modified columns</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * whiteUqFkRef.<span style="color: #CC4747">setVersionNo</span>(value);
-     * <span style="color: #70226C">try</span> {
-     *     <span style="color: #3F7E5E">// you can update by self calculation values</span>
-     *     UpdateOption&lt;WhiteUqFkRefCB&gt; option = new UpdateOption&lt;WhiteUqFkRefCB&gt;();
-     *     option.self(new SpecifyQuery&lt;WhiteUqFkRefCB&gt;() {
-     *         public void specify(WhiteUqFkRefCB cb) {
-     *             cb.specify().<span style="color: #CC4747">columnXxxCount()</span>;
-     *         }
+     * <span style="color: #3F7E5E">// you can update by self calculation values</span>
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(whiteUqFkRef, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">cb</span>.specify().<span style="color: #CC4747">columnXxxCount()</span>;
      *     }).plus(1); <span style="color: #3F7E5E">// XXX_COUNT = XXX_COUNT + 1</span>
-     *     <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(whiteUqFkRef, option);
-     * } <span style="color: #70226C">catch</span> (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * });
      * </pre>
      * @param whiteUqFkRef The entity of update. (NotNull, PrimaryKeyNotNull)
      * @param opLambda The callback for option of update for varying requests. (NotNull)
@@ -1059,15 +1049,13 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//whiteUqFkRef.setVersionNo(value);</span>
-     * WhiteUqFkRefCB cb = new WhiteUqFkRefCB();
-     * cb.query().setFoo...(value);
-     * UpdateOption&lt;WhiteUqFkRefCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;WhiteUqFkRefCB&gt;();
-     * option.self(new SpecifyQuery&lt;WhiteUqFkRefCB&gt;() {
-     *     public void specify(WhiteUqFkRefCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(whiteUqFkRef, cb, option);
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(whiteUqFkRef, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param whiteUqFkRef The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cbLambda The callback for condition-bean of WhiteUqFkRef. (NotNull)
@@ -1095,13 +1083,11 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
      * <span style="color: #3F7E5E">//whiteUqFkRef.setVersionNo(value);</span>
      * WhiteUqFkRefCB cb = <span style="color: #70226C">new</span> WhiteUqFkRefCB();
      * cb.query().setFoo...(value);
-     * UpdateOption&lt;WhiteUqFkRefCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;WhiteUqFkRefCB&gt;();
-     * option.self(new SpecifyQuery&lt;WhiteUqFkRefCB&gt;() {
-     *     public void specify(WhiteUqFkRefCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(whiteUqFkRef, cb, option);
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(whiteUqFkRef, cb, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param whiteUqFkRef The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cb The condition-bean of WhiteUqFkRef. (NotNull)
@@ -1116,7 +1102,14 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
+     * <pre>
+     * <span style="color: #0000C0">whiteUqFkRefBhv</span>.<span style="color: #CC4747">queryDelete</span>(whiteUqFkRef, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>...
+     * });
+     * </pre>
      * @param cbLambda The callback for condition-bean of WhiteUqFkRef. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.
@@ -1129,7 +1122,7 @@ public abstract class BsWhiteUqFkRefBhv extends AbstractBehaviorWritable<WhiteUq
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
      * @param cb The condition-bean of WhiteUqFkRef. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.

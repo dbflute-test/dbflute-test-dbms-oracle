@@ -745,11 +745,7 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * <span style="color: #3F7E5E">//nextSchemaProductStatus.set...;</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * nextSchemaProductStatus.<span style="color: #CC4747">setVersionNo</span>(value);
-     * try {
-     *     <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">update</span>(nextSchemaProductStatus);
-     * } catch (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">update</span>(nextSchemaProductStatus);
      * </pre>
      * @param nextSchemaProductStatus The entity of update. (NotNull, PrimaryKeyNotNull)
      * @throws EntityAlreadyDeletedException When the entity has already been deleted. (not found)
@@ -910,9 +906,9 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//nextSchemaProductStatus.setVersionNo(value);</span>
-     * NextSchemaProductStatusCB cb = <span style="color: #70226C">new</span> NextSchemaProductStatusCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">queryUpdate</span>(nextSchemaProductStatus, cb);
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">queryUpdate</span>(nextSchemaProductStatus, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param nextSchemaProductStatus The entity that contains update values. (NotNull, PrimaryKeyNullAllowed)
      * @param cbLambda The callback for condition-bean of NextSchemaProductStatus. (NotNull)
@@ -952,9 +948,9 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
     /**
      * Delete the several entities by query. (NonExclusiveControl)
      * <pre>
-     * NextSchemaProductStatusCB cb = new NextSchemaProductStatusCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">queryDelete</span>(nextSchemaProductStatus, cb);
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">queryDelete</span>(nextSchemaProductStatus, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param cbLambda The callback for condition-bean of NextSchemaProductStatus. (NotNull)
      * @return The deleted count.
@@ -994,10 +990,10 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * <span style="color: #3F7E5E">// if auto-increment, you don't need to set the PK value</span>
      * nextSchemaProductStatus.setFoo...(value);
      * nextSchemaProductStatus.setBar...(value);
-     * InsertOption&lt;NextSchemaProductStatusCB&gt; option = new InsertOption&lt;NextSchemaProductStatusCB&gt;();
-     * <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
-     * option.disableCommonColumnAutoSetup();
-     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingInsert</span>(nextSchemaProductStatus, option);
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingInsert</span>(nextSchemaProductStatus, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
+     *     <span style="color: #553000">op</span>.disableCommonColumnAutoSetup();
+     * });
      * ... = nextSchemaProductStatus.getPK...(); <span style="color: #3F7E5E">// if auto-increment, you can get the value after</span>
      * </pre>
      * @param nextSchemaProductStatus The entity of insert. (NotNull, PrimaryKeyNullAllowed: when auto-increment)
@@ -1018,18 +1014,12 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * nextSchemaProductStatus.setOther...(value); <span style="color: #3F7E5E">// you should set only modified columns</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * nextSchemaProductStatus.<span style="color: #CC4747">setVersionNo</span>(value);
-     * <span style="color: #70226C">try</span> {
-     *     <span style="color: #3F7E5E">// you can update by self calculation values</span>
-     *     UpdateOption&lt;NextSchemaProductStatusCB&gt; option = new UpdateOption&lt;NextSchemaProductStatusCB&gt;();
-     *     option.self(new SpecifyQuery&lt;NextSchemaProductStatusCB&gt;() {
-     *         public void specify(NextSchemaProductStatusCB cb) {
-     *             cb.specify().<span style="color: #CC4747">columnXxxCount()</span>;
-     *         }
+     * <span style="color: #3F7E5E">// you can update by self calculation values</span>
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(nextSchemaProductStatus, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">cb</span>.specify().<span style="color: #CC4747">columnXxxCount()</span>;
      *     }).plus(1); <span style="color: #3F7E5E">// XXX_COUNT = XXX_COUNT + 1</span>
-     *     <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(nextSchemaProductStatus, option);
-     * } <span style="color: #70226C">catch</span> (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * });
      * </pre>
      * @param nextSchemaProductStatus The entity of update. (NotNull, PrimaryKeyNotNull)
      * @param opLambda The callback for option of update for varying requests. (NotNull)
@@ -1138,15 +1128,13 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//nextSchemaProductStatus.setVersionNo(value);</span>
-     * NextSchemaProductStatusCB cb = new NextSchemaProductStatusCB();
-     * cb.query().setFoo...(value);
-     * UpdateOption&lt;NextSchemaProductStatusCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;NextSchemaProductStatusCB&gt;();
-     * option.self(new SpecifyQuery&lt;NextSchemaProductStatusCB&gt;() {
-     *     public void specify(NextSchemaProductStatusCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(nextSchemaProductStatus, cb, option);
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(nextSchemaProductStatus, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param nextSchemaProductStatus The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cbLambda The callback for condition-bean of NextSchemaProductStatus. (NotNull)
@@ -1174,13 +1162,11 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * <span style="color: #3F7E5E">//nextSchemaProductStatus.setVersionNo(value);</span>
      * NextSchemaProductStatusCB cb = <span style="color: #70226C">new</span> NextSchemaProductStatusCB();
      * cb.query().setFoo...(value);
-     * UpdateOption&lt;NextSchemaProductStatusCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;NextSchemaProductStatusCB&gt;();
-     * option.self(new SpecifyQuery&lt;NextSchemaProductStatusCB&gt;() {
-     *     public void specify(NextSchemaProductStatusCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(nextSchemaProductStatus, cb, option);
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(nextSchemaProductStatus, cb, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param nextSchemaProductStatus The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cb The condition-bean of NextSchemaProductStatus. (NotNull)
@@ -1195,7 +1181,14 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
+     * <pre>
+     * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">queryDelete</span>(nextSchemaProductStatus, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>...
+     * });
+     * </pre>
      * @param cbLambda The callback for condition-bean of NextSchemaProductStatus. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.
@@ -1208,7 +1201,7 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
      * @param cb The condition-bean of NextSchemaProductStatus. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.

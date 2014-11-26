@@ -291,6 +291,11 @@ public class ImplementedInvokerAssistant implements InvokerAssistant {
     }
 
     protected OutsideSqlOption prepareFirstOutsideSqlOption(String tableDbName) {
+        if (DBFluteConfig.getInstance().isNonSpecifiedColumnAccessAllowed()) {
+            OutsideSqlOption option = new OutsideSqlOption();
+            option.setTableDbName(tableDbName);
+            return option.enableNonSpecifiedColumnAccess();
+        }
         return null; // no instance (lazy-loaded) as default
     }
 
