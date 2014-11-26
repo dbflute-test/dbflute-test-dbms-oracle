@@ -24,16 +24,17 @@ import org.dbflute.jdbc.ValueType;
 import org.dbflute.outsidesql.factory.OutsideSqlExecutorFactory;
 import org.dbflute.s2dao.valuetype.TnValueTypes;
 import org.dbflute.s2dao.valuetype.plugin.OracleAgent;
-import org.dbflute.s2dao.valuetype.plugin.OracleDateType;
 import org.dbflute.s2dao.valuetype.plugin.OracleArrayType;
+import org.dbflute.s2dao.valuetype.plugin.OracleDateAsDateType;
+import org.dbflute.s2dao.valuetype.plugin.OracleDateAsTimestampType;
+import org.dbflute.s2dao.valuetype.plugin.OracleDateType;
 import org.dbflute.s2dao.valuetype.plugin.OracleStructType;
 import org.dbflute.system.QLog;
 import org.dbflute.system.XLog;
 import org.dbflute.twowaysql.DisplaySqlBuilder;
 import org.dbflute.twowaysql.style.BoundDateDisplayTimeZoneProvider;
 import org.dbflute.util.DfReflectionUtil;
-import org.seasar.extension.dbcp.ConnectionWrapper;
-import org.seasar.framework.exception.SQLRuntimeException;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 
 /**
  * @author oracleman
@@ -61,10 +62,12 @@ public class DBFluteConfig {
     protected boolean _innerJoinAutoDetect = true;
     protected boolean _thatsBadTimingDetect = true;
     protected boolean _nullOrEmptyQueryAllowed = false;
-    protected boolean _emptyStringQueryAllowed;
-    protected boolean _emptyStringParameterAllowed;
+    protected boolean _emptyStringQueryAllowed = false;
+    protected boolean _emptyStringParameterAllowed = false;
     protected boolean _overridingQueryAllowed = false;
     protected boolean _nonSpecifiedColumnAccessAllowed = false;
+    protected boolean _columnNullObjectAllowed = false;
+    protected boolean _columnNullObjectGearedToSpecify = false;
     protected boolean _disableSelectIndex;
     protected boolean _queryUpdateCountPreCheck = false;
 
@@ -78,11 +81,14 @@ public class DBFluteConfig {
 
     // environment
     protected StatementConfig _defaultStatementConfig;
-    protected Integer _cursorSelectFetchSize;
+    protected Integer _cursorSelectFetchSize = null;
+    protected Integer _entitySelectFetchSize = null;
+    protected boolean _usePagingByCursorSkipSynchronizedFetchSize = false;
+    protected Integer _fixedPagingByCursorSkipSynchronizedFetchSize = null;
     protected DataSourceHandler _dataSourceHandler;
     protected PhysicalConnectionDigger _physicalConnectionDigger;
     protected SQLExceptionDigger _sqlExceptionDigger;
-    protected String _outsideSqlPackage;
+    protected String _outsideSqlPackage = "org.docksidestage.oracle.dbflute";
     protected boolean _useSqlLogRegistry = false;
     protected MappingDateTimeZoneProvider _mappingDateTimeZoneProvider;
 
@@ -119,12 +125,13 @@ public class DBFluteConfig {
             // date formatting has two points:
             //   o the DATE type of Oracle has seconds  
             //   o it uses a date literal of Oracle
-            _logDatePattern = "timestamp $df:{yyyy-MM-dd HH:mm:ss}";
+            _logDatePattern = "date $df:{yyyy-MM-dd}"; // but treated as date by your setting
             _logTimestampPattern = "timestamp $df:{" + DisplaySqlBuilder.DEFAULT_TIMESTAMP_FORMAT + "}";
         }
 
         // treats as uses Oracle date of database native JDBC to get best performances
         TnValueTypes.registerBasicValueType(DBDef.Oracle, java.util.Date.class, new ImplementedOracleDateType());
+        TnValueTypes.registerPluginValueType(DBDef.Oracle, "oracleDateType", new ImplementedOracleDateAsDateType());
     }
 
     // ===================================================================================
@@ -287,6 +294,43 @@ public class DBFluteConfig {
     }
 
     // ===================================================================================
+    //                                                                  Column Null Object
+    //                                                                  ==================
+    public boolean isColumnNullObjectAllowed() {
+        return _columnNullObjectAllowed;
+    }
+
+    /**
+     * Set whether column null object is allowed or not. <br>
+     * This configuration is only for ConditionBean.
+     * @param columnNullObjectAllowed The determination, true or false.
+     */
+    public void setColumnNullObjectAllowed(boolean columnNullObjectAllowed) {
+        assertUnlocked();
+        if (_log.isInfoEnabled()) {
+            _log.info("...Setting columnNullObjectAllowed: " + columnNullObjectAllowed);
+        }
+        _columnNullObjectAllowed = columnNullObjectAllowed;
+    }
+
+    public boolean isColumnNullObjectGearedToSpecify() {
+        return _columnNullObjectGearedToSpecify;
+    }
+
+    /**
+     * Set whether column null object is geared to specify or not. <br>
+     * This configuration is only for ConditionBean.
+     * @param columnNullObjectGearedToSpecify The determination, true or false.
+     */
+    public void setColumnNullObjectGearedToSpecify(boolean columnNullObjectGearedToSpecify) {
+        assertUnlocked();
+        if (_log.isInfoEnabled()) {
+            _log.info("...Setting columnNullObjectGearedToSpecify: " + columnNullObjectGearedToSpecify);
+        }
+        _columnNullObjectGearedToSpecify = columnNullObjectGearedToSpecify;
+    }
+
+    // ===================================================================================
     //                                                                        Select Index
     //                                                                        ============
     public boolean isDisableSelectIndex() {
@@ -421,6 +465,48 @@ public class DBFluteConfig {
             _log.info("...Setting cursorSelectFetchSize: " + cursorSelectFetchSize);
         }
         _cursorSelectFetchSize = cursorSelectFetchSize;
+    }
+
+    // ===================================================================================
+    //                                                              EntitySelect FetchSize
+    //                                                              ======================
+    public Integer getEntitySelectFetchSize() {
+        return _entitySelectFetchSize;
+    }
+
+    public void setEntitySelectFetchSize(Integer entitySelectFetchSize) {
+        assertUnlocked();
+        if (_log.isInfoEnabled()) {
+            _log.info("...Setting entitySelectFetchSize: " + entitySelectFetchSize);
+        }
+        _entitySelectFetchSize = entitySelectFetchSize;
+    }
+
+    // ===================================================================================
+    //                                                              PagingSelect FetchSize
+    //                                                              ======================
+    public boolean isUsePagingByCursorSkipSynchronizedFetchSize() {
+        return _usePagingByCursorSkipSynchronizedFetchSize;
+    }
+
+    public void setUsePagingByCursorSkipSynchronizedFetchSize(boolean usePagingByCursorSkipSynchronizedFetchSize) {
+        assertUnlocked();
+        if (_log.isInfoEnabled()) {
+            _log.info("...Setting usePagingByCursorSkipSynchronizedFetchSize: " + usePagingByCursorSkipSynchronizedFetchSize);
+        }
+        _usePagingByCursorSkipSynchronizedFetchSize = usePagingByCursorSkipSynchronizedFetchSize;
+    }
+
+    public Integer getFixedPagingByCursorSkipSynchronizedFetchSize() {
+        return _fixedPagingByCursorSkipSynchronizedFetchSize;
+    }
+
+    public void setFixedPagingByCursorSkipSynchronizedFetchSize(Integer fixedPagingByCursorSkipSynchronizedFetchSize) {
+        assertUnlocked();
+        if (_log.isInfoEnabled()) {
+            _log.info("...Setting fixedPagingByCursorSkipSynchronizedFetchSize: " + fixedPagingByCursorSkipSynchronizedFetchSize);
+        }
+        _fixedPagingByCursorSkipSynchronizedFetchSize = fixedPagingByCursorSkipSynchronizedFetchSize;
     }
 
     // [DBFlute-0.9.0]
@@ -778,11 +864,11 @@ public class DBFluteConfig {
         }
 
         public Connection getConnectionFromUtils(DataSource ds) {
-            throw new IllegalStateException("This method is only for Spring Framework.");
+            return DataSourceUtils.getConnection(ds);
         }
 
         public boolean isConnectionTransactional(Connection conn, DataSource ds) {
-            throw new IllegalStateException("This method is only for Spring Framework.");
+            return DataSourceUtils.isConnectionTransactional(conn, ds);
         }
     }
 
@@ -836,11 +922,27 @@ public class DBFluteConfig {
         }
     }
 
+    public static class ImplementedOracleDateAsDateType extends OracleDateAsDateType {
+
+        @Override
+        protected OracleAgent createOracleAgent() {
+            return createImplementedOracleAgent();
+        }
+    }
+
+    public static class ImplementedOracleDateAsTimestampType extends OracleDateAsTimestampType {
+
+        @Override
+        protected OracleAgent createOracleAgent() {
+            return createImplementedOracleAgent();
+        }
+    }
+
     public static class ImplementedOracleDateType extends OracleDateType {
 
         @Override
         protected OracleAgent createOracleAgent() {
-            return new ImplementedOracleAgent();
+            return createImplementedOracleAgent();
         }
     }
 
@@ -852,7 +954,7 @@ public class DBFluteConfig {
 
         @Override
         protected OracleAgent createOracleAgent() {
-            return new ImplementedOracleAgent();
+            return createImplementedOracleAgent();
         }
     }
 
@@ -864,8 +966,12 @@ public class DBFluteConfig {
 
         @Override
         protected OracleAgent createOracleAgent() {
-            return new ImplementedOracleAgent();
+            return createImplementedOracleAgent();
         }
+    }
+
+    protected static ImplementedOracleAgent createImplementedOracleAgent() {
+        return new ImplementedOracleAgent();
     }
 
     // -----------------------------------------------------
@@ -875,7 +981,6 @@ public class DBFluteConfig {
 
         public Connection digUp(Connection conn) throws SQLException {
             Connection digged = unwrap(conn);
-            digged = resolveS2DBCP(digged);
             digged = resolveCommonsDBCP(digged);
             return digged;
         }
@@ -883,13 +988,6 @@ public class DBFluteConfig {
         protected Connection unwrap(Connection conn) {
             if (conn instanceof NotClosingConnectionWrapper) {
                 return ((NotClosingConnectionWrapper)conn).getActualConnection();
-            }
-            return conn;
-        }
-
-        protected Connection resolveS2DBCP(Connection conn) {
-            if (conn instanceof ConnectionWrapper) {
-                return ((ConnectionWrapper)conn).getPhysicalConnection();
             }
             return conn;
         }
@@ -917,23 +1015,9 @@ public class DBFluteConfig {
     public static class ImplementedSQLExceptionDigger implements SQLExceptionDigger {
 
         public SQLException digUp(Throwable cause) {
-            SQLException found = resolveS2DBCP(cause);
-            if (found != null) {
-                return found;
-            }
-            found = resolveDefault(cause);
-            if (found != null) {
-                return found;
-            }
-            return null;
-        }
-
-        protected SQLException resolveS2DBCP(Throwable cause) {
-            if (cause instanceof SQLRuntimeException) {
-                Throwable nestedCause = ((SQLRuntimeException)cause).getCause();
-                if (nestedCause instanceof SQLException) {
-                    return (SQLException)nestedCause;
-                }
+            SQLException defaultFound = resolveDefault(cause);
+            if (defaultFound != null) {
+                return defaultFound;
             }
             return null;
         }
@@ -946,4 +1030,13 @@ public class DBFluteConfig {
             return null;
         }
     }
+
+    // ===================================================================================
+    //                                                                       Very Internal
+    //                                                                       =============
+    // very internal (for suppressing warn about 'Not Use Import')
+    protected String xTms() { return Timestamp.class.getName(); }
+    protected String xDSc() { return DataSource.class.getName(); }
+    protected String xSQLEx() { return SQLException.class.getName(); }
+    protected String xDSqB() { return DisplaySqlBuilder.class.getName(); }
 }

@@ -213,24 +213,16 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     protected String _typeOfRowid;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "VENDOR_CHECK";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "vendorCheck";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -269,7 +261,7 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _vendorCheckId);
         return hs;
     }
@@ -753,6 +745,7 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
      * [get] TYPE_OF_DATE: {DATE(7)} <br>
      * @return The value of the column 'TYPE_OF_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getTypeOfDate() {
         checkSpecifiedProperty("typeOfDate");
         return _typeOfDate;

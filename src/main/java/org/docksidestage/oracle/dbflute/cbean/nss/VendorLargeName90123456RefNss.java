@@ -11,7 +11,7 @@ public class VendorLargeName90123456RefNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected VendorLargeName90123456RefCQ _query;
+    protected final VendorLargeName90123456RefCQ _query;
     public VendorLargeName90123456RefNss(VendorLargeName90123456RefCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

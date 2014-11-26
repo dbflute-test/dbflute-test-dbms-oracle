@@ -207,24 +207,16 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     protected String _typeOfRowid;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "SimpleVendorCheck";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "simpleVendorCheck";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.SimpleVendorCheckDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "SimpleVendorCheck";
     }
 
     // ===================================================================================
@@ -291,7 +283,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _vendorCheckId);
         hs = xCH(hs, _typeOfChar);
         hs = xCH(hs, _typeOfNchar);
@@ -785,6 +777,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
      * [get] TYPE_OF_DATE: {DATE(7)} <br>
      * @return The value of the column 'TYPE_OF_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getTypeOfDate() {
         checkSpecifiedProperty("typeOfDate");
         return _typeOfDate;

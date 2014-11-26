@@ -62,17 +62,14 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
     }
 
     // ===================================================================================
-    //                                                                     DBMeta Provider
-    //                                                                     ===============
+    //                                                                             DB Meta
+    //                                                                             =======
     @Override
     protected DBMetaProvider getDBMetaProvider() {
         return DBMetaInstanceHandler.getProvider(); // as default
     }
 
-    // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
-    public String getTableDbName() {
+    public String asTableDbName() {
         return "MEMBER_WITHDRAWAL";
     }
 
@@ -460,7 +457,8 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
          */
         public HpSDRFunction<MemberWithdrawalCB, MemberWithdrawalCQ> myselfDerived() {
             assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (fn, sq, cq, al, op) -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<MemberWithdrawalCB> sq, MemberWithdrawalCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
         }
     }
 
@@ -490,14 +488,10 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
      * Set up column-query. {column1 = column2}
      * <pre>
      * <span style="color: #3F7E5E">// where FOO &lt; BAR</span>
-     * cb.<span style="color: #CC4747">columnQuery</span>(new SpecifyQuery&lt;MemberWithdrawalCB&gt;() {
-     *     public void query(MemberWithdrawalCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFoo()</span>; <span style="color: #3F7E5E">// left column</span>
-     *     }
-     * }).lessThan(new SpecifyQuery&lt;MemberWithdrawalCB&gt;() {
-     *     public void query(MemberWithdrawalCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnBar()</span>; <span style="color: #3F7E5E">// right column</span>
-     *     }
+     * cb.<span style="color: #CC4747">columnQuery</span>(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFoo()</span>; <span style="color: #3F7E5E">// left column</span>
+     * }).lessThan(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnBar()</span>; <span style="color: #3F7E5E">// right column</span>
      * }); <span style="color: #3F7E5E">// you can calculate for right column like '}).plus(3);'</span>
      * </pre>
      * @param colCBLambda The callback for specify-query of left column. (NotNull)
@@ -524,11 +518,9 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
      * (Same-column-and-same-condition-key conditions are allowed in or-scope)
      * <pre>
      * <span style="color: #3F7E5E">// where (FOO = '...' or BAR = '...')</span>
-     * cb.<span style="color: #CC4747">orScopeQuery</span>(new OrQuery&lt;MemberWithdrawalCB&gt;() {
-     *     public void query(MemberWithdrawalCB orCB) {
-     *         orCB.query().setFOO_Equal...
-     *         orCB.query().setBAR_Equal...
-     *     }
+     * cb.<span style="color: #CC4747">orScopeQuery</span>(<span style="color: #553000">orCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">orCB</span>.query().setFoo...
+     *     <span style="color: #553000">orCB</span>.query().setBar...
      * });
      * </pre>
      * @param orCBLambda The callback for query of or-condition. (NotNull)
@@ -542,16 +534,12 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
      * (However nested or-scope query and as-or-split of like-search in and-part are unsupported)
      * <pre>
      * <span style="color: #3F7E5E">// where (FOO = '...' or (BAR = '...' and QUX = '...'))</span>
-     * cb.<span style="color: #CC4747">orScopeQuery</span>(new OrQuery&lt;MemberWithdrawalCB&gt;() {
-     *     public void query(MemberWithdrawalCB orCB) {
-     *         orCB.query().setFOO_Equal...
-     *         orCB.<span style="color: #CC4747">orScopeQueryAndPart</span>(new AndQuery&lt;MemberWithdrawalCB&gt;() {
-     *             public void query(MemberWithdrawalCB andCB) {
-     *                 andCB.query().setBar_...
-     *                 andCB.query().setQux_...
-     *             }
-     *         });
-     *     }
+     * cb.<span style="color: #994747">orScopeQuery</span>(<span style="color: #553000">orCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">orCB</span>.query().setFoo...
+     *     <span style="color: #553000">orCB</span>.<span style="color: #CC4747">orScopeQueryAndPart</span>(<span style="color: #553000">andCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">andCB</span>.query().setBar...
+     *         <span style="color: #553000">andCB</span>.query().setQux...
+     *     });
      * });
      * </pre>
      * @param andCBLambda The callback for query of and-condition. (NotNull)

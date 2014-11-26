@@ -11,7 +11,7 @@ public class NextSchemaProductNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected NextSchemaProductCQ _query;
+    protected final NextSchemaProductCQ _query;
     public NextSchemaProductNss(NextSchemaProductCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

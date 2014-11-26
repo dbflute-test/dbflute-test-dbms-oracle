@@ -11,7 +11,7 @@ public class WhiteUqFkWithoutPkRefNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected WhiteUqFkWithoutPkRefCQ _query;
+    protected final WhiteUqFkWithoutPkRefCQ _query;
     public WhiteUqFkWithoutPkRefNss(WhiteUqFkWithoutPkRefCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

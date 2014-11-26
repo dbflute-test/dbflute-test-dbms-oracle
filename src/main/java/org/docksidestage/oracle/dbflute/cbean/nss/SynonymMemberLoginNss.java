@@ -11,7 +11,7 @@ public class SynonymMemberLoginNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected SynonymMemberLoginCQ _query;
+    protected final SynonymMemberLoginCQ _query;
     public SynonymMemberLoginNss(SynonymMemberLoginCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

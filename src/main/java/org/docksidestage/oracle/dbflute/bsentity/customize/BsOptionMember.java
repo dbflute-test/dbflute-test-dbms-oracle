@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.CustomizeEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.docksidestage.oracle.dbflute.allcommon.CDef;
 import org.docksidestage.oracle.dbflute.exentity.customize.*;
 
@@ -102,24 +103,16 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
     protected java.math.BigDecimal _dummyNoflg;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "OptionMember";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "optionMember";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.OptionMemberDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "OptionMember";
     }
 
     // ===================================================================================
@@ -332,7 +325,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _memberId);
         hs = xCH(hs, _memberName);
         hs = xCH(hs, _birthdate);
@@ -422,6 +415,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
      * [get] BIRTHDATE: {DATE(7)} <br>
      * @return The value of the column 'BIRTHDATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getBirthdate() {
         checkSpecifiedProperty("birthdate");
         return _birthdate;

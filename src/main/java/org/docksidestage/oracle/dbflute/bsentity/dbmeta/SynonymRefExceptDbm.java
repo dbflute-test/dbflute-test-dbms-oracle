@@ -72,8 +72,8 @@ public class SynonymRefExceptDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnRefExceptId = cci("REF_EXCEPT_ID", "REF_EXCEPT_ID", null, null, Long.class, "refExceptId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, false, false, true, "NUMBER", 16, 0, null, false, null, null, "synonymExcept", null, null);
+    protected final ColumnInfo _columnRefExceptId = cci("REF_EXCEPT_ID", "REF_EXCEPT_ID", null, null, Long.class, "refExceptId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, false, false, true, "NUMBER", 16, 0, null, false, null, null, "synonymExcept", null, null, false);
 
     /**
      * REF_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
@@ -119,7 +119,7 @@ public class SynonymRefExceptDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignSynonymExcept() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnExceptId(), SynonymExceptDbm.getInstance().columnExceptId());
-        return cfi("FK_WHITE_REF_EXCEPT_SYNONYM1", "synonymExcept", this, SynonymExceptDbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "synonymRefExceptList");
+        return cfi("FK_WHITE_REF_EXCEPT_SYNONYM1", "synonymExcept", this, SynonymExceptDbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "synonymRefExceptList", false);
     }
 
     // -----------------------------------------------------

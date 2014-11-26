@@ -7,6 +7,7 @@ import org.dbflute.Entity;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.DomainEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.dbflute.optional.OptionalEntity;
 import org.docksidestage.oracle.dbflute.allcommon.DBMetaInstanceHandler;
 import org.docksidestage.oracle.dbflute.exentity.*;
@@ -104,24 +105,16 @@ public abstract class BsVendorLargeDataRef extends AbstractEntity implements Dom
     protected Long _selfParentId;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "VENDOR_LARGE_DATA_REF";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "vendorLargeDataRef";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -222,7 +215,7 @@ public abstract class BsVendorLargeDataRef extends AbstractEntity implements Dom
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _largeDataRefId);
         return hs;
     }
@@ -324,6 +317,7 @@ public abstract class BsVendorLargeDataRef extends AbstractEntity implements Dom
      * [get] DATE_INDEX: {IX, NotNull, DATE(7)} <br>
      * @return The value of the column 'DATE_INDEX'. (basically NotNull if selected: for the constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getDateIndex() {
         checkSpecifiedProperty("dateIndex");
         return _dateIndex;
@@ -342,6 +336,7 @@ public abstract class BsVendorLargeDataRef extends AbstractEntity implements Dom
      * [get] DATE_NO_INDEX: {NotNull, DATE(7)} <br>
      * @return The value of the column 'DATE_NO_INDEX'. (basically NotNull if selected: for the constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getDateNoIndex() {
         checkSpecifiedProperty("dateNoIndex");
         return _dateNoIndex;

@@ -59,10 +59,12 @@ public abstract class BsWhiteUqFkWithoutPkBhv extends AbstractBehaviorReadable<W
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public WhiteUqFkWithoutPkDbm getDBMeta() { return WhiteUqFkWithoutPkDbm.getInstance(); }
+    public WhiteUqFkWithoutPkDbm asDBMeta() { return WhiteUqFkWithoutPkDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "WHITE_UQ_FK_WITHOUT_PK"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -403,7 +405,7 @@ public abstract class BsWhiteUqFkWithoutPkBhv extends AbstractBehaviorReadable<W
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

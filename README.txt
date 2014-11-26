@@ -12,30 +12,26 @@ The example project for Buri and DBFlute.
 This project needs maven2 so you should prepare 'M2Eclipse'.
 
 [JDBC]
-Put ojdbc5.jar to both 'lib' and 'dbflute_exampledb/extlib' and 'dbflute_nextexampledb/extlib'.
+Put ojdbc5.jar to both 'lib' and 'dbflute_maihamadb/extlib' and 'dbflute_newurayasudb/extlib'.
 
 [Oracle]
 /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-This example requires two schemas 'exampledb' and 'nextexampledb'.
+This example requires two schemas 'maihamadb' and 'newurayasudb'.
 = = = = = = = = = =/
-The exampledb and nextexampledb will be created by ReplaceSchema task. (contains creating user)
+The maihamadb and newurayasudb will be created by ReplaceSchema task. (contains creating user)
 But if a password of your 'system' user is different from 'orcl',
 Modify the password on additionalUserMap in replaceSchemaDefinitionMap.dfprop.
 
 Are you ready? OK, execute the ReplaceSchema task!
-At first execute the ReplaceSchema task for dbflute_nextexampledb
-Then after, execute the ReplaceSchema task for dbflute_exampledb
+At first execute the ReplaceSchema task by nextschema-renewal.bat(sh) for newurayasudb
+Then after, execute the ReplaceSchema task by manage.bat(sh) 0 for maihamadb
 
--- * * * * * * * * * * *
+-- _/_/_/_/_/_/_/_/_/_/_/
 -- If ORA-01536 occurred
--- * * * * * * * * * * *
+-- _/_/_/_/_/_/_/_/_/_/_/
 -- [By system user]
-alter user exampledb quota unlimited on users;
-alter user nextexampledb quota unlimited on users;
-
-[DBFlute Client]
-The DBFlute client 'dbflute_nextexampledb' has ReplaceSchema and Doc tasks only.
-The exampledb uses their tables by the function 'additionalSchema'.
+alter user maihamadb quota unlimited on users;
+alter user newurayasudb quota unlimited on users;
 
 
 # ========================================================================================

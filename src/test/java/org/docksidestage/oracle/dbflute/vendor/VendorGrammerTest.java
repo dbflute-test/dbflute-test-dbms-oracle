@@ -212,7 +212,7 @@ public class VendorGrammerTest extends UnitContainerTestCase {
                 formalizedMemberMap.put(member.getMemberId(), member);
             }
         }
-        final Timestamp coalesce = DfTypeUtil.toTimestamp("1234-10-24 12:34:56.147");
+        final Timestamp coalesce = DfTypeUtil.toTimestamp("1970-10-24 12:34:56.147");
 
         // ## Act ##
         memberWithdrawalBhv.queryInsert(new QueryInsertSetupper<MemberWithdrawal, MemberWithdrawalCB>() {
@@ -250,17 +250,18 @@ public class VendorGrammerTest extends UnitContainerTestCase {
         String fmt = "yyyy-MM-dd HH:mm:ss";
         Set<String> existsSet = new HashSet<String>();
         for (MemberWithdrawal actual : actualList) {
-            String withdrawalDatetime = DfTypeUtil.toString(actual.getWithdrawalDatetime(), fmt);
-            String coalesceDatetime = DfTypeUtil.toString(coalesce, fmt);
+            String withdrawalDatetimeExp = DfTypeUtil.toString(actual.getWithdrawalDatetime(), fmt);
+            String coalesceDatetime = toString(coalesce, fmt);
             Member member = formalizedMemberMap.get(actual.getMemberId());
             assertNotNull(member);
-            if (withdrawalDatetime.equals(coalesceDatetime)) {
-                assertNull(member.getLatestLoginDatetime());
+            Timestamp latestLoginDatetime = member.getLatestLoginDatetime();
+            if (withdrawalDatetimeExp.equals(coalesceDatetime)) {
+                assertNull(latestLoginDatetime);
                 existsSet.add("coalesce");
             } else {
-                String latestLoginDatetime = DfTypeUtil.toString(member.getLatestLoginDatetime(), fmt);
-                assertNotNull(latestLoginDatetime);
-                assertEquals(latestLoginDatetime, withdrawalDatetime);
+                String latestLoginDatetimeExp = toString(latestLoginDatetime, fmt);
+                assertNotNull(latestLoginDatetimeExp);
+                assertEquals(latestLoginDatetimeExp, withdrawalDatetimeExp);
                 existsSet.add("latest");
             }
             assertNull(actual.getWithdrawalReasonCode());

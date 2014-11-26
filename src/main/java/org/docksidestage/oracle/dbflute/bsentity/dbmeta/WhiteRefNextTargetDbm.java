@@ -72,8 +72,8 @@ public class WhiteRefNextTargetDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnRefNextTargetId = cci("REF_NEXT_TARGET_ID", "REF_NEXT_TARGET_ID", null, null, Long.class, "refNextTargetId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnNextTargetCode = cci("NEXT_TARGET_CODE", "NEXT_TARGET_CODE", null, null, String.class, "nextTargetCode", null, false, false, true, "CHAR", 3, 0, null, false, null, null, "nextSchemaProductStatus", null, null);
+    protected final ColumnInfo _columnRefNextTargetId = cci("REF_NEXT_TARGET_ID", "REF_NEXT_TARGET_ID", null, null, Long.class, "refNextTargetId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnNextTargetCode = cci("NEXT_TARGET_CODE", "NEXT_TARGET_CODE", null, null, String.class, "nextTargetCode", null, false, false, true, "CHAR", 3, 0, null, false, null, null, "nextSchemaProductStatus", null, null, false);
 
     /**
      * REF_NEXT_TARGET_ID: {PK, NotNull, NUMBER(16)}
@@ -119,7 +119,7 @@ public class WhiteRefNextTargetDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignNextSchemaProductStatus() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnNextTargetCode(), NextSchemaProductStatusDbm.getInstance().columnProductStatusCode());
-        return cfi("FK_WHITE_REF_NEXT_TARGET", "nextSchemaProductStatus", this, NextSchemaProductStatusDbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "whiteRefNextTargetList");
+        return cfi("FK_WHITE_REF_NEXT_TARGET", "nextSchemaProductStatus", this, NextSchemaProductStatusDbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "whiteRefNextTargetList", false);
     }
 
     // -----------------------------------------------------

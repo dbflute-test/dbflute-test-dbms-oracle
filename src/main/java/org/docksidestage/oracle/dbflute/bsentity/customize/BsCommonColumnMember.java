@@ -96,24 +96,16 @@ public abstract class BsCommonColumnMember extends AbstractEntity implements Cus
     protected String _updateProcess;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "CommonColumnMember";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "commonColumnMember";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.CommonColumnMemberDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "CommonColumnMember";
     }
 
     // ===================================================================================
@@ -158,7 +150,7 @@ public abstract class BsCommonColumnMember extends AbstractEntity implements Cus
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _memberId);
         hs = xCH(hs, _memberName);
         hs = xCH(hs, _registerDatetime);

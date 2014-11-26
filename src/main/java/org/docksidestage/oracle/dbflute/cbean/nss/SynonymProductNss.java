@@ -11,7 +11,7 @@ public class SynonymProductNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected SynonymProductCQ _query;
+    protected final SynonymProductCQ _query;
     public SynonymProductNss(SynonymProductCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

@@ -156,7 +156,7 @@ public class AdditionalSchemaTest extends UnitContainerTestCase {
         assertNotNull(dbm.getTableSqlName());
         assertTrue(dbm.getTableSqlName().toString().contains("."));
         assertFalse(MemberDbm.getInstance().getTableSqlName().toString().contains(".")); // compare
-        assertEquals("NEXTEXAMPLEDB." + dbm.getTableDbName(), dbm.getTableSqlName().toString());
+        assertEquals("NEWURAYASUDB." + dbm.getTableDbName(), dbm.getTableSqlName().toString());
     }
 
     public void test_DBMeta_commonColumn_valid() throws Exception {

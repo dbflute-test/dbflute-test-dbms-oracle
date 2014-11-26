@@ -87,24 +87,16 @@ public abstract class BsCorgeBean extends AbstractEntity implements CustomizeEnt
     protected String _corgeClob;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "CORGE_BEAN";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "corgeBean";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.CorgeBeanDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "CORGE_BEAN";
     }
 
     // ===================================================================================
@@ -147,7 +139,7 @@ public abstract class BsCorgeBean extends AbstractEntity implements CustomizeEnt
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _corgeId);
         hs = xCH(hs, _corgeName);
         hs = xCH(hs, _corgeDecimal);
@@ -249,6 +241,7 @@ public abstract class BsCorgeBean extends AbstractEntity implements CustomizeEnt
      * [get] CORGE_DATE: {DATE} <br>
      * @return The value of the column 'CORGE_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getCorgeDate() {
         checkSpecifiedProperty("corgeDate");
         return _corgeDate;

@@ -61,10 +61,10 @@ public class UnpaidSummaryMemberDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnUnpaidManId = cci("UNPAID_MAN_ID", "UNPAID_MAN_ID", null, null, Integer.class, "unpaidManId", null, true, false, false, "NUMBER", 9, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnUnpaidManName = cci("UNPAID_MAN_NAME", "UNPAID_MAN_NAME", null, null, String.class, "unpaidManName", null, false, false, false, "VARCHAR2", 200, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnUnpaidPriceSummary = cci("UNPAID_PRICE_SUMMARY", "UNPAID_PRICE_SUMMARY", null, null, java.math.BigDecimal.class, "unpaidPriceSummary", null, false, false, false, "NUMBER", 22, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnStatusName = cci("STATUS_NAME", "STATUS_NAME", null, null, String.class, "statusName", null, false, false, false, "VARCHAR2", 50, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnUnpaidManId = cci("UNPAID_MAN_ID", "UNPAID_MAN_ID", null, null, Integer.class, "unpaidManId", null, true, false, false, "NUMBER", 9, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnUnpaidManName = cci("UNPAID_MAN_NAME", "UNPAID_MAN_NAME", null, null, String.class, "unpaidManName", null, false, false, false, "VARCHAR2", 200, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnUnpaidPriceSummary = cci("UNPAID_PRICE_SUMMARY", "UNPAID_PRICE_SUMMARY", null, null, java.math.BigDecimal.class, "unpaidPriceSummary", null, false, false, false, "NUMBER", 22, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnStatusName = cci("STATUS_NAME", "STATUS_NAME", null, null, String.class, "statusName", null, false, false, false, "VARCHAR2", 50, 0, null, false, null, null, null, null, null, false);
 
     /**
      * UNPAID_MAN_ID: {PK, NUMBER(9), refers to MEMBER}

@@ -60,9 +60,9 @@ public class SynonymNextSameNameFkDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnRefId = cci("REF_ID", "REF_ID", null, null, Long.class, "refId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnRefName = cci("REF_NAME", "REF_NAME", null, null, String.class, "refName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnSameNameId = cci("SAME_NAME_ID", "SAME_NAME_ID", null, null, Long.class, "sameNameId", null, false, false, false, "NUMBER", 16, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnRefId = cci("REF_ID", "REF_ID", null, null, Long.class, "refId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnRefName = cci("REF_NAME", "REF_NAME", null, null, String.class, "refName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnSameNameId = cci("SAME_NAME_ID", "SAME_NAME_ID", null, null, Long.class, "sameNameId", null, false, false, false, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
 
     /**
      * REF_ID: {PK, NotNull, NUMBER(16)}

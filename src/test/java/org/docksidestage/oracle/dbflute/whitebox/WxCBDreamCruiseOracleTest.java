@@ -172,7 +172,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
     // ===================================================================================
     //                                                                        MysticRythms
     //                                                                        ============
-    public void test_ColumnQuery_MysticRythms_basic() throws Exception {
+    public void test_ColumnQuery_MysticRythms_utilDate() throws Exception {
         // ## Arrange ##
         {
             Member member = new Member();
@@ -188,7 +188,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).lessEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2015/04/05"));
+                cb.mysticRhythms(toLocalDate("2015/04/05"));
             }
         }).convert(op -> op.addMonth(dreamCruiseCB.specify().columnVersionNo()));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
@@ -197,7 +197,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).lessThan(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2014/09/01"));
+                cb.mysticRhythms(toLocalDate("2014/09/01"));
             }
         }).convert(op -> op.addDay(dreamCruiseCB.specify().columnMemberId()).addMinute(1));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
@@ -218,16 +218,16 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
         for (Member member : memberList) {
             Integer memberId = member.getMemberId();
             log(memberId, member.getMemberName());
-            assertTrue(memberId >= 9L);
-            if (memberId.equals(9L)) {
+            assertTrue(memberId >= 9);
+            if (memberId.equals(9)) {
                 markHere("exists");
             }
         }
         assertMarked("exists");
         String sql = cb.toDisplaySql();
-        assertContains(sql, "where dfloc.BIRTHDATE <= add_months(timestamp '2015-04-05 00:00:00', dfloc.VERSION_NO)");
-        assertContains(sql, "and dfloc.BIRTHDATE < timestamp '2014-09-01 00:00:00' + dfloc.MEMBER_ID + 1 / 1440");
-        assertContains(sql, "and dfloc.BIRTHDATE >= timestamp '2006-09-26 00:00:00'");
+        assertContains(sql, "where dfloc.BIRTHDATE <= add_months(date '2015-04-05', dfloc.VERSION_NO)");
+        assertContains(sql, "and dfloc.BIRTHDATE < date '2014-09-01' + dfloc.MEMBER_ID + 1 / 1440");
+        assertContains(sql, "and dfloc.BIRTHDATE >= date '2006-09-26'");
     }
 
     public void test_ColumnQuery_MysticRythms_timestamp() throws Exception {
@@ -246,7 +246,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).lessEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toTimestamp("2015/04/05 12:34:56"));
+                cb.mysticRhythms(toLocalDateTime("2015/04/05 12:34:56"));
             }
         }).convert(op -> op.addMonth(dreamCruiseCB.specify().columnVersionNo()));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
@@ -255,7 +255,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).lessEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toTimestamp("2014/09/01 15:00:00"));
+                cb.mysticRhythms(toLocalDateTime("2014/09/01 15:00:00"));
             }
         }).convert(op -> op.addDay(dreamCruiseCB.specify().columnMemberId()).addHour(-3));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
@@ -310,7 +310,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).lessEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2014/09/20"));
+                cb.mysticRhythms(toLocalDate("2014/09/20"));
             }
         }).convert(op -> op.subtractDay(dreamCruiseCB.specify().columnMemberId()).addMinute(-1));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
@@ -319,7 +319,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).lessEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2015/04/05"));
+                cb.mysticRhythms(toLocalDate("2015/04/05"));
             }
         });
 
@@ -331,16 +331,16 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
         for (Member member : memberList) {
             Integer memberId = member.getMemberId();
             log(memberId, member.getMemberName());
-            assertTrue(memberId <= 9L);
-            if (memberId.equals(9L)) {
+            assertTrue(memberId <= 9);
+            if (memberId.equals(9)) {
                 markHere("exists");
             }
         }
         assertMarked("exists");
         String sql = cb.toDisplaySql();
-        assertContains(sql, "where dfloc.BIRTHDATE >= add_months(timestamp '2006-09-26 00:00:00', -dfloc.VERSION_NO)");
-        assertContains(sql, "and dfloc.BIRTHDATE <= timestamp '2014-09-20 00:00:00' - dfloc.MEMBER_ID + -1 / 1440");
-        assertContains(sql, "and dfloc.BIRTHDATE <= timestamp '2015-04-05 00:00:00'");
+        assertContains(sql, "where dfloc.BIRTHDATE >= add_months(date '2006-09-26', -dfloc.VERSION_NO)");
+        assertContains(sql, "and dfloc.BIRTHDATE <= date '2014-09-20' - dfloc.MEMBER_ID + -1 / 1440");
+        assertContains(sql, "and dfloc.BIRTHDATE <= date '2015-04-05'");
     }
 
     // ===================================================================================

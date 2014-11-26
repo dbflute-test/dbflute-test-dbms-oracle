@@ -59,8 +59,8 @@ public class Vendor$DollarDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnVendor$DollarId = cci("VENDOR_$_DOLLAR_ID", "VENDOR_$_DOLLAR_ID", null, null, Long.class, "vendor$DollarId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnVendor$DollarName = cci("VENDOR_$_DOLLAR_NAME", "VENDOR_$_DOLLAR_NAME", null, null, String.class, "vendor$DollarName", null, false, false, true, "VARCHAR2", 32, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnVendor$DollarId = cci("VENDOR_$_DOLLAR_ID", "VENDOR_$_DOLLAR_ID", null, null, Long.class, "vendor$DollarId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnVendor$DollarName = cci("VENDOR_$_DOLLAR_NAME", "VENDOR_$_DOLLAR_NAME", null, null, String.class, "vendor$DollarName", null, false, false, true, "VARCHAR2", 32, 0, null, false, null, null, null, null, null, false);
 
     /**
      * VENDOR_$_DOLLAR_ID: {PK, NotNull, NUMBER(16)}

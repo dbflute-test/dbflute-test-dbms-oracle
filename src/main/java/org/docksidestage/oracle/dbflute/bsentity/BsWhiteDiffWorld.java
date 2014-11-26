@@ -67,24 +67,16 @@ public abstract class BsWhiteDiffWorld extends AbstractEntity implements DomainE
     protected String _diffWorldName;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "WHITE_DIFF_WORLD";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "whiteDiffWorld";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -123,7 +115,7 @@ public abstract class BsWhiteDiffWorld extends AbstractEntity implements DomainE
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _diffWorldId);
         return hs;
     }

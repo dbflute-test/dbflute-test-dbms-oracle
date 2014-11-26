@@ -4,7 +4,7 @@ Put ojdbc5.jar or ojdbc6.jar here named ojdbc.jar
  to execute this example.
 
 dbflute-oracle-example
- |-dbflute_exampledb
+ |-dbflute_maihamadb
  |  |-dfprop
  |  |-extlib
  |     |-ojdbc5.jar (or ojdbc6.jar)

@@ -14,8 +14,8 @@
 		<property name="URL">
 			@org.docksidestage.oracle.JdbcDiconResolver@resolveUrl("jdbc:oracle:thin:@localhost:1521:XE")
 		</property>
-		<property name="user">"exampledb"</property>
-		<property name="password">"exampledb"</property>
+		<property name="user">"maihamadb"</property>
+		<property name="password">"maihamadb"</property>
 		<!-- same connection settings as DBFlute generator for meta data test -->
 		<initMethod name="addProperty">
 			<arg>"includeSynonyms"</arg>

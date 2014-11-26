@@ -94,8 +94,8 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     //                                           -----------
     public void test_DatabaseMetaData_getTables_mainSchemaSynonym() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getTables(null, "EXAMPLEDB", null, new String[] { "SYNONYM" });
-        log("[EXAMPLEDB]");
+        ResultSet rs = metaData.getTables(null, "MAIHAMADB", null, new String[] { "SYNONYM" });
+        log("[MAIHAMADB]");
         while (rs.next()) {
             String tableName = rs.getString(3);
             String tableType = rs.getString(4);
@@ -106,9 +106,9 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
 
     public void test_DatabaseMetaData_getTables_nextSchemaSynonym_withAuth() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getTables(null, "NEXTEXAMPLEDB", null, new String[] { "SYNONYM" });
+        ResultSet rs = metaData.getTables(null, "NEWURAYASUDB", null, new String[] { "SYNONYM" });
         boolean exists = false;
-        log("[NEXTEXAMPLEDB]");
+        log("[NEWURAYASUDB]");
         while (rs.next()) {
             String tableName = rs.getString(3);
             String tableType = rs.getString(4);
@@ -127,7 +127,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     public void test_DatabaseMetaData_getColumns_sameNameTable_basic() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
 
-        ResultSet rs = metaData.getColumns(null, "EXAMPLEDB", "WHITE_SAME_NAME_REF_REF", null);
+        ResultSet rs = metaData.getColumns(null, "MAIHAMADB", "WHITE_SAME_NAME_REF_REF", null);
         boolean exists = false;
         while (rs.next()) {
             exists = true;
@@ -142,7 +142,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     public void test_DatabaseMetaData_getColumns_Synonym_basic() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
 
-        ResultSet rs = metaData.getColumns(null, "EXAMPLEDB", "SYNONYM_MEMBER", null);
+        ResultSet rs = metaData.getColumns(null, "MAIHAMADB", "SYNONYM_MEMBER", null);
         boolean exists = false;
         while (rs.next()) {
             exists = true;
@@ -159,7 +159,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     //public void test_DatabaseMetaData_getColumns_Synonym_sameName() throws SQLException {
     //    DatabaseMetaData metaData = _conn.getMetaData();
     //
-    //    ResultSet rs = metaData.getColumns(null, "EXAMPLEDB", "SYNONYM_NEXT_SAME_NAME_DIFF", null);
+    //    ResultSet rs = metaData.getColumns(null, "MAIHAMADB", "SYNONYM_NEXT_SAME_NAME_DIFF", null);
     //    boolean exists = false;
     //    while (rs.next()) {
     //        exists = true;
@@ -174,7 +174,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     public void test_DatabaseMetaData_getColumns_Synonym_DBLink() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
 
-        ResultSet rs = metaData.getColumns(null, "EXAMPLEDB", "SYNONYM_NEXT_LINK_SECRET", null);
+        ResultSet rs = metaData.getColumns(null, "MAIHAMADB", "SYNONYM_NEXT_LINK_SECRET", null);
         boolean exists = false;
         while (rs.next()) {
             exists = true;
@@ -209,7 +209,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     public void test_DatabaseMetaData_getImportedKeys_basic() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
         String tableDbName = PurchaseDbm.getInstance().getTableDbName();
-        ResultSet rs = metaData.getImportedKeys(null, "EXAMPLEDB", tableDbName);
+        ResultSet rs = metaData.getImportedKeys(null, "MAIHAMADB", tableDbName);
         boolean exists = false;
         int count = 0;
         Set<String> fkSet = new HashSet<String>();
@@ -243,7 +243,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     //                                       ---------------
     public void test_DatabaseMetaData_getProcedures_mainSchema() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getProcedures(null, "EXAMPLEDB", null);
+        ResultSet rs = metaData.getProcedures(null, "MAIHAMADB", null);
         boolean exists = false;
         boolean existsCatalog = false;
         boolean notexistsCatalog = false;
@@ -271,7 +271,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
 
     public void test_DatabaseMetaData_getProcedures_nextSchema() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getProcedures(null, "NEXTEXAMPLEDB", null);
+        ResultSet rs = metaData.getProcedures(null, "NEWURAYASUDB", null);
         boolean exists = false;
         boolean existsCatalog = false;
         boolean notexistsCatalog = false;
@@ -302,7 +302,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     //                                 ---------------------
     public void test_DatabaseMetaData_getProcedureColumns_mainSchema_basic() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getProcedures(null, "EXAMPLEDB", null);
+        ResultSet rs = metaData.getProcedures(null, "MAIHAMADB", null);
         boolean exists = false;
         log("[Procedure]");
         while (rs.next()) {
@@ -337,7 +337,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
 
     public void test_DatabaseMetaData_getProcedureColumns_mainSchema_package_basic() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getProcedures("MAIN_PKG", "EXAMPLEDB", null);
+        ResultSet rs = metaData.getProcedures("MAIN_PKG", "MAIHAMADB", null);
         boolean exists = false;
         log("[Procedure]");
         while (rs.next()) {
@@ -359,7 +359,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
 
     public void test_DatabaseMetaData_getProcedureColumns_mainSchema_package_qualifiedName() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getProcedures("MAIN_PKG", "EXAMPLEDB", null);
+        ResultSet rs = metaData.getProcedures("MAIN_PKG", "MAIHAMADB", null);
         log("[Procedure]");
         while (rs.next()) {
             String catalog = rs.getString("PROCEDURE_CAT");
@@ -377,7 +377,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
 
     public void test_DatabaseMetaData_getProcedureColumns_nextSchema_basic() throws SQLException {
         DatabaseMetaData metaData = _conn.getMetaData();
-        ResultSet rs = metaData.getProcedures(null, "NEXTEXAMPLEDB", null);
+        ResultSet rs = metaData.getProcedures(null, "NEWURAYASUDB", null);
         boolean exists = false;
         log("[Procedure]");
         while (rs.next()) {
@@ -458,7 +458,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
         ResultSet rs = null;
         try {
             st = conn.createStatement();
-            rs = st.executeQuery("select * from EXAMPLEDB.SYNONYM_NEXT_LINK_SECRET where 0=1");
+            rs = st.executeQuery("select * from MAIHAMADB.SYNONYM_NEXT_LINK_SECRET where 0=1");
             ResultSetMetaData metaData = rs.getMetaData();
             int count = metaData.getColumnCount();
             boolean exists = false;

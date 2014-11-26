@@ -7,6 +7,7 @@ import org.dbflute.Entity;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.DomainEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.dbflute.optional.OptionalEntity;
 import org.docksidestage.oracle.dbflute.allcommon.EntityDefinedCommonColumn;
 import org.docksidestage.oracle.dbflute.allcommon.DBMetaInstanceHandler;
@@ -126,24 +127,16 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     protected Long _versionNo;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "MEMBER_ADDRESS";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "memberAddress";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -343,7 +336,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _memberAddressId);
         return hs;
     }
@@ -445,6 +438,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
      * [get] VALID_BEGIN_DATE: {+UQ, NotNull, DATE(7)} <br>
      * @return The value of the column 'VALID_BEGIN_DATE'. (basically NotNull if selected: for the constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getValidBeginDate() {
         checkSpecifiedProperty("validBeginDate");
         return _validBeginDate;
@@ -463,6 +457,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
      * [get] VALID_END_DATE: {NotNull, DATE(7)} <br>
      * @return The value of the column 'VALID_END_DATE'. (basically NotNull if selected: for the constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getValidEndDate() {
         checkSpecifiedProperty("validEndDate");
         return _validEndDate;

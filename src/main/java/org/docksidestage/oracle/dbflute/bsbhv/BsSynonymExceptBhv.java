@@ -60,10 +60,12 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SynonymExceptDbm getDBMeta() { return SynonymExceptDbm.getInstance(); }
+    public SynonymExceptDbm asDBMeta() { return SynonymExceptDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SYNONYM_EXCEPT"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -408,7 +410,7 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 
@@ -622,11 +624,7 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
      * <span style="color: #3F7E5E">//synonymExcept.set...;</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * synonymExcept.<span style="color: #CC4747">setVersionNo</span>(value);
-     * try {
-     *     <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">update</span>(synonymExcept);
-     * } catch (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">update</span>(synonymExcept);
      * </pre>
      * @param synonymExcept The entity of update. (NotNull, PrimaryKeyNotNull)
      * @throws EntityAlreadyDeletedException When the entity has already been deleted. (not found)
@@ -787,9 +785,9 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//synonymExcept.setVersionNo(value);</span>
-     * SynonymExceptCB cb = <span style="color: #70226C">new</span> SynonymExceptCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">queryUpdate</span>(synonymExcept, cb);
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">queryUpdate</span>(synonymExcept, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param synonymExcept The entity that contains update values. (NotNull, PrimaryKeyNullAllowed)
      * @param cbLambda The callback for condition-bean of SynonymExcept. (NotNull)
@@ -829,9 +827,9 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
     /**
      * Delete the several entities by query. (NonExclusiveControl)
      * <pre>
-     * SynonymExceptCB cb = new SynonymExceptCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">queryDelete</span>(synonymExcept, cb);
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">queryDelete</span>(synonymExcept, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param cbLambda The callback for condition-bean of SynonymExcept. (NotNull)
      * @return The deleted count.
@@ -871,10 +869,10 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
      * <span style="color: #3F7E5E">// if auto-increment, you don't need to set the PK value</span>
      * synonymExcept.setFoo...(value);
      * synonymExcept.setBar...(value);
-     * InsertOption&lt;SynonymExceptCB&gt; option = new InsertOption&lt;SynonymExceptCB&gt;();
-     * <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
-     * option.disableCommonColumnAutoSetup();
-     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingInsert</span>(synonymExcept, option);
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingInsert</span>(synonymExcept, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
+     *     <span style="color: #553000">op</span>.disableCommonColumnAutoSetup();
+     * });
      * ... = synonymExcept.getPK...(); <span style="color: #3F7E5E">// if auto-increment, you can get the value after</span>
      * </pre>
      * @param synonymExcept The entity of insert. (NotNull, PrimaryKeyNullAllowed: when auto-increment)
@@ -895,18 +893,12 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
      * synonymExcept.setOther...(value); <span style="color: #3F7E5E">// you should set only modified columns</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * synonymExcept.<span style="color: #CC4747">setVersionNo</span>(value);
-     * <span style="color: #70226C">try</span> {
-     *     <span style="color: #3F7E5E">// you can update by self calculation values</span>
-     *     UpdateOption&lt;SynonymExceptCB&gt; option = new UpdateOption&lt;SynonymExceptCB&gt;();
-     *     option.self(new SpecifyQuery&lt;SynonymExceptCB&gt;() {
-     *         public void specify(SynonymExceptCB cb) {
-     *             cb.specify().<span style="color: #CC4747">columnXxxCount()</span>;
-     *         }
+     * <span style="color: #3F7E5E">// you can update by self calculation values</span>
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(synonymExcept, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">cb</span>.specify().<span style="color: #CC4747">columnXxxCount()</span>;
      *     }).plus(1); <span style="color: #3F7E5E">// XXX_COUNT = XXX_COUNT + 1</span>
-     *     <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(synonymExcept, option);
-     * } <span style="color: #70226C">catch</span> (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * });
      * </pre>
      * @param synonymExcept The entity of update. (NotNull, PrimaryKeyNotNull)
      * @param opLambda The callback for option of update for varying requests. (NotNull)
@@ -1015,15 +1007,13 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//synonymExcept.setVersionNo(value);</span>
-     * SynonymExceptCB cb = new SynonymExceptCB();
-     * cb.query().setFoo...(value);
-     * UpdateOption&lt;SynonymExceptCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;SynonymExceptCB&gt;();
-     * option.self(new SpecifyQuery&lt;SynonymExceptCB&gt;() {
-     *     public void specify(SynonymExceptCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymExcept, cb, option);
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymExcept, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param synonymExcept The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cbLambda The callback for condition-bean of SynonymExcept. (NotNull)
@@ -1051,13 +1041,11 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
      * <span style="color: #3F7E5E">//synonymExcept.setVersionNo(value);</span>
      * SynonymExceptCB cb = <span style="color: #70226C">new</span> SynonymExceptCB();
      * cb.query().setFoo...(value);
-     * UpdateOption&lt;SynonymExceptCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;SynonymExceptCB&gt;();
-     * option.self(new SpecifyQuery&lt;SynonymExceptCB&gt;() {
-     *     public void specify(SynonymExceptCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymExcept, cb, option);
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymExcept, cb, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param synonymExcept The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cb The condition-bean of SynonymExcept. (NotNull)
@@ -1072,7 +1060,14 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
+     * <pre>
+     * <span style="color: #0000C0">synonymExceptBhv</span>.<span style="color: #CC4747">queryDelete</span>(synonymExcept, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>...
+     * });
+     * </pre>
      * @param cbLambda The callback for condition-bean of SynonymExcept. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.
@@ -1085,7 +1080,7 @@ public abstract class BsSynonymExceptBhv extends AbstractBehaviorWritable<Synony
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
      * @param cb The condition-bean of SynonymExcept. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.

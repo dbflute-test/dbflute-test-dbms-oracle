@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.DomainEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.docksidestage.oracle.dbflute.allcommon.DBMetaInstanceHandler;
 import org.docksidestage.oracle.dbflute.exentity.*;
 
@@ -72,24 +73,16 @@ public abstract class BsWhiteSameNameRefRef extends AbstractEntity implements Do
     protected java.time.LocalDate _refRefDate;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "WHITE_SAME_NAME_REF_REF";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "whiteSameNameRefRef";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -128,7 +121,7 @@ public abstract class BsWhiteSameNameRefRef extends AbstractEntity implements Do
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _refRefId);
         return hs;
     }
@@ -204,6 +197,7 @@ public abstract class BsWhiteSameNameRefRef extends AbstractEntity implements Do
      * [get] REF_REF_DATE: {NotNull, DATE(7)} <br>
      * @return The value of the column 'REF_REF_DATE'. (basically NotNull if selected: for the constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getRefRefDate() {
         checkSpecifiedProperty("refRefDate");
         return _refRefDate;

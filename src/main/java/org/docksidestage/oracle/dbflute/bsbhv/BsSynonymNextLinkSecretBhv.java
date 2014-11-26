@@ -60,10 +60,12 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public SynonymNextLinkSecretDbm getDBMeta() { return SynonymNextLinkSecretDbm.getInstance(); }
+    public SynonymNextLinkSecretDbm asDBMeta() { return SynonymNextLinkSecretDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "SYNONYM_NEXT_LINK_SECRET"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -433,7 +435,7 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 
@@ -567,11 +569,7 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
      * <span style="color: #3F7E5E">//synonymNextLinkSecret.set...;</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * synonymNextLinkSecret.<span style="color: #CC4747">setVersionNo</span>(value);
-     * try {
-     *     <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">update</span>(synonymNextLinkSecret);
-     * } catch (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">update</span>(synonymNextLinkSecret);
      * </pre>
      * @param synonymNextLinkSecret The entity of update. (NotNull, PrimaryKeyNotNull)
      * @throws EntityAlreadyDeletedException When the entity has already been deleted. (not found)
@@ -732,9 +730,9 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//synonymNextLinkSecret.setVersionNo(value);</span>
-     * SynonymNextLinkSecretCB cb = <span style="color: #70226C">new</span> SynonymNextLinkSecretCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">queryUpdate</span>(synonymNextLinkSecret, cb);
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">queryUpdate</span>(synonymNextLinkSecret, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param synonymNextLinkSecret The entity that contains update values. (NotNull, PrimaryKeyNullAllowed)
      * @param cbLambda The callback for condition-bean of SynonymNextLinkSecret. (NotNull)
@@ -774,9 +772,9 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
     /**
      * Delete the several entities by query. (NonExclusiveControl)
      * <pre>
-     * SynonymNextLinkSecretCB cb = new SynonymNextLinkSecretCB();
-     * cb.query().setFoo...(value);
-     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">queryDelete</span>(synonymNextLinkSecret, cb);
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">queryDelete</span>(synonymNextLinkSecret, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * });
      * </pre>
      * @param cbLambda The callback for condition-bean of SynonymNextLinkSecret. (NotNull)
      * @return The deleted count.
@@ -816,10 +814,10 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
      * <span style="color: #3F7E5E">// if auto-increment, you don't need to set the PK value</span>
      * synonymNextLinkSecret.setFoo...(value);
      * synonymNextLinkSecret.setBar...(value);
-     * InsertOption&lt;SynonymNextLinkSecretCB&gt; option = new InsertOption&lt;SynonymNextLinkSecretCB&gt;();
-     * <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
-     * option.disableCommonColumnAutoSetup();
-     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingInsert</span>(synonymNextLinkSecret, option);
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingInsert</span>(synonymNextLinkSecret, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #3F7E5E">// you can insert by your values for common columns</span>
+     *     <span style="color: #553000">op</span>.disableCommonColumnAutoSetup();
+     * });
      * ... = synonymNextLinkSecret.getPK...(); <span style="color: #3F7E5E">// if auto-increment, you can get the value after</span>
      * </pre>
      * @param synonymNextLinkSecret The entity of insert. (NotNull, PrimaryKeyNullAllowed: when auto-increment)
@@ -840,18 +838,12 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
      * synonymNextLinkSecret.setOther...(value); <span style="color: #3F7E5E">// you should set only modified columns</span>
      * <span style="color: #3F7E5E">// if exclusive control, the value of concurrency column is required</span>
      * synonymNextLinkSecret.<span style="color: #CC4747">setVersionNo</span>(value);
-     * <span style="color: #70226C">try</span> {
-     *     <span style="color: #3F7E5E">// you can update by self calculation values</span>
-     *     UpdateOption&lt;SynonymNextLinkSecretCB&gt; option = new UpdateOption&lt;SynonymNextLinkSecretCB&gt;();
-     *     option.self(new SpecifyQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *         public void specify(SynonymNextLinkSecretCB cb) {
-     *             cb.specify().<span style="color: #CC4747">columnXxxCount()</span>;
-     *         }
+     * <span style="color: #3F7E5E">// you can update by self calculation values</span>
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(synonymNextLinkSecret, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">cb</span>.specify().<span style="color: #CC4747">columnXxxCount()</span>;
      *     }).plus(1); <span style="color: #3F7E5E">// XXX_COUNT = XXX_COUNT + 1</span>
-     *     <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingUpdate</span>(synonymNextLinkSecret, option);
-     * } <span style="color: #70226C">catch</span> (EntityAlreadyUpdatedException e) { <span style="color: #3F7E5E">// if concurrent update</span>
-     *     ...
-     * }
+     * });
      * </pre>
      * @param synonymNextLinkSecret The entity of update. (NotNull, PrimaryKeyNotNull)
      * @param opLambda The callback for option of update for varying requests. (NotNull)
@@ -960,15 +952,13 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
      * <span style="color: #3F7E5E">// you don't need to set a value of concurrency column</span>
      * <span style="color: #3F7E5E">// (auto-increment for version number is valid though non-exclusive control)</span>
      * <span style="color: #3F7E5E">//synonymNextLinkSecret.setVersionNo(value);</span>
-     * SynonymNextLinkSecretCB cb = new SynonymNextLinkSecretCB();
-     * cb.query().setFoo...(value);
-     * UpdateOption&lt;SynonymNextLinkSecretCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;SynonymNextLinkSecretCB&gt;();
-     * option.self(new SpecifyQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *     public void specify(SynonymNextLinkSecretCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymNextLinkSecret, cb, option);
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymNextLinkSecret, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param synonymNextLinkSecret The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cbLambda The callback for condition-bean of SynonymNextLinkSecret. (NotNull)
@@ -996,13 +986,11 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
      * <span style="color: #3F7E5E">//synonymNextLinkSecret.setVersionNo(value);</span>
      * SynonymNextLinkSecretCB cb = <span style="color: #70226C">new</span> SynonymNextLinkSecretCB();
      * cb.query().setFoo...(value);
-     * UpdateOption&lt;SynonymNextLinkSecretCB&gt; option = <span style="color: #70226C">new</span> UpdateOption&lt;SynonymNextLinkSecretCB&gt;();
-     * option.self(new SpecifyQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *     public void specify(SynonymNextLinkSecretCB cb) {
-     *         cb.specify().<span style="color: #CC4747">columnFooCount()</span>;
-     *     }
-     * }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
-     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymNextLinkSecret, cb, option);
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">varyingQueryUpdate</span>(synonymNextLinkSecret, cb, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>.self(<span style="color: #553000">colCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">colCB</span>.specify().<span style="color: #CC4747">columnFooCount()</span>;
+     *     }).plus(1); <span style="color: #3F7E5E">// FOO_COUNT = FOO_COUNT + 1</span>
+     * });
      * </pre>
      * @param synonymNextLinkSecret The entity that contains update values. (NotNull) {PrimaryKeyNotRequired}
      * @param cb The condition-bean of SynonymNextLinkSecret. (NotNull)
@@ -1017,7 +1005,14 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
+     * <pre>
+     * <span style="color: #0000C0">synonymNextLinkSecretBhv</span>.<span style="color: #CC4747">queryDelete</span>(synonymNextLinkSecret, <span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.query().setFoo...
+     * }, <span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">op</span>...
+     * });
+     * </pre>
      * @param cbLambda The callback for condition-bean of SynonymNextLinkSecret. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.
@@ -1030,7 +1025,7 @@ public abstract class BsSynonymNextLinkSecretBhv extends AbstractBehaviorWritabl
     /**
      * Delete the several entities by query with varying requests non-strictly. <br>
      * For example, allowNonQueryDelete(). <br>
-     * Other specifications are same as batchUpdateNonstrict(entityList).
+     * Other specifications are same as queryDelete(cb).
      * @param cb The condition-bean of SynonymNextLinkSecret. (NotNull)
      * @param opLambda The callback for option of delete for varying requests. (NotNull)
      * @return The deleted count.

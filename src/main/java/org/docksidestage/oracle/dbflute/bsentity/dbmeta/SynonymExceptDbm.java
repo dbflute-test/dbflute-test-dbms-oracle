@@ -59,8 +59,8 @@ public class SynonymExceptDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, "synonymRefExceptList", null);
-    protected final ColumnInfo _columnExceptName = cci("EXCEPT_NAME", "EXCEPT_NAME", null, null, String.class, "exceptName", null, false, false, false, "VARCHAR2", 256, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, "synonymRefExceptList", null, false);
+    protected final ColumnInfo _columnExceptName = cci("EXCEPT_NAME", "EXCEPT_NAME", null, null, String.class, "exceptName", null, false, false, false, "VARCHAR2", 256, 0, null, false, null, null, null, null, null, false);
 
     /**
      * EXCEPT_ID: {PK, NotNull, NUMBER(16)}

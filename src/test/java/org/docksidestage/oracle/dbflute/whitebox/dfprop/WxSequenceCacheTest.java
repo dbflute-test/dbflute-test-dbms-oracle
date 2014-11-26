@@ -69,7 +69,7 @@ public class WxSequenceCacheTest extends UnitContainerTestCase {
         log(resultSet);
         assertEquals(40, resultSet.size());
         assertEquals(40, resultList.size());
-        assertEquals(Long.valueOf(resultList.get(0) + 39L), resultList.get(39));
+        assertEquals(resultList.get(0) + 39, resultList.get(39));
     }
 
     public void test_selectNextVal_loop_batchWay_basic() {
@@ -177,7 +177,7 @@ public class WxSequenceCacheTest extends UnitContainerTestCase {
         log(sb.toString());
         log("min = " + min + ", max = " + max);
         assertEquals(3000, resultAllSet.size());
-        assertEquals(Long.valueOf(min + (resultAllList.size() - 1)), max);
+        assertEquals(min + (resultAllList.size() - 1), max);
     }
 
     public void test_selectNextVal_threadSafe_batchWay() {

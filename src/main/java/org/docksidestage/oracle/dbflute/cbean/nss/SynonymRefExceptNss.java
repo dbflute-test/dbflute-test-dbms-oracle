@@ -11,7 +11,7 @@ public class SynonymRefExceptNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected SynonymRefExceptCQ _query;
+    protected final SynonymRefExceptCQ _query;
     public SynonymRefExceptNss(SynonymRefExceptCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

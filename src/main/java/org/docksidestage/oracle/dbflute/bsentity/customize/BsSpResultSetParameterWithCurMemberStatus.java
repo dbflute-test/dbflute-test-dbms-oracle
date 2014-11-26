@@ -76,24 +76,16 @@ public abstract class BsSpResultSetParameterWithCurMemberStatus extends Abstract
     protected Integer _displayOrder;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "SpResultSetParameterWithCurMemberStatus";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "spResultSetParameterWithCurMemberStatus";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.SpResultSetParameterWithCurMemberStatusDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "SpResultSetParameterWithCurMemberStatus";
     }
 
     // ===================================================================================
@@ -134,7 +126,7 @@ public abstract class BsSpResultSetParameterWithCurMemberStatus extends Abstract
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _memberStatusCode);
         hs = xCH(hs, _memberStatusName);
         hs = xCH(hs, _description);

@@ -11,7 +11,7 @@ public class MemberSecurityNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected MemberSecurityCQ _query;
+    protected final MemberSecurityCQ _query;
     public MemberSecurityNss(MemberSecurityCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

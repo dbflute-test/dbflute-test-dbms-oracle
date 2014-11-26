@@ -29,17 +29,14 @@ public abstract class AbstractBsWhiteUqFkWithoutPkCQ extends AbstractConditionQu
     }
 
     // ===================================================================================
-    //                                                                     DBMeta Provider
-    //                                                                     ===============
+    //                                                                             DB Meta
+    //                                                                             =======
     @Override
     protected DBMetaProvider xgetDBMetaProvider() {
         return DBMetaInstanceHandler.getProvider();
     }
 
-    // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
-    public String getTableDbName() {
+    public String asTableDbName() {
         return "WHITE_UQ_FK_WITHOUT_PK";
     }
 

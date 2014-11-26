@@ -11,7 +11,7 @@ public class SynonymMemberWithdrawalNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected SynonymMemberWithdrawalCQ _query;
+    protected final SynonymMemberWithdrawalCQ _query;
     public SynonymMemberWithdrawalNss(SynonymMemberWithdrawalCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

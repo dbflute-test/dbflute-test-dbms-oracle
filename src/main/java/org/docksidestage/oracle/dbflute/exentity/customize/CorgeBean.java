@@ -12,6 +12,6 @@ import org.docksidestage.oracle.dbflute.bsentity.customize.BsCorgeBean;
  */
 public class CorgeBean extends BsCorgeBean {
 
-    /** Serial version UID. (Default) */
+    /** The serial version UID for object serialization. (Default) */
     private static final long serialVersionUID = 1L;
 }

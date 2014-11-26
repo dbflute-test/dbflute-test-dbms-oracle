@@ -87,24 +87,16 @@ public abstract class BsBarBean extends AbstractEntity implements CustomizeEntit
     protected String _barClob;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "BAR_BEAN";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "barBean";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.BarBeanDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "BAR_BEAN";
     }
 
     // ===================================================================================
@@ -147,7 +139,7 @@ public abstract class BsBarBean extends AbstractEntity implements CustomizeEntit
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _barId);
         hs = xCH(hs, _barName);
         hs = xCH(hs, _barDecimal);
@@ -249,6 +241,7 @@ public abstract class BsBarBean extends AbstractEntity implements CustomizeEntit
      * [get] BAR_DATE: {DATE} <br>
      * @return The value of the column 'BAR_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getBarDate() {
         checkSpecifiedProperty("barDate");
         return _barDate;

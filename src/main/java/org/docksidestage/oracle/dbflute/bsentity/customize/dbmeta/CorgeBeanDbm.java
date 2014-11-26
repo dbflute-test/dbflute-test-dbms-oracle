@@ -63,12 +63,12 @@ public class CorgeBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnCorgeId = cci("CORGE_ID", "CORGE_ID", null, null, Integer.class, "corgeId", null, false, false, false, "NUMBER", 8, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnCorgeName = cci("CORGE_NAME", "CORGE_NAME", null, null, String.class, "corgeName", null, false, false, false, "VARCHAR2", 20, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnCorgeDecimal = cci("CORGE_DECIMAL", "CORGE_DECIMAL", null, null, java.math.BigDecimal.class, "corgeDecimal", null, false, false, false, "NUMBER", 5, 3, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnCorgeDate = cci("CORGE_DATE", "CORGE_DATE", null, null, java.time.LocalDate.class, "corgeDate", null, false, false, false, "DATE", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnCorgeTimestamp = cci("CORGE_TIMESTAMP", "CORGE_TIMESTAMP", null, null, java.time.LocalDateTime.class, "corgeTimestamp", null, false, false, false, "TIMESTAMP", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnCorgeClob = cci("CORGE_CLOB", "CORGE_CLOB", null, null, String.class, "corgeClob", null, false, false, false, "CLOB", null, null, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnCorgeId = cci("CORGE_ID", "CORGE_ID", null, null, Integer.class, "corgeId", null, false, false, false, "NUMBER", 8, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnCorgeName = cci("CORGE_NAME", "CORGE_NAME", null, null, String.class, "corgeName", null, false, false, false, "VARCHAR2", 20, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnCorgeDecimal = cci("CORGE_DECIMAL", "CORGE_DECIMAL", null, null, java.math.BigDecimal.class, "corgeDecimal", null, false, false, false, "NUMBER", 5, 3, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnCorgeDate = cci("CORGE_DATE", "CORGE_DATE", null, null, java.time.LocalDate.class, "corgeDate", null, false, false, false, "DATE", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnCorgeTimestamp = cci("CORGE_TIMESTAMP", "CORGE_TIMESTAMP", null, null, java.time.LocalDateTime.class, "corgeTimestamp", null, false, false, false, "TIMESTAMP", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnCorgeClob = cci("CORGE_CLOB", "CORGE_CLOB", null, null, String.class, "corgeClob", null, false, false, false, "CLOB", null, null, null, false, null, null, null, null, null, false);
 
     /**
      * CORGE_ID: {NUMBER(8)}

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.CustomizeEntity;
+import org.dbflute.dbmeta.accessory.MappingValueType;
 import org.docksidestage.oracle.dbflute.exentity.customize.*;
 
 /**
@@ -91,24 +92,16 @@ public abstract class BsNestedFooBean extends AbstractEntity implements Customiz
     protected List<CorgeBean> _corgeList;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "NESTED_FOO_BEAN";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "nestedFooBean";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.NestedFooBeanDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "NESTED_FOO_BEAN";
     }
 
     // ===================================================================================
@@ -152,7 +145,7 @@ public abstract class BsNestedFooBean extends AbstractEntity implements Customiz
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _fooId);
         hs = xCH(hs, _fooName);
         hs = xCH(hs, _fooDate);
@@ -238,6 +231,7 @@ public abstract class BsNestedFooBean extends AbstractEntity implements Customiz
      * [get] FOO_DATE: {DATE} <br>
      * @return The value of the column 'FOO_DATE'. (NullAllowed even if selected: for no constraint)
      */
+    @MappingValueType(keyName = "oracleDateType")
     public java.time.LocalDate getFooDate() {
         checkSpecifiedProperty("fooDate");
         return _fooDate;
