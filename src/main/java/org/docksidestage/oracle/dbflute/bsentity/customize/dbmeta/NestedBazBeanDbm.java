@@ -28,6 +28,9 @@ public class NestedBazBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,7 +45,7 @@ public class NestedBazBeanDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((NestedBazBean)et).getBazId(), (et, vl) -> ((NestedBazBean)et).setBazId(cti(vl)), "bazId");
         setupEpg(_epgMap, et -> ((NestedBazBean)et).getBazName(), (et, vl) -> ((NestedBazBean)et).setBazName((String)vl), "bazName");
-        setupEpg(_epgMap, et -> ((NestedBazBean)et).getBazDate(), (et, vl) -> ((NestedBazBean)et).setBazDate((java.time.LocalDate)vl), "bazDate");
+        setupEpg(_epgMap, et -> ((NestedBazBean)et).getBazDate(), (et, vl) -> ((NestedBazBean)et).setBazDate(ctld(vl)), "bazDate");
         setupEpg(_epgMap, et -> ((NestedBazBean)et).getBazList(), (et, vl) -> ((NestedBazBean)et).setBazList((List<List<BarBean>>)vl), "bazList");
     }
     public PropertyGateway findPropertyGateway(String prop)

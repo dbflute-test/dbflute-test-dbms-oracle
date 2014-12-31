@@ -28,6 +28,9 @@ public class NestedBarBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,7 +45,7 @@ public class NestedBarBeanDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((NestedBarBean)et).getBarId(), (et, vl) -> ((NestedBarBean)et).setBarId(cti(vl)), "barId");
         setupEpg(_epgMap, et -> ((NestedBarBean)et).getBarName(), (et, vl) -> ((NestedBarBean)et).setBarName((String)vl), "barName");
-        setupEpg(_epgMap, et -> ((NestedBarBean)et).getBarDate(), (et, vl) -> ((NestedBarBean)et).setBarDate((java.time.LocalDate)vl), "barDate");
+        setupEpg(_epgMap, et -> ((NestedBarBean)et).getBarDate(), (et, vl) -> ((NestedBarBean)et).setBarDate(ctld(vl)), "barDate");
         setupEpg(_epgMap, et -> ((NestedBarBean)et).getBarList(), (et, vl) -> ((NestedBarBean)et).setBarList((List<BarBean>)vl), "barList");
         setupEpg(_epgMap, et -> ((NestedBarBean)et).getBazBean1(), (et, vl) -> ((NestedBarBean)et).setBazBean1((NestedBazBean)vl), "bazBean1");
         setupEpg(_epgMap, et -> ((NestedBarBean)et).getBazBean2(), (et, vl) -> ((NestedBarBean)et).setBazBean2((NestedBazBean)vl), "bazBean2");

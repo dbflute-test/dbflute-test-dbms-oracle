@@ -28,6 +28,9 @@ public class SimpleVendorCheckDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -61,8 +64,8 @@ public class SimpleVendorCheckDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfNumberMaxdecimal(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfNumberMaxdecimal(ctb(vl)), "typeOfNumberMaxdecimal");
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfBinaryFloat(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfBinaryFloat((String)vl), "typeOfBinaryFloat");
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfBinaryDouble(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfBinaryDouble((String)vl), "typeOfBinaryDouble");
-        setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfDate(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfDate((java.time.LocalDate)vl), "typeOfDate");
-        setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfTimestamp(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfTimestamp((java.time.LocalDateTime)vl), "typeOfTimestamp");
+        setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfDate(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfDate(ctld(vl)), "typeOfDate");
+        setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfTimestamp(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfTimestamp(ctldt(vl)), "typeOfTimestamp");
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfIntervalYearToMonth(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfIntervalYearToMonth((String)vl), "typeOfIntervalYearToMonth");
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfIntervalDayToSecond(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfIntervalDayToSecond((String)vl), "typeOfIntervalDayToSecond");
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfBlob(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfBlob((byte[])vl), "typeOfBlob");

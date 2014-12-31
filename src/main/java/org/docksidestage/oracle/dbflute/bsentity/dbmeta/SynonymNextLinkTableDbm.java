@@ -28,6 +28,9 @@ public class SynonymNextLinkTableDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -43,10 +46,10 @@ public class SynonymNextLinkTableDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getProductName(), (et, vl) -> ((SynonymNextLinkTable)et).setProductName((String)vl), "productName");
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getProductHandleCode(), (et, vl) -> ((SynonymNextLinkTable)et).setProductHandleCode((String)vl), "productHandleCode");
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getProductStatusCode(), (et, vl) -> ((SynonymNextLinkTable)et).setProductStatusCode((String)vl), "productStatusCode");
-        setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getRegisterDatetime(), (et, vl) -> ((SynonymNextLinkTable)et).setRegisterDatetime((java.time.LocalDateTime)vl), "registerDatetime");
+        setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getRegisterDatetime(), (et, vl) -> ((SynonymNextLinkTable)et).setRegisterDatetime(ctldt(vl)), "registerDatetime");
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getRegisterUser(), (et, vl) -> ((SynonymNextLinkTable)et).setRegisterUser((String)vl), "registerUser");
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getRegisterProcess(), (et, vl) -> ((SynonymNextLinkTable)et).setRegisterProcess((String)vl), "registerProcess");
-        setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getUpdateDatetime(), (et, vl) -> ((SynonymNextLinkTable)et).setUpdateDatetime((java.time.LocalDateTime)vl), "updateDatetime");
+        setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getUpdateDatetime(), (et, vl) -> ((SynonymNextLinkTable)et).setUpdateDatetime(ctldt(vl)), "updateDatetime");
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getUpdateUser(), (et, vl) -> ((SynonymNextLinkTable)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getUpdateProcess(), (et, vl) -> ((SynonymNextLinkTable)et).setUpdateProcess((String)vl), "updateProcess");
         setupEpg(_epgMap, et -> ((SynonymNextLinkTable)et).getVersionNo(), (et, vl) -> ((SynonymNextLinkTable)et).setVersionNo(ctb(vl)), "versionNo");

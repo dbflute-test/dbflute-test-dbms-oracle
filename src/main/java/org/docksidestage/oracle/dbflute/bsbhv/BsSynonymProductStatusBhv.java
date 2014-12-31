@@ -647,7 +647,8 @@ public abstract class BsSynonymProductStatusBhv extends AbstractBehaviorWritable
     }
 
     /**
-     * Update the entity modified-only. (ZeroUpdateException, NonExclusiveControl)
+     * Update the entity modified-only. (ZeroUpdateException, NonExclusiveControl) <br>
+     * By PK as default, and also you can update by unique keys using entity's uniqueOf().
      * <pre>
      * SynonymProductStatus synonymProductStatus = <span style="color: #70226C">new</span> SynonymProductStatus();
      * synonymProductStatus.setPK...(value); <span style="color: #3F7E5E">// required</span>
@@ -671,7 +672,7 @@ public abstract class BsSynonymProductStatusBhv extends AbstractBehaviorWritable
     /**
      * Insert or update the entity modified-only. (DefaultConstraintsEnabled, NonExclusiveControl) <br>
      * if (the entity has no PK) { insert() } else { update(), but no data, insert() } <br>
-     * <p><span style="color: #CC4747; font-size: 120%">Attention, you cannot update by unique keys instead of PK.</span></p>
+     * <p><span style="color: #994747; font-size: 120%">Also you can update by unique keys using entity's uniqueOf().</span></p>
      * @param synonymProductStatus The entity of insert or update. (NotNull, ...depends on insert or update)
      * @throws EntityAlreadyDeletedException When the entity has already been deleted. (not found)
      * @throws EntityDuplicatedException When the entity has been duplicated.
@@ -682,7 +683,8 @@ public abstract class BsSynonymProductStatusBhv extends AbstractBehaviorWritable
     }
 
     /**
-     * Delete the entity. (ZeroUpdateException, NonExclusiveControl)
+     * Delete the entity. (ZeroUpdateException, NonExclusiveControl) <br>
+     * By PK as default, and also you can delete by unique keys using entity's uniqueOf().
      * <pre>
      * SynonymProductStatus synonymProductStatus = <span style="color: #70226C">new</span> SynonymProductStatus();
      * synonymProductStatus.setPK...(value); <span style="color: #3F7E5E">// required</span>

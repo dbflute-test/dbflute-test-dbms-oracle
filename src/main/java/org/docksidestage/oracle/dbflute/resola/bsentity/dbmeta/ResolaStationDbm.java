@@ -28,6 +28,9 @@ public class ResolaStationDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return ResolaDBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return ResolaDBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return ResolaDBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return ResolaDBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,8 +44,8 @@ public class ResolaStationDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((ResolaStation)et).getStationId(), (et, vl) -> ((ResolaStation)et).setStationId(cti(vl)), "stationId");
         setupEpg(_epgMap, et -> ((ResolaStation)et).getStationName(), (et, vl) -> ((ResolaStation)et).setStationName((String)vl), "stationName");
-        setupEpg(_epgMap, et -> ((ResolaStation)et).getBirthdate(), (et, vl) -> ((ResolaStation)et).setBirthdate((java.time.LocalDateTime)vl), "birthdate");
-        setupEpg(_epgMap, et -> ((ResolaStation)et).getFormalizedDatetime(), (et, vl) -> ((ResolaStation)et).setFormalizedDatetime((java.time.LocalDateTime)vl), "formalizedDatetime");
+        setupEpg(_epgMap, et -> ((ResolaStation)et).getBirthdate(), (et, vl) -> ((ResolaStation)et).setBirthdate(ctldt(vl)), "birthdate");
+        setupEpg(_epgMap, et -> ((ResolaStation)et).getFormalizedDatetime(), (et, vl) -> ((ResolaStation)et).setFormalizedDatetime(ctldt(vl)), "formalizedDatetime");
         setupEpg(_epgMap, et -> ((ResolaStation)et).getHomeCount(), (et, vl) -> ((ResolaStation)et).setHomeCount(cti(vl)), "homeCount");
         setupEpg(_epgMap, et -> ((ResolaStation)et).getWorkingKilometer(), (et, vl) -> ((ResolaStation)et).setWorkingKilometer(ctb(vl)), "workingKilometer");
     }

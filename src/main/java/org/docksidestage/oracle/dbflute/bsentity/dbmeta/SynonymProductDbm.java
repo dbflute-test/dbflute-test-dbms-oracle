@@ -29,6 +29,9 @@ public class SynonymProductDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -46,10 +49,10 @@ public class SynonymProductDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getProductCategoryCode(), (et, vl) -> ((SynonymProduct)et).setProductCategoryCode((String)vl), "productCategoryCode");
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getProductStatusCode(), (et, vl) -> ((SynonymProduct)et).setProductStatusCode((String)vl), "productStatusCode");
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getRegularPrice(), (et, vl) -> ((SynonymProduct)et).setRegularPrice(cti(vl)), "regularPrice");
-        setupEpg(_epgMap, et -> ((SynonymProduct)et).getRegisterDatetime(), (et, vl) -> ((SynonymProduct)et).setRegisterDatetime((java.time.LocalDateTime)vl), "registerDatetime");
+        setupEpg(_epgMap, et -> ((SynonymProduct)et).getRegisterDatetime(), (et, vl) -> ((SynonymProduct)et).setRegisterDatetime(ctldt(vl)), "registerDatetime");
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getRegisterUser(), (et, vl) -> ((SynonymProduct)et).setRegisterUser((String)vl), "registerUser");
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getRegisterProcess(), (et, vl) -> ((SynonymProduct)et).setRegisterProcess((String)vl), "registerProcess");
-        setupEpg(_epgMap, et -> ((SynonymProduct)et).getUpdateDatetime(), (et, vl) -> ((SynonymProduct)et).setUpdateDatetime((java.time.LocalDateTime)vl), "updateDatetime");
+        setupEpg(_epgMap, et -> ((SynonymProduct)et).getUpdateDatetime(), (et, vl) -> ((SynonymProduct)et).setUpdateDatetime(ctldt(vl)), "updateDatetime");
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getUpdateUser(), (et, vl) -> ((SynonymProduct)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getUpdateProcess(), (et, vl) -> ((SynonymProduct)et).setUpdateProcess((String)vl), "updateProcess");
         setupEpg(_epgMap, et -> ((SynonymProduct)et).getVersionNo(), (et, vl) -> ((SynonymProduct)et).setVersionNo(ctl(vl)), "versionNo");

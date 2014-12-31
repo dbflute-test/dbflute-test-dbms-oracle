@@ -28,6 +28,9 @@ public class SimpleMemberDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,7 +44,7 @@ public class SimpleMemberDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SimpleMember)et).getMemberId(), (et, vl) -> ((SimpleMember)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SimpleMember)et).getMemberName(), (et, vl) -> ((SimpleMember)et).setMemberName((String)vl), "memberName");
-        setupEpg(_epgMap, et -> ((SimpleMember)et).getBirthdate(), (et, vl) -> ((SimpleMember)et).setBirthdate((java.time.LocalDate)vl), "birthdate");
+        setupEpg(_epgMap, et -> ((SimpleMember)et).getBirthdate(), (et, vl) -> ((SimpleMember)et).setBirthdate(ctld(vl)), "birthdate");
         setupEpg(_epgMap, et -> ((SimpleMember)et).getMemberStatusName(), (et, vl) -> ((SimpleMember)et).setMemberStatusName((String)vl), "memberStatusName");
     }
     public PropertyGateway findPropertyGateway(String prop)

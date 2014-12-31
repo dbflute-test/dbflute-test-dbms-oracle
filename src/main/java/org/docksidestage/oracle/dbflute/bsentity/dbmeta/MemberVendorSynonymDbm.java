@@ -29,6 +29,9 @@ public class MemberVendorSynonymDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -52,12 +55,12 @@ public class MemberVendorSynonymDbm extends AbstractDBMeta {
                 ((MemberVendorSynonym)et).mynativeMappingMemberStatusCode((String)vl);
             }
         }, "memberStatusCode");
-        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getFormalizedDatetime(), (et, vl) -> ((MemberVendorSynonym)et).setFormalizedDatetime((java.time.LocalDateTime)vl), "formalizedDatetime");
-        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getBirthdate(), (et, vl) -> ((MemberVendorSynonym)et).setBirthdate((java.time.LocalDate)vl), "birthdate");
-        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getRegisterDatetime(), (et, vl) -> ((MemberVendorSynonym)et).setRegisterDatetime((java.time.LocalDateTime)vl), "registerDatetime");
+        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getFormalizedDatetime(), (et, vl) -> ((MemberVendorSynonym)et).setFormalizedDatetime(ctldt(vl)), "formalizedDatetime");
+        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getBirthdate(), (et, vl) -> ((MemberVendorSynonym)et).setBirthdate(ctld(vl)), "birthdate");
+        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getRegisterDatetime(), (et, vl) -> ((MemberVendorSynonym)et).setRegisterDatetime(ctldt(vl)), "registerDatetime");
         setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getRegisterUser(), (et, vl) -> ((MemberVendorSynonym)et).setRegisterUser((String)vl), "registerUser");
         setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getRegisterProcess(), (et, vl) -> ((MemberVendorSynonym)et).setRegisterProcess((String)vl), "registerProcess");
-        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getUpdateDatetime(), (et, vl) -> ((MemberVendorSynonym)et).setUpdateDatetime((java.time.LocalDateTime)vl), "updateDatetime");
+        setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getUpdateDatetime(), (et, vl) -> ((MemberVendorSynonym)et).setUpdateDatetime(ctldt(vl)), "updateDatetime");
         setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getUpdateUser(), (et, vl) -> ((MemberVendorSynonym)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getUpdateProcess(), (et, vl) -> ((MemberVendorSynonym)et).setUpdateProcess((String)vl), "updateProcess");
         setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getVersionNo(), (et, vl) -> ((MemberVendorSynonym)et).setVersionNo(ctl(vl)), "versionNo");

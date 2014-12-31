@@ -29,6 +29,9 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,7 +45,7 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getMemberLoginId(), (et, vl) -> ((SynonymMemberLogin)et).setMemberLoginId(ctl(vl)), "memberLoginId");
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getMemberId(), (et, vl) -> ((SynonymMemberLogin)et).setMemberId(cti(vl)), "memberId");
-        setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getLoginDatetime(), (et, vl) -> ((SynonymMemberLogin)et).setLoginDatetime((java.time.LocalDateTime)vl), "loginDatetime");
+        setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getLoginDatetime(), (et, vl) -> ((SynonymMemberLogin)et).setLoginDatetime(ctldt(vl)), "loginDatetime");
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getMobileLoginFlg(), (et, vl) -> {
             ColumnInfo col = columnMobileLoginFlg();
             CDef.Flg cls = (CDef.Flg)gcls(col, vl);

@@ -28,6 +28,9 @@ public class NestedFooBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,7 +45,7 @@ public class NestedFooBeanDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooId(), (et, vl) -> ((NestedFooBean)et).setFooId(cti(vl)), "fooId");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooName(), (et, vl) -> ((NestedFooBean)et).setFooName((String)vl), "fooName");
-        setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooDate(), (et, vl) -> ((NestedFooBean)et).setFooDate((java.time.LocalDate)vl), "fooDate");
+        setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooDate(), (et, vl) -> ((NestedFooBean)et).setFooDate(ctld(vl)), "fooDate");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getBarBean(), (et, vl) -> ((NestedFooBean)et).setBarBean((NestedBarBean)vl), "barBean");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getQuxList(), (et, vl) -> ((NestedFooBean)et).setQuxList((List<java.math.BigDecimal>)vl), "quxList");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getQuuxList(), (et, vl) -> ((NestedFooBean)et).setQuuxList((List<java.math.BigDecimal>)vl), "quuxList");

@@ -28,6 +28,9 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,7 +44,7 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getMemberId(), (et, vl) -> ((SummaryMemberPurchase)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getAllsumPurchasePrice(), (et, vl) -> ((SummaryMemberPurchase)et).setAllsumPurchasePrice(ctb(vl)), "allsumPurchasePrice");
-        setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getLatestPurchaseDatetime(), (et, vl) -> ((SummaryMemberPurchase)et).setLatestPurchaseDatetime((java.time.LocalDateTime)vl), "latestPurchaseDatetime");
+        setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getLatestPurchaseDatetime(), (et, vl) -> ((SummaryMemberPurchase)et).setLatestPurchaseDatetime(ctldt(vl)), "latestPurchaseDatetime");
     }
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }

@@ -29,6 +29,9 @@ public class SynonymMemberWithdrawalDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -51,11 +54,11 @@ public class SynonymMemberWithdrawalDbm extends AbstractDBMeta {
             }
         }, "withdrawalReasonCode");
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getWithdrawalReasonInputText(), (et, vl) -> ((SynonymMemberWithdrawal)et).setWithdrawalReasonInputText((String)vl), "withdrawalReasonInputText");
-        setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getWithdrawalDatetime(), (et, vl) -> ((SynonymMemberWithdrawal)et).setWithdrawalDatetime((java.time.LocalDateTime)vl), "withdrawalDatetime");
-        setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getRegisterDatetime(), (et, vl) -> ((SynonymMemberWithdrawal)et).setRegisterDatetime((java.time.LocalDateTime)vl), "registerDatetime");
+        setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getWithdrawalDatetime(), (et, vl) -> ((SynonymMemberWithdrawal)et).setWithdrawalDatetime(ctldt(vl)), "withdrawalDatetime");
+        setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getRegisterDatetime(), (et, vl) -> ((SynonymMemberWithdrawal)et).setRegisterDatetime(ctldt(vl)), "registerDatetime");
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getRegisterProcess(), (et, vl) -> ((SynonymMemberWithdrawal)et).setRegisterProcess((String)vl), "registerProcess");
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getRegisterUser(), (et, vl) -> ((SynonymMemberWithdrawal)et).setRegisterUser((String)vl), "registerUser");
-        setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getUpdateDatetime(), (et, vl) -> ((SynonymMemberWithdrawal)et).setUpdateDatetime((java.time.LocalDateTime)vl), "updateDatetime");
+        setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getUpdateDatetime(), (et, vl) -> ((SynonymMemberWithdrawal)et).setUpdateDatetime(ctldt(vl)), "updateDatetime");
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getUpdateProcess(), (et, vl) -> ((SynonymMemberWithdrawal)et).setUpdateProcess((String)vl), "updateProcess");
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getUpdateUser(), (et, vl) -> ((SynonymMemberWithdrawal)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getVersionNo(), (et, vl) -> ((SynonymMemberWithdrawal)et).setVersionNo(ctl(vl)), "versionNo");

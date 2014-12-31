@@ -13,10 +13,10 @@
 	<inceptionYear>2014</inceptionYear>
 
 	<properties>
-		<dbflute.version>1.1.0-RC1</dbflute.version>
+		<dbflute.version>1.1.0-RC5</dbflute.version>
 		<oracle.jdbc.version>11.1.0.6.0-Production+</oracle.jdbc.version>
 		<spring.version>4.1.1.RELEASE</spring.version>
-		<utflute.version>0.5.0-RC1</utflute.version>
+		<utflute.version>0.5.0-RC5</utflute.version>
 	</properties>
 
 	<licenses>
@@ -117,6 +117,14 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.dbflute</groupId>
+				<artifactId>dbflute-maven-plugin</artifactId>
+				<version>1.1.0-RC1</version>
+				<configuration>
+					<clientProject>maihamadb</clientProject>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

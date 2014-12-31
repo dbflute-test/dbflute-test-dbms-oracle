@@ -28,6 +28,9 @@ public class SpResultSetParameterWithCurMemberDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,8 +44,8 @@ public class SpResultSetParameterWithCurMemberDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SpResultSetParameterWithCurMember)et).getMemberId(), (et, vl) -> ((SpResultSetParameterWithCurMember)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SpResultSetParameterWithCurMember)et).getMemberName(), (et, vl) -> ((SpResultSetParameterWithCurMember)et).setMemberName((String)vl), "memberName");
-        setupEpg(_epgMap, et -> ((SpResultSetParameterWithCurMember)et).getBirthdate(), (et, vl) -> ((SpResultSetParameterWithCurMember)et).setBirthdate((java.time.LocalDate)vl), "birthdate");
-        setupEpg(_epgMap, et -> ((SpResultSetParameterWithCurMember)et).getFormalizedDatetime(), (et, vl) -> ((SpResultSetParameterWithCurMember)et).setFormalizedDatetime((java.time.LocalDateTime)vl), "formalizedDatetime");
+        setupEpg(_epgMap, et -> ((SpResultSetParameterWithCurMember)et).getBirthdate(), (et, vl) -> ((SpResultSetParameterWithCurMember)et).setBirthdate(ctld(vl)), "birthdate");
+        setupEpg(_epgMap, et -> ((SpResultSetParameterWithCurMember)et).getFormalizedDatetime(), (et, vl) -> ((SpResultSetParameterWithCurMember)et).setFormalizedDatetime(ctldt(vl)), "formalizedDatetime");
         setupEpg(_epgMap, et -> ((SpResultSetParameterWithCurMember)et).getMemberStatusCode(), (et, vl) -> ((SpResultSetParameterWithCurMember)et).setMemberStatusCode((String)vl), "memberStatusCode");
     }
     public PropertyGateway findPropertyGateway(String prop)
