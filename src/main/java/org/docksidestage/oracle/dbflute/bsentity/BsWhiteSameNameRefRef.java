@@ -86,8 +86,8 @@ public abstract class BsWhiteSameNameRefRef extends AbstractEntity implements Do
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_refRefId == null) { return false; }

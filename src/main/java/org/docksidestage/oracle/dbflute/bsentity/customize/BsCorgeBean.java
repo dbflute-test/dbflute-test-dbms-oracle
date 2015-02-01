@@ -100,8 +100,8 @@ public abstract class BsCorgeBean extends AbstractEntity implements CustomizeEnt
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         return false;

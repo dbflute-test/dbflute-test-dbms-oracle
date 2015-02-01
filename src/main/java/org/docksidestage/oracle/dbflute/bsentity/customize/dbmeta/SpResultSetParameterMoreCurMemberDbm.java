@@ -55,10 +55,12 @@ public class SpResultSetParameterMoreCurMemberDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "SpResultSetParameterMoreCurMember";
+    protected final String _tableDispName = "SpResultSetParameterMoreCurMember";
     protected final String _tablePropertyName = "spResultSetParameterMoreCurMember";
     protected final TableSqlName _tableSqlName = new TableSqlName("SpResultSetParameterMoreCurMember", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

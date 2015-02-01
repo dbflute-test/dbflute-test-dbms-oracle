@@ -97,8 +97,8 @@ public abstract class BsWhiteUqFkRef extends AbstractEntity implements DomainEnt
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_uqFkRefId == null) { return false; }

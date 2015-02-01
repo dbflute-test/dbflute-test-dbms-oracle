@@ -90,8 +90,8 @@ public abstract class BsUnpaidSummaryMember extends AbstractEntity implements Cu
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_unpaidManId == null) { return false; }

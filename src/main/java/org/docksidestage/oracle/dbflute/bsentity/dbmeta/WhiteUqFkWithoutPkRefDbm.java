@@ -65,10 +65,12 @@ public class WhiteUqFkWithoutPkRefDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "WHITE_UQ_FK_WITHOUT_PK_REF";
+    protected final String _tableDispName = "WHITE_UQ_FK_WITHOUT_PK_REF";
     protected final String _tablePropertyName = "whiteUqFkWithoutPkRef";
     protected final TableSqlName _tableSqlName = new TableSqlName("WHITE_UQ_FK_WITHOUT_PK_REF", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

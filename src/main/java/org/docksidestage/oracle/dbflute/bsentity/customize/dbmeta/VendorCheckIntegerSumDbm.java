@@ -51,10 +51,12 @@ public class VendorCheckIntegerSumDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "VendorCheckIntegerSum";
+    protected final String _tableDispName = "VendorCheckIntegerSum";
     protected final String _tablePropertyName = "vendorCheckIntegerSum";
     protected final TableSqlName _tableSqlName = new TableSqlName("VendorCheckIntegerSum", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

@@ -66,10 +66,12 @@ public class VendorLargeName90123456RefDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "VENDOR_LARGE_NAME_90123456_REF";
+    protected final String _tableDispName = "VENDOR_LARGE_NAME_90123456_REF";
     protected final String _tablePropertyName = "vendorLargeName90123456Ref";
     protected final TableSqlName _tableSqlName = new TableSqlName("VENDOR_LARGE_NAME_90123456_REF", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

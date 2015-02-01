@@ -82,8 +82,8 @@ public abstract class BsWhiteRefNextTarget extends AbstractEntity implements Dom
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_refNextTargetId == null) { return false; }

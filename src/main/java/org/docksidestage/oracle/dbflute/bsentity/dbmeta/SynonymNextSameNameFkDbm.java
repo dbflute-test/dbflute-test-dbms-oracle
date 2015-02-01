@@ -53,10 +53,12 @@ public class SynonymNextSameNameFkDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "SYNONYM_NEXT_SAME_NAME_FK";
+    protected final String _tableDispName = "SYNONYM_NEXT_SAME_NAME_FK";
     protected final String _tablePropertyName = "synonymNextSameNameFk";
     protected final TableSqlName _tableSqlName = new TableSqlName("SYNONYM_NEXT_SAME_NAME_FK", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

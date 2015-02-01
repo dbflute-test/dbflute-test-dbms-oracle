@@ -80,8 +80,8 @@ public abstract class BsVendorLargeName901234567890 extends AbstractEntity imple
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_vendorLargeName901234567Id == null) { return false; }

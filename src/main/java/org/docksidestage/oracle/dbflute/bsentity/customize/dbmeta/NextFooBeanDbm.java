@@ -56,10 +56,12 @@ public class NextFooBeanDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "NEXT_FOO_BEAN";
+    protected final String _tableDispName = "NEXT_FOO_BEAN";
     protected final String _tablePropertyName = "nextFooBean";
     protected final TableSqlName _tableSqlName = new TableSqlName("NEWURAYASUDB.NEXT_FOO_BEAN", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

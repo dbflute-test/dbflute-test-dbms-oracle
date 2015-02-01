@@ -95,8 +95,8 @@ public abstract class BsSpResultSetParameterCurMember extends AbstractEntity imp
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         return false;

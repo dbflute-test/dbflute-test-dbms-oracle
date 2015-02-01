@@ -56,10 +56,12 @@ public class ResolaStationDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "STATION";
+    protected final String _tableDispName = "STATION";
     protected final String _tablePropertyName = "station";
     protected final TableSqlName _tableSqlName = new TableSqlName("STATION", _tableDbName);
     { _tableSqlName.xacceptFilter(ResolaDBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 
