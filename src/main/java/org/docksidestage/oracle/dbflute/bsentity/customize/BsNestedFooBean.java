@@ -105,8 +105,8 @@ public abstract class BsNestedFooBean extends AbstractEntity implements Customiz
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         return false;

@@ -29,6 +29,9 @@ public class VendorLargeDataRefDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,10 +45,10 @@ public class VendorLargeDataRefDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getLargeDataRefId(), (et, vl) -> ((VendorLargeDataRef)et).setLargeDataRefId(ctl(vl)), "largeDataRefId");
         setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getLargeDataId(), (et, vl) -> ((VendorLargeDataRef)et).setLargeDataId(ctl(vl)), "largeDataId");
-        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getDateIndex(), (et, vl) -> ((VendorLargeDataRef)et).setDateIndex((java.time.LocalDate)vl), "dateIndex");
-        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getDateNoIndex(), (et, vl) -> ((VendorLargeDataRef)et).setDateNoIndex((java.time.LocalDate)vl), "dateNoIndex");
-        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getTimestampIndex(), (et, vl) -> ((VendorLargeDataRef)et).setTimestampIndex((java.time.LocalDateTime)vl), "timestampIndex");
-        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getTimestampNoIndex(), (et, vl) -> ((VendorLargeDataRef)et).setTimestampNoIndex((java.time.LocalDateTime)vl), "timestampNoIndex");
+        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getDateIndex(), (et, vl) -> ((VendorLargeDataRef)et).setDateIndex(ctld(vl)), "dateIndex");
+        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getDateNoIndex(), (et, vl) -> ((VendorLargeDataRef)et).setDateNoIndex(ctld(vl)), "dateNoIndex");
+        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getTimestampIndex(), (et, vl) -> ((VendorLargeDataRef)et).setTimestampIndex(ctldt(vl)), "timestampIndex");
+        setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getTimestampNoIndex(), (et, vl) -> ((VendorLargeDataRef)et).setTimestampNoIndex(ctldt(vl)), "timestampNoIndex");
         setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getNullableDecimalIndex(), (et, vl) -> ((VendorLargeDataRef)et).setNullableDecimalIndex(ctb(vl)), "nullableDecimalIndex");
         setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getNullableDecimalNoIndex(), (et, vl) -> ((VendorLargeDataRef)et).setNullableDecimalNoIndex(ctb(vl)), "nullableDecimalNoIndex");
         setupEpg(_epgMap, et -> ((VendorLargeDataRef)et).getSelfParentId(), (et, vl) -> ((VendorLargeDataRef)et).setSelfParentId(ctl(vl)), "selfParentId");
@@ -70,10 +73,12 @@ public class VendorLargeDataRefDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "VENDOR_LARGE_DATA_REF";
+    protected final String _tableDispName = "VENDOR_LARGE_DATA_REF";
     protected final String _tablePropertyName = "vendorLargeDataRef";
     protected final TableSqlName _tableSqlName = new TableSqlName("VENDOR_LARGE_DATA_REF", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

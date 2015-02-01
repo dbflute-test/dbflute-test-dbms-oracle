@@ -29,6 +29,9 @@ public class MemberAddressDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,8 +45,8 @@ public class MemberAddressDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((MemberAddress)et).getMemberAddressId(), (et, vl) -> ((MemberAddress)et).setMemberAddressId(ctl(vl)), "memberAddressId");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getMemberId(), (et, vl) -> ((MemberAddress)et).setMemberId(cti(vl)), "memberId");
-        setupEpg(_epgMap, et -> ((MemberAddress)et).getValidBeginDate(), (et, vl) -> ((MemberAddress)et).setValidBeginDate((java.time.LocalDate)vl), "validBeginDate");
-        setupEpg(_epgMap, et -> ((MemberAddress)et).getValidEndDate(), (et, vl) -> ((MemberAddress)et).setValidEndDate((java.time.LocalDate)vl), "validEndDate");
+        setupEpg(_epgMap, et -> ((MemberAddress)et).getValidBeginDate(), (et, vl) -> ((MemberAddress)et).setValidBeginDate(ctld(vl)), "validBeginDate");
+        setupEpg(_epgMap, et -> ((MemberAddress)et).getValidEndDate(), (et, vl) -> ((MemberAddress)et).setValidEndDate(ctld(vl)), "validEndDate");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getAddress(), (et, vl) -> ((MemberAddress)et).setAddress((String)vl), "address");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getRegionId(), (et, vl) -> {
             ColumnInfo col = columnRegionId();
@@ -54,10 +57,10 @@ public class MemberAddressDbm extends AbstractDBMeta {
                 ((MemberAddress)et).mynativeMappingRegionId(ctn(vl, java.math.BigDecimal.class));
             }
         }, "regionId");
-        setupEpg(_epgMap, et -> ((MemberAddress)et).getRegisterDatetime(), (et, vl) -> ((MemberAddress)et).setRegisterDatetime((java.time.LocalDateTime)vl), "registerDatetime");
+        setupEpg(_epgMap, et -> ((MemberAddress)et).getRegisterDatetime(), (et, vl) -> ((MemberAddress)et).setRegisterDatetime(ctldt(vl)), "registerDatetime");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getRegisterProcess(), (et, vl) -> ((MemberAddress)et).setRegisterProcess((String)vl), "registerProcess");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getRegisterUser(), (et, vl) -> ((MemberAddress)et).setRegisterUser((String)vl), "registerUser");
-        setupEpg(_epgMap, et -> ((MemberAddress)et).getUpdateDatetime(), (et, vl) -> ((MemberAddress)et).setUpdateDatetime((java.time.LocalDateTime)vl), "updateDatetime");
+        setupEpg(_epgMap, et -> ((MemberAddress)et).getUpdateDatetime(), (et, vl) -> ((MemberAddress)et).setUpdateDatetime(ctldt(vl)), "updateDatetime");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getUpdateProcess(), (et, vl) -> ((MemberAddress)et).setUpdateProcess((String)vl), "updateProcess");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getUpdateUser(), (et, vl) -> ((MemberAddress)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((MemberAddress)et).getVersionNo(), (et, vl) -> ((MemberAddress)et).setVersionNo(ctl(vl)), "versionNo");
@@ -82,10 +85,12 @@ public class MemberAddressDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "MEMBER_ADDRESS";
+    protected final String _tableDispName = "MEMBER_ADDRESS";
     protected final String _tablePropertyName = "memberAddress";
     protected final TableSqlName _tableSqlName = new TableSqlName("MEMBER_ADDRESS", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 
@@ -201,6 +206,16 @@ public class MemberAddressDbm extends AbstractDBMeta {
     protected UniqueInfo cpui() { return hpcpui(columnMemberAddressId()); }
     public boolean hasPrimaryKey() { return true; }
     public boolean hasCompoundPrimaryKey() { return false; }
+
+    // -----------------------------------------------------
+    //                                        Unique Element
+    //                                        --------------
+    public UniqueInfo uniqueOf() {
+        List<ColumnInfo> ls = newArrayListSized(4);
+        ls.add(columnMemberId());
+        ls.add(columnValidBeginDate());
+        return hpcui(ls);
+    }
 
     // ===================================================================================
     //                                                                       Relation Info

@@ -28,6 +28,9 @@ public class CorgeBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,8 +45,8 @@ public class CorgeBeanDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeId(), (et, vl) -> ((CorgeBean)et).setCorgeId(cti(vl)), "corgeId");
         setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeName(), (et, vl) -> ((CorgeBean)et).setCorgeName((String)vl), "corgeName");
         setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeDecimal(), (et, vl) -> ((CorgeBean)et).setCorgeDecimal(ctb(vl)), "corgeDecimal");
-        setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeDate(), (et, vl) -> ((CorgeBean)et).setCorgeDate((java.time.LocalDate)vl), "corgeDate");
-        setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeTimestamp(), (et, vl) -> ((CorgeBean)et).setCorgeTimestamp((java.time.LocalDateTime)vl), "corgeTimestamp");
+        setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeDate(), (et, vl) -> ((CorgeBean)et).setCorgeDate(ctld(vl)), "corgeDate");
+        setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeTimestamp(), (et, vl) -> ((CorgeBean)et).setCorgeTimestamp(ctldt(vl)), "corgeTimestamp");
         setupEpg(_epgMap, et -> ((CorgeBean)et).getCorgeClob(), (et, vl) -> ((CorgeBean)et).setCorgeClob((String)vl), "corgeClob");
     }
     public PropertyGateway findPropertyGateway(String prop)
@@ -53,10 +56,12 @@ public class CorgeBeanDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "CORGE_BEAN";
+    protected final String _tableDispName = "CORGE_BEAN";
     protected final String _tablePropertyName = "corgeBean";
     protected final TableSqlName _tableSqlName = new TableSqlName("CORGE_BEAN", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

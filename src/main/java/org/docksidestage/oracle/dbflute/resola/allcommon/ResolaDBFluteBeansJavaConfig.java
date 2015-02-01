@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
 import org.dbflute.bhv.core.BehaviorCommandInvoker;
 import org.dbflute.bhv.core.InvokerAssistant;
 import org.docksidestage.oracle.dbflute.resola.allcommon.ResolaDBFluteInitializer;
@@ -33,10 +34,11 @@ public class ResolaDBFluteBeansJavaConfig {
     //                                                                   Runtime Component
     //                                                                   =================
     @Bean(name="resolaIntroduction")
-    public ResolaDBFluteInitializer createDBFluteInitializer() {
+    public ResolaDBFluteInitializer createDBFluteInitializer() { // no lazy for initialize-only component
         return new org.docksidestage.oracle.dbflute.resola.allcommon.ResolaDBFluteInitializer(_dataSource);
     }
 
+    @Lazy
     @Bean(name="resolaInvokerAssistant")
     public InvokerAssistant createImplementedInvokerAssistant() {
         ResolaImplementedInvokerAssistant assistant = newImplementedInvokerAssistant();
@@ -48,6 +50,7 @@ public class ResolaDBFluteBeansJavaConfig {
         return new org.docksidestage.oracle.dbflute.resola.allcommon.ResolaImplementedInvokerAssistant();
     }
 
+    @Lazy
     @Bean(name="resolaBehaviorCommandInvoker")
     public BehaviorCommandInvoker createBehaviorCommandInvoker() {
         BehaviorCommandInvoker invoker = newBehaviorCommandInvoker();
@@ -59,6 +62,7 @@ public class ResolaDBFluteBeansJavaConfig {
         return new BehaviorCommandInvoker();
     }
 
+    @Lazy
     @Bean(name="resolaBehaviorSelector")
     public ResolaImplementedBehaviorSelector createImplementedBehaviorSelector() {
         ResolaImplementedBehaviorSelector selector = newImplementedBehaviorSelector();
@@ -70,6 +74,7 @@ public class ResolaDBFluteBeansJavaConfig {
         return new ResolaImplementedBehaviorSelector();
     }
 
+    @Lazy
     @Bean(name="resolaCommonColumnAutoSetupper")
     public ResolaImplementedCommonColumnAutoSetupper createImplementedCommonColumnAutoSetupper() {
         return newImplementedCommonColumnAutoSetupper();
@@ -82,6 +87,7 @@ public class ResolaDBFluteBeansJavaConfig {
     // ===================================================================================
     //                                                                            Behavior
     //                                                                            ========
+    @Lazy
     @Bean(name="resolaStationBhv")
     public ResolaStationBhv createResolaStationBhv() {
         ResolaStationBhv bhv = newResolaStationBhv();

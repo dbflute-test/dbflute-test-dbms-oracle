@@ -29,6 +29,9 @@ public class MemberServiceDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -52,10 +55,10 @@ public class MemberServiceDbm extends AbstractDBMeta {
                 ((MemberService)et).mynativeMappingServiceRankCode((String)vl);
             }
         }, "serviceRankCode");
-        setupEpg(_epgMap, et -> ((MemberService)et).getRegisterDatetime(), (et, vl) -> ((MemberService)et).setRegisterDatetime((java.time.LocalDateTime)vl), "registerDatetime");
+        setupEpg(_epgMap, et -> ((MemberService)et).getRegisterDatetime(), (et, vl) -> ((MemberService)et).setRegisterDatetime(ctldt(vl)), "registerDatetime");
         setupEpg(_epgMap, et -> ((MemberService)et).getRegisterProcess(), (et, vl) -> ((MemberService)et).setRegisterProcess((String)vl), "registerProcess");
         setupEpg(_epgMap, et -> ((MemberService)et).getRegisterUser(), (et, vl) -> ((MemberService)et).setRegisterUser((String)vl), "registerUser");
-        setupEpg(_epgMap, et -> ((MemberService)et).getUpdateDatetime(), (et, vl) -> ((MemberService)et).setUpdateDatetime((java.time.LocalDateTime)vl), "updateDatetime");
+        setupEpg(_epgMap, et -> ((MemberService)et).getUpdateDatetime(), (et, vl) -> ((MemberService)et).setUpdateDatetime(ctldt(vl)), "updateDatetime");
         setupEpg(_epgMap, et -> ((MemberService)et).getUpdateProcess(), (et, vl) -> ((MemberService)et).setUpdateProcess((String)vl), "updateProcess");
         setupEpg(_epgMap, et -> ((MemberService)et).getUpdateUser(), (et, vl) -> ((MemberService)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((MemberService)et).getVersionNo(), (et, vl) -> ((MemberService)et).setVersionNo(ctl(vl)), "versionNo");
@@ -80,10 +83,12 @@ public class MemberServiceDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "MEMBER_SERVICE";
+    protected final String _tableDispName = "MEMBER_SERVICE";
     protected final String _tablePropertyName = "memberService";
     protected final TableSqlName _tableSqlName = new TableSqlName("MEMBER_SERVICE", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 
@@ -185,6 +190,11 @@ public class MemberServiceDbm extends AbstractDBMeta {
     protected UniqueInfo cpui() { return hpcpui(columnMemberServiceId()); }
     public boolean hasPrimaryKey() { return true; }
     public boolean hasCompoundPrimaryKey() { return false; }
+
+    // -----------------------------------------------------
+    //                                        Unique Element
+    //                                        --------------
+    public UniqueInfo uniqueOf() { return hpcui(columnMemberId()); }
 
     // ===================================================================================
     //                                                                       Relation Info

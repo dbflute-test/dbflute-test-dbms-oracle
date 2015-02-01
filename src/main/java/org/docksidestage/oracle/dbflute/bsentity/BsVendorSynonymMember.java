@@ -142,8 +142,8 @@ public abstract class BsVendorSynonymMember extends AbstractEntity implements Do
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_memberId == null) { return false; }

@@ -126,8 +126,8 @@ public abstract class BsSynonymNextLinkSynonym extends AbstractEntity implements
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_productId == null) { return false; }

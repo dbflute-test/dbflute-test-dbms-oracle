@@ -28,6 +28,9 @@ public class NestedFooBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,7 +45,7 @@ public class NestedFooBeanDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooId(), (et, vl) -> ((NestedFooBean)et).setFooId(cti(vl)), "fooId");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooName(), (et, vl) -> ((NestedFooBean)et).setFooName((String)vl), "fooName");
-        setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooDate(), (et, vl) -> ((NestedFooBean)et).setFooDate((java.time.LocalDate)vl), "fooDate");
+        setupEpg(_epgMap, et -> ((NestedFooBean)et).getFooDate(), (et, vl) -> ((NestedFooBean)et).setFooDate(ctld(vl)), "fooDate");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getBarBean(), (et, vl) -> ((NestedFooBean)et).setBarBean((NestedBarBean)vl), "barBean");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getQuxList(), (et, vl) -> ((NestedFooBean)et).setQuxList((List<java.math.BigDecimal>)vl), "quxList");
         setupEpg(_epgMap, et -> ((NestedFooBean)et).getQuuxList(), (et, vl) -> ((NestedFooBean)et).setQuuxList((List<java.math.BigDecimal>)vl), "quuxList");
@@ -55,10 +58,12 @@ public class NestedFooBeanDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "NESTED_FOO_BEAN";
+    protected final String _tableDispName = "NESTED_FOO_BEAN";
     protected final String _tablePropertyName = "nestedFooBean";
     protected final TableSqlName _tableSqlName = new TableSqlName("NESTED_FOO_BEAN", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

@@ -28,6 +28,9 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,7 +44,7 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getMemberId(), (et, vl) -> ((SummaryMemberPurchase)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getAllsumPurchasePrice(), (et, vl) -> ((SummaryMemberPurchase)et).setAllsumPurchasePrice(ctb(vl)), "allsumPurchasePrice");
-        setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getLatestPurchaseDatetime(), (et, vl) -> ((SummaryMemberPurchase)et).setLatestPurchaseDatetime((java.time.LocalDateTime)vl), "latestPurchaseDatetime");
+        setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getLatestPurchaseDatetime(), (et, vl) -> ((SummaryMemberPurchase)et).setLatestPurchaseDatetime(ctldt(vl)), "latestPurchaseDatetime");
     }
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }
@@ -50,10 +53,12 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "SUMMARY_MEMBER_PURCHASE";
+    protected final String _tableDispName = "SUMMARY_MEMBER_PURCHASE";
     protected final String _tablePropertyName = "summaryMemberPurchase";
     protected final TableSqlName _tableSqlName = new TableSqlName("SUMMARY_MEMBER_PURCHASE", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "会員購入さまりまてびゅー";
@@ -105,6 +110,10 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     }
     public boolean hasPrimaryKey() { return false; }
     public boolean hasCompoundPrimaryKey() { return false; }
+
+    // -----------------------------------------------------
+    //                                        Unique Element
+    //                                        --------------
 
     // ===================================================================================
     //                                                                       Relation Info

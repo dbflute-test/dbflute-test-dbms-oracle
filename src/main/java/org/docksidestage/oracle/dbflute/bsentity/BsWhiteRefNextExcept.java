@@ -80,8 +80,8 @@ public abstract class BsWhiteRefNextExcept extends AbstractEntity implements Dom
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_refNextExceptId == null) { return false; }

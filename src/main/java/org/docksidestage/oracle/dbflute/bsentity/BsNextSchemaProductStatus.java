@@ -81,8 +81,8 @@ public abstract class BsNextSchemaProductStatus extends AbstractEntity implement
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_productStatusCode == null) { return false; }

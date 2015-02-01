@@ -100,8 +100,8 @@ public abstract class BsFooBean extends AbstractEntity implements CustomizeEntit
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         return false;

@@ -28,6 +28,9 @@ public class NextSchemaProductStatusDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -49,10 +52,12 @@ public class NextSchemaProductStatusDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "NEXT_SCHEMA_PRODUCT_STATUS";
+    protected final String _tableDispName = "NEXT_SCHEMA_PRODUCT_STATUS";
     protected final String _tablePropertyName = "nextSchemaProductStatus";
     protected final TableSqlName _tableSqlName = new TableSqlName("NEWURAYASUDB.NEXT_SCHEMA_PRODUCT_STATUS", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "隣のスキステ";
@@ -95,6 +100,11 @@ public class NextSchemaProductStatusDbm extends AbstractDBMeta {
     protected UniqueInfo cpui() { return hpcpui(columnProductStatusCode()); }
     public boolean hasPrimaryKey() { return true; }
     public boolean hasCompoundPrimaryKey() { return false; }
+
+    // -----------------------------------------------------
+    //                                        Unique Element
+    //                                        --------------
+    public UniqueInfo uniqueOf() { return hpcui(columnProductStatusName()); }
 
     // ===================================================================================
     //                                                                       Relation Info

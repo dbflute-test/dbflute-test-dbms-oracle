@@ -99,8 +99,8 @@ public abstract class BsSynonymMemberLogin extends AbstractEntity implements Dom
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_memberLoginId == null) { return false; }

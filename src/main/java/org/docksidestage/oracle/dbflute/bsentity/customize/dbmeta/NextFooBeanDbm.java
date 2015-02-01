@@ -28,6 +28,9 @@ public class NextFooBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,8 +45,8 @@ public class NextFooBeanDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((NextFooBean)et).getFooId(), (et, vl) -> ((NextFooBean)et).setFooId(cti(vl)), "fooId");
         setupEpg(_epgMap, et -> ((NextFooBean)et).getFooName(), (et, vl) -> ((NextFooBean)et).setFooName((String)vl), "fooName");
         setupEpg(_epgMap, et -> ((NextFooBean)et).getFooDecimal(), (et, vl) -> ((NextFooBean)et).setFooDecimal(ctb(vl)), "fooDecimal");
-        setupEpg(_epgMap, et -> ((NextFooBean)et).getFooDate(), (et, vl) -> ((NextFooBean)et).setFooDate((java.time.LocalDate)vl), "fooDate");
-        setupEpg(_epgMap, et -> ((NextFooBean)et).getFooTimestamp(), (et, vl) -> ((NextFooBean)et).setFooTimestamp((java.time.LocalDateTime)vl), "fooTimestamp");
+        setupEpg(_epgMap, et -> ((NextFooBean)et).getFooDate(), (et, vl) -> ((NextFooBean)et).setFooDate(ctld(vl)), "fooDate");
+        setupEpg(_epgMap, et -> ((NextFooBean)et).getFooTimestamp(), (et, vl) -> ((NextFooBean)et).setFooTimestamp(ctldt(vl)), "fooTimestamp");
         setupEpg(_epgMap, et -> ((NextFooBean)et).getFooClob(), (et, vl) -> ((NextFooBean)et).setFooClob((String)vl), "fooClob");
     }
     public PropertyGateway findPropertyGateway(String prop)
@@ -53,10 +56,12 @@ public class NextFooBeanDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "NEXT_FOO_BEAN";
+    protected final String _tableDispName = "NEXT_FOO_BEAN";
     protected final String _tablePropertyName = "nextFooBean";
     protected final TableSqlName _tableSqlName = new TableSqlName("NEWURAYASUDB.NEXT_FOO_BEAN", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

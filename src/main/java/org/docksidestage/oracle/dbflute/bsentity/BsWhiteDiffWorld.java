@@ -80,8 +80,8 @@ public abstract class BsWhiteDiffWorld extends AbstractEntity implements DomainE
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_diffWorldId == null) { return false; }

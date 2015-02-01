@@ -28,6 +28,9 @@ public class SynonymNextSecretAuthDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -49,10 +52,12 @@ public class SynonymNextSecretAuthDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "SYNONYM_NEXT_SECRET_AUTH";
+    protected final String _tableDispName = "SYNONYM_NEXT_SECRET_AUTH";
     protected final String _tablePropertyName = "synonymNextSecretAuth";
     protected final TableSqlName _tableSqlName = new TableSqlName("SYNONYM_NEXT_SECRET_AUTH", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "隣の秘密で権限あり";

@@ -28,6 +28,9 @@ public class OptionMemberDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,8 +44,8 @@ public class OptionMemberDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((OptionMember)et).getMemberId(), (et, vl) -> ((OptionMember)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((OptionMember)et).getMemberName(), (et, vl) -> ((OptionMember)et).setMemberName((String)vl), "memberName");
-        setupEpg(_epgMap, et -> ((OptionMember)et).getBirthdate(), (et, vl) -> ((OptionMember)et).setBirthdate((java.time.LocalDate)vl), "birthdate");
-        setupEpg(_epgMap, et -> ((OptionMember)et).getFormalizedDatetime(), (et, vl) -> ((OptionMember)et).setFormalizedDatetime((java.time.LocalDateTime)vl), "formalizedDatetime");
+        setupEpg(_epgMap, et -> ((OptionMember)et).getBirthdate(), (et, vl) -> ((OptionMember)et).setBirthdate(ctld(vl)), "birthdate");
+        setupEpg(_epgMap, et -> ((OptionMember)et).getFormalizedDatetime(), (et, vl) -> ((OptionMember)et).setFormalizedDatetime(ctldt(vl)), "formalizedDatetime");
         setupEpg(_epgMap, et -> ((OptionMember)et).getMemberStatusCode(), (et, vl) -> {
             ColumnInfo col = columnMemberStatusCode();
             CDef.MemberStatus cls = (CDef.MemberStatus)gcls(col, vl);
@@ -72,10 +75,12 @@ public class OptionMemberDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "OptionMember";
+    protected final String _tableDispName = "OptionMember";
     protected final String _tablePropertyName = "optionMember";
     protected final TableSqlName _tableSqlName = new TableSqlName("OptionMember", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

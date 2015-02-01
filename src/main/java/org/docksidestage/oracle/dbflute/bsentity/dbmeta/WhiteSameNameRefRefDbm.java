@@ -28,6 +28,9 @@ public class WhiteSameNameRefRefDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,7 +44,7 @@ public class WhiteSameNameRefRefDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((WhiteSameNameRefRef)et).getRefRefId(), (et, vl) -> ((WhiteSameNameRefRef)et).setRefRefId(ctl(vl)), "refRefId");
         setupEpg(_epgMap, et -> ((WhiteSameNameRefRef)et).getRefRefName(), (et, vl) -> ((WhiteSameNameRefRef)et).setRefRefName((String)vl), "refRefName");
-        setupEpg(_epgMap, et -> ((WhiteSameNameRefRef)et).getRefRefDate(), (et, vl) -> ((WhiteSameNameRefRef)et).setRefRefDate((java.time.LocalDate)vl), "refRefDate");
+        setupEpg(_epgMap, et -> ((WhiteSameNameRefRef)et).getRefRefDate(), (et, vl) -> ((WhiteSameNameRefRef)et).setRefRefDate(ctld(vl)), "refRefDate");
     }
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }
@@ -50,10 +53,12 @@ public class WhiteSameNameRefRefDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "WHITE_SAME_NAME_REF_REF";
+    protected final String _tableDispName = "WHITE_SAME_NAME_REF_REF";
     protected final String _tablePropertyName = "whiteSameNameRefRef";
     protected final TableSqlName _tableSqlName = new TableSqlName("WHITE_SAME_NAME_REF_REF", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

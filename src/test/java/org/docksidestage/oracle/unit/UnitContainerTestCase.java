@@ -72,7 +72,7 @@ public abstract class UnitContainerTestCase extends ContainerTestCase {
 
     protected void deleteMemberReferrer() {
         deleteAll(MemberAddressBhv.class);
-        // TODO jflute test: MemberFollowing in Oracle
+        // TODO jflute test: Oracle, MemberFollowing
         //deleteAll(MemberFollowingBhv.class);
         deleteAll(MemberLoginBhv.class);
         deleteAll(MemberServiceBhv.class);

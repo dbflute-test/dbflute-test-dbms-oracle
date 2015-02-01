@@ -29,6 +29,9 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,7 +45,7 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getMemberLoginId(), (et, vl) -> ((SynonymMemberLogin)et).setMemberLoginId(ctl(vl)), "memberLoginId");
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getMemberId(), (et, vl) -> ((SynonymMemberLogin)et).setMemberId(cti(vl)), "memberId");
-        setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getLoginDatetime(), (et, vl) -> ((SynonymMemberLogin)et).setLoginDatetime((java.time.LocalDateTime)vl), "loginDatetime");
+        setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getLoginDatetime(), (et, vl) -> ((SynonymMemberLogin)et).setLoginDatetime(ctldt(vl)), "loginDatetime");
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getMobileLoginFlg(), (et, vl) -> {
             ColumnInfo col = columnMobileLoginFlg();
             CDef.Flg cls = (CDef.Flg)gcls(col, vl);
@@ -84,10 +87,12 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "SYNONYM_MEMBER_LOGIN";
+    protected final String _tableDispName = "SYNONYM_MEMBER_LOGIN";
     protected final String _tablePropertyName = "synonymMemberLogin";
     protected final TableSqlName _tableSqlName = new TableSqlName("SYNONYM_MEMBER_LOGIN", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "会員ログイン";
@@ -151,6 +156,16 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
     protected UniqueInfo cpui() { return hpcpui(columnMemberLoginId()); }
     public boolean hasPrimaryKey() { return true; }
     public boolean hasCompoundPrimaryKey() { return false; }
+
+    // -----------------------------------------------------
+    //                                        Unique Element
+    //                                        --------------
+    public UniqueInfo uniqueOf() {
+        List<ColumnInfo> ls = newArrayListSized(4);
+        ls.add(columnMemberId());
+        ls.add(columnLoginDatetime());
+        return hpcui(ls);
+    }
 
     // ===================================================================================
     //                                                                       Relation Info

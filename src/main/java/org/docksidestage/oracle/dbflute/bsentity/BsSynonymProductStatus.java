@@ -86,8 +86,8 @@ public abstract class BsSynonymProductStatus extends AbstractEntity implements D
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_productStatusCode == null) { return false; }

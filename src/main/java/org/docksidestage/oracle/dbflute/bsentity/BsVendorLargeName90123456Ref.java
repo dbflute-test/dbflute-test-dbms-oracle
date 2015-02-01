@@ -87,8 +87,8 @@ public abstract class BsVendorLargeName90123456Ref extends AbstractEntity implem
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_vendorLargeName90123RefId == null) { return false; }

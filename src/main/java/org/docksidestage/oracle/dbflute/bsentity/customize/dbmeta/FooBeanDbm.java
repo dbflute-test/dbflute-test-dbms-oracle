@@ -28,6 +28,9 @@ public class FooBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -42,8 +45,8 @@ public class FooBeanDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((FooBean)et).getFooId(), (et, vl) -> ((FooBean)et).setFooId(cti(vl)), "fooId");
         setupEpg(_epgMap, et -> ((FooBean)et).getFooName(), (et, vl) -> ((FooBean)et).setFooName((String)vl), "fooName");
         setupEpg(_epgMap, et -> ((FooBean)et).getFooDecimal(), (et, vl) -> ((FooBean)et).setFooDecimal(ctb(vl)), "fooDecimal");
-        setupEpg(_epgMap, et -> ((FooBean)et).getFooDate(), (et, vl) -> ((FooBean)et).setFooDate((java.time.LocalDate)vl), "fooDate");
-        setupEpg(_epgMap, et -> ((FooBean)et).getFooTimestamp(), (et, vl) -> ((FooBean)et).setFooTimestamp((java.time.LocalDateTime)vl), "fooTimestamp");
+        setupEpg(_epgMap, et -> ((FooBean)et).getFooDate(), (et, vl) -> ((FooBean)et).setFooDate(ctld(vl)), "fooDate");
+        setupEpg(_epgMap, et -> ((FooBean)et).getFooTimestamp(), (et, vl) -> ((FooBean)et).setFooTimestamp(ctldt(vl)), "fooTimestamp");
         setupEpg(_epgMap, et -> ((FooBean)et).getFooClob(), (et, vl) -> ((FooBean)et).setFooClob((String)vl), "fooClob");
     }
     public PropertyGateway findPropertyGateway(String prop)
@@ -53,10 +56,12 @@ public class FooBeanDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "FOO_BEAN";
+    protected final String _tableDispName = "FOO_BEAN";
     protected final String _tablePropertyName = "fooBean";
     protected final TableSqlName _tableSqlName = new TableSqlName("FOO_BEAN", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

@@ -100,8 +100,8 @@ public abstract class ResolaBsStation extends AbstractEntity implements DomainEn
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_stationId == null) { return false; }

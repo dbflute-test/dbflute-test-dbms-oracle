@@ -89,8 +89,8 @@ public abstract class BsSpResultSetParameterWithCurMemberStatus extends Abstract
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         return false;

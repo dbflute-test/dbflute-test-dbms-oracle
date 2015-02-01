@@ -110,8 +110,8 @@ public abstract class BsNestedBarBean extends AbstractEntity implements Customiz
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         return false;

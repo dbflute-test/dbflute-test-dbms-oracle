@@ -80,8 +80,8 @@ public abstract class BsWhiteSameName extends AbstractEntity implements DomainEn
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_sameNameId == null) { return false; }

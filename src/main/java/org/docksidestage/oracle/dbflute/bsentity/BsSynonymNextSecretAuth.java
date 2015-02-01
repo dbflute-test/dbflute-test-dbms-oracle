@@ -81,8 +81,8 @@ public abstract class BsSynonymNextSecretAuth extends AbstractEntity implements 
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_secretAuthCode == null) { return false; }
