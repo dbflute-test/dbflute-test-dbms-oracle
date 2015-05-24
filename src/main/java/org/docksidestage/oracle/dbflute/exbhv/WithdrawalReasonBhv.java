@@ -8,5 +8,6 @@ package org.docksidestage.oracle.dbflute.exbhv;
  * </p>
  * @author DBFlute(AutoGenerator)
  */
+@org.springframework.stereotype.Component("withdrawalReasonBhv")
 public class WithdrawalReasonBhv extends org.docksidestage.oracle.dbflute.bsbhv.BsWithdrawalReasonBhv {
 }

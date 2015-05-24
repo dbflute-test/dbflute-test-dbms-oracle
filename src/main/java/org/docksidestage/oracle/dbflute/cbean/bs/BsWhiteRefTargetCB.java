@@ -264,7 +264,7 @@ public class BsWhiteRefTargetCB extends AbstractConditionBean {
      */
     public void setupSelect_WhiteTarget() {
         assertSetupSelectPurpose("whiteTarget");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnTargetId();
         }
         doSetupSelect(() -> query().queryWhiteTarget());
@@ -306,8 +306,8 @@ public class BsWhiteRefTargetCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<WhiteRefTargetCQ> {

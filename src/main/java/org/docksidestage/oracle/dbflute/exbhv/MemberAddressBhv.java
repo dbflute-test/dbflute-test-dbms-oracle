@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsMemberAddressBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("memberAddressBhv")
 public class MemberAddressBhv extends BsMemberAddressBhv {
 }

@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsServiceRankBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("serviceRankBhv")
 public class ServiceRankBhv extends BsServiceRankBhv {
 }

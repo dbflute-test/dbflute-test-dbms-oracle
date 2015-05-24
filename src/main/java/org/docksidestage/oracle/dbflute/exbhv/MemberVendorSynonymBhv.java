@@ -8,5 +8,6 @@ package org.docksidestage.oracle.dbflute.exbhv;
  * </p>
  * @author DBFlute(AutoGenerator)
  */
+@org.springframework.stereotype.Component("memberVendorSynonymBhv")
 public class MemberVendorSynonymBhv extends org.docksidestage.oracle.dbflute.bsbhv.BsMemberVendorSynonymBhv {
 }

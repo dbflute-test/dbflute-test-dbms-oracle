@@ -8,5 +8,6 @@ package org.docksidestage.oracle.dbflute.exbhv;
  * </p>
  * @author DBFlute(AutoGenerator)
  */
+@org.springframework.stereotype.Component("vendorCheckBhv")
 public class VendorCheckBhv extends org.docksidestage.oracle.dbflute.bsbhv.BsVendorCheckBhv {
 }

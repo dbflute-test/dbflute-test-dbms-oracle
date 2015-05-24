@@ -264,7 +264,7 @@ public class BsNextSchemaProductCB extends AbstractConditionBean {
      */
     public void setupSelect_NextSchemaProductStatus() {
         assertSetupSelectPurpose("nextSchemaProductStatus");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnProductStatusCode();
         }
         doSetupSelect(() -> query().queryNextSchemaProductStatus());
@@ -306,8 +306,8 @@ public class BsNextSchemaProductCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<NextSchemaProductCQ> {

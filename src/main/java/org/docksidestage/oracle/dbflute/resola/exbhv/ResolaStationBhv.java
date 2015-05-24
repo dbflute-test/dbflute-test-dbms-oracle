@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.resola.bsbhv.ResolaBsStationBhv;
  * </p>
  * @author DBFlute(AutoGenerator)
  */
+@org.springframework.stereotype.Component("resolaStationBhv")
 public class ResolaStationBhv extends ResolaBsStationBhv {
 }

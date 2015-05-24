@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSynonymNextLinkSynonymBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("synonymNextLinkSynonymBhv")
 public class SynonymNextLinkSynonymBhv extends BsSynonymNextLinkSynonymBhv {
 }

@@ -278,7 +278,7 @@ public class BsSynonymMemberLoginCB extends AbstractConditionBean {
      */
     public void setupSelect_MemberStatus() {
         assertSetupSelectPurpose("memberStatus");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnLoginMemberStatusCode();
         }
         doSetupSelect(() -> query().queryMemberStatus());
@@ -304,7 +304,7 @@ public class BsSynonymMemberLoginCB extends AbstractConditionBean {
      */
     public MemberVendorSynonymNss setupSelect_MemberVendorSynonym() {
         assertSetupSelectPurpose("memberVendorSynonym");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnMemberId();
         }
         doSetupSelect(() -> query().queryMemberVendorSynonym());
@@ -333,7 +333,7 @@ public class BsSynonymMemberLoginCB extends AbstractConditionBean {
      */
     public SynonymMemberNss setupSelect_SynonymMember() {
         assertSetupSelectPurpose("synonymMember");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnMemberId();
         }
         doSetupSelect(() -> query().querySynonymMember());
@@ -362,7 +362,7 @@ public class BsSynonymMemberLoginCB extends AbstractConditionBean {
      */
     public VendorSynonymMemberNss setupSelect_VendorSynonymMember() {
         assertSetupSelectPurpose("vendorSynonymMember");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnMemberId();
         }
         doSetupSelect(() -> query().queryVendorSynonymMember());
@@ -407,8 +407,8 @@ public class BsSynonymMemberLoginCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<SynonymMemberLoginCQ> {

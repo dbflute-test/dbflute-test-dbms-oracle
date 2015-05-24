@@ -264,7 +264,7 @@ public class BsVendorLargeName90123456RefCB extends AbstractConditionBean {
      */
     public void setupSelect_VendorLargeName901234567890() {
         assertSetupSelectPurpose("vendorLargeName901234567890");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnVendorLargeName901234567Id();
         }
         doSetupSelect(() -> query().queryVendorLargeName901234567890());
@@ -306,8 +306,8 @@ public class BsVendorLargeName90123456RefCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<VendorLargeName90123456RefCQ> {

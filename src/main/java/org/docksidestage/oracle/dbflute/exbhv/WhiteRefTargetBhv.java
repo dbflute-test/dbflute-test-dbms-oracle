@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsWhiteRefTargetBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("whiteRefTargetBhv")
 public class WhiteRefTargetBhv extends BsWhiteRefTargetBhv {
 }

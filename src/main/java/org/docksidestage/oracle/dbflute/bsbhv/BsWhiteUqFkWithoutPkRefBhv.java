@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.dbflute.*;
 import org.dbflute.bhv.*;
+import org.dbflute.bhv.core.BehaviorCommandInvoker;
 import org.dbflute.bhv.readable.*;
 import org.dbflute.bhv.referrer.*;
 import org.dbflute.cbean.*;
@@ -513,4 +514,19 @@ public abstract class BsWhiteUqFkWithoutPkRefBhv extends AbstractBehaviorReadabl
     protected Class<? extends WhiteUqFkWithoutPkRef> typeOfSelectedEntity() { return WhiteUqFkWithoutPkRef.class; }
     protected Class<WhiteUqFkWithoutPkRef> typeOfHandlingEntity() { return WhiteUqFkWithoutPkRef.class; }
     protected Class<WhiteUqFkWithoutPkRefCB> typeOfHandlingConditionBean() { return WhiteUqFkWithoutPkRefCB.class; }
+
+    // ===================================================================================
+    //                                                                            Accessor
+    //                                                                            ========
+    @Override
+    @javax.annotation.Resource(name="behaviorCommandInvoker")
+    public void setBehaviorCommandInvoker(BehaviorCommandInvoker behaviorCommandInvoker) {
+        super.setBehaviorCommandInvoker(behaviorCommandInvoker);
+    }
+
+    @Override
+    @javax.annotation.Resource(name="behaviorSelector")
+    public void setBehaviorSelector(BehaviorSelector behaviorSelector) {
+        super.setBehaviorSelector(behaviorSelector);
+    }
 }

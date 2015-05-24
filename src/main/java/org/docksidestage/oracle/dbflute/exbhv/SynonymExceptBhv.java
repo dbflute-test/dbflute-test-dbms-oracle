@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSynonymExceptBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("synonymExceptBhv")
 public class SynonymExceptBhv extends BsSynonymExceptBhv {
 }

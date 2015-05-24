@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSynonymNextSameNameFkBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("synonymNextSameNameFkBhv")
 public class SynonymNextSameNameFkBhv extends BsSynonymNextSameNameFkBhv {
 }
