@@ -4,7 +4,7 @@
 <database name="RESORTLINEDB">
     <table name="STATION" schema="RESORTLINEDB" type="TABLE">
         <column dbType="NUMBER" javaType="Integer" name="STATION_ID"
-            pkName="SYS_C0078035" pkPosition="1" primaryKey="true"
+            pkName="SYS_C0079206" pkPosition="1" primaryKey="true"
             required="true" size="9" type="DECIMAL"/>
         <column dbType="VARCHAR2" javaType="String" name="STATION_NAME"
             required="true" size="200" type="VARCHAR"/>

@@ -337,92 +337,84 @@ public abstract class AbstractBsWhiteUqFkWithoutPkCQ extends AbstractConditionQu
     //                                                                     ===============
     /**
      * Prepare ScalarCondition as equal. <br>
-     * {where FOO = (select max(BAR) from ...)
+     * {where FOO = (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_Equal()</span>.max(new SubQuery&lt;WhiteUqFkWithoutPkCB&gt;() {
-     *     public void query(WhiteUqFkWithoutPkCB subCB) {
-     *         subCB.specify().setXxx... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setYyy...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre>
+     * </pre> 
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<WhiteUqFkWithoutPkCB> scalar_Equal() {
-        return xcreateSSQFunction(CK_EQ, WhiteUqFkWithoutPkCB.class);
+    public HpSLCFunction<WhiteUqFkWithoutPkCB> scalar_Equal() {
+        return xcreateSLCFunction(CK_EQ, WhiteUqFkWithoutPkCB.class);
     }
 
     /**
      * Prepare ScalarCondition as equal. <br>
-     * {where FOO &lt;&gt; (select max(BAR) from ...)
+     * {where FOO &lt;&gt; (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_NotEqual()</span>.max(new SubQuery&lt;WhiteUqFkWithoutPkCB&gt;() {
-     *     public void query(WhiteUqFkWithoutPkCB subCB) {
-     *         subCB.specify().setXxx... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setYyy...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre>
+     * </pre> 
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<WhiteUqFkWithoutPkCB> scalar_NotEqual() {
-        return xcreateSSQFunction(CK_NES, WhiteUqFkWithoutPkCB.class);
+    public HpSLCFunction<WhiteUqFkWithoutPkCB> scalar_NotEqual() {
+        return xcreateSLCFunction(CK_NES, WhiteUqFkWithoutPkCB.class);
     }
 
     /**
      * Prepare ScalarCondition as greaterThan. <br>
-     * {where FOO &gt; (select max(BAR) from ...)
+     * {where FOO &gt; (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_GreaterThan()</span>.max(new SubQuery&lt;WhiteUqFkWithoutPkCB&gt;() {
-     *     public void query(WhiteUqFkWithoutPkCB subCB) {
-     *         subCB.specify().setFoo... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setBar...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
+     * </pre> 
      * </pre>
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<WhiteUqFkWithoutPkCB> scalar_GreaterThan() {
-        return xcreateSSQFunction(CK_GT, WhiteUqFkWithoutPkCB.class);
+    public HpSLCFunction<WhiteUqFkWithoutPkCB> scalar_GreaterThan() {
+        return xcreateSLCFunction(CK_GT, WhiteUqFkWithoutPkCB.class);
     }
 
     /**
      * Prepare ScalarCondition as lessThan. <br>
-     * {where FOO &lt; (select max(BAR) from ...)
+     * {where FOO &lt; (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_LessThan()</span>.max(new SubQuery&lt;WhiteUqFkWithoutPkCB&gt;() {
-     *     public void query(WhiteUqFkWithoutPkCB subCB) {
-     *         subCB.specify().setFoo... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setBar...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
+     * </pre> 
      * </pre>
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<WhiteUqFkWithoutPkCB> scalar_LessThan() {
-        return xcreateSSQFunction(CK_LT, WhiteUqFkWithoutPkCB.class);
+    public HpSLCFunction<WhiteUqFkWithoutPkCB> scalar_LessThan() {
+        return xcreateSLCFunction(CK_LT, WhiteUqFkWithoutPkCB.class);
     }
 
     /**
      * Prepare ScalarCondition as greaterEqual. <br>
-     * {where FOO &gt;= (select max(BAR) from ...)
+     * {where FOO &gt;= (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_GreaterEqual()</span>.max(new SubQuery&lt;WhiteUqFkWithoutPkCB&gt;() {
-     *     public void query(WhiteUqFkWithoutPkCB subCB) {
-     *         subCB.specify().setFoo... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setBar...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre>
+     * </pre> 
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<WhiteUqFkWithoutPkCB> scalar_GreaterEqual() {
-        return xcreateSSQFunction(CK_GE, WhiteUqFkWithoutPkCB.class);
+    public HpSLCFunction<WhiteUqFkWithoutPkCB> scalar_GreaterEqual() {
+        return xcreateSLCFunction(CK_GE, WhiteUqFkWithoutPkCB.class);
     }
 
     /**
      * Prepare ScalarCondition as lessEqual. <br>
-     * {where FOO &lt;= (select max(BAR) from ...)
+     * {where FOO &lt;= (select max(BAR) from ...)}
      * <pre>
      * cb.query().<span style="color: #CC4747">scalar_LessEqual()</span>.max(new SubQuery&lt;WhiteUqFkWithoutPkCB&gt;() {
      *     public void query(WhiteUqFkWithoutPkCB subCB) {
@@ -433,17 +425,17 @@ public abstract class AbstractBsWhiteUqFkWithoutPkCQ extends AbstractConditionQu
      * </pre>
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<WhiteUqFkWithoutPkCB> scalar_LessEqual() {
-        return xcreateSSQFunction(CK_LE, WhiteUqFkWithoutPkCB.class);
+    public HpSLCFunction<WhiteUqFkWithoutPkCB> scalar_LessEqual() {
+        return xcreateSLCFunction(CK_LE, WhiteUqFkWithoutPkCB.class);
     }
 
     @SuppressWarnings("unchecked")
-    protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSSQOption<CB> op) {
+    protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
         assertObjectNotNull("subQuery", sq);
         WhiteUqFkWithoutPkCB cb = xcreateScalarConditionCB(); sq.query((CB)cb);
         String pp = keepScalarCondition(cb.query()); // for saving query-value
-        op.setPartitionByCBean((CB)xcreateScalarConditionPartitionByCB()); // for using partition-by
-        registerScalarCondition(fn, cb.query(), pp, rd, op);
+        cs.setPartitionByCBean((CB)xcreateScalarConditionPartitionByCB()); // for using partition-by
+        registerScalarCondition(fn, cb.query(), pp, rd, cs, op);
     }
     public abstract String keepScalarCondition(WhiteUqFkWithoutPkCQ sq);
 
@@ -571,6 +563,6 @@ public abstract class AbstractBsWhiteUqFkWithoutPkCQ extends AbstractConditionQu
     protected String xabUDT() { return Date.class.getName(); }
     protected String xabCQ() { return WhiteUqFkWithoutPkCQ.class.getName(); }
     protected String xabLSO() { return LikeSearchOption.class.getName(); }
-    protected String xabSSQS() { return HpSSQSetupper.class.getName(); }
+    protected String xabSLCS() { return HpSLCSetupper.class.getName(); }
     protected String xabSCP() { return SubQuery.class.getName(); }
 }
