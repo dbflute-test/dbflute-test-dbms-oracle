@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsNextSchemaProductBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("nextSchemaProductBhv")
 public class NextSchemaProductBhv extends BsNextSchemaProductBhv {
 }

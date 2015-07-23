@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSynonymMemberLoginBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("synonymMemberLoginBhv")
 public class SynonymMemberLoginBhv extends BsSynonymMemberLoginBhv {
 }

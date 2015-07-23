@@ -48,7 +48,7 @@ public class MemberVendorSynonymDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getMemberAccount(), (et, vl) -> ((MemberVendorSynonym)et).setMemberAccount((String)vl), "memberAccount");
         setupEpg(_epgMap, et -> ((MemberVendorSynonym)et).getMemberStatusCode(), (et, vl) -> {
             ColumnInfo col = columnMemberStatusCode();
-            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(col, vl);
+            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(et, col, vl);
             if (cls != null) {
                 ((MemberVendorSynonym)et).setMemberStatusCodeAsMemberStatus(cls);
             } else {

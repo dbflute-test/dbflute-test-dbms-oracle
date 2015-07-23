@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSynonymMemberWithdrawalBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("synonymMemberWithdrawalBhv")
 public class SynonymMemberWithdrawalBhv extends BsSynonymMemberWithdrawalBhv {
 }

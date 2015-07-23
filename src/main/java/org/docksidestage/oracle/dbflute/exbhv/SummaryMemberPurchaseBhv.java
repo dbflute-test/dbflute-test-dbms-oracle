@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSummaryMemberPurchaseBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("summaryMemberPurchaseBhv")
 public class SummaryMemberPurchaseBhv extends BsSummaryMemberPurchaseBhv {
 }

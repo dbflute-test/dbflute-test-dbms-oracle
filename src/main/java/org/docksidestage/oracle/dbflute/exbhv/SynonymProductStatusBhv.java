@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSynonymProductStatusBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("synonymProductStatusBhv")
 public class SynonymProductStatusBhv extends BsSynonymProductStatusBhv {
 }

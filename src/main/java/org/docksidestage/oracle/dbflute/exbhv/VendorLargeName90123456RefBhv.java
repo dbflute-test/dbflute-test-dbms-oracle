@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsVendorLargeName90123456RefBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("vendorLargeName90123456RefBhv")
 public class VendorLargeName90123456RefBhv extends BsVendorLargeName90123456RefBhv {
 }

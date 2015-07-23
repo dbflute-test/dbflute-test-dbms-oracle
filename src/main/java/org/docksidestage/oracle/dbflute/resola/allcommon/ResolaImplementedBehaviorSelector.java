@@ -135,11 +135,10 @@ public class ResolaImplementedBehaviorSelector implements BehaviorSelector {
     // ===================================================================================
     //                                                                           Component
     //                                                                           =========
-    @SuppressWarnings("unchecked")
     protected <COMPONENT> COMPONENT getComponent(Class<COMPONENT> componentType) { // only for behavior
         assertObjectNotNull("componentType", componentType);
         assertObjectNotNull("_container", _container);
-		return (COMPONENT)_container.getBean(replace(initUncap(toClassTitle(componentType)), "$", ""));
+		return _container.getBean(componentType);
     }
 
     // ===================================================================================

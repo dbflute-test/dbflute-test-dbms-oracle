@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsPurchasePaymentBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("purchasePaymentBhv")
 public class PurchasePaymentBhv extends BsPurchasePaymentBhv {
 }

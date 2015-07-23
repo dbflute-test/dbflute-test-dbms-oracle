@@ -271,7 +271,7 @@ public class BsWhiteUqFkRefNestCB extends AbstractConditionBean {
      */
     public WhiteUqFkRefNss setupSelect_WhiteUqFkRef() {
         assertSetupSelectPurpose("whiteUqFkRef");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnCompoundUqFirstCode();
             specify().columnCompoundUqSecondCode();
         }
@@ -317,8 +317,8 @@ public class BsWhiteUqFkRefNestCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<WhiteUqFkRefNestCQ> {

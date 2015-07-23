@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsWhiteRefNextExceptBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("whiteRefNextExceptBhv")
 public class WhiteRefNextExceptBhv extends BsWhiteRefNextExceptBhv {
 }

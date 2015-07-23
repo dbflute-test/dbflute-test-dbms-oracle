@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsSynonymNextSecretAuthBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("synonymNextSecretAuthBhv")
 public class SynonymNextSecretAuthBhv extends BsSynonymNextSecretAuthBhv {
 }

@@ -402,92 +402,84 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     //                                                                     ===============
     /**
      * Prepare ScalarCondition as equal. <br>
-     * {where FOO = (select max(BAR) from ...)
+     * {where FOO = (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_Equal()</span>.max(new SubQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *     public void query(SynonymNextLinkSecretCB subCB) {
-     *         subCB.specify().setXxx... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setYyy...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre>
+     * </pre> 
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<SynonymNextLinkSecretCB> scalar_Equal() {
-        return xcreateSSQFunction(CK_EQ, SynonymNextLinkSecretCB.class);
+    public HpSLCFunction<SynonymNextLinkSecretCB> scalar_Equal() {
+        return xcreateSLCFunction(CK_EQ, SynonymNextLinkSecretCB.class);
     }
 
     /**
      * Prepare ScalarCondition as equal. <br>
-     * {where FOO &lt;&gt; (select max(BAR) from ...)
+     * {where FOO &lt;&gt; (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_NotEqual()</span>.max(new SubQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *     public void query(SynonymNextLinkSecretCB subCB) {
-     *         subCB.specify().setXxx... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setYyy...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre>
+     * </pre> 
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<SynonymNextLinkSecretCB> scalar_NotEqual() {
-        return xcreateSSQFunction(CK_NES, SynonymNextLinkSecretCB.class);
+    public HpSLCFunction<SynonymNextLinkSecretCB> scalar_NotEqual() {
+        return xcreateSLCFunction(CK_NES, SynonymNextLinkSecretCB.class);
     }
 
     /**
      * Prepare ScalarCondition as greaterThan. <br>
-     * {where FOO &gt; (select max(BAR) from ...)
+     * {where FOO &gt; (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_GreaterThan()</span>.max(new SubQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *     public void query(SynonymNextLinkSecretCB subCB) {
-     *         subCB.specify().setFoo... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setBar...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
+     * </pre> 
      * </pre>
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<SynonymNextLinkSecretCB> scalar_GreaterThan() {
-        return xcreateSSQFunction(CK_GT, SynonymNextLinkSecretCB.class);
+    public HpSLCFunction<SynonymNextLinkSecretCB> scalar_GreaterThan() {
+        return xcreateSLCFunction(CK_GT, SynonymNextLinkSecretCB.class);
     }
 
     /**
      * Prepare ScalarCondition as lessThan. <br>
-     * {where FOO &lt; (select max(BAR) from ...)
+     * {where FOO &lt; (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_LessThan()</span>.max(new SubQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *     public void query(SynonymNextLinkSecretCB subCB) {
-     *         subCB.specify().setFoo... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setBar...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
+     * </pre> 
      * </pre>
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<SynonymNextLinkSecretCB> scalar_LessThan() {
-        return xcreateSSQFunction(CK_LT, SynonymNextLinkSecretCB.class);
+    public HpSLCFunction<SynonymNextLinkSecretCB> scalar_LessThan() {
+        return xcreateSLCFunction(CK_LT, SynonymNextLinkSecretCB.class);
     }
 
     /**
      * Prepare ScalarCondition as greaterEqual. <br>
-     * {where FOO &gt;= (select max(BAR) from ...)
+     * {where FOO &gt;= (select max(BAR) from ...)}
      * <pre>
-     * cb.query().<span style="color: #CC4747">scalar_GreaterEqual()</span>.max(new SubQuery&lt;SynonymNextLinkSecretCB&gt;() {
-     *     public void query(SynonymNextLinkSecretCB subCB) {
-     *         subCB.specify().setFoo... <span style="color: #3F7E5E">// derived column for function</span>
-     *         subCB.query().setBar...
-     *     }
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre>
+     * </pre> 
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<SynonymNextLinkSecretCB> scalar_GreaterEqual() {
-        return xcreateSSQFunction(CK_GE, SynonymNextLinkSecretCB.class);
+    public HpSLCFunction<SynonymNextLinkSecretCB> scalar_GreaterEqual() {
+        return xcreateSLCFunction(CK_GE, SynonymNextLinkSecretCB.class);
     }
 
     /**
      * Prepare ScalarCondition as lessEqual. <br>
-     * {where FOO &lt;= (select max(BAR) from ...)
+     * {where FOO &lt;= (select max(BAR) from ...)}
      * <pre>
      * cb.query().<span style="color: #CC4747">scalar_LessEqual()</span>.max(new SubQuery&lt;SynonymNextLinkSecretCB&gt;() {
      *     public void query(SynonymNextLinkSecretCB subCB) {
@@ -498,17 +490,17 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * </pre>
      * @return The object to set up a function. (NotNull)
      */
-    public HpSSQFunction<SynonymNextLinkSecretCB> scalar_LessEqual() {
-        return xcreateSSQFunction(CK_LE, SynonymNextLinkSecretCB.class);
+    public HpSLCFunction<SynonymNextLinkSecretCB> scalar_LessEqual() {
+        return xcreateSLCFunction(CK_LE, SynonymNextLinkSecretCB.class);
     }
 
     @SuppressWarnings("unchecked")
-    protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSSQOption<CB> op) {
+    protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
         assertObjectNotNull("subQuery", sq);
         SynonymNextLinkSecretCB cb = xcreateScalarConditionCB(); sq.query((CB)cb);
         String pp = keepScalarCondition(cb.query()); // for saving query-value
-        op.setPartitionByCBean((CB)xcreateScalarConditionPartitionByCB()); // for using partition-by
-        registerScalarCondition(fn, cb.query(), pp, rd, op);
+        cs.setPartitionByCBean((CB)xcreateScalarConditionPartitionByCB()); // for using partition-by
+        registerScalarCondition(fn, cb.query(), pp, rd, cs, op);
     }
     public abstract String keepScalarCondition(SynonymNextLinkSecretCQ sq);
 
@@ -681,6 +673,6 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     protected String xabUDT() { return Date.class.getName(); }
     protected String xabCQ() { return SynonymNextLinkSecretCQ.class.getName(); }
     protected String xabLSO() { return LikeSearchOption.class.getName(); }
-    protected String xabSSQS() { return HpSSQSetupper.class.getName(); }
+    protected String xabSLCS() { return HpSLCSetupper.class.getName(); }
     protected String xabSCP() { return SubQuery.class.getName(); }
 }

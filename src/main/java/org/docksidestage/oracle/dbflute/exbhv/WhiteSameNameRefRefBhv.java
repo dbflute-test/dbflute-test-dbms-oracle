@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsWhiteSameNameRefRefBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("whiteSameNameRefRefBhv")
 public class WhiteSameNameRefRefBhv extends BsWhiteSameNameRefRefBhv {
 }

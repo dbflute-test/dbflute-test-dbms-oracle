@@ -277,7 +277,7 @@ public class BsWhiteUqFkRefCB extends AbstractConditionBean {
      */
     public void setupSelect_WhiteUqFkByFkToPkId() {
         assertSetupSelectPurpose("whiteUqFkByFkToPkId");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnFkToPkId();
         }
         doSetupSelect(() -> query().queryWhiteUqFkByFkToPkId());
@@ -297,7 +297,7 @@ public class BsWhiteUqFkRefCB extends AbstractConditionBean {
      */
     public void setupSelect_WhiteUqFkByFkToUqCode() {
         assertSetupSelectPurpose("whiteUqFkByFkToUqCode");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnFkToUqCode();
         }
         doSetupSelect(() -> query().queryWhiteUqFkByFkToUqCode());
@@ -339,8 +339,8 @@ public class BsWhiteUqFkRefCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<WhiteUqFkRefCQ> {

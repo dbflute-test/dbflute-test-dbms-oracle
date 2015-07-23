@@ -15,6 +15,7 @@ import org.docksidestage.oracle.dbflute.exbhv.pmbean.PurchaseSummaryMemberPmb;
  * 
  * @author DBFlute(AutoGenerator)
  */
+@org.springframework.stereotype.Component("memberBhv")
 public class MemberBhv extends org.docksidestage.oracle.dbflute.bsbhv.BsMemberBhv {
 
     // ===================================================================================

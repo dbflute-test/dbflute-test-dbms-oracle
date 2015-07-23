@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsWhiteDiffWorldBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("whiteDiffWorldBhv")
 public class WhiteDiffWorldBhv extends BsWhiteDiffWorldBhv {
 }

@@ -48,7 +48,7 @@ public class SynonymMemberDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((SynonymMember)et).getMemberAccount(), (et, vl) -> ((SynonymMember)et).setMemberAccount((String)vl), "memberAccount");
         setupEpg(_epgMap, et -> ((SynonymMember)et).getMemberStatusCode(), (et, vl) -> {
             ColumnInfo col = columnMemberStatusCode();
-            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(col, vl);
+            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(et, col, vl);
             if (cls != null) {
                 ((SynonymMember)et).setMemberStatusCodeAsMemberStatus(cls);
             } else {

@@ -48,7 +48,7 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getLoginDatetime(), (et, vl) -> ((SynonymMemberLogin)et).setLoginDatetime(ctldt(vl)), "loginDatetime");
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getMobileLoginFlg(), (et, vl) -> {
             ColumnInfo col = columnMobileLoginFlg();
-            CDef.Flg cls = (CDef.Flg)gcls(col, vl);
+            CDef.Flg cls = (CDef.Flg)gcls(et, col, vl);
             if (cls != null) {
                 ((SynonymMemberLogin)et).setMobileLoginFlgAsFlg(cls);
             } else {
@@ -57,7 +57,7 @@ public class SynonymMemberLoginDbm extends AbstractDBMeta {
         }, "mobileLoginFlg");
         setupEpg(_epgMap, et -> ((SynonymMemberLogin)et).getLoginMemberStatusCode(), (et, vl) -> {
             ColumnInfo col = columnLoginMemberStatusCode();
-            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(col, vl);
+            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(et, col, vl);
             if (cls != null) {
                 ((SynonymMemberLogin)et).setLoginMemberStatusCodeAsMemberStatus(cls);
             } else {

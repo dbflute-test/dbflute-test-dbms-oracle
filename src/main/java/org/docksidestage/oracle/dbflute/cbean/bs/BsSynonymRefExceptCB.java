@@ -264,7 +264,7 @@ public class BsSynonymRefExceptCB extends AbstractConditionBean {
      */
     public void setupSelect_SynonymExcept() {
         assertSetupSelectPurpose("synonymExcept");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnExceptId();
         }
         doSetupSelect(() -> query().querySynonymExcept());
@@ -306,8 +306,8 @@ public class BsSynonymRefExceptCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<SynonymRefExceptCQ> {

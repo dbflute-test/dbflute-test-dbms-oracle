@@ -10,5 +10,6 @@ import org.docksidestage.oracle.dbflute.bsbhv.BsWhiteUqFkRefNestBhv;
  * </p>
  * @author oracleman
  */
+@org.springframework.stereotype.Component("whiteUqFkRefNestBhv")
 public class WhiteUqFkRefNestBhv extends BsWhiteUqFkRefNestBhv {
 }
