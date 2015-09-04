@@ -46,7 +46,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationId The value of stationId as equal. (NullAllowed: if null, no condition)
+     * @param stationId The value of stationId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setStationId_Equal(Integer stationId) {
         doSetStationId_Equal(stationId);
@@ -59,7 +59,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationId The value of stationId as notEqual. (NullAllowed: if null, no condition)
+     * @param stationId The value of stationId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setStationId_NotEqual(Integer stationId) {
         doSetStationId_NotEqual(stationId);
@@ -72,7 +72,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationId The value of stationId as greaterThan. (NullAllowed: if null, no condition)
+     * @param stationId The value of stationId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setStationId_GreaterThan(Integer stationId) {
         regStationId(CK_GT, stationId);
@@ -81,7 +81,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationId The value of stationId as lessThan. (NullAllowed: if null, no condition)
+     * @param stationId The value of stationId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setStationId_LessThan(Integer stationId) {
         regStationId(CK_LT, stationId);
@@ -90,7 +90,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationId The value of stationId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param stationId The value of stationId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setStationId_GreaterEqual(Integer stationId) {
         regStationId(CK_GE, stationId);
@@ -99,7 +99,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationId The value of stationId as lessEqual. (NullAllowed: if null, no condition)
+     * @param stationId The value of stationId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setStationId_LessEqual(Integer stationId) {
         regStationId(CK_LE, stationId);
@@ -310,7 +310,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as equal. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_Equal(java.time.LocalDateTime birthdate) {
         regBirthdate(CK_EQ,  birthdate);
@@ -319,7 +319,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as greaterThan. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_GreaterThan(java.time.LocalDateTime birthdate) {
         regBirthdate(CK_GT,  birthdate);
@@ -328,7 +328,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as lessThan. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_LessThan(java.time.LocalDateTime birthdate) {
         regBirthdate(CK_LT,  birthdate);
@@ -337,7 +337,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as greaterEqual. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_GreaterEqual(java.time.LocalDateTime birthdate) {
         regBirthdate(CK_GE,  birthdate);
@@ -346,7 +346,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as lessEqual. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_LessEqual(java.time.LocalDateTime birthdate) {
         regBirthdate(CK_LE, birthdate);
@@ -397,7 +397,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * FORMALIZED_DATETIME: {TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as equal. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_Equal(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_EQ,  formalizedDatetime);
@@ -406,7 +406,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * FORMALIZED_DATETIME: {TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as greaterThan. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_GreaterThan(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_GT,  formalizedDatetime);
@@ -415,7 +415,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * FORMALIZED_DATETIME: {TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as lessThan. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_LessThan(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_LT,  formalizedDatetime);
@@ -424,7 +424,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * FORMALIZED_DATETIME: {TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as greaterEqual. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_GreaterEqual(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_GE,  formalizedDatetime);
@@ -433,7 +433,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * FORMALIZED_DATETIME: {TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as lessEqual. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_LessEqual(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_LE, formalizedDatetime);
@@ -484,7 +484,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCount The value of homeCount as equal. (NullAllowed: if null, no condition)
+     * @param homeCount The value of homeCount as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setHomeCount_Equal(Integer homeCount) {
         doSetHomeCount_Equal(homeCount);
@@ -497,7 +497,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCount The value of homeCount as notEqual. (NullAllowed: if null, no condition)
+     * @param homeCount The value of homeCount as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setHomeCount_NotEqual(Integer homeCount) {
         doSetHomeCount_NotEqual(homeCount);
@@ -510,7 +510,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCount The value of homeCount as greaterThan. (NullAllowed: if null, no condition)
+     * @param homeCount The value of homeCount as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setHomeCount_GreaterThan(Integer homeCount) {
         regHomeCount(CK_GT, homeCount);
@@ -519,7 +519,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCount The value of homeCount as lessThan. (NullAllowed: if null, no condition)
+     * @param homeCount The value of homeCount as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setHomeCount_LessThan(Integer homeCount) {
         regHomeCount(CK_LT, homeCount);
@@ -528,7 +528,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCount The value of homeCount as greaterEqual. (NullAllowed: if null, no condition)
+     * @param homeCount The value of homeCount as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setHomeCount_GreaterEqual(Integer homeCount) {
         regHomeCount(CK_GE, homeCount);
@@ -537,7 +537,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCount The value of homeCount as lessEqual. (NullAllowed: if null, no condition)
+     * @param homeCount The value of homeCount as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setHomeCount_LessEqual(Integer homeCount) {
         regHomeCount(CK_LE, homeCount);
@@ -613,7 +613,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometer The value of workingKilometer as equal. (NullAllowed: if null, no condition)
+     * @param workingKilometer The value of workingKilometer as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setWorkingKilometer_Equal(java.math.BigDecimal workingKilometer) {
         doSetWorkingKilometer_Equal(workingKilometer);
@@ -626,7 +626,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometer The value of workingKilometer as notEqual. (NullAllowed: if null, no condition)
+     * @param workingKilometer The value of workingKilometer as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setWorkingKilometer_NotEqual(java.math.BigDecimal workingKilometer) {
         doSetWorkingKilometer_NotEqual(workingKilometer);
@@ -639,7 +639,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometer The value of workingKilometer as greaterThan. (NullAllowed: if null, no condition)
+     * @param workingKilometer The value of workingKilometer as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setWorkingKilometer_GreaterThan(java.math.BigDecimal workingKilometer) {
         regWorkingKilometer(CK_GT, workingKilometer);
@@ -648,7 +648,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometer The value of workingKilometer as lessThan. (NullAllowed: if null, no condition)
+     * @param workingKilometer The value of workingKilometer as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setWorkingKilometer_LessThan(java.math.BigDecimal workingKilometer) {
         regWorkingKilometer(CK_LT, workingKilometer);
@@ -657,7 +657,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometer The value of workingKilometer as greaterEqual. (NullAllowed: if null, no condition)
+     * @param workingKilometer The value of workingKilometer as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setWorkingKilometer_GreaterEqual(java.math.BigDecimal workingKilometer) {
         regWorkingKilometer(CK_GE, workingKilometer);
@@ -666,7 +666,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometer The value of workingKilometer as lessEqual. (NullAllowed: if null, no condition)
+     * @param workingKilometer The value of workingKilometer as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setWorkingKilometer_LessEqual(java.math.BigDecimal workingKilometer) {
         regWorkingKilometer(CK_LE, workingKilometer);

@@ -46,7 +46,7 @@ public abstract class AbstractBsSynonymExceptCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param exceptId The value of exceptId as equal. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_Equal(Long exceptId) {
         doSetExceptId_Equal(exceptId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsSynonymExceptCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param exceptId The value of exceptId as greaterThan. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_GreaterThan(Long exceptId) {
         regExceptId(CK_GT, exceptId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsSynonymExceptCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param exceptId The value of exceptId as lessThan. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_LessThan(Long exceptId) {
         regExceptId(CK_LT, exceptId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsSynonymExceptCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param exceptId The value of exceptId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_GreaterEqual(Long exceptId) {
         regExceptId(CK_GE, exceptId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsSynonymExceptCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param exceptId The value of exceptId as lessEqual. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_LessEqual(Long exceptId) {
         regExceptId(CK_LE, exceptId);

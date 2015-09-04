@@ -46,7 +46,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
-     * @param regionId The value of regionId as equal. (NullAllowed: if null, no condition)
+     * @param regionId The value of regionId as equal. (basically NotNull: error as default, or no condition as option)
      */
     protected void setRegionId_Equal(java.math.BigDecimal regionId) {
         doSetRegionId_Equal(regionId);
@@ -56,7 +56,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
      * Equal(=). As Region. And NullIgnored, OnlyOnceRegistered. <br>
      * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region} <br>
      * mainly region of member address
-     * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, no condition)
+     * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setRegionId_Equal_AsRegion(CDef.Region cdef) {
         doSetRegionId_Equal(cTNum(cdef != null ? cdef.code() : null, java.math.BigDecimal.class));

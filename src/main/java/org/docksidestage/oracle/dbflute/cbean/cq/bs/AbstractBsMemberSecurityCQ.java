@@ -46,7 +46,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, NotNull, NUMBER(9), FK to MEMBER}
-     * @param memberId The value of memberId as equal. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_Equal(Integer memberId) {
         doSetMemberId_Equal(memberId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, NotNull, NUMBER(9), FK to MEMBER}
-     * @param memberId The value of memberId as greaterThan. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_GreaterThan(Integer memberId) {
         regMemberId(CK_GT, memberId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, NotNull, NUMBER(9), FK to MEMBER}
-     * @param memberId The value of memberId as lessThan. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_LessThan(Integer memberId) {
         regMemberId(CK_LT, memberId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, NotNull, NUMBER(9), FK to MEMBER}
-     * @param memberId The value of memberId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_GreaterEqual(Integer memberId) {
         regMemberId(CK_GE, memberId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, NotNull, NUMBER(9), FK to MEMBER}
-     * @param memberId The value of memberId as lessEqual. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_LessEqual(Integer memberId) {
         regMemberId(CK_LE, memberId);
@@ -486,7 +486,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REMINDER_USE_COUNT: {NotNull, NUMBER(7)}
-     * @param reminderUseCount The value of reminderUseCount as equal. (NullAllowed: if null, no condition)
+     * @param reminderUseCount The value of reminderUseCount as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setReminderUseCount_Equal(Integer reminderUseCount) {
         doSetReminderUseCount_Equal(reminderUseCount);
@@ -499,7 +499,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REMINDER_USE_COUNT: {NotNull, NUMBER(7)}
-     * @param reminderUseCount The value of reminderUseCount as greaterThan. (NullAllowed: if null, no condition)
+     * @param reminderUseCount The value of reminderUseCount as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setReminderUseCount_GreaterThan(Integer reminderUseCount) {
         regReminderUseCount(CK_GT, reminderUseCount);
@@ -508,7 +508,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REMINDER_USE_COUNT: {NotNull, NUMBER(7)}
-     * @param reminderUseCount The value of reminderUseCount as lessThan. (NullAllowed: if null, no condition)
+     * @param reminderUseCount The value of reminderUseCount as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setReminderUseCount_LessThan(Integer reminderUseCount) {
         regReminderUseCount(CK_LT, reminderUseCount);
@@ -517,7 +517,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REMINDER_USE_COUNT: {NotNull, NUMBER(7)}
-     * @param reminderUseCount The value of reminderUseCount as greaterEqual. (NullAllowed: if null, no condition)
+     * @param reminderUseCount The value of reminderUseCount as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setReminderUseCount_GreaterEqual(Integer reminderUseCount) {
         regReminderUseCount(CK_GE, reminderUseCount);
@@ -526,7 +526,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REMINDER_USE_COUNT: {NotNull, NUMBER(7)}
-     * @param reminderUseCount The value of reminderUseCount as lessEqual. (NullAllowed: if null, no condition)
+     * @param reminderUseCount The value of reminderUseCount as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setReminderUseCount_LessEqual(Integer reminderUseCount) {
         regReminderUseCount(CK_LE, reminderUseCount);
@@ -590,7 +590,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
-     * @param registerDatetime The value of registerDatetime as equal. (NullAllowed: if null, no condition)
+     * @param registerDatetime The value of registerDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRegisterDatetime_Equal(java.time.LocalDateTime registerDatetime) {
         regRegisterDatetime(CK_EQ,  registerDatetime);
@@ -634,7 +634,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
-     * @param updateDatetime The value of updateDatetime as equal. (NullAllowed: if null, no condition)
+     * @param updateDatetime The value of updateDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setUpdateDatetime_Equal(java.time.LocalDateTime updateDatetime) {
         regUpdateDatetime(CK_EQ,  updateDatetime);
@@ -678,7 +678,7 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * VERSION_NO: {NotNull, NUMBER(16)}
-     * @param versionNo The value of versionNo as equal. (NullAllowed: if null, no condition)
+     * @param versionNo The value of versionNo as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setVersionNo_Equal(Long versionNo) {
         doSetVersionNo_Equal(versionNo);

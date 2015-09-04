@@ -46,7 +46,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param targetId The value of targetId as equal. (NullAllowed: if null, no condition)
+     * @param targetId The value of targetId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTargetId_Equal(Long targetId) {
         doSetTargetId_Equal(targetId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param targetId The value of targetId as greaterThan. (NullAllowed: if null, no condition)
+     * @param targetId The value of targetId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTargetId_GreaterThan(Long targetId) {
         regTargetId(CK_GT, targetId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param targetId The value of targetId as lessThan. (NullAllowed: if null, no condition)
+     * @param targetId The value of targetId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTargetId_LessThan(Long targetId) {
         regTargetId(CK_LT, targetId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param targetId The value of targetId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param targetId The value of targetId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTargetId_GreaterEqual(Long targetId) {
         regTargetId(CK_GE, targetId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param targetId The value of targetId as lessEqual. (NullAllowed: if null, no condition)
+     * @param targetId The value of targetId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTargetId_LessEqual(Long targetId) {
         regTargetId(CK_LE, targetId);

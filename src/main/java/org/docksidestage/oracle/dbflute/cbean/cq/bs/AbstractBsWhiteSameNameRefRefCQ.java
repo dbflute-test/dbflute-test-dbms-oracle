@@ -46,7 +46,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refRefId The value of refRefId as equal. (NullAllowed: if null, no condition)
+     * @param refRefId The value of refRefId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefId_Equal(Long refRefId) {
         doSetRefRefId_Equal(refRefId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refRefId The value of refRefId as greaterThan. (NullAllowed: if null, no condition)
+     * @param refRefId The value of refRefId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefId_GreaterThan(Long refRefId) {
         regRefRefId(CK_GT, refRefId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refRefId The value of refRefId as lessThan. (NullAllowed: if null, no condition)
+     * @param refRefId The value of refRefId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefId_LessThan(Long refRefId) {
         regRefRefId(CK_LT, refRefId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refRefId The value of refRefId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param refRefId The value of refRefId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefId_GreaterEqual(Long refRefId) {
         regRefRefId(CK_GE, refRefId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refRefId The value of refRefId as lessEqual. (NullAllowed: if null, no condition)
+     * @param refRefId The value of refRefId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefId_LessEqual(Long refRefId) {
         regRefRefId(CK_LE, refRefId);
@@ -270,7 +270,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_DATE: {NotNull, DATE(7)}
-     * @param refRefDate The value of refRefDate as equal. (NullAllowed: if null, no condition)
+     * @param refRefDate The value of refRefDate as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefDate_Equal(java.time.LocalDate refRefDate) {
         regRefRefDate(CK_EQ,  refRefDate);
@@ -279,7 +279,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_DATE: {NotNull, DATE(7)}
-     * @param refRefDate The value of refRefDate as greaterThan. (NullAllowed: if null, no condition)
+     * @param refRefDate The value of refRefDate as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefDate_GreaterThan(java.time.LocalDate refRefDate) {
         regRefRefDate(CK_GT,  refRefDate);
@@ -288,7 +288,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_DATE: {NotNull, DATE(7)}
-     * @param refRefDate The value of refRefDate as lessThan. (NullAllowed: if null, no condition)
+     * @param refRefDate The value of refRefDate as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefDate_LessThan(java.time.LocalDate refRefDate) {
         regRefRefDate(CK_LT,  refRefDate);
@@ -297,7 +297,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_DATE: {NotNull, DATE(7)}
-     * @param refRefDate The value of refRefDate as greaterEqual. (NullAllowed: if null, no condition)
+     * @param refRefDate The value of refRefDate as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefDate_GreaterEqual(java.time.LocalDate refRefDate) {
         regRefRefDate(CK_GE,  refRefDate);
@@ -306,7 +306,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_DATE: {NotNull, DATE(7)}
-     * @param refRefDate The value of refRefDate as lessEqual. (NullAllowed: if null, no condition)
+     * @param refRefDate The value of refRefDate as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefRefDate_LessEqual(java.time.LocalDate refRefDate) {
         regRefRefDate(CK_LE, refRefDate);

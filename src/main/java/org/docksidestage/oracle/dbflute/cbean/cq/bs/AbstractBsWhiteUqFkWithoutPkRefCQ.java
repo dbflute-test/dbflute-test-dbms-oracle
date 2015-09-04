@@ -46,7 +46,7 @@ public abstract class AbstractBsWhiteUqFkWithoutPkRefCQ extends AbstractConditio
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_REF_ID: {NotNull, NUMBER(16)}
-     * @param uqFkRefId The value of uqFkRefId as equal. (NullAllowed: if null, no condition)
+     * @param uqFkRefId The value of uqFkRefId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkRefId_Equal(Long uqFkRefId) {
         doSetUqFkRefId_Equal(uqFkRefId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsWhiteUqFkWithoutPkRefCQ extends AbstractConditio
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_REF_ID: {NotNull, NUMBER(16)}
-     * @param uqFkRefId The value of uqFkRefId as greaterThan. (NullAllowed: if null, no condition)
+     * @param uqFkRefId The value of uqFkRefId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkRefId_GreaterThan(Long uqFkRefId) {
         regUqFkRefId(CK_GT, uqFkRefId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsWhiteUqFkWithoutPkRefCQ extends AbstractConditio
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_REF_ID: {NotNull, NUMBER(16)}
-     * @param uqFkRefId The value of uqFkRefId as lessThan. (NullAllowed: if null, no condition)
+     * @param uqFkRefId The value of uqFkRefId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkRefId_LessThan(Long uqFkRefId) {
         regUqFkRefId(CK_LT, uqFkRefId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsWhiteUqFkWithoutPkRefCQ extends AbstractConditio
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_REF_ID: {NotNull, NUMBER(16)}
-     * @param uqFkRefId The value of uqFkRefId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param uqFkRefId The value of uqFkRefId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkRefId_GreaterEqual(Long uqFkRefId) {
         regUqFkRefId(CK_GE, uqFkRefId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsWhiteUqFkWithoutPkRefCQ extends AbstractConditio
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_REF_ID: {NotNull, NUMBER(16)}
-     * @param uqFkRefId The value of uqFkRefId as lessEqual. (NullAllowed: if null, no condition)
+     * @param uqFkRefId The value of uqFkRefId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkRefId_LessEqual(Long uqFkRefId) {
         regUqFkRefId(CK_LE, uqFkRefId);
