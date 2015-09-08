@@ -46,7 +46,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_ID: {PK, NotNull, NUMBER(16)}
-     * @param productId The value of productId as equal. (NullAllowed: if null, no condition)
+     * @param productId The value of productId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setProductId_Equal(Long productId) {
         doSetProductId_Equal(productId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_ID: {PK, NotNull, NUMBER(16)}
-     * @param productId The value of productId as greaterThan. (NullAllowed: if null, no condition)
+     * @param productId The value of productId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setProductId_GreaterThan(Long productId) {
         regProductId(CK_GT, productId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_ID: {PK, NotNull, NUMBER(16)}
-     * @param productId The value of productId as lessThan. (NullAllowed: if null, no condition)
+     * @param productId The value of productId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setProductId_LessThan(Long productId) {
         regProductId(CK_LT, productId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_ID: {PK, NotNull, NUMBER(16)}
-     * @param productId The value of productId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param productId The value of productId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setProductId_GreaterEqual(Long productId) {
         regProductId(CK_GE, productId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_ID: {PK, NotNull, NUMBER(16)}
-     * @param productId The value of productId as lessEqual. (NullAllowed: if null, no condition)
+     * @param productId The value of productId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setProductId_LessEqual(Long productId) {
         regProductId(CK_LE, productId);
@@ -486,7 +486,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REGISTER_DATETIME: {NotNull, TIMESTAMP}
-     * @param registerDatetime The value of registerDatetime as equal. (NullAllowed: if null, no condition)
+     * @param registerDatetime The value of registerDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRegisterDatetime_Equal(java.time.LocalDateTime registerDatetime) {
         regRegisterDatetime(CK_EQ,  registerDatetime);
@@ -530,7 +530,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * UPDATE_DATETIME: {NotNull, TIMESTAMP}
-     * @param updateDatetime The value of updateDatetime as equal. (NullAllowed: if null, no condition)
+     * @param updateDatetime The value of updateDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setUpdateDatetime_Equal(java.time.LocalDateTime updateDatetime) {
         regUpdateDatetime(CK_EQ,  updateDatetime);
@@ -574,7 +574,7 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * VERSION_NO: {NotNull, NUMBER(38)}
-     * @param versionNo The value of versionNo as equal. (NullAllowed: if null, no condition)
+     * @param versionNo The value of versionNo as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setVersionNo_Equal(java.math.BigDecimal versionNo) {
         doSetVersionNo_Equal(versionNo);

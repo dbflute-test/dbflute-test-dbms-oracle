@@ -46,7 +46,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refId The value of refId as equal. (NullAllowed: if null, no condition)
+     * @param refId The value of refId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefId_Equal(Long refId) {
         doSetRefId_Equal(refId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refId The value of refId as greaterThan. (NullAllowed: if null, no condition)
+     * @param refId The value of refId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefId_GreaterThan(Long refId) {
         regRefId(CK_GT, refId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refId The value of refId as lessThan. (NullAllowed: if null, no condition)
+     * @param refId The value of refId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefId_LessThan(Long refId) {
         regRefId(CK_LT, refId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refId The value of refId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param refId The value of refId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefId_GreaterEqual(Long refId) {
         regRefId(CK_GE, refId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refId The value of refId as lessEqual. (NullAllowed: if null, no condition)
+     * @param refId The value of refId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefId_LessEqual(Long refId) {
         regRefId(CK_LE, refId);
@@ -270,7 +270,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param sameNameId The value of sameNameId as equal. (NullAllowed: if null, no condition)
+     * @param sameNameId The value of sameNameId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setSameNameId_Equal(Long sameNameId) {
         doSetSameNameId_Equal(sameNameId);
@@ -283,7 +283,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param sameNameId The value of sameNameId as greaterThan. (NullAllowed: if null, no condition)
+     * @param sameNameId The value of sameNameId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setSameNameId_GreaterThan(Long sameNameId) {
         regSameNameId(CK_GT, sameNameId);
@@ -292,7 +292,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param sameNameId The value of sameNameId as lessThan. (NullAllowed: if null, no condition)
+     * @param sameNameId The value of sameNameId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setSameNameId_LessThan(Long sameNameId) {
         regSameNameId(CK_LT, sameNameId);
@@ -301,7 +301,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param sameNameId The value of sameNameId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param sameNameId The value of sameNameId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setSameNameId_GreaterEqual(Long sameNameId) {
         regSameNameId(CK_GE, sameNameId);
@@ -310,7 +310,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param sameNameId The value of sameNameId as lessEqual. (NullAllowed: if null, no condition)
+     * @param sameNameId The value of sameNameId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setSameNameId_LessEqual(Long sameNameId) {
         regSameNameId(CK_LE, sameNameId);

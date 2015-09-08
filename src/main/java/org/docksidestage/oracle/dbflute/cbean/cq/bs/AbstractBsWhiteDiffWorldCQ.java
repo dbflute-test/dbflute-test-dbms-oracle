@@ -46,7 +46,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param diffWorldId The value of diffWorldId as equal. (NullAllowed: if null, no condition)
+     * @param diffWorldId The value of diffWorldId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setDiffWorldId_Equal(Long diffWorldId) {
         doSetDiffWorldId_Equal(diffWorldId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param diffWorldId The value of diffWorldId as greaterThan. (NullAllowed: if null, no condition)
+     * @param diffWorldId The value of diffWorldId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setDiffWorldId_GreaterThan(Long diffWorldId) {
         regDiffWorldId(CK_GT, diffWorldId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param diffWorldId The value of diffWorldId as lessThan. (NullAllowed: if null, no condition)
+     * @param diffWorldId The value of diffWorldId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setDiffWorldId_LessThan(Long diffWorldId) {
         regDiffWorldId(CK_LT, diffWorldId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param diffWorldId The value of diffWorldId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param diffWorldId The value of diffWorldId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setDiffWorldId_GreaterEqual(Long diffWorldId) {
         regDiffWorldId(CK_GE, diffWorldId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param diffWorldId The value of diffWorldId as lessEqual. (NullAllowed: if null, no condition)
+     * @param diffWorldId The value of diffWorldId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setDiffWorldId_LessEqual(Long diffWorldId) {
         regDiffWorldId(CK_LE, diffWorldId);

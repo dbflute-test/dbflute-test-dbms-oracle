@@ -46,7 +46,7 @@ public abstract class AbstractBsWhiteRefNextTargetCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextTargetId The value of refNextTargetId as equal. (NullAllowed: if null, no condition)
+     * @param refNextTargetId The value of refNextTargetId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextTargetId_Equal(Long refNextTargetId) {
         doSetRefNextTargetId_Equal(refNextTargetId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsWhiteRefNextTargetCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextTargetId The value of refNextTargetId as greaterThan. (NullAllowed: if null, no condition)
+     * @param refNextTargetId The value of refNextTargetId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextTargetId_GreaterThan(Long refNextTargetId) {
         regRefNextTargetId(CK_GT, refNextTargetId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsWhiteRefNextTargetCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextTargetId The value of refNextTargetId as lessThan. (NullAllowed: if null, no condition)
+     * @param refNextTargetId The value of refNextTargetId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextTargetId_LessThan(Long refNextTargetId) {
         regRefNextTargetId(CK_LT, refNextTargetId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsWhiteRefNextTargetCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextTargetId The value of refNextTargetId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param refNextTargetId The value of refNextTargetId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextTargetId_GreaterEqual(Long refNextTargetId) {
         regRefNextTargetId(CK_GE, refNextTargetId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsWhiteRefNextTargetCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextTargetId The value of refNextTargetId as lessEqual. (NullAllowed: if null, no condition)
+     * @param refNextTargetId The value of refNextTargetId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextTargetId_LessEqual(Long refNextTargetId) {
         regRefNextTargetId(CK_LE, refNextTargetId);

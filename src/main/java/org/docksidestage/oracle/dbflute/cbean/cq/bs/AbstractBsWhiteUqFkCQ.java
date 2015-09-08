@@ -46,7 +46,7 @@ public abstract class AbstractBsWhiteUqFkCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_ID: {PK, NotNull, NUMBER(16)}
-     * @param uqFkId The value of uqFkId as equal. (NullAllowed: if null, no condition)
+     * @param uqFkId The value of uqFkId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkId_Equal(Long uqFkId) {
         doSetUqFkId_Equal(uqFkId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsWhiteUqFkCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_ID: {PK, NotNull, NUMBER(16)}
-     * @param uqFkId The value of uqFkId as greaterThan. (NullAllowed: if null, no condition)
+     * @param uqFkId The value of uqFkId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkId_GreaterThan(Long uqFkId) {
         regUqFkId(CK_GT, uqFkId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsWhiteUqFkCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_ID: {PK, NotNull, NUMBER(16)}
-     * @param uqFkId The value of uqFkId as lessThan. (NullAllowed: if null, no condition)
+     * @param uqFkId The value of uqFkId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkId_LessThan(Long uqFkId) {
         regUqFkId(CK_LT, uqFkId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsWhiteUqFkCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_ID: {PK, NotNull, NUMBER(16)}
-     * @param uqFkId The value of uqFkId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param uqFkId The value of uqFkId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkId_GreaterEqual(Long uqFkId) {
         regUqFkId(CK_GE, uqFkId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsWhiteUqFkCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_ID: {PK, NotNull, NUMBER(16)}
-     * @param uqFkId The value of uqFkId as lessEqual. (NullAllowed: if null, no condition)
+     * @param uqFkId The value of uqFkId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setUqFkId_LessEqual(Long uqFkId) {
         regUqFkId(CK_LE, uqFkId);

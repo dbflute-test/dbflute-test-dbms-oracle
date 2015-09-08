@@ -46,7 +46,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * (会員ID)MEMBER_ID: {PK, NotNull, NUMBER(9)}
-     * @param memberId The value of memberId as equal. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_Equal(Integer memberId) {
         doSetMemberId_Equal(memberId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * (会員ID)MEMBER_ID: {PK, NotNull, NUMBER(9)}
-     * @param memberId The value of memberId as greaterThan. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_GreaterThan(Integer memberId) {
         regMemberId(CK_GT, memberId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * (会員ID)MEMBER_ID: {PK, NotNull, NUMBER(9)}
-     * @param memberId The value of memberId as lessThan. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_LessThan(Integer memberId) {
         regMemberId(CK_LT, memberId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * (会員ID)MEMBER_ID: {PK, NotNull, NUMBER(9)}
-     * @param memberId The value of memberId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_GreaterEqual(Integer memberId) {
         regMemberId(CK_GE, memberId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * (会員ID)MEMBER_ID: {PK, NotNull, NUMBER(9)}
-     * @param memberId The value of memberId as lessEqual. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_LessEqual(Integer memberId) {
         regMemberId(CK_LE, memberId);
@@ -461,7 +461,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
      * Equal(=). As MemberStatus. And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (会員ステータスコード)MEMBER_STATUS_CODE: {NotNull, CHAR(3), FK to MEMBER_STATUS, classification=MemberStatus} <br>
      * status of member from entry to withdrawal
-     * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, no condition)
+     * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberStatusCode_Equal_AsMemberStatus(CDef.MemberStatus cdef) {
         doSetMemberStatusCode_Equal(cdef != null ? cdef.code() : null);
@@ -508,7 +508,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
      * NotEqual(&lt;&gt;). As MemberStatus. And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (会員ステータスコード)MEMBER_STATUS_CODE: {NotNull, CHAR(3), FK to MEMBER_STATUS, classification=MemberStatus} <br>
      * status of member from entry to withdrawal
-     * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, no condition)
+     * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberStatusCode_NotEqual_AsMemberStatus(CDef.MemberStatus cdef) {
         doSetMemberStatusCode_NotEqual(cdef != null ? cdef.code() : null);
@@ -594,7 +594,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * (正式会員日時)FORMALIZED_DATETIME: {IX, TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as equal. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_Equal(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_EQ,  formalizedDatetime);
@@ -603,7 +603,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * (正式会員日時)FORMALIZED_DATETIME: {IX, TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as greaterThan. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_GreaterThan(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_GT,  formalizedDatetime);
@@ -612,7 +612,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * (正式会員日時)FORMALIZED_DATETIME: {IX, TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as lessThan. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_LessThan(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_LT,  formalizedDatetime);
@@ -621,7 +621,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * (正式会員日時)FORMALIZED_DATETIME: {IX, TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as greaterEqual. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_GreaterEqual(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_GE,  formalizedDatetime);
@@ -630,7 +630,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * (正式会員日時)FORMALIZED_DATETIME: {IX, TIMESTAMP(3)(11, 3)}
-     * @param formalizedDatetime The value of formalizedDatetime as lessEqual. (NullAllowed: if null, no condition)
+     * @param formalizedDatetime The value of formalizedDatetime as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setFormalizedDatetime_LessEqual(java.time.LocalDateTime formalizedDatetime) {
         regFormalizedDatetime(CK_LE, formalizedDatetime);
@@ -696,7 +696,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * (生年月日)BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as equal. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_Equal(java.time.LocalDate birthdate) {
         regBirthdate(CK_EQ,  birthdate);
@@ -705,7 +705,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * (生年月日)BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as greaterThan. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_GreaterThan(java.time.LocalDate birthdate) {
         regBirthdate(CK_GT,  birthdate);
@@ -714,7 +714,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * (生年月日)BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as lessThan. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_LessThan(java.time.LocalDate birthdate) {
         regBirthdate(CK_LT,  birthdate);
@@ -723,7 +723,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * (生年月日)BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as greaterEqual. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_GreaterEqual(java.time.LocalDate birthdate) {
         regBirthdate(CK_GE,  birthdate);
@@ -732,7 +732,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * (生年月日)BIRTHDATE: {DATE(7)}
-     * @param birthdate The value of birthdate as lessEqual. (NullAllowed: if null, no condition)
+     * @param birthdate The value of birthdate as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setBirthdate_LessEqual(java.time.LocalDate birthdate) {
         regBirthdate(CK_LE, birthdate);
@@ -798,7 +798,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * (登録日時)REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
-     * @param registerDatetime The value of registerDatetime as equal. (NullAllowed: if null, no condition)
+     * @param registerDatetime The value of registerDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRegisterDatetime_Equal(java.time.LocalDateTime registerDatetime) {
         regRegisterDatetime(CK_EQ,  registerDatetime);
@@ -842,7 +842,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * (更新日時)UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
-     * @param updateDatetime The value of updateDatetime as equal. (NullAllowed: if null, no condition)
+     * @param updateDatetime The value of updateDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setUpdateDatetime_Equal(java.time.LocalDateTime updateDatetime) {
         regUpdateDatetime(CK_EQ,  updateDatetime);
@@ -886,7 +886,7 @@ public abstract class AbstractBsMemberVendorSynonymCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * (バージョンNO)VERSION_NO: {NotNull, NUMBER(16)}
-     * @param versionNo The value of versionNo as equal. (NullAllowed: if null, no condition)
+     * @param versionNo The value of versionNo as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setVersionNo_Equal(Long versionNo) {
         doSetVersionNo_Equal(versionNo);

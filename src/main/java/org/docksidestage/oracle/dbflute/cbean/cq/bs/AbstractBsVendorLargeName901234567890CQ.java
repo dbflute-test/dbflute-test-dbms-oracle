@@ -46,7 +46,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as equal. (NullAllowed: if null, no condition)
+     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorLargeName901234567Id_Equal(Long vendorLargeName901234567Id) {
         doSetVendorLargeName901234567Id_Equal(vendorLargeName901234567Id);
@@ -59,7 +59,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as greaterThan. (NullAllowed: if null, no condition)
+     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorLargeName901234567Id_GreaterThan(Long vendorLargeName901234567Id) {
         regVendorLargeName901234567Id(CK_GT, vendorLargeName901234567Id);
@@ -68,7 +68,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as lessThan. (NullAllowed: if null, no condition)
+     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorLargeName901234567Id_LessThan(Long vendorLargeName901234567Id) {
         regVendorLargeName901234567Id(CK_LT, vendorLargeName901234567Id);
@@ -77,7 +77,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as greaterEqual. (NullAllowed: if null, no condition)
+     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorLargeName901234567Id_GreaterEqual(Long vendorLargeName901234567Id) {
         regVendorLargeName901234567Id(CK_GE, vendorLargeName901234567Id);
@@ -86,7 +86,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as lessEqual. (NullAllowed: if null, no condition)
+     * @param vendorLargeName901234567Id The value of vendorLargeName901234567Id as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorLargeName901234567Id_LessEqual(Long vendorLargeName901234567Id) {
         regVendorLargeName901234567Id(CK_LE, vendorLargeName901234567Id);

@@ -46,7 +46,7 @@ public abstract class AbstractBsWhiteRefNextExceptCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextExceptId The value of refNextExceptId as equal. (NullAllowed: if null, no condition)
+     * @param refNextExceptId The value of refNextExceptId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextExceptId_Equal(Long refNextExceptId) {
         doSetRefNextExceptId_Equal(refNextExceptId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsWhiteRefNextExceptCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextExceptId The value of refNextExceptId as greaterThan. (NullAllowed: if null, no condition)
+     * @param refNextExceptId The value of refNextExceptId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextExceptId_GreaterThan(Long refNextExceptId) {
         regRefNextExceptId(CK_GT, refNextExceptId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsWhiteRefNextExceptCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextExceptId The value of refNextExceptId as lessThan. (NullAllowed: if null, no condition)
+     * @param refNextExceptId The value of refNextExceptId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextExceptId_LessThan(Long refNextExceptId) {
         regRefNextExceptId(CK_LT, refNextExceptId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsWhiteRefNextExceptCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextExceptId The value of refNextExceptId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param refNextExceptId The value of refNextExceptId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextExceptId_GreaterEqual(Long refNextExceptId) {
         regRefNextExceptId(CK_GE, refNextExceptId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsWhiteRefNextExceptCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_NEXT_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param refNextExceptId The value of refNextExceptId as lessEqual. (NullAllowed: if null, no condition)
+     * @param refNextExceptId The value of refNextExceptId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefNextExceptId_LessEqual(Long refNextExceptId) {
         regRefNextExceptId(CK_LE, refNextExceptId);

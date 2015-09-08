@@ -46,7 +46,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_REF_ID: {PK, NotNull, NUMBER(12)}
-     * @param largeDataRefId The value of largeDataRefId as equal. (NullAllowed: if null, no condition)
+     * @param largeDataRefId The value of largeDataRefId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataRefId_Equal(Long largeDataRefId) {
         doSetLargeDataRefId_Equal(largeDataRefId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_REF_ID: {PK, NotNull, NUMBER(12)}
-     * @param largeDataRefId The value of largeDataRefId as greaterThan. (NullAllowed: if null, no condition)
+     * @param largeDataRefId The value of largeDataRefId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataRefId_GreaterThan(Long largeDataRefId) {
         regLargeDataRefId(CK_GT, largeDataRefId);
@@ -68,7 +68,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_REF_ID: {PK, NotNull, NUMBER(12)}
-     * @param largeDataRefId The value of largeDataRefId as lessThan. (NullAllowed: if null, no condition)
+     * @param largeDataRefId The value of largeDataRefId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataRefId_LessThan(Long largeDataRefId) {
         regLargeDataRefId(CK_LT, largeDataRefId);
@@ -77,7 +77,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_REF_ID: {PK, NotNull, NUMBER(12)}
-     * @param largeDataRefId The value of largeDataRefId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param largeDataRefId The value of largeDataRefId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataRefId_GreaterEqual(Long largeDataRefId) {
         regLargeDataRefId(CK_GE, largeDataRefId);
@@ -86,7 +86,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_REF_ID: {PK, NotNull, NUMBER(12)}
-     * @param largeDataRefId The value of largeDataRefId as lessEqual. (NullAllowed: if null, no condition)
+     * @param largeDataRefId The value of largeDataRefId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataRefId_LessEqual(Long largeDataRefId) {
         regLargeDataRefId(CK_LE, largeDataRefId);
@@ -235,7 +235,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_ID: {IX, NotNull, NUMBER(12), FK to VENDOR_LARGE_DATA}
-     * @param largeDataId The value of largeDataId as equal. (NullAllowed: if null, no condition)
+     * @param largeDataId The value of largeDataId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataId_Equal(Long largeDataId) {
         doSetLargeDataId_Equal(largeDataId);
@@ -248,7 +248,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_ID: {IX, NotNull, NUMBER(12), FK to VENDOR_LARGE_DATA}
-     * @param largeDataId The value of largeDataId as greaterThan. (NullAllowed: if null, no condition)
+     * @param largeDataId The value of largeDataId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataId_GreaterThan(Long largeDataId) {
         regLargeDataId(CK_GT, largeDataId);
@@ -257,7 +257,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_ID: {IX, NotNull, NUMBER(12), FK to VENDOR_LARGE_DATA}
-     * @param largeDataId The value of largeDataId as lessThan. (NullAllowed: if null, no condition)
+     * @param largeDataId The value of largeDataId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataId_LessThan(Long largeDataId) {
         regLargeDataId(CK_LT, largeDataId);
@@ -266,7 +266,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_ID: {IX, NotNull, NUMBER(12), FK to VENDOR_LARGE_DATA}
-     * @param largeDataId The value of largeDataId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param largeDataId The value of largeDataId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataId_GreaterEqual(Long largeDataId) {
         regLargeDataId(CK_GE, largeDataId);
@@ -275,7 +275,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * LARGE_DATA_ID: {IX, NotNull, NUMBER(12), FK to VENDOR_LARGE_DATA}
-     * @param largeDataId The value of largeDataId as lessEqual. (NullAllowed: if null, no condition)
+     * @param largeDataId The value of largeDataId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setLargeDataId_LessEqual(Long largeDataId) {
         regLargeDataId(CK_LE, largeDataId);
@@ -339,7 +339,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_INDEX: {IX, NotNull, DATE(7)}
-     * @param dateIndex The value of dateIndex as equal. (NullAllowed: if null, no condition)
+     * @param dateIndex The value of dateIndex as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateIndex_Equal(java.time.LocalDate dateIndex) {
         regDateIndex(CK_EQ,  dateIndex);
@@ -348,7 +348,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_INDEX: {IX, NotNull, DATE(7)}
-     * @param dateIndex The value of dateIndex as greaterThan. (NullAllowed: if null, no condition)
+     * @param dateIndex The value of dateIndex as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateIndex_GreaterThan(java.time.LocalDate dateIndex) {
         regDateIndex(CK_GT,  dateIndex);
@@ -357,7 +357,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_INDEX: {IX, NotNull, DATE(7)}
-     * @param dateIndex The value of dateIndex as lessThan. (NullAllowed: if null, no condition)
+     * @param dateIndex The value of dateIndex as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateIndex_LessThan(java.time.LocalDate dateIndex) {
         regDateIndex(CK_LT,  dateIndex);
@@ -366,7 +366,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_INDEX: {IX, NotNull, DATE(7)}
-     * @param dateIndex The value of dateIndex as greaterEqual. (NullAllowed: if null, no condition)
+     * @param dateIndex The value of dateIndex as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateIndex_GreaterEqual(java.time.LocalDate dateIndex) {
         regDateIndex(CK_GE,  dateIndex);
@@ -375,7 +375,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_INDEX: {IX, NotNull, DATE(7)}
-     * @param dateIndex The value of dateIndex as lessEqual. (NullAllowed: if null, no condition)
+     * @param dateIndex The value of dateIndex as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateIndex_LessEqual(java.time.LocalDate dateIndex) {
         regDateIndex(CK_LE, dateIndex);
@@ -429,7 +429,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_NO_INDEX: {NotNull, DATE(7)}
-     * @param dateNoIndex The value of dateNoIndex as equal. (NullAllowed: if null, no condition)
+     * @param dateNoIndex The value of dateNoIndex as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateNoIndex_Equal(java.time.LocalDate dateNoIndex) {
         regDateNoIndex(CK_EQ,  dateNoIndex);
@@ -438,7 +438,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_NO_INDEX: {NotNull, DATE(7)}
-     * @param dateNoIndex The value of dateNoIndex as greaterThan. (NullAllowed: if null, no condition)
+     * @param dateNoIndex The value of dateNoIndex as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateNoIndex_GreaterThan(java.time.LocalDate dateNoIndex) {
         regDateNoIndex(CK_GT,  dateNoIndex);
@@ -447,7 +447,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_NO_INDEX: {NotNull, DATE(7)}
-     * @param dateNoIndex The value of dateNoIndex as lessThan. (NullAllowed: if null, no condition)
+     * @param dateNoIndex The value of dateNoIndex as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateNoIndex_LessThan(java.time.LocalDate dateNoIndex) {
         regDateNoIndex(CK_LT,  dateNoIndex);
@@ -456,7 +456,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_NO_INDEX: {NotNull, DATE(7)}
-     * @param dateNoIndex The value of dateNoIndex as greaterEqual. (NullAllowed: if null, no condition)
+     * @param dateNoIndex The value of dateNoIndex as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateNoIndex_GreaterEqual(java.time.LocalDate dateNoIndex) {
         regDateNoIndex(CK_GE,  dateNoIndex);
@@ -465,7 +465,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * DATE_NO_INDEX: {NotNull, DATE(7)}
-     * @param dateNoIndex The value of dateNoIndex as lessEqual. (NullAllowed: if null, no condition)
+     * @param dateNoIndex The value of dateNoIndex as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setDateNoIndex_LessEqual(java.time.LocalDate dateNoIndex) {
         regDateNoIndex(CK_LE, dateNoIndex);
@@ -519,7 +519,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_INDEX: {IX, NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampIndex The value of timestampIndex as equal. (NullAllowed: if null, no condition)
+     * @param timestampIndex The value of timestampIndex as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampIndex_Equal(java.time.LocalDateTime timestampIndex) {
         regTimestampIndex(CK_EQ,  timestampIndex);
@@ -528,7 +528,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_INDEX: {IX, NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampIndex The value of timestampIndex as greaterThan. (NullAllowed: if null, no condition)
+     * @param timestampIndex The value of timestampIndex as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampIndex_GreaterThan(java.time.LocalDateTime timestampIndex) {
         regTimestampIndex(CK_GT,  timestampIndex);
@@ -537,7 +537,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_INDEX: {IX, NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampIndex The value of timestampIndex as lessThan. (NullAllowed: if null, no condition)
+     * @param timestampIndex The value of timestampIndex as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampIndex_LessThan(java.time.LocalDateTime timestampIndex) {
         regTimestampIndex(CK_LT,  timestampIndex);
@@ -546,7 +546,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_INDEX: {IX, NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampIndex The value of timestampIndex as greaterEqual. (NullAllowed: if null, no condition)
+     * @param timestampIndex The value of timestampIndex as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampIndex_GreaterEqual(java.time.LocalDateTime timestampIndex) {
         regTimestampIndex(CK_GE,  timestampIndex);
@@ -555,7 +555,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_INDEX: {IX, NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampIndex The value of timestampIndex as lessEqual. (NullAllowed: if null, no condition)
+     * @param timestampIndex The value of timestampIndex as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampIndex_LessEqual(java.time.LocalDateTime timestampIndex) {
         regTimestampIndex(CK_LE, timestampIndex);
@@ -609,7 +609,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_NO_INDEX: {NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampNoIndex The value of timestampNoIndex as equal. (NullAllowed: if null, no condition)
+     * @param timestampNoIndex The value of timestampNoIndex as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampNoIndex_Equal(java.time.LocalDateTime timestampNoIndex) {
         regTimestampNoIndex(CK_EQ,  timestampNoIndex);
@@ -618,7 +618,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_NO_INDEX: {NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampNoIndex The value of timestampNoIndex as greaterThan. (NullAllowed: if null, no condition)
+     * @param timestampNoIndex The value of timestampNoIndex as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampNoIndex_GreaterThan(java.time.LocalDateTime timestampNoIndex) {
         regTimestampNoIndex(CK_GT,  timestampNoIndex);
@@ -627,7 +627,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_NO_INDEX: {NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampNoIndex The value of timestampNoIndex as lessThan. (NullAllowed: if null, no condition)
+     * @param timestampNoIndex The value of timestampNoIndex as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampNoIndex_LessThan(java.time.LocalDateTime timestampNoIndex) {
         regTimestampNoIndex(CK_LT,  timestampNoIndex);
@@ -636,7 +636,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_NO_INDEX: {NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampNoIndex The value of timestampNoIndex as greaterEqual. (NullAllowed: if null, no condition)
+     * @param timestampNoIndex The value of timestampNoIndex as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampNoIndex_GreaterEqual(java.time.LocalDateTime timestampNoIndex) {
         regTimestampNoIndex(CK_GE,  timestampNoIndex);
@@ -645,7 +645,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TIMESTAMP_NO_INDEX: {NotNull, TIMESTAMP(6)(11, 6)}
-     * @param timestampNoIndex The value of timestampNoIndex as lessEqual. (NullAllowed: if null, no condition)
+     * @param timestampNoIndex The value of timestampNoIndex as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTimestampNoIndex_LessEqual(java.time.LocalDateTime timestampNoIndex) {
         regTimestampNoIndex(CK_LE, timestampNoIndex);
@@ -699,7 +699,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_INDEX: {IX, NUMBER(12, 3)}
-     * @param nullableDecimalIndex The value of nullableDecimalIndex as equal. (NullAllowed: if null, no condition)
+     * @param nullableDecimalIndex The value of nullableDecimalIndex as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalIndex_Equal(java.math.BigDecimal nullableDecimalIndex) {
         doSetNullableDecimalIndex_Equal(nullableDecimalIndex);
@@ -712,7 +712,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_INDEX: {IX, NUMBER(12, 3)}
-     * @param nullableDecimalIndex The value of nullableDecimalIndex as greaterThan. (NullAllowed: if null, no condition)
+     * @param nullableDecimalIndex The value of nullableDecimalIndex as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalIndex_GreaterThan(java.math.BigDecimal nullableDecimalIndex) {
         regNullableDecimalIndex(CK_GT, nullableDecimalIndex);
@@ -721,7 +721,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_INDEX: {IX, NUMBER(12, 3)}
-     * @param nullableDecimalIndex The value of nullableDecimalIndex as lessThan. (NullAllowed: if null, no condition)
+     * @param nullableDecimalIndex The value of nullableDecimalIndex as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalIndex_LessThan(java.math.BigDecimal nullableDecimalIndex) {
         regNullableDecimalIndex(CK_LT, nullableDecimalIndex);
@@ -730,7 +730,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_INDEX: {IX, NUMBER(12, 3)}
-     * @param nullableDecimalIndex The value of nullableDecimalIndex as greaterEqual. (NullAllowed: if null, no condition)
+     * @param nullableDecimalIndex The value of nullableDecimalIndex as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalIndex_GreaterEqual(java.math.BigDecimal nullableDecimalIndex) {
         regNullableDecimalIndex(CK_GE, nullableDecimalIndex);
@@ -739,7 +739,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_INDEX: {IX, NUMBER(12, 3)}
-     * @param nullableDecimalIndex The value of nullableDecimalIndex as lessEqual. (NullAllowed: if null, no condition)
+     * @param nullableDecimalIndex The value of nullableDecimalIndex as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalIndex_LessEqual(java.math.BigDecimal nullableDecimalIndex) {
         regNullableDecimalIndex(CK_LE, nullableDecimalIndex);
@@ -815,7 +815,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_NO_INDEX: {NUMBER(12, 3)}
-     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as equal. (NullAllowed: if null, no condition)
+     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalNoIndex_Equal(java.math.BigDecimal nullableDecimalNoIndex) {
         doSetNullableDecimalNoIndex_Equal(nullableDecimalNoIndex);
@@ -828,7 +828,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_NO_INDEX: {NUMBER(12, 3)}
-     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as greaterThan. (NullAllowed: if null, no condition)
+     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalNoIndex_GreaterThan(java.math.BigDecimal nullableDecimalNoIndex) {
         regNullableDecimalNoIndex(CK_GT, nullableDecimalNoIndex);
@@ -837,7 +837,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_NO_INDEX: {NUMBER(12, 3)}
-     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as lessThan. (NullAllowed: if null, no condition)
+     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalNoIndex_LessThan(java.math.BigDecimal nullableDecimalNoIndex) {
         regNullableDecimalNoIndex(CK_LT, nullableDecimalNoIndex);
@@ -846,7 +846,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_NO_INDEX: {NUMBER(12, 3)}
-     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as greaterEqual. (NullAllowed: if null, no condition)
+     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalNoIndex_GreaterEqual(java.math.BigDecimal nullableDecimalNoIndex) {
         regNullableDecimalNoIndex(CK_GE, nullableDecimalNoIndex);
@@ -855,7 +855,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * NULLABLE_DECIMAL_NO_INDEX: {NUMBER(12, 3)}
-     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as lessEqual. (NullAllowed: if null, no condition)
+     * @param nullableDecimalNoIndex The value of nullableDecimalNoIndex as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setNullableDecimalNoIndex_LessEqual(java.math.BigDecimal nullableDecimalNoIndex) {
         regNullableDecimalNoIndex(CK_LE, nullableDecimalNoIndex);
@@ -931,7 +931,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * SELF_PARENT_ID: {NUMBER(12), FK to VENDOR_LARGE_DATA_REF}
-     * @param selfParentId The value of selfParentId as equal. (NullAllowed: if null, no condition)
+     * @param selfParentId The value of selfParentId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setSelfParentId_Equal(Long selfParentId) {
         doSetSelfParentId_Equal(selfParentId);
@@ -944,7 +944,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * SELF_PARENT_ID: {NUMBER(12), FK to VENDOR_LARGE_DATA_REF}
-     * @param selfParentId The value of selfParentId as greaterThan. (NullAllowed: if null, no condition)
+     * @param selfParentId The value of selfParentId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setSelfParentId_GreaterThan(Long selfParentId) {
         regSelfParentId(CK_GT, selfParentId);
@@ -953,7 +953,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * SELF_PARENT_ID: {NUMBER(12), FK to VENDOR_LARGE_DATA_REF}
-     * @param selfParentId The value of selfParentId as lessThan. (NullAllowed: if null, no condition)
+     * @param selfParentId The value of selfParentId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setSelfParentId_LessThan(Long selfParentId) {
         regSelfParentId(CK_LT, selfParentId);
@@ -962,7 +962,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * SELF_PARENT_ID: {NUMBER(12), FK to VENDOR_LARGE_DATA_REF}
-     * @param selfParentId The value of selfParentId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param selfParentId The value of selfParentId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setSelfParentId_GreaterEqual(Long selfParentId) {
         regSelfParentId(CK_GE, selfParentId);
@@ -971,7 +971,7 @@ public abstract class AbstractBsVendorLargeDataRefCQ extends AbstractConditionQu
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * SELF_PARENT_ID: {NUMBER(12), FK to VENDOR_LARGE_DATA_REF}
-     * @param selfParentId The value of selfParentId as lessEqual. (NullAllowed: if null, no condition)
+     * @param selfParentId The value of selfParentId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setSelfParentId_LessEqual(Long selfParentId) {
         regSelfParentId(CK_LE, selfParentId);
