@@ -1,4 +1,302 @@
 map:{
+    ; 2015/10/03 03:13:13 = map:{
+        ; diffDate = 2015/10/03 03:13:13
+        ; procedureDiff = map:{
+            ; MAIHAMADB.FN_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.FN_IN_OUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.FN_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.FN_NO_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_IN_OUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_NO_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_NULL_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_NULL_OUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_ORACLE_CHAR_INOUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_ORACLE_CHAR_INOUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_INTERRUPT = map:{
+                ; procedureName = MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_INTERRUPT
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SAME_PKG.SP_PKG_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SAME_PKG.SP_PKG_IN_OUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.MAIN_PKG.SP_PKG_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.MAIN_PKG.SP_PKG_IN_OUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.MAIN_PKG.SP_PKG_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.MAIN_PKG.SP_PKG_NO_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SAME_PKG.SP_PKG_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SAME_PKG.SP_PKG_NO_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_RESULT_SET_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_RESULT_SET_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_RESULT_SET_PARAMETER_MORE = map:{
+                ; procedureName = MAIHAMADB.SP_RESULT_SET_PARAMETER_MORE
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_RESULT_SET_PARAMETER_WITH = map:{
+                ; procedureName = MAIHAMADB.SP_RESULT_SET_PARAMETER_WITH
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_STRUCT_BASIC_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_BASIC_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_STRUCT_LIST_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_LIST_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_STRUCT_NESTED_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_NESTED_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_STRUCT_NEXT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_NEXT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_STRUCT_SYNONYM_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_SYNONYM_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_TABLE_MANUAL_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_MANUAL_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_TABLE_NESTED_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_NESTED_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_TABLE_NEXT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_NEXT_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_TABLE_PACKED_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_PACKED_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_TABLE_SYNONYM_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_SYNONYM_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_TABLE_VARIOUS_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_VARIOUS_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_TRANSACTION_INHERIT = map:{
+                ; procedureName = MAIHAMADB.SP_TRANSACTION_INHERIT
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_VARIOUS_TYPE_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_VARIOUS_TYPE_PARAMETER
+                ; diffType = ADD
+            }
+            ; MAIHAMADB.SP_VARRAY_MANUAL_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_VARRAY_MANUAL_PARAMETER
+                ; diffType = ADD
+            }
+            ; NEWURAYASUDB.FN_NEXT_NO_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.FN_NEXT_NO_PARAMETER
+                ; diffType = ADD
+            }
+            ; NEWURAYASUDB.FN_NEXT_SYNONYM_SAME_NAME = map:{
+                ; procedureName = NEWURAYASUDB.FN_NEXT_SYNONYM_SAME_NAME
+                ; diffType = ADD
+            }
+            ; NEWURAYASUDB.SP_NEXT_IN_OUT_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.SP_NEXT_IN_OUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; NEWURAYASUDB.SP_NEXT_NO_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.SP_NEXT_NO_PARAMETER
+                ; diffType = ADD
+            }
+            ; NEWURAYASUDB.SP_NEXT_STRUCT_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.SP_NEXT_STRUCT_PARAMETER
+                ; diffType = ADD
+            }
+            ; NEWURAYASUDB.NEXT_PKG.SP_PKG_IN_OUT_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.NEXT_PKG.SP_PKG_IN_OUT_PARAMETER
+                ; diffType = ADD
+            }
+            ; NEWURAYASUDB.NEXT_PKG.SP_PKG_NO_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.NEXT_PKG.SP_PKG_NO_PARAMETER
+                ; diffType = ADD
+            }
+        }
+    }
+    ; 2015/10/03 03:12:48 = map:{
+        ; diffDate = 2015/10/03 03:12:48
+        ; procedureDiff = map:{
+            ; MAIHAMADB.FN_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.FN_IN_OUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.FN_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.FN_NO_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_IN_OUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_NO_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_NULL_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_NULL_OUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_ORACLE_CHAR_INOUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_ORACLE_CHAR_INOUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_INTERRUPT = map:{
+                ; procedureName = MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_INTERRUPT
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.OVERLOAD_PKG.SP_OVERLOAD_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SAME_PKG.SP_PKG_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SAME_PKG.SP_PKG_IN_OUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.MAIN_PKG.SP_PKG_IN_OUT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.MAIN_PKG.SP_PKG_IN_OUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.MAIN_PKG.SP_PKG_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.MAIN_PKG.SP_PKG_NO_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SAME_PKG.SP_PKG_NO_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SAME_PKG.SP_PKG_NO_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_RESULT_SET_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_RESULT_SET_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_RESULT_SET_PARAMETER_MORE = map:{
+                ; procedureName = MAIHAMADB.SP_RESULT_SET_PARAMETER_MORE
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_RESULT_SET_PARAMETER_WITH = map:{
+                ; procedureName = MAIHAMADB.SP_RESULT_SET_PARAMETER_WITH
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_STRUCT_BASIC_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_BASIC_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_STRUCT_LIST_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_LIST_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_STRUCT_NESTED_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_NESTED_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_STRUCT_NEXT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_NEXT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_STRUCT_SYNONYM_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_STRUCT_SYNONYM_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_TABLE_MANUAL_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_MANUAL_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_TABLE_NESTED_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_NESTED_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_TABLE_NEXT_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_NEXT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_TABLE_PACKED_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_PACKED_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_TABLE_SYNONYM_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_SYNONYM_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_TABLE_VARIOUS_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_TABLE_VARIOUS_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_TRANSACTION_INHERIT = map:{
+                ; procedureName = MAIHAMADB.SP_TRANSACTION_INHERIT
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_VARIOUS_TYPE_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_VARIOUS_TYPE_PARAMETER
+                ; diffType = DELETE
+            }
+            ; MAIHAMADB.SP_VARRAY_MANUAL_PARAMETER = map:{
+                ; procedureName = MAIHAMADB.SP_VARRAY_MANUAL_PARAMETER
+                ; diffType = DELETE
+            }
+            ; NEWURAYASUDB.FN_NEXT_NO_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.FN_NEXT_NO_PARAMETER
+                ; diffType = DELETE
+            }
+            ; NEWURAYASUDB.FN_NEXT_SYNONYM_SAME_NAME = map:{
+                ; procedureName = NEWURAYASUDB.FN_NEXT_SYNONYM_SAME_NAME
+                ; diffType = DELETE
+            }
+            ; NEWURAYASUDB.SP_NEXT_IN_OUT_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.SP_NEXT_IN_OUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; NEWURAYASUDB.SP_NEXT_NO_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.SP_NEXT_NO_PARAMETER
+                ; diffType = DELETE
+            }
+            ; NEWURAYASUDB.SP_NEXT_STRUCT_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.SP_NEXT_STRUCT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; NEWURAYASUDB.NEXT_PKG.SP_PKG_IN_OUT_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.NEXT_PKG.SP_PKG_IN_OUT_PARAMETER
+                ; diffType = DELETE
+            }
+            ; NEWURAYASUDB.NEXT_PKG.SP_PKG_NO_PARAMETER = map:{
+                ; procedureName = NEWURAYASUDB.NEXT_PKG.SP_PKG_NO_PARAMETER
+                ; diffType = DELETE
+            }
+        }
+    }
     ; 2014/11/02 19:07:57 = map:{
         ; diffDate = 2014/11/02 19:07:57
         ; tableDiff = map:{
