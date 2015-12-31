@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.CustomizeEntity;
+import org.docksidestage.oracle.dbflute.allcommon.EntityDefinedCommonColumn;
 import org.docksidestage.oracle.dbflute.exentity.customize.*;
 
 /**
@@ -60,7 +61,7 @@ import org.docksidestage.oracle.dbflute.exentity.customize.*;
  * </pre>
  * @author oracleman
  */
-public abstract class BsCommonColumnMember extends AbstractEntity implements CustomizeEntity {
+public abstract class BsCommonColumnMember extends AbstractEntity implements CustomizeEntity, EntityDefinedCommonColumn {
 
     // ===================================================================================
     //                                                                          Definition
