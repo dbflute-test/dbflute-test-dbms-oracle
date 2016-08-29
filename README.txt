@@ -2,29 +2,31 @@
 # ========================================================================================
 #                                                                                 Overview
 #                                                                                 ========
-The example project for Buri and DBFlute.
+The example project for Oracle and DBFlute.
 
 
 # ========================================================================================
 #                                                                              Environment
 #                                                                              ===========
 [Maven2]
-This project needs maven2 so you should prepare 'M2Eclipse'.
+This project needs maven2 so you should prepare 'M2E' (if Eclipse).
 
 [JDBC]
-Put ojdbc5.jar to both 'lib' and 'dbflute_maihamadb/extlib' and 'dbflute_newurayasudb/extlib'.
+Put ojdbc6.jar to both 'lib' and 'dbflute_maihamadb/extlib' and 'dbflute_newurayasudb/extlib'.
 
 [Oracle]
-/= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-This example requires two schemas 'maihamadb' and 'newurayasudb'.
+/= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+This example requires three schemas 'maihamadb' and 'resortlinedb' and 'newurayasudb'.
 = = = = = = = = = =/
-The maihamadb and newurayasudb will be created by ReplaceSchema task. (contains creating user)
+The schemas will be created by ReplaceSchema task. (contains creating user)
 But if a password of your 'system' user is different from 'orcl',
-Modify the password on additionalUserMap in replaceSchemaDefinitionMap.dfprop.
+make "system-password.txt" (will be git-ignored) in dfprop directory with your system password.
+(then both maihamadb's and resortlinedb's dfprop directory)
 
 Are you ready? OK, execute the ReplaceSchema task!
-At first execute the ReplaceSchema task by nextschema-renewal.bat(sh) for newurayasudb
-Then after, execute the ReplaceSchema task by manage.bat(sh) 0 for maihamadb
+First, execute ReplaceSchema by manage.bat(sh) for resortlinedb and selecting replace-schema(0).
+Second, execute ReplaceSchema by nextschema-renewal.bat(sh) for newurayasudb.
+Then after, execute ReplaceSchema by manage.bat(sh) for maihamadb and selecting replace-schema(0).
 
 -- _/_/_/_/_/_/_/_/_/_/_/
 -- If ORA-01536 occurred
@@ -32,6 +34,7 @@ Then after, execute the ReplaceSchema task by manage.bat(sh) 0 for maihamadb
 -- [By system user]
 alter user maihamadb quota unlimited on users;
 alter user newurayasudb quota unlimited on users;
+alter user resortlinedb quota unlimited on users;
 
 
 # ========================================================================================
