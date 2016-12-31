@@ -39,6 +39,11 @@ public abstract class UnitContainerTestCase extends ContainerTestCase {
     //                                                                            Settings
     //                                                                            ========
     @Override
+    protected boolean isUseTestCaseLooseBinding() {
+        return true;
+    }
+    
+    @Override
     public void tearDown() throws Exception {
         super.tearDown();
         _cbStack.clear();

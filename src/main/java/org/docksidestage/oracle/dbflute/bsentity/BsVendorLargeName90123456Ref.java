@@ -16,31 +16,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     VENDOR_LARGE_NAME_90123_REF_ID
- * 
+ *
  * [column]
  *     VENDOR_LARGE_NAME_90123_REF_ID, VENDOR_LARGE_NAME_901_REF_NAME, VENDOR_LARGE_NAME_901234567_ID
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     VENDOR_LARGE_NAME_901234567890
- * 
+ *
  * [referrer table]
  *     
- * 
+ *
  * [foreign property]
  *     vendorLargeName901234567890
- * 
+ *
  * [referrer property]
  *     
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long vendorLargeName90123RefId = entity.getVendorLargeName90123RefId();
@@ -122,7 +122,7 @@ public abstract class BsVendorLargeName90123456Ref extends AbstractEntity implem
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

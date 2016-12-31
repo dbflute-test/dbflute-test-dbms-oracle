@@ -21,31 +21,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     MEMBER_ID
- * 
+ *
  * [column]
  *     MEMBER_ID, MEMBER_NAME, MEMBER_ACCOUNT, MEMBER_STATUS_CODE, FORMALIZED_DATETIME, BIRTHDATE, REGISTER_DATETIME, REGISTER_USER, REGISTER_PROCESS, UPDATE_DATETIME, UPDATE_USER, UPDATE_PROCESS, VERSION_NO
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     VERSION_NO
- * 
+ *
  * [foreign table]
  *     MEMBER_STATUS, SYNONYM_MEMBER_WITHDRAWAL(AsOne)
- * 
+ *
  * [referrer table]
  *     SYNONYM_MEMBER_LOGIN, SYNONYM_MEMBER_WITHDRAWAL
- * 
+ *
  * [foreign property]
  *     memberStatus, synonymMemberWithdrawalAsOne
- * 
+ *
  * [referrer property]
  *     synonymMemberLoginList
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Integer memberId = entity.getMemberId();
@@ -316,7 +316,7 @@ public abstract class BsSynonymMember extends AbstractEntity implements DomainEn
         _synonymMemberLoginList = synonymMemberLoginList;
     }
 
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

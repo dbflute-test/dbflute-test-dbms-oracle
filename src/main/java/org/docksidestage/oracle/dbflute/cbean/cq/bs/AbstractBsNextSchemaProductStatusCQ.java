@@ -459,7 +459,6 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<NextSchemaProductStatusCB> scalar_GreaterThan() {
@@ -475,7 +474,6 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<NextSchemaProductStatusCB> scalar_LessThan() {

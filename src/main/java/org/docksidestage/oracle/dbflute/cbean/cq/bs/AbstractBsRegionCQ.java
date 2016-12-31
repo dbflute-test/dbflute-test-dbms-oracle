@@ -103,7 +103,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
      * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
      * @param regionIdList The collection of regionId as inScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setRegionId_InScope(Collection<java.math.BigDecimal> regionIdList) {
+    protected void setRegionId_InScope(Collection<java.math.BigDecimal> regionIdList) {
         doSetRegionId_InScope(regionIdList);
     }
 
@@ -382,7 +382,6 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<RegionCB> scalar_GreaterThan() {
@@ -398,7 +397,6 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<RegionCB> scalar_LessThan() {

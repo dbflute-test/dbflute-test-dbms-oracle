@@ -14,31 +14,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     REF_ID
- * 
+ *
  * [column]
  *     REF_ID, REF_NAME, SAME_NAME_ID
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     
- * 
+ *
  * [referrer table]
  *     
- * 
+ *
  * [foreign property]
  *     
- * 
+ *
  * [referrer property]
  *     
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long refId = entity.getRefId();
@@ -99,7 +99,7 @@ public abstract class BsSynonymNextSameNameFk extends AbstractEntity implements 
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

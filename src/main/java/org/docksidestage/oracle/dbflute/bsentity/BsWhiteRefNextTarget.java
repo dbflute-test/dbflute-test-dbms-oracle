@@ -16,31 +16,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     REF_NEXT_TARGET_ID
- * 
+ *
  * [column]
  *     REF_NEXT_TARGET_ID, NEXT_TARGET_CODE
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     NEXT_SCHEMA_PRODUCT_STATUS
- * 
+ *
  * [referrer table]
  *     
- * 
+ *
  * [foreign property]
  *     nextSchemaProductStatus
- * 
+ *
  * [referrer property]
  *     
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long refNextTargetId = entity.getRefNextTargetId();
@@ -117,7 +117,7 @@ public abstract class BsWhiteRefNextTarget extends AbstractEntity implements Dom
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

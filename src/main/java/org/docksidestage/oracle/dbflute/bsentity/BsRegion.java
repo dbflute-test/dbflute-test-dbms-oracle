@@ -15,31 +15,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     REGION_ID
- * 
+ *
  * [column]
  *     REGION_ID, REGION_NAME
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     
- * 
+ *
  * [referrer table]
  *     MEMBER_ADDRESS
- * 
+ *
  * [foreign property]
  *     
- * 
+ *
  * [referrer property]
  *     memberAddressList
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * java.math.BigDecimal regionId = entity.getRegionId();
@@ -221,7 +221,7 @@ public abstract class BsRegion extends AbstractEntity implements DomainEntity {
         _memberAddressList = memberAddressList;
     }
 
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

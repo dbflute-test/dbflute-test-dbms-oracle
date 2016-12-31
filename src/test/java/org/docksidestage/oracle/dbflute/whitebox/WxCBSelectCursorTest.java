@@ -110,7 +110,7 @@ public class WxCBSelectCursorTest extends UnitContainerTestCase {
         assertFalse(ConditionBeanContext.isExistConditionBeanOnThread());
         assertFalse(OutsideSqlContext.isExistOutsideSqlContextOnThread());
         MemberStatusCB statusCB = new MemberStatusCB();
-        statusCB.query().setMemberStatusCode_InScope(codeList);
+        statusCB.query().invokeQuery("MemberStatusCode", "InScope", codeList);
         assertNotSame(0, memberStatusBhv.selectCount(statusCB));
     }
 }

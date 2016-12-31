@@ -655,7 +655,6 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextLinkSynonymCB> scalar_GreaterThan() {
@@ -671,7 +670,6 @@ public abstract class AbstractBsSynonymNextLinkSynonymCQ extends AbstractConditi
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextLinkSynonymCB> scalar_LessThan() {

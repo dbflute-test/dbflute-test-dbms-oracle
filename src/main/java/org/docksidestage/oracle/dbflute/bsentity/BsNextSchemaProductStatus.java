@@ -15,31 +15,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     PRODUCT_STATUS_CODE
- * 
+ *
  * [column]
  *     PRODUCT_STATUS_CODE, PRODUCT_STATUS_NAME
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     
- * 
+ *
  * [referrer table]
  *     WHITE_REF_NEXT_TARGET, NEXT_SCHEMA_PRODUCT
- * 
+ *
  * [foreign property]
  *     
- * 
+ *
  * [referrer property]
  *     whiteRefNextTargetList, nextSchemaProductList
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * String productStatusCode = entity.getProductStatusCode();
@@ -146,7 +146,7 @@ public abstract class BsNextSchemaProductStatus extends AbstractEntity implement
         _nextSchemaProductList = nextSchemaProductList;
     }
 
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

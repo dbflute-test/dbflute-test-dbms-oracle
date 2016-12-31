@@ -14,31 +14,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     UQ_FK_ID
- * 
+ *
  * [column]
  *     UQ_FK_ID, UQ_FK_CODE
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     
- * 
+ *
  * [referrer table]
  *     WHITE_UQ_FK_REF
- * 
+ *
  * [foreign property]
  *     
- * 
+ *
  * [referrer property]
  *     whiteUqFkRefByFkToPkIdList, whiteUqFkRefByFkToUqCodeList
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long uqFkId = entity.getUqFkId();
@@ -145,7 +145,7 @@ public abstract class BsWhiteUqFk extends AbstractEntity implements DomainEntity
         _whiteUqFkRefByFkToUqCodeList = whiteUqFkRefByFkToUqCodeList;
     }
 
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

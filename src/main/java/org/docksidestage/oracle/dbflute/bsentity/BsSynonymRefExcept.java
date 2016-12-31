@@ -16,31 +16,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     REF_EXCEPT_ID
- * 
+ *
  * [column]
  *     REF_EXCEPT_ID, EXCEPT_ID
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     SYNONYM_EXCEPT
- * 
+ *
  * [referrer table]
  *     
- * 
+ *
  * [foreign property]
  *     synonymExcept
- * 
+ *
  * [referrer property]
  *     
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long refExceptId = entity.getRefExceptId();
@@ -117,7 +117,7 @@ public abstract class BsSynonymRefExcept extends AbstractEntity implements Domai
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

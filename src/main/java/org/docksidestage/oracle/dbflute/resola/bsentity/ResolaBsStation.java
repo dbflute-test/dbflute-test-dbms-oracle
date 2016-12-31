@@ -14,31 +14,31 @@ import org.docksidestage.oracle.dbflute.resola.exentity.*;
  * <pre>
  * [primary-key]
  *     STATION_ID
- * 
+ *
  * [column]
  *     STATION_ID, STATION_NAME, BIRTHDATE, FORMALIZED_DATETIME, HOME_COUNT, WORKING_KILOMETER
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     
- * 
+ *
  * [referrer table]
  *     
- * 
+ *
  * [foreign property]
  *     
- * 
+ *
  * [referrer property]
  *     
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Integer stationId = entity.getStationId();
@@ -114,7 +114,7 @@ public abstract class ResolaBsStation extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

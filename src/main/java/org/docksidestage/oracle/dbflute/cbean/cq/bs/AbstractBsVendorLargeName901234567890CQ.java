@@ -382,7 +382,6 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorLargeName901234567890CB> scalar_GreaterThan() {
@@ -398,7 +397,6 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorLargeName901234567890CB> scalar_LessThan() {

@@ -176,7 +176,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
      * SERVICE_RANK_CODE: {PK, NotNull, CHAR(3), classification=ServiceRank}
      * @param serviceRankCodeList The collection of serviceRankCode as inScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setServiceRankCode_InScope(Collection<String> serviceRankCodeList) {
+    protected void setServiceRankCode_InScope(Collection<String> serviceRankCodeList) {
         doSetServiceRankCode_InScope(serviceRankCodeList);
     }
 
@@ -561,7 +561,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
      * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg}
      * @param newAcceptableFlgList The collection of newAcceptableFlg as inScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setNewAcceptableFlg_InScope(Collection<java.math.BigDecimal> newAcceptableFlgList) {
+    protected void setNewAcceptableFlg_InScope(Collection<java.math.BigDecimal> newAcceptableFlgList) {
         doSetNewAcceptableFlg_InScope(newAcceptableFlgList);
     }
 
@@ -859,7 +859,6 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<ServiceRankCB> scalar_GreaterThan() {
@@ -875,7 +874,6 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
      * </pre> 
-     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<ServiceRankCB> scalar_LessThan() {

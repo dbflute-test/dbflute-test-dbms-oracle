@@ -17,31 +17,31 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     PRODUCT_ID
- * 
+ *
  * [column]
  *     PRODUCT_ID, PRODUCT_NAME, PRODUCT_HANDLE_CODE, PRODUCT_CATEGORY_CODE, PRODUCT_STATUS_CODE, REGULAR_PRICE, REGISTER_DATETIME, REGISTER_USER, REGISTER_PROCESS, UPDATE_DATETIME, UPDATE_USER, UPDATE_PROCESS, VERSION_NO
- * 
+ *
  * [sequence]
  *     SYNONYM_NEXT_SEQUENCE
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     VERSION_NO
- * 
+ *
  * [foreign table]
  *     PRODUCT_STATUS
- * 
+ *
  * [referrer table]
  *     PURCHASE
- * 
+ *
  * [foreign property]
  *     productStatus
- * 
+ *
  * [referrer property]
  *     purchaseList
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Integer productId = entity.getProductId();
@@ -204,7 +204,7 @@ public abstract class BsProduct extends AbstractEntity implements DomainEntity, 
         _purchaseList = purchaseList;
     }
 
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 
