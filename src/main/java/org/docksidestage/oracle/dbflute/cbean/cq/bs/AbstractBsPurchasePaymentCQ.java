@@ -589,7 +589,7 @@ public abstract class AbstractBsPurchasePaymentCQ extends AbstractConditionQuery
      * PAYMENT_METHOD_CODE: {NotNull, CHAR(3), classification=PaymentMethod}
      * @param paymentMethodCodeList The collection of paymentMethodCode as notInScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setPaymentMethodCode_NotInScope(Collection<String> paymentMethodCodeList) {
+    protected void setPaymentMethodCode_NotInScope(Collection<String> paymentMethodCodeList) {
         doSetPaymentMethodCode_NotInScope(paymentMethodCodeList);
     }
 

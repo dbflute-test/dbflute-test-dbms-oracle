@@ -805,7 +805,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
      * PAYMENT_COMPLETE_FLG: {NotNull, NUMBER(1), classification=Flg}
      * @param paymentCompleteFlgList The collection of paymentCompleteFlg as notInScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setPaymentCompleteFlg_NotInScope(Collection<Integer> paymentCompleteFlgList) {
+    protected void setPaymentCompleteFlg_NotInScope(Collection<Integer> paymentCompleteFlgList) {
         doSetPaymentCompleteFlg_NotInScope(paymentCompleteFlgList);
     }
 

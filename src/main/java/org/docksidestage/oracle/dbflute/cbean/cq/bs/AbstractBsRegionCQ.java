@@ -126,7 +126,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
      * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
      * @param regionIdList The collection of regionId as notInScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setRegionId_NotInScope(Collection<java.math.BigDecimal> regionIdList) {
+    protected void setRegionId_NotInScope(Collection<java.math.BigDecimal> regionIdList) {
         doSetRegionId_NotInScope(regionIdList);
     }
 

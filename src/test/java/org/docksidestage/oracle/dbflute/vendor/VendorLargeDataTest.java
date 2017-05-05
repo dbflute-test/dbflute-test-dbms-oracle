@@ -332,10 +332,10 @@ public class VendorLargeDataTest extends UnitContainerTestCase {
             long secondTotal = 0;
             for (int i = 0; i < totalTryCount; i++) {
                 boolean firstTime = (i % 2 == 0);
-                long before = currentDate().getTime();
+                long before = currentUtilDate().getTime();
                 CB currentCB = firstTime ? firstCB : secondCB;
                 callback.exec(currentCB);
-                long after = currentDate().getTime();
+                long after = currentUtilDate().getTime();
                 if (firstTime) {
                     firstTotal = firstTotal + (after - before);
                 } else {

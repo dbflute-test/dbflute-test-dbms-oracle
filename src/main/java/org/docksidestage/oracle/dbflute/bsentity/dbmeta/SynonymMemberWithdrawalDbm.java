@@ -45,8 +45,7 @@ public class SynonymMemberWithdrawalDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getMemberId(), (et, vl) -> ((SynonymMemberWithdrawal)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SynonymMemberWithdrawal)et).getWithdrawalReasonCode(), (et, vl) -> {
-            ColumnInfo col = columnWithdrawalReasonCode();
-            CDef.WithdrawalReason cls = (CDef.WithdrawalReason)gcls(et, col, vl);
+            CDef.WithdrawalReason cls = (CDef.WithdrawalReason)gcls(et, columnWithdrawalReasonCode(), vl);
             if (cls != null) {
                 ((SynonymMemberWithdrawal)et).setWithdrawalReasonCodeAsWithdrawalReason(cls);
             } else {

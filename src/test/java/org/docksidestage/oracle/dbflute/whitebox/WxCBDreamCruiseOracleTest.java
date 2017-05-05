@@ -86,8 +86,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             public void query(PurchaseCB subCB) {
                 subCB.query().queryProduct().notExistsPurchase(new SubQuery<PurchaseCB>() {
                     public void query(PurchaseCB subCB) {
-                        SpecifiedColumn pointColumn = dreamCruiseCB.specify().specifyMemberServiceAsOne()
-                                .columnServicePointCount();
+                        SpecifiedColumn pointColumn = dreamCruiseCB.specify().specifyMemberServiceAsOne().columnServicePointCount();
                         subCB.columnQuery(new SpecifyQuery<PurchaseCB>() {
                             public void specify(PurchaseCB cb) {
                                 cb.specify().columnMemberId();
@@ -206,7 +205,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).greaterEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2006/09/26"));
+                cb.mysticRhythms(toUtilDate("2006/09/26"));
             }
         });
 
@@ -278,10 +277,8 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             assertTrue(member.getMemberId() >= 10L);
         }
         String sql = cb.toDisplaySql();
-        assertContains(sql,
-                "where dfloc.FORMALIZED_DATETIME <= add_months(timestamp '2015-04-05 12:34:56.000', dfloc.VERSION_NO)");
-        assertContains(sql,
-                "and dfloc.FORMALIZED_DATETIME <= timestamp '2014-09-01 15:00:00.000' + dfloc.MEMBER_ID + -3 / 24");
+        assertContains(sql, "where dfloc.FORMALIZED_DATETIME <= add_months(timestamp '2015-04-05 12:34:56.000', dfloc.VERSION_NO)");
+        assertContains(sql, "and dfloc.FORMALIZED_DATETIME <= timestamp '2014-09-01 15:00:00.000' + dfloc.MEMBER_ID + -3 / 24");
         assertContains(sql, "and dfloc.FORMALIZED_DATETIME >= timestamp '2006-09-26 12:34:56.789'");
     }
 
@@ -301,7 +298,7 @@ public class WxCBDreamCruiseOracleTest extends UnitContainerTestCase {
             }
         }).greaterEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2006/09/26"));
+                cb.mysticRhythms(toUtilDate("2006/09/26"));
             }
         }).convert(op -> op.subtractMonth(dreamCruiseCB.specify().columnVersionNo()));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
