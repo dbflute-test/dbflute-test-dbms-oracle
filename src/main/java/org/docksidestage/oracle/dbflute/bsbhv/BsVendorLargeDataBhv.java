@@ -124,7 +124,7 @@ public abstract class BsVendorLargeDataBhv extends AbstractBehaviorWritable<Vend
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">vendorLargeData</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">vendorLargeDataBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsVendorLargeDataBhv extends AbstractBehaviorWritable<Vend
      * <pre>
      * VendorLargeDataCB cb = <span style="color: #70226C">new</span> VendorLargeDataCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">vendorLargeDataBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(vendorLargeData <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = vendorLargeData.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">vendorLargeDataBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(vendorLargeData <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1133,8 +1133,8 @@ public abstract class BsVendorLargeDataBhv extends AbstractBehaviorWritable<Vend
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * vendorLargeDataBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * vendorLargeDataBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * vendorLargeDataBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * vendorLargeDataBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * vendorLargeDataBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1142,7 +1142,7 @@ public abstract class BsVendorLargeDataBhv extends AbstractBehaviorWritable<Vend
      * vendorLargeDataBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * vendorLargeDataBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * vendorLargeDataBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * vendorLargeDataBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * vendorLargeDataBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1150,7 +1150,7 @@ public abstract class BsVendorLargeDataBhv extends AbstractBehaviorWritable<Vend
      * vendorLargeDataBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * vendorLargeDataBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * vendorLargeDataBhv.outideSql().removeBlockComment().selectList()
      * vendorLargeDataBhv.outideSql().removeLineComment().selectList()
      * vendorLargeDataBhv.outideSql().formatSql().selectList()

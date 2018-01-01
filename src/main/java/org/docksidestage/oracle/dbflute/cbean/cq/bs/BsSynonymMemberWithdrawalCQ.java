@@ -79,7 +79,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _memberId; }
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_ID: {PK, NotNull, NUMBER(9), FK to MEMBER_VENDOR_SYNONYM}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _withdrawalReasonCode; }
     protected ConditionValue xgetCValueWithdrawalReasonCode() { return xdfgetWithdrawalReasonCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * WITHDRAWAL_REASON_CODE: {CHAR(3), FK to WITHDRAWAL_REASON, classification=WithdrawalReason}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _withdrawalReasonInputText; }
     protected ConditionValue xgetCValueWithdrawalReasonInputText() { return xdfgetWithdrawalReasonInputText(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * WITHDRAWAL_REASON_INPUT_TEXT: {CLOB(4000)}
      * @return this. (NotNull)
@@ -139,7 +139,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _withdrawalDatetime; }
     protected ConditionValue xgetCValueWithdrawalDatetime() { return xdfgetWithdrawalDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * WITHDRAWAL_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -159,7 +159,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _registerDatetime; }
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -179,7 +179,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _registerProcess; }
     protected ConditionValue xgetCValueRegisterProcess() { return xdfgetRegisterProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -199,7 +199,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _registerUser; }
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -219,7 +219,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _updateDatetime; }
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -239,7 +239,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _updateProcess; }
     protected ConditionValue xgetCValueUpdateProcess() { return xdfgetUpdateProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -259,7 +259,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _updateUser; }
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -279,7 +279,7 @@ public class BsSynonymMemberWithdrawalCQ extends AbstractBsSynonymMemberWithdraw
       return _versionNo; }
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VERSION_NO: {NotNull, NUMBER(16)}
      * @return this. (NotNull)

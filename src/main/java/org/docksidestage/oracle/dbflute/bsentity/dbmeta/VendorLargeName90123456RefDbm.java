@@ -78,9 +78,9 @@ public class VendorLargeName90123456RefDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnVendorLargeName90123RefId = cci("VENDOR_LARGE_NAME_90123_REF_ID", "VENDOR_LARGE_NAME_90123_REF_ID", null, null, Long.class, "vendorLargeName90123RefId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnVendorLargeName901RefName = cci("VENDOR_LARGE_NAME_901_REF_NAME", "VENDOR_LARGE_NAME_901_REF_NAME", null, null, String.class, "vendorLargeName901RefName", null, false, false, true, "VARCHAR2", 32, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnVendorLargeName901234567Id = cci("VENDOR_LARGE_NAME_901234567_ID", "VENDOR_LARGE_NAME_901234567_ID", null, null, Long.class, "vendorLargeName901234567Id", null, false, false, false, "NUMBER", 16, 0, null, false, null, null, "vendorLargeName901234567890", null, null, false);
+    protected final ColumnInfo _columnVendorLargeName90123RefId = cci("VENDOR_LARGE_NAME_90123_REF_ID", "VENDOR_LARGE_NAME_90123_REF_ID", null, null, Long.class, "vendorLargeName90123RefId", null, true, false, true, "NUMBER", 16, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnVendorLargeName901RefName = cci("VENDOR_LARGE_NAME_901_REF_NAME", "VENDOR_LARGE_NAME_901_REF_NAME", null, null, String.class, "vendorLargeName901RefName", null, false, false, true, "VARCHAR2", 32, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnVendorLargeName901234567Id = cci("VENDOR_LARGE_NAME_901234567_ID", "VENDOR_LARGE_NAME_901234567_ID", null, null, Long.class, "vendorLargeName901234567Id", null, false, false, false, "NUMBER", 16, 0, null, null, false, null, null, "vendorLargeName901234567890", null, null, false);
 
     /**
      * VENDOR_LARGE_NAME_90123_REF_ID: {PK, NotNull, NUMBER(16)}

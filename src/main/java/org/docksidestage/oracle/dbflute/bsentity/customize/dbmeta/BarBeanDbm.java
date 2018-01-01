@@ -68,12 +68,12 @@ public class BarBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnBarId = cci("BAR_ID", "BAR_ID", null, null, Integer.class, "barId", null, false, false, false, "NUMBER", 8, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBarName = cci("BAR_NAME", "BAR_NAME", null, null, String.class, "barName", null, false, false, false, "VARCHAR2", 20, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBarDecimal = cci("BAR_DECIMAL", "BAR_DECIMAL", null, null, java.math.BigDecimal.class, "barDecimal", null, false, false, false, "NUMBER", 5, 3, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBarDate = cci("BAR_DATE", "BAR_DATE", null, null, java.time.LocalDate.class, "barDate", null, false, false, false, "DATE", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBarTimestamp = cci("BAR_TIMESTAMP", "BAR_TIMESTAMP", null, null, java.time.LocalDateTime.class, "barTimestamp", null, false, false, false, "TIMESTAMP", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBarClob = cci("BAR_CLOB", "BAR_CLOB", null, null, String.class, "barClob", null, false, false, false, "CLOB", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarId = cci("BAR_ID", "BAR_ID", null, null, Integer.class, "barId", null, false, false, false, "NUMBER", 8, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarName = cci("BAR_NAME", "BAR_NAME", null, null, String.class, "barName", null, false, false, false, "VARCHAR2", 20, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarDecimal = cci("BAR_DECIMAL", "BAR_DECIMAL", null, null, java.math.BigDecimal.class, "barDecimal", null, false, false, false, "NUMBER", 5, 3, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarDate = cci("BAR_DATE", "BAR_DATE", null, null, java.time.LocalDate.class, "barDate", null, false, false, false, "DATE", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarTimestamp = cci("BAR_TIMESTAMP", "BAR_TIMESTAMP", null, null, java.time.LocalDateTime.class, "barTimestamp", null, false, false, false, "TIMESTAMP", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarClob = cci("BAR_CLOB", "BAR_CLOB", null, null, String.class, "barClob", null, false, false, false, "CLOB", null, null, null, null, false, null, null, null, null, null, false);
 
     /**
      * BAR_ID: {NUMBER(8)}

@@ -93,7 +93,7 @@ public class BsSynonymExceptCQ extends AbstractBsSynonymExceptCQ {
     public Map<String, Object> xdfgetExceptId_QueryDerivedReferrer_SynonymRefExceptListParameter() { return xgetSQuePmMap("exceptId_QueryDerivedReferrer_SynonymRefExceptList"); }
     public String keepExceptId_QueryDerivedReferrer_SynonymRefExceptListParameter(Object pm) { return xkeepSQuePm("exceptId_QueryDerivedReferrer_SynonymRefExceptList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * EXCEPT_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -113,7 +113,7 @@ public class BsSynonymExceptCQ extends AbstractBsSynonymExceptCQ {
       return _exceptName; }
     protected ConditionValue xgetCValueExceptName() { return xdfgetExceptName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * EXCEPT_NAME: {VARCHAR2(256)}
      * @return this. (NotNull)

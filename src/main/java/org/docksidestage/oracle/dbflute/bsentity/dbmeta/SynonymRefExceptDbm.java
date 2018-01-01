@@ -77,8 +77,8 @@ public class SynonymRefExceptDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnRefExceptId = cci("REF_EXCEPT_ID", "REF_EXCEPT_ID", null, null, Long.class, "refExceptId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, false, false, true, "NUMBER", 16, 0, null, false, null, null, "synonymExcept", null, null, false);
+    protected final ColumnInfo _columnRefExceptId = cci("REF_EXCEPT_ID", "REF_EXCEPT_ID", null, null, Long.class, "refExceptId", null, true, false, true, "NUMBER", 16, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, false, false, true, "NUMBER", 16, 0, null, null, false, null, null, "synonymExcept", null, null, false);
 
     /**
      * REF_EXCEPT_ID: {PK, NotNull, NUMBER(16)}

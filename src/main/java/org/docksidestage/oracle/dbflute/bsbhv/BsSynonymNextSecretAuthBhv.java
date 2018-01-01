@@ -124,7 +124,7 @@ public abstract class BsSynonymNextSecretAuthBhv extends AbstractBehaviorWritabl
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">synonymNextSecretAuth</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymNextSecretAuthBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsSynonymNextSecretAuthBhv extends AbstractBehaviorWritabl
      * <pre>
      * SynonymNextSecretAuthCB cb = <span style="color: #70226C">new</span> SynonymNextSecretAuthCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">synonymNextSecretAuthBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(synonymNextSecretAuth <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = synonymNextSecretAuth.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymNextSecretAuthBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(synonymNextSecretAuth <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1012,8 +1012,8 @@ public abstract class BsSynonymNextSecretAuthBhv extends AbstractBehaviorWritabl
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * synonymNextSecretAuthBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * synonymNextSecretAuthBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * synonymNextSecretAuthBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * synonymNextSecretAuthBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * synonymNextSecretAuthBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1021,7 +1021,7 @@ public abstract class BsSynonymNextSecretAuthBhv extends AbstractBehaviorWritabl
      * synonymNextSecretAuthBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * synonymNextSecretAuthBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * synonymNextSecretAuthBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * synonymNextSecretAuthBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * synonymNextSecretAuthBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1029,7 +1029,7 @@ public abstract class BsSynonymNextSecretAuthBhv extends AbstractBehaviorWritabl
      * synonymNextSecretAuthBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * synonymNextSecretAuthBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * synonymNextSecretAuthBhv.outideSql().removeBlockComment().selectList()
      * synonymNextSecretAuthBhv.outideSql().removeLineComment().selectList()
      * synonymNextSecretAuthBhv.outideSql().formatSql().selectList()

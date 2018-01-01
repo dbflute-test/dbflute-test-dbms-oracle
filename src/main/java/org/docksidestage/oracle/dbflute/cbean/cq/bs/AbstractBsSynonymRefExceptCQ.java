@@ -97,8 +97,8 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refExceptId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refExceptId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refExceptId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refExceptId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setRefExceptId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refExceptId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refExceptId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refExceptId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refExceptId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setRefExceptId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param refExceptIdList The collection of refExceptId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param refExceptIdList The collection of refExceptId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefExceptId_InScope(Collection<Long> refExceptIdList) {
         doSetRefExceptId_InScope(refExceptIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
-     * @param refExceptIdList The collection of refExceptId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param refExceptIdList The collection of refExceptId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefExceptId_NotInScope(Collection<Long> refExceptIdList) {
         doSetRefExceptId_NotInScope(refExceptIdList);
@@ -213,8 +213,8 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, NUMBER(16), FK to SYNONYM_EXCEPT}
-     * @param minNumber The min number of exceptId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of exceptId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of exceptId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of exceptId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setExceptId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -226,8 +226,8 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, NUMBER(16), FK to SYNONYM_EXCEPT}
-     * @param minNumber The min number of exceptId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of exceptId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of exceptId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of exceptId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setExceptId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * EXCEPT_ID: {NotNull, NUMBER(16), FK to SYNONYM_EXCEPT}
-     * @param exceptIdList The collection of exceptId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param exceptIdList The collection of exceptId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setExceptId_InScope(Collection<Long> exceptIdList) {
         doSetExceptId_InScope(exceptIdList);
@@ -250,7 +250,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * EXCEPT_ID: {NotNull, NUMBER(16), FK to SYNONYM_EXCEPT}
-     * @param exceptIdList The collection of exceptId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param exceptIdList The collection of exceptId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setExceptId_NotInScope(Collection<Long> exceptIdList) {
         doSetExceptId_NotInScope(exceptIdList);
@@ -274,7 +274,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymRefExceptCB> scalar_Equal() {
@@ -289,7 +289,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymRefExceptCB> scalar_NotEqual() {
@@ -304,7 +304,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymRefExceptCB> scalar_GreaterThan() {
@@ -319,7 +319,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymRefExceptCB> scalar_LessThan() {
@@ -334,7 +334,7 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymRefExceptCB> scalar_GreaterEqual() {
@@ -470,7 +470,6 @@ public abstract class AbstractBsSynonymRefExceptCQ extends AbstractConditionQuer
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

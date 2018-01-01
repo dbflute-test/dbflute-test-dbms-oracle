@@ -97,8 +97,8 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refTargetId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refTargetId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refTargetId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refTargetId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setRefTargetId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refTargetId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refTargetId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refTargetId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refTargetId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setRefTargetId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param refTargetIdList The collection of refTargetId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param refTargetIdList The collection of refTargetId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefTargetId_InScope(Collection<Long> refTargetIdList) {
         doSetRefTargetId_InScope(refTargetIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param refTargetIdList The collection of refTargetId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param refTargetIdList The collection of refTargetId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefTargetId_NotInScope(Collection<Long> refTargetIdList) {
         doSetRefTargetId_NotInScope(refTargetIdList);
@@ -213,8 +213,8 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {NotNull, NUMBER(16), FK to WHITE_TARGET}
-     * @param minNumber The min number of targetId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of targetId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTargetId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -226,8 +226,8 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {NotNull, NUMBER(16), FK to WHITE_TARGET}
-     * @param minNumber The min number of targetId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of targetId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTargetId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TARGET_ID: {NotNull, NUMBER(16), FK to WHITE_TARGET}
-     * @param targetIdList The collection of targetId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param targetIdList The collection of targetId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetId_InScope(Collection<Long> targetIdList) {
         doSetTargetId_InScope(targetIdList);
@@ -250,7 +250,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TARGET_ID: {NotNull, NUMBER(16), FK to WHITE_TARGET}
-     * @param targetIdList The collection of targetId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param targetIdList The collection of targetId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetId_NotInScope(Collection<Long> targetIdList) {
         doSetTargetId_NotInScope(targetIdList);
@@ -274,7 +274,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteRefTargetCB> scalar_Equal() {
@@ -289,7 +289,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteRefTargetCB> scalar_NotEqual() {
@@ -304,7 +304,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteRefTargetCB> scalar_GreaterThan() {
@@ -319,7 +319,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteRefTargetCB> scalar_LessThan() {
@@ -334,7 +334,7 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteRefTargetCB> scalar_GreaterEqual() {
@@ -470,7 +470,6 @@ public abstract class AbstractBsWhiteRefTargetCQ extends AbstractConditionQuery 
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

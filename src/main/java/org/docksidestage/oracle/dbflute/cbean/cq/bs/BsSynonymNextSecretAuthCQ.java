@@ -79,7 +79,7 @@ public class BsSynonymNextSecretAuthCQ extends AbstractBsSynonymNextSecretAuthCQ
       return _secretAuthCode; }
     protected ConditionValue xgetCValueSecretAuthCode() { return xdfgetSecretAuthCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (隣の秘密２コード)SECRET_AUTH_CODE: {PK, NotNull, CHAR(3)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSynonymNextSecretAuthCQ extends AbstractBsSynonymNextSecretAuthCQ
       return _secretAuthName; }
     protected ConditionValue xgetCValueSecretAuthName() { return xdfgetSecretAuthName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (隣の秘密２名称)SECRET_AUTH_NAME: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)

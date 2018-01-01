@@ -124,7 +124,7 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">nextSchemaProductStatus</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * <pre>
      * NextSchemaProductStatusCB cb = <span style="color: #70226C">new</span> NextSchemaProductStatusCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(nextSchemaProductStatus <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = nextSchemaProductStatus.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">nextSchemaProductStatusBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(nextSchemaProductStatus <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1221,8 +1221,8 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * nextSchemaProductStatusBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * nextSchemaProductStatusBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * nextSchemaProductStatusBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * nextSchemaProductStatusBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * nextSchemaProductStatusBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1230,7 +1230,7 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * nextSchemaProductStatusBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * nextSchemaProductStatusBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * nextSchemaProductStatusBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * nextSchemaProductStatusBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * nextSchemaProductStatusBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1238,7 +1238,7 @@ public abstract class BsNextSchemaProductStatusBhv extends AbstractBehaviorWrita
      * nextSchemaProductStatusBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * nextSchemaProductStatusBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * nextSchemaProductStatusBhv.outideSql().removeBlockComment().selectList()
      * nextSchemaProductStatusBhv.outideSql().removeLineComment().selectList()
      * nextSchemaProductStatusBhv.outideSql().formatSql().selectList()

@@ -97,8 +97,8 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {NotNull, NUMBER(9)}
-     * @param minNumber The min number of memberId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memberId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setMemberId_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {NotNull, NUMBER(9)}
-     * @param minNumber The min number of memberId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memberId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setMemberId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * MEMBER_ID: {NotNull, NUMBER(9)}
-     * @param memberIdList The collection of memberId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param memberIdList The collection of memberId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberId_InScope(Collection<Integer> memberIdList) {
         doSetMemberId_InScope(memberIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * MEMBER_ID: {NotNull, NUMBER(9)}
-     * @param memberIdList The collection of memberId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param memberIdList The collection of memberId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberId_NotInScope(Collection<Integer> memberIdList) {
         doSetMemberId_NotInScope(memberIdList);
@@ -201,8 +201,8 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
-     * @param minNumber The min number of allsumPurchasePrice. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of allsumPurchasePrice. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setAllsumPurchasePrice_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -214,8 +214,8 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
-     * @param minNumber The min number of allsumPurchasePrice. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of allsumPurchasePrice. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setAllsumPurchasePrice_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, RangeOfOption rangeOfOption) {
@@ -225,7 +225,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
-     * @param allsumPurchasePriceList The collection of allsumPurchasePrice as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param allsumPurchasePriceList The collection of allsumPurchasePrice as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_InScope(Collection<java.math.BigDecimal> allsumPurchasePriceList) {
         doSetAllsumPurchasePrice_InScope(allsumPurchasePriceList);
@@ -238,7 +238,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
-     * @param allsumPurchasePriceList The collection of allsumPurchasePrice as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param allsumPurchasePriceList The collection of allsumPurchasePrice as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_NotInScope(Collection<java.math.BigDecimal> allsumPurchasePriceList) {
         doSetAllsumPurchasePrice_NotInScope(allsumPurchasePriceList);
@@ -376,7 +376,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SummaryMemberPurchaseCB> scalar_Equal() {
@@ -391,7 +391,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SummaryMemberPurchaseCB> scalar_NotEqual() {
@@ -406,7 +406,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SummaryMemberPurchaseCB> scalar_GreaterThan() {
@@ -421,7 +421,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SummaryMemberPurchaseCB> scalar_LessThan() {
@@ -436,7 +436,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SummaryMemberPurchaseCB> scalar_GreaterEqual() {
@@ -527,7 +527,6 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

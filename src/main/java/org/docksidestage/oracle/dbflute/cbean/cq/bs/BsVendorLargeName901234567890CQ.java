@@ -93,7 +93,7 @@ public class BsVendorLargeName901234567890CQ extends AbstractBsVendorLargeName90
     public Map<String, Object> xdfgetVendorLargeName901234567Id_QueryDerivedReferrer_VendorLargeName90123456RefListParameter() { return xgetSQuePmMap("vendorLargeName901234567Id_QueryDerivedReferrer_VendorLargeName90123456RefList"); }
     public String keepVendorLargeName901234567Id_QueryDerivedReferrer_VendorLargeName90123456RefListParameter(Object pm) { return xkeepSQuePm("vendorLargeName901234567Id_QueryDerivedReferrer_VendorLargeName90123456RefList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -113,7 +113,7 @@ public class BsVendorLargeName901234567890CQ extends AbstractBsVendorLargeName90
       return _vendorLargeName9012345Name; }
     protected ConditionValue xgetCValueVendorLargeName9012345Name() { return xdfgetVendorLargeName9012345Name(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
      * @return this. (NotNull)

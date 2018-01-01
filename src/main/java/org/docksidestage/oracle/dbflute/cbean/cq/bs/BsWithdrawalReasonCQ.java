@@ -107,7 +107,7 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
     public Map<String, Object> xdfgetWithdrawalReasonCode_QueryDerivedReferrer_SynonymMemberWithdrawalListParameter() { return xgetSQuePmMap("withdrawalReasonCode_QueryDerivedReferrer_SynonymMemberWithdrawalList"); }
     public String keepWithdrawalReasonCode_QueryDerivedReferrer_SynonymMemberWithdrawalListParameter(Object pm) { return xkeepSQuePm("withdrawalReasonCode_QueryDerivedReferrer_SynonymMemberWithdrawalList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * WITHDRAWAL_REASON_CODE: {PK, NotNull, CHAR(3), classification=WithdrawalReason}
      * @return this. (NotNull)
@@ -127,7 +127,7 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
       return _withdrawalReasonText; }
     protected ConditionValue xgetCValueWithdrawalReasonText() { return xdfgetWithdrawalReasonText(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * WITHDRAWAL_REASON_TEXT: {NotNull, CLOB(4000)}
      * @return this. (NotNull)
@@ -147,7 +147,7 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
       return _displayOrder; }
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DISPLAY_ORDER: {UQ, NotNull, NUMBER(8)}
      * @return this. (NotNull)

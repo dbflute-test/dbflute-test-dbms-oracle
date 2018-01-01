@@ -78,9 +78,9 @@ public class WhiteUqFkRefNestDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnUqFkRefNestId = cci("UQ_FK_REF_NEST_ID", "UQ_FK_REF_NEST_ID", null, null, Long.class, "uqFkRefNestId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnCompoundUqFirstCode = cci("COMPOUND_UQ_FIRST_CODE", "COMPOUND_UQ_FIRST_CODE", null, null, String.class, "compoundUqFirstCode", null, false, false, true, "CHAR", 3, 0, null, false, null, null, "whiteUqFkRef", null, null, false);
-    protected final ColumnInfo _columnCompoundUqSecondCode = cci("COMPOUND_UQ_SECOND_CODE", "COMPOUND_UQ_SECOND_CODE", null, null, String.class, "compoundUqSecondCode", null, false, false, true, "CHAR", 3, 0, null, false, null, null, "whiteUqFkRef", null, null, false);
+    protected final ColumnInfo _columnUqFkRefNestId = cci("UQ_FK_REF_NEST_ID", "UQ_FK_REF_NEST_ID", null, null, Long.class, "uqFkRefNestId", null, true, false, true, "NUMBER", 16, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnCompoundUqFirstCode = cci("COMPOUND_UQ_FIRST_CODE", "COMPOUND_UQ_FIRST_CODE", null, null, String.class, "compoundUqFirstCode", null, false, false, true, "CHAR", 3, 0, null, null, false, null, null, "whiteUqFkRef", null, null, false);
+    protected final ColumnInfo _columnCompoundUqSecondCode = cci("COMPOUND_UQ_SECOND_CODE", "COMPOUND_UQ_SECOND_CODE", null, null, String.class, "compoundUqSecondCode", null, false, false, true, "CHAR", 3, 0, null, null, false, null, null, "whiteUqFkRef", null, null, false);
 
     /**
      * UQ_FK_REF_NEST_ID: {PK, NotNull, NUMBER(16)}

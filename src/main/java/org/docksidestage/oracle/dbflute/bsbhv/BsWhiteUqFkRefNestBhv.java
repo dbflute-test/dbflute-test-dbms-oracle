@@ -124,7 +124,7 @@ public abstract class BsWhiteUqFkRefNestBhv extends AbstractBehaviorWritable<Whi
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">whiteUqFkRefNest</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">whiteUqFkRefNestBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsWhiteUqFkRefNestBhv extends AbstractBehaviorWritable<Whi
      * <pre>
      * WhiteUqFkRefNestCB cb = <span style="color: #70226C">new</span> WhiteUqFkRefNestCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">whiteUqFkRefNestBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(whiteUqFkRefNest <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = whiteUqFkRefNest.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">whiteUqFkRefNestBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(whiteUqFkRefNest <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1020,8 +1020,8 @@ public abstract class BsWhiteUqFkRefNestBhv extends AbstractBehaviorWritable<Whi
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * whiteUqFkRefNestBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * whiteUqFkRefNestBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * whiteUqFkRefNestBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * whiteUqFkRefNestBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * whiteUqFkRefNestBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1029,7 +1029,7 @@ public abstract class BsWhiteUqFkRefNestBhv extends AbstractBehaviorWritable<Whi
      * whiteUqFkRefNestBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * whiteUqFkRefNestBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * whiteUqFkRefNestBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * whiteUqFkRefNestBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * whiteUqFkRefNestBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1037,7 +1037,7 @@ public abstract class BsWhiteUqFkRefNestBhv extends AbstractBehaviorWritable<Whi
      * whiteUqFkRefNestBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * whiteUqFkRefNestBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * whiteUqFkRefNestBhv.outideSql().removeBlockComment().selectList()
      * whiteUqFkRefNestBhv.outideSql().removeLineComment().selectList()
      * whiteUqFkRefNestBhv.outideSql().formatSql().selectList()

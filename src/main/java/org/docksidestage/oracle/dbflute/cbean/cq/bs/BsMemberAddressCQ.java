@@ -79,7 +79,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _memberAddressId; }
     protected ConditionValue xgetCValueMemberAddressId() { return xdfgetMemberAddressId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_ADDRESS_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _memberId; }
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_ID: {UQ+, NotNull, NUMBER(9), FK to MEMBER}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _validBeginDate; }
     protected ConditionValue xgetCValueValidBeginDate() { return xdfgetValidBeginDate(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VALID_BEGIN_DATE: {+UQ, NotNull, DATE(7)}
      * @return this. (NotNull)
@@ -139,7 +139,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _validEndDate; }
     protected ConditionValue xgetCValueValidEndDate() { return xdfgetValidEndDate(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VALID_END_DATE: {NotNull, DATE(7)}
      * @return this. (NotNull)
@@ -159,7 +159,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _address; }
     protected ConditionValue xgetCValueAddress() { return xdfgetAddress(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * ADDRESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -179,7 +179,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _regionId; }
     protected ConditionValue xgetCValueRegionId() { return xdfgetRegionId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGION_ID: {NotNull, NUMBER(22), FK to REGION, classification=Region}
      * @return this. (NotNull)
@@ -199,7 +199,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _registerDatetime; }
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -219,7 +219,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _registerProcess; }
     protected ConditionValue xgetCValueRegisterProcess() { return xdfgetRegisterProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -239,7 +239,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _registerUser; }
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -259,7 +259,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _updateDatetime; }
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -279,7 +279,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _updateProcess; }
     protected ConditionValue xgetCValueUpdateProcess() { return xdfgetUpdateProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -299,7 +299,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _updateUser; }
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -319,7 +319,7 @@ public class BsMemberAddressCQ extends AbstractBsMemberAddressCQ {
       return _versionNo; }
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VERSION_NO: {NotNull, NUMBER(16)}
      * @return this. (NotNull)

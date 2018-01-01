@@ -125,7 +125,7 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">serviceRank</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">serviceRankBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -154,13 +154,13 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
      * <pre>
      * ServiceRankCB cb = <span style="color: #70226C">new</span> ServiceRankCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">serviceRankBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(serviceRank <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = serviceRank.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">serviceRankBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(serviceRank <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1134,8 +1134,8 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * serviceRankBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * serviceRankBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * serviceRankBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * serviceRankBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * serviceRankBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1143,7 +1143,7 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
      * serviceRankBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * serviceRankBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * serviceRankBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * serviceRankBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * serviceRankBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1151,7 +1151,7 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
      * serviceRankBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * serviceRankBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * serviceRankBhv.outideSql().removeBlockComment().selectList()
      * serviceRankBhv.outideSql().removeLineComment().selectList()
      * serviceRankBhv.outideSql().formatSql().selectList()

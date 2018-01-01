@@ -79,7 +79,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _purchasePaymentId; }
     protected ConditionValue xgetCValuePurchasePaymentId() { return xdfgetPurchasePaymentId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PURCHASE_PAYMENT_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _purchaseId; }
     protected ConditionValue xgetCValuePurchaseId() { return xdfgetPurchaseId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PURCHASE_ID: {NotNull, NUMBER(16), FK to PURCHASE}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _paymentAmount; }
     protected ConditionValue xgetCValuePaymentAmount() { return xdfgetPaymentAmount(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PAYMENT_AMOUNT: {NotNull, NUMBER(10, 2)}
      * @return this. (NotNull)
@@ -139,7 +139,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _paymentDatetime; }
     protected ConditionValue xgetCValuePaymentDatetime() { return xdfgetPaymentDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PAYMENT_DATETIME: {IX+, NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -159,7 +159,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _paymentMethodCode; }
     protected ConditionValue xgetCValuePaymentMethodCode() { return xdfgetPaymentMethodCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PAYMENT_METHOD_CODE: {NotNull, CHAR(3), classification=PaymentMethod}
      * @return this. (NotNull)
@@ -179,7 +179,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _registerDatetime; }
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -199,7 +199,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _registerUser; }
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -219,7 +219,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _updateDatetime; }
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -239,7 +239,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
       return _updateUser; }
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)

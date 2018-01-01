@@ -93,7 +93,7 @@ public class BsWhiteTargetCQ extends AbstractBsWhiteTargetCQ {
     public Map<String, Object> xdfgetTargetId_QueryDerivedReferrer_WhiteRefTargetListParameter() { return xgetSQuePmMap("targetId_QueryDerivedReferrer_WhiteRefTargetList"); }
     public String keepTargetId_QueryDerivedReferrer_WhiteRefTargetListParameter(Object pm) { return xkeepSQuePm("targetId_QueryDerivedReferrer_WhiteRefTargetList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -113,7 +113,7 @@ public class BsWhiteTargetCQ extends AbstractBsWhiteTargetCQ {
       return _targetName; }
     protected ConditionValue xgetCValueTargetName() { return xdfgetTargetName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * TARGET_NAME: {VARCHAR2(256)}
      * @return this. (NotNull)

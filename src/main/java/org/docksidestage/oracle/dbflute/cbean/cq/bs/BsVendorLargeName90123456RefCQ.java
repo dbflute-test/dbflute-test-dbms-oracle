@@ -79,7 +79,7 @@ public class BsVendorLargeName90123456RefCQ extends AbstractBsVendorLargeName901
       return _vendorLargeName90123RefId; }
     protected ConditionValue xgetCValueVendorLargeName90123RefId() { return xdfgetVendorLargeName90123RefId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VENDOR_LARGE_NAME_90123_REF_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsVendorLargeName90123456RefCQ extends AbstractBsVendorLargeName901
       return _vendorLargeName901RefName; }
     protected ConditionValue xgetCValueVendorLargeName901RefName() { return xdfgetVendorLargeName901RefName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VENDOR_LARGE_NAME_901_REF_NAME: {NotNull, VARCHAR2(32)}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsVendorLargeName90123456RefCQ extends AbstractBsVendorLargeName901
       return _vendorLargeName901234567Id; }
     protected ConditionValue xgetCValueVendorLargeName901234567Id() { return xdfgetVendorLargeName901234567Id(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {NUMBER(16), FK to VENDOR_LARGE_NAME_901234567890}
      * @return this. (NotNull)

@@ -79,7 +79,7 @@ public class BsWhiteSameNameRefRefCQ extends AbstractBsWhiteSameNameRefRefCQ {
       return _refRefId; }
     protected ConditionValue xgetCValueRefRefId() { return xdfgetRefRefId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsWhiteSameNameRefRefCQ extends AbstractBsWhiteSameNameRefRefCQ {
       return _refRefName; }
     protected ConditionValue xgetCValueRefRefName() { return xdfgetRefRefName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsWhiteSameNameRefRefCQ extends AbstractBsWhiteSameNameRefRefCQ {
       return _refRefDate; }
     protected ConditionValue xgetCValueRefRefDate() { return xdfgetRefRefDate(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_REF_DATE: {NotNull, DATE(7)}
      * @return this. (NotNull)

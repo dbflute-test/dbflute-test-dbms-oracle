@@ -1,5 +1,5 @@
 ##
-## Copyright 2014-2017 the original author or authors.
+## Copyright 2014-2018 the original author or authors.
 ##
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.
@@ -201,6 +201,17 @@ public interface ${request.className}${pluginDef} {
         }
 #end
 #end
+#end
+#if ($request.tableMap.isUseDefaultConfigAtGeneration)
+
+        @Override
+        protected java.util.Map<String, String> prepareGeneratedDefaultMap() {
+            java.util.Map<String, String> defaultMap = super.prepareGeneratedDefaultMap();
+#foreach ($column in $table.columnList)
+            defaultMap.put(${request.className}.${column.defName}, ${column.propertyValueStringLiteral});
+#end
+            return defaultMap;
+        }
 #end
     }
 }

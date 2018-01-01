@@ -64,8 +64,8 @@ public class WhiteDiffWorldDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnDiffWorldId = cci("DIFF_WORLD_ID", "DIFF_WORLD_ID", null, null, Long.class, "diffWorldId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnDiffWorldName = cci("DIFF_WORLD_NAME", "DIFF_WORLD_NAME", null, null, String.class, "diffWorldName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnDiffWorldId = cci("DIFF_WORLD_ID", "DIFF_WORLD_ID", null, null, Long.class, "diffWorldId", null, true, false, true, "NUMBER", 16, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnDiffWorldName = cci("DIFF_WORLD_NAME", "DIFF_WORLD_NAME", null, null, String.class, "diffWorldName", null, false, false, true, "VARCHAR2", 50, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}

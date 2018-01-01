@@ -15,22 +15,22 @@ public class ResolaImplementedSqlClauseCreator implements SqlClauseCreator {
     // ===================================================================================
     //                                                                      Implementation
     //                                                                      ==============
-	/**
-	 * Create SQL clause. {for condition-bean}
-	 * @param cb Condition-bean. (NotNull) 
-	 * @return SQL clause. (NotNull)
-	 */
+    /**
+     * Create SQL clause. {for condition-bean}
+     * @param cb Condition-bean. (NotNull)
+     * @return SQL clause. (NotNull)
+     */
     public SqlClause createSqlClause(ConditionBean cb) {
         String tableDbName = cb.asTableDbName();
-		SqlClause sqlClause = createSqlClause(tableDbName);
+        SqlClause sqlClause = createSqlClause(tableDbName);
         return sqlClause;
     }
 
-	/**
-	 * Create SQL clause.
-	 * @param tableDbName The DB name of table. (NotNull) 
-	 * @return SQL clause. (NotNull)
-	 */
+    /**
+     * Create SQL clause.
+     * @param tableDbName The DB name of table. (NotNull)
+     * @return SQL clause. (NotNull)
+     */
     public SqlClause createSqlClause(String tableDbName) {
         SqlClause sqlClause = doCreateSqlClause(tableDbName);
         setupSqlClauseOption(sqlClause);
@@ -146,6 +146,7 @@ public class ResolaImplementedSqlClauseCreator implements SqlClauseCreator {
         doSetupSqlClauseOverridingQuery(sqlClause);
         doSetupSqlClauseColumnNullObject(sqlClause);
         doSetupSqlClauseColumnNullObjectGearedToSpecify(sqlClause);
+        doSetupSqlClauseTruncateConditionDatetimePrecision(sqlClause);
         doSetupSqlClauseSelectIndex(sqlClause);
     }
 
@@ -199,6 +200,14 @@ public class ResolaImplementedSqlClauseCreator implements SqlClauseCreator {
         }
     }
 
+    protected void doSetupSqlClauseTruncateConditionDatetimePrecision(SqlClause sqlClause) {
+        if (isDatetimePrecisionTruncationOfCondition()) {
+            sqlClause.enableDatetimePrecisionTruncationOfCondition();
+        } else {
+            sqlClause.disableDatetimePrecisionTruncationOfCondition();
+        }
+    }
+
     protected void doSetupSqlClauseSelectIndex(SqlClause sqlClause) {
         if (isDisableSelectIndex()) {
             sqlClause.disableSelectIndex();
@@ -209,38 +218,42 @@ public class ResolaImplementedSqlClauseCreator implements SqlClauseCreator {
     //                                                                       Determination
     //                                                                       =============
     protected boolean isCurrentDBDef(DBDef currentDBDef) {
-	    return ResolaDBCurrent.getInstance().isCurrentDBDef(currentDBDef);
+        return ResolaDBCurrent.getInstance().isCurrentDBDef(currentDBDef);
     }
 
     protected boolean isInnerJoinAutoDetect() {
-	    return ResolaDBFluteConfig.getInstance().isInnerJoinAutoDetect();
+        return ResolaDBFluteConfig.getInstance().isInnerJoinAutoDetect();
     }
 
     protected boolean isThatsBadTimingDetect() {
-	    return ResolaDBFluteConfig.getInstance().isThatsBadTimingDetect();
+        return ResolaDBFluteConfig.getInstance().isThatsBadTimingDetect();
     }
 
     protected boolean isNullOrEmptyQueryAllowed() {
-	    return ResolaDBFluteConfig.getInstance().isNullOrEmptyQueryAllowed();
+        return ResolaDBFluteConfig.getInstance().isNullOrEmptyQueryAllowed();
     }
 
     protected boolean isEmptyStringQueryAllowed() {
-	    return ResolaDBFluteConfig.getInstance().isEmptyStringQueryAllowed();
+        return ResolaDBFluteConfig.getInstance().isEmptyStringQueryAllowed();
     }
 
     protected boolean isOverridingQueryAllowed() {
-	    return ResolaDBFluteConfig.getInstance().isOverridingQueryAllowed();
+        return ResolaDBFluteConfig.getInstance().isOverridingQueryAllowed();
     }
 
     protected boolean isColumnNullObjectAllowed() {
-	    return ResolaDBFluteConfig.getInstance().isColumnNullObjectAllowed();
+        return ResolaDBFluteConfig.getInstance().isColumnNullObjectAllowed();
     }
 
     protected boolean isColumnNullObjectGearedToSpecify() {
-	    return ResolaDBFluteConfig.getInstance().isColumnNullObjectGearedToSpecify();
+        return ResolaDBFluteConfig.getInstance().isColumnNullObjectGearedToSpecify();
+    }
+
+    protected boolean isDatetimePrecisionTruncationOfCondition() {
+        return ResolaDBFluteConfig.getInstance().isDatetimePrecisionTruncationOfCondition();
     }
 
     protected boolean isDisableSelectIndex() {
-	    return ResolaDBFluteConfig.getInstance().isDisableSelectIndex();
+        return ResolaDBFluteConfig.getInstance().isDisableSelectIndex();
     }
 }

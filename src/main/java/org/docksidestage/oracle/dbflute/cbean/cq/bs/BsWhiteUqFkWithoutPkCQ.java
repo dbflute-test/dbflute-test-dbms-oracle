@@ -93,7 +93,7 @@ public class BsWhiteUqFkWithoutPkCQ extends AbstractBsWhiteUqFkWithoutPkCQ {
     public Map<String, Object> xdfgetUqFkCode_QueryDerivedReferrer_WhiteUqFkWithoutPkRefListParameter() { return xgetSQuePmMap("uqFkCode_QueryDerivedReferrer_WhiteUqFkWithoutPkRefList"); }
     public String keepUqFkCode_QueryDerivedReferrer_WhiteUqFkWithoutPkRefListParameter(Object pm) { return xkeepSQuePm("uqFkCode_QueryDerivedReferrer_WhiteUqFkWithoutPkRefList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UQ_FK_CODE: {UQ, NotNull, CHAR(3)}
      * @return this. (NotNull)
@@ -113,7 +113,7 @@ public class BsWhiteUqFkWithoutPkCQ extends AbstractBsWhiteUqFkWithoutPkCQ {
       return _uqFkName; }
     protected ConditionValue xgetCValueUqFkName() { return xdfgetUqFkName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UQ_FK_NAME: {NotNull, VARCHAR2(64)}
      * @return this. (NotNull)

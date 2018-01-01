@@ -124,7 +124,7 @@ public abstract class BsSynonymMemberLoginBhv extends AbstractBehaviorWritable<S
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">synonymMemberLogin</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymMemberLoginBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsSynonymMemberLoginBhv extends AbstractBehaviorWritable<S
      * <pre>
      * SynonymMemberLoginCB cb = <span style="color: #70226C">new</span> SynonymMemberLoginCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">synonymMemberLoginBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(synonymMemberLogin <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = synonymMemberLogin.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymMemberLoginBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(synonymMemberLogin <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1070,8 +1070,8 @@ public abstract class BsSynonymMemberLoginBhv extends AbstractBehaviorWritable<S
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * synonymMemberLoginBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * synonymMemberLoginBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * synonymMemberLoginBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * synonymMemberLoginBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * synonymMemberLoginBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1079,7 +1079,7 @@ public abstract class BsSynonymMemberLoginBhv extends AbstractBehaviorWritable<S
      * synonymMemberLoginBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * synonymMemberLoginBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * synonymMemberLoginBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * synonymMemberLoginBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * synonymMemberLoginBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1087,7 +1087,7 @@ public abstract class BsSynonymMemberLoginBhv extends AbstractBehaviorWritable<S
      * synonymMemberLoginBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * synonymMemberLoginBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * synonymMemberLoginBhv.outideSql().removeBlockComment().selectList()
      * synonymMemberLoginBhv.outideSql().removeLineComment().selectList()
      * synonymMemberLoginBhv.outideSql().formatSql().selectList()

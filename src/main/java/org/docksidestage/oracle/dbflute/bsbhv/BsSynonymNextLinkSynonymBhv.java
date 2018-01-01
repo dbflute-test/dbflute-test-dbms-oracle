@@ -124,7 +124,7 @@ public abstract class BsSynonymNextLinkSynonymBhv extends AbstractBehaviorWritab
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">synonymNextLinkSynonym</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymNextLinkSynonymBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsSynonymNextLinkSynonymBhv extends AbstractBehaviorWritab
      * <pre>
      * SynonymNextLinkSynonymCB cb = <span style="color: #70226C">new</span> SynonymNextLinkSynonymCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">synonymNextLinkSynonymBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(synonymNextLinkSynonym <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = synonymNextLinkSynonym.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymNextLinkSynonymBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(synonymNextLinkSynonym <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1187,8 +1187,8 @@ public abstract class BsSynonymNextLinkSynonymBhv extends AbstractBehaviorWritab
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * synonymNextLinkSynonymBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * synonymNextLinkSynonymBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * synonymNextLinkSynonymBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * synonymNextLinkSynonymBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * synonymNextLinkSynonymBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1196,7 +1196,7 @@ public abstract class BsSynonymNextLinkSynonymBhv extends AbstractBehaviorWritab
      * synonymNextLinkSynonymBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * synonymNextLinkSynonymBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * synonymNextLinkSynonymBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * synonymNextLinkSynonymBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * synonymNextLinkSynonymBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1204,7 +1204,7 @@ public abstract class BsSynonymNextLinkSynonymBhv extends AbstractBehaviorWritab
      * synonymNextLinkSynonymBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * synonymNextLinkSynonymBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * synonymNextLinkSynonymBhv.outideSql().removeBlockComment().selectList()
      * synonymNextLinkSynonymBhv.outideSql().removeLineComment().selectList()
      * synonymNextLinkSynonymBhv.outideSql().formatSql().selectList()

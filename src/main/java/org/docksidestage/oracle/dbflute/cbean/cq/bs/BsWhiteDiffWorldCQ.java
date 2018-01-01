@@ -79,7 +79,7 @@ public class BsWhiteDiffWorldCQ extends AbstractBsWhiteDiffWorldCQ {
       return _diffWorldId; }
     protected ConditionValue xgetCValueDiffWorldId() { return xdfgetDiffWorldId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsWhiteDiffWorldCQ extends AbstractBsWhiteDiffWorldCQ {
       return _diffWorldName; }
     protected ConditionValue xgetCValueDiffWorldName() { return xdfgetDiffWorldName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)

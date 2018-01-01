@@ -79,7 +79,7 @@ public class BsSynonymRefExceptCQ extends AbstractBsSynonymRefExceptCQ {
       return _refExceptId; }
     protected ConditionValue xgetCValueRefExceptId() { return xdfgetRefExceptId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSynonymRefExceptCQ extends AbstractBsSynonymRefExceptCQ {
       return _exceptId; }
     protected ConditionValue xgetCValueExceptId() { return xdfgetExceptId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * EXCEPT_ID: {NotNull, NUMBER(16), FK to SYNONYM_EXCEPT}
      * @return this. (NotNull)

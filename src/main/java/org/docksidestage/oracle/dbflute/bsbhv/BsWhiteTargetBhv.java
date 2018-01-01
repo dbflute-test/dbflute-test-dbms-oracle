@@ -124,7 +124,7 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">whiteTarget</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">whiteTargetBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
      * <pre>
      * WhiteTargetCB cb = <span style="color: #70226C">new</span> WhiteTargetCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">whiteTargetBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(whiteTarget <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = whiteTarget.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">whiteTargetBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(whiteTarget <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1100,8 +1100,8 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * whiteTargetBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * whiteTargetBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * whiteTargetBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * whiteTargetBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * whiteTargetBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1109,7 +1109,7 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
      * whiteTargetBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * whiteTargetBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * whiteTargetBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * whiteTargetBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * whiteTargetBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1117,7 +1117,7 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
      * whiteTargetBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * whiteTargetBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * whiteTargetBhv.outideSql().removeBlockComment().selectList()
      * whiteTargetBhv.outideSql().removeLineComment().selectList()
      * whiteTargetBhv.outideSql().formatSql().selectList()

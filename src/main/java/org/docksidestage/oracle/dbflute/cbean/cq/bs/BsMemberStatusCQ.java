@@ -163,7 +163,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     public Map<String, Object> xdfgetMemberStatusCode_QueryDerivedReferrer_VendorSynonymMemberListParameter() { return xgetSQuePmMap("memberStatusCode_QueryDerivedReferrer_VendorSynonymMemberList"); }
     public String keepMemberStatusCode_QueryDerivedReferrer_VendorSynonymMemberListParameter(Object pm) { return xkeepSQuePm("memberStatusCode_QueryDerivedReferrer_VendorSynonymMemberList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_STATUS_CODE: {PK, NotNull, CHAR(3), classification=MemberStatus}
      * @return this. (NotNull)
@@ -183,7 +183,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
       return _memberStatusName; }
     protected ConditionValue xgetCValueMemberStatusName() { return xdfgetMemberStatusName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -203,7 +203,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
       return _description; }
     protected ConditionValue xgetCValueDescription() { return xdfgetDescription(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DESCRIPTION: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -223,7 +223,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
       return _displayOrder; }
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DISPLAY_ORDER: {UQ, NotNull, NUMBER(8)}
      * @return this. (NotNull)

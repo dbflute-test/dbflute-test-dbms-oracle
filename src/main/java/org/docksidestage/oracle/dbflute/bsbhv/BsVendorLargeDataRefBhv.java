@@ -124,7 +124,7 @@ public abstract class BsVendorLargeDataRefBhv extends AbstractBehaviorWritable<V
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">vendorLargeDataRef</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">vendorLargeDataRefBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsVendorLargeDataRefBhv extends AbstractBehaviorWritable<V
      * <pre>
      * VendorLargeDataRefCB cb = <span style="color: #70226C">new</span> VendorLargeDataRefCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">vendorLargeDataRefBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(vendorLargeDataRef <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = vendorLargeDataRef.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">vendorLargeDataRefBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(vendorLargeDataRef <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1116,8 +1116,8 @@ public abstract class BsVendorLargeDataRefBhv extends AbstractBehaviorWritable<V
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * vendorLargeDataRefBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * vendorLargeDataRefBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * vendorLargeDataRefBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * vendorLargeDataRefBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * vendorLargeDataRefBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1125,7 +1125,7 @@ public abstract class BsVendorLargeDataRefBhv extends AbstractBehaviorWritable<V
      * vendorLargeDataRefBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * vendorLargeDataRefBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * vendorLargeDataRefBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * vendorLargeDataRefBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * vendorLargeDataRefBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1133,7 +1133,7 @@ public abstract class BsVendorLargeDataRefBhv extends AbstractBehaviorWritable<V
      * vendorLargeDataRefBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * vendorLargeDataRefBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * vendorLargeDataRefBhv.outideSql().removeBlockComment().selectList()
      * vendorLargeDataRefBhv.outideSql().removeLineComment().selectList()
      * vendorLargeDataRefBhv.outideSql().formatSql().selectList()

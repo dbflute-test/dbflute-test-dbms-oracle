@@ -64,8 +64,8 @@ public class WhiteRefNextExceptDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnRefNextExceptId = cci("REF_NEXT_EXCEPT_ID", "REF_NEXT_EXCEPT_ID", null, null, Long.class, "refNextExceptId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnNextExceptCode = cci("NEXT_EXCEPT_CODE", "NEXT_EXCEPT_CODE", null, null, String.class, "nextExceptCode", null, false, false, true, "CHAR", 3, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnRefNextExceptId = cci("REF_NEXT_EXCEPT_ID", "REF_NEXT_EXCEPT_ID", null, null, Long.class, "refNextExceptId", null, true, false, true, "NUMBER", 16, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnNextExceptCode = cci("NEXT_EXCEPT_CODE", "NEXT_EXCEPT_CODE", null, null, String.class, "nextExceptCode", null, false, false, true, "CHAR", 3, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * REF_NEXT_EXCEPT_ID: {PK, NotNull, NUMBER(16)}

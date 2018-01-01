@@ -67,11 +67,11 @@ public class PurchaseMaxPriceMemberDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, false, false, false, "NUMBER", 9, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnMemberName = cci("MEMBER_NAME", "MEMBER_NAME", null, null, String.class, "memberName", null, false, false, false, "VARCHAR2", 200, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnPurchaseMaxPrice = cci("PURCHASE_MAX_PRICE", "PURCHASE_MAX_PRICE", null, null, java.math.BigDecimal.class, "purchaseMaxPrice", null, false, false, false, "NUMBER", 22, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnMemberStatusName = cci("MEMBER_STATUS_NAME", "MEMBER_STATUS_NAME", null, null, String.class, "memberStatusName", null, false, false, false, "VARCHAR2", 50, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnRn = cci("RN", "RN", null, null, java.math.BigDecimal.class, "rn", null, false, false, false, "NUMBER", 22, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, false, false, false, "NUMBER", 9, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnMemberName = cci("MEMBER_NAME", "MEMBER_NAME", null, null, String.class, "memberName", null, false, false, false, "VARCHAR2", 200, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnPurchaseMaxPrice = cci("PURCHASE_MAX_PRICE", "PURCHASE_MAX_PRICE", null, null, java.math.BigDecimal.class, "purchaseMaxPrice", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnMemberStatusName = cci("MEMBER_STATUS_NAME", "MEMBER_STATUS_NAME", null, null, String.class, "memberStatusName", null, false, false, false, "VARCHAR2", 50, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnRn = cci("RN", "RN", null, null, java.math.BigDecimal.class, "rn", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * MEMBER_ID: {NUMBER(9)}

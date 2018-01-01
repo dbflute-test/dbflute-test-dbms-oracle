@@ -124,7 +124,7 @@ public abstract class BsSynonymProductBhv extends AbstractBehaviorWritable<Synon
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">synonymProduct</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymProductBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsSynonymProductBhv extends AbstractBehaviorWritable<Synon
      * <pre>
      * SynonymProductCB cb = <span style="color: #70226C">new</span> SynonymProductCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">synonymProductBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(synonymProduct <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = synonymProduct.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">synonymProductBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(synonymProduct <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1228,8 +1228,8 @@ public abstract class BsSynonymProductBhv extends AbstractBehaviorWritable<Synon
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * synonymProductBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * synonymProductBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * synonymProductBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * synonymProductBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * synonymProductBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1237,7 +1237,7 @@ public abstract class BsSynonymProductBhv extends AbstractBehaviorWritable<Synon
      * synonymProductBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * synonymProductBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * synonymProductBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * synonymProductBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * synonymProductBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1245,7 +1245,7 @@ public abstract class BsSynonymProductBhv extends AbstractBehaviorWritable<Synon
      * synonymProductBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * synonymProductBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * synonymProductBhv.outideSql().removeBlockComment().selectList()
      * synonymProductBhv.outideSql().removeLineComment().selectList()
      * synonymProductBhv.outideSql().formatSql().selectList()

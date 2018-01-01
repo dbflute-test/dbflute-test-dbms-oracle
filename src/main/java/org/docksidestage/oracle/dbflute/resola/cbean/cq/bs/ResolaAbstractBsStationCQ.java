@@ -110,8 +110,8 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param minNumber The min number of stationId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of stationId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of stationId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of stationId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setStationId_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -123,8 +123,8 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param minNumber The min number of stationId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of stationId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of stationId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of stationId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     protected void setStationId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -134,7 +134,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationIdList The collection of stationId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param stationIdList The collection of stationId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationId_InScope(Collection<Integer> stationIdList) {
         doSetStationId_InScope(stationIdList);
@@ -147,7 +147,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
-     * @param stationIdList The collection of stationId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param stationIdList The collection of stationId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationId_NotInScope(Collection<Integer> stationIdList) {
         doSetStationId_NotInScope(stationIdList);
@@ -175,7 +175,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_Equal(String stationName) {
         doSetStationName_Equal(fRES(stationName));
@@ -188,7 +188,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_NotEqual(String stationName) {
         doSetStationName_NotEqual(fRES(stationName));
@@ -201,7 +201,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as greaterThan. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_GreaterThan(String stationName) {
         regStationName(CK_GT, fRES(stationName));
@@ -210,7 +210,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as lessThan. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_LessThan(String stationName) {
         regStationName(CK_LT, fRES(stationName));
@@ -219,7 +219,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as greaterEqual. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_GreaterEqual(String stationName) {
         regStationName(CK_GE, fRES(stationName));
@@ -228,7 +228,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as lessEqual. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_LessEqual(String stationName) {
         regStationName(CK_LE, fRES(stationName));
@@ -237,7 +237,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationNameList The collection of stationName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param stationNameList The collection of stationName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_InScope(Collection<String> stationNameList) {
         doSetStationName_InScope(stationNameList);
@@ -250,7 +250,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationNameList The collection of stationName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param stationNameList The collection of stationName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setStationName_NotInScope(Collection<String> stationNameList) {
         doSetStationName_NotInScope(stationNameList);
@@ -264,7 +264,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)} <br>
      * <pre>e.g. setStationName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param stationName The value of stationName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setStationName_LikeSearch(String stationName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -275,7 +275,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)} <br>
      * <pre>e.g. setStationName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param stationName The value of stationName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     protected void setStationName_LikeSearch(String stationName, LikeSearchOption likeSearchOption) {
@@ -286,7 +286,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setStationName_NotLikeSearch(String stationName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -297,7 +297,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
-     * @param stationName The value of stationName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param stationName The value of stationName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     protected void setStationName_NotLikeSearch(String stationName, LikeSearchOption likeSearchOption) {
@@ -548,8 +548,8 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param minNumber The min number of homeCount. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of homeCount. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of homeCount. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of homeCount. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setHomeCount_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -561,8 +561,8 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param minNumber The min number of homeCount. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of homeCount. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of homeCount. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of homeCount. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     protected void setHomeCount_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -572,7 +572,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCountList The collection of homeCount as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param homeCountList The collection of homeCount as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setHomeCount_InScope(Collection<Integer> homeCountList) {
         doSetHomeCount_InScope(homeCountList);
@@ -585,7 +585,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * HOME_COUNT: {NUMBER(9)}
-     * @param homeCountList The collection of homeCount as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param homeCountList The collection of homeCount as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setHomeCount_NotInScope(Collection<Integer> homeCountList) {
         doSetHomeCount_NotInScope(homeCountList);
@@ -677,8 +677,8 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param minNumber The min number of workingKilometer. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of workingKilometer. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of workingKilometer. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of workingKilometer. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setWorkingKilometer_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -690,8 +690,8 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param minNumber The min number of workingKilometer. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of workingKilometer. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of workingKilometer. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of workingKilometer. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     protected void setWorkingKilometer_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, RangeOfOption rangeOfOption) {
@@ -701,7 +701,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometerList The collection of workingKilometer as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param workingKilometerList The collection of workingKilometer as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setWorkingKilometer_InScope(Collection<java.math.BigDecimal> workingKilometerList) {
         doSetWorkingKilometer_InScope(workingKilometerList);
@@ -714,7 +714,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
-     * @param workingKilometerList The collection of workingKilometer as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param workingKilometerList The collection of workingKilometer as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setWorkingKilometer_NotInScope(Collection<java.math.BigDecimal> workingKilometerList) {
         doSetWorkingKilometer_NotInScope(workingKilometerList);
@@ -750,7 +750,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<ResolaStationCB> scalar_Equal() {
@@ -765,7 +765,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<ResolaStationCB> scalar_NotEqual() {
@@ -780,7 +780,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<ResolaStationCB> scalar_GreaterThan() {
@@ -795,7 +795,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<ResolaStationCB> scalar_LessThan() {
@@ -810,7 +810,7 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<ResolaStationCB> scalar_GreaterEqual() {
@@ -913,7 +913,6 @@ public abstract class ResolaAbstractBsStationCQ extends AbstractConditionQuery {
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

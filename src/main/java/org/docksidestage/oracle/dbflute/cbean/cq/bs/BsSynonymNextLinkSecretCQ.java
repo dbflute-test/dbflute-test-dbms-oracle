@@ -79,7 +79,7 @@ public class BsSynonymNextLinkSecretCQ extends AbstractBsSynonymNextLinkSecretCQ
       return _secretCode; }
     protected ConditionValue xgetCValueSecretCode() { return xdfgetSecretCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSynonymNextLinkSecretCQ extends AbstractBsSynonymNextLinkSecretCQ
       return _secretName; }
     protected ConditionValue xgetCValueSecretName() { return xdfgetSecretName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsSynonymNextLinkSecretCQ extends AbstractBsSynonymNextLinkSecretCQ
       return _secretAuthCode; }
     protected ConditionValue xgetCValueSecretAuthCode() { return xdfgetSecretAuthCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
      * @return this. (NotNull)

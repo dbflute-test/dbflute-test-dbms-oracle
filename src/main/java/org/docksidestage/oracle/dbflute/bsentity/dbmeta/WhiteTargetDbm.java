@@ -64,8 +64,8 @@ public class WhiteTargetDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnTargetId = cci("TARGET_ID", "TARGET_ID", null, null, Long.class, "targetId", null, true, false, true, "NUMBER", 16, 0, null, false, null, null, null, "whiteRefTargetList", null, false);
-    protected final ColumnInfo _columnTargetName = cci("TARGET_NAME", "TARGET_NAME", null, null, String.class, "targetName", null, false, false, false, "VARCHAR2", 256, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnTargetId = cci("TARGET_ID", "TARGET_ID", null, null, Long.class, "targetId", null, true, false, true, "NUMBER", 16, 0, null, null, false, null, null, null, "whiteRefTargetList", null, false);
+    protected final ColumnInfo _columnTargetName = cci("TARGET_NAME", "TARGET_NAME", null, null, String.class, "targetName", null, false, false, false, "VARCHAR2", 256, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * TARGET_ID: {PK, NotNull, NUMBER(16)}

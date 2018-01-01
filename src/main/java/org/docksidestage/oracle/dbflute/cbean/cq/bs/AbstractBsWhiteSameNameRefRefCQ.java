@@ -97,8 +97,8 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refRefId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refRefId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refRefId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refRefId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setRefRefId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refRefId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refRefId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refRefId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refRefId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setRefRefId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refRefIdList The collection of refRefId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param refRefIdList The collection of refRefId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefRefId_InScope(Collection<Long> refRefIdList) {
         doSetRefRefId_InScope(refRefIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refRefIdList The collection of refRefId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param refRefIdList The collection of refRefId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefRefId_NotInScope(Collection<Long> refRefIdList) {
         doSetRefRefId_NotInScope(refRefIdList);
@@ -162,7 +162,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
-     * @param refRefName The value of refRefName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param refRefName The value of refRefName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefRefName_Equal(String refRefName) {
         doSetRefRefName_Equal(fRES(refRefName));
@@ -175,7 +175,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
-     * @param refRefName The value of refRefName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param refRefName The value of refRefName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefRefName_NotEqual(String refRefName) {
         doSetRefRefName_NotEqual(fRES(refRefName));
@@ -188,7 +188,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
-     * @param refRefNameList The collection of refRefName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param refRefNameList The collection of refRefName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefRefName_InScope(Collection<String> refRefNameList) {
         doSetRefRefName_InScope(refRefNameList);
@@ -201,7 +201,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
-     * @param refRefNameList The collection of refRefName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param refRefNameList The collection of refRefName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefRefName_NotInScope(Collection<String> refRefNameList) {
         doSetRefRefName_NotInScope(refRefNameList);
@@ -215,7 +215,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)} <br>
      * <pre>e.g. setRefRefName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param refRefName The value of refRefName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refRefName The value of refRefName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setRefRefName_LikeSearch(String refRefName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -226,7 +226,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)} <br>
      * <pre>e.g. setRefRefName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param refRefName The value of refRefName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refRefName The value of refRefName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setRefRefName_LikeSearch(String refRefName, LikeSearchOption likeSearchOption) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
-     * @param refRefName The value of refRefName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refRefName The value of refRefName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setRefRefName_NotLikeSearch(String refRefName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -248,7 +248,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
-     * @param refRefName The value of refRefName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refRefName The value of refRefName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setRefRefName_NotLikeSearch(String refRefName, LikeSearchOption likeSearchOption) {
@@ -258,7 +258,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_REF_NAME: {NotNull, VARCHAR2(100)}
-     * @param refRefName The value of refRefName as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refRefName The value of refRefName as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefRefName_PrefixSearch(String refRefName) {
         setRefRefName_LikeSearch(refRefName, xcLSOPPre());
@@ -368,7 +368,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameRefRefCB> scalar_Equal() {
@@ -383,7 +383,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameRefRefCB> scalar_NotEqual() {
@@ -398,7 +398,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameRefRefCB> scalar_GreaterThan() {
@@ -413,7 +413,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameRefRefCB> scalar_LessThan() {
@@ -428,7 +428,7 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameRefRefCB> scalar_GreaterEqual() {
@@ -564,7 +564,6 @@ public abstract class AbstractBsWhiteSameNameRefRefCQ extends AbstractConditionQ
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

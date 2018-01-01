@@ -79,7 +79,7 @@ public class BsWhiteUqFkWithoutPkRefCQ extends AbstractBsWhiteUqFkWithoutPkRefCQ
       return _uqFkRefId; }
     protected ConditionValue xgetCValueUqFkRefId() { return xdfgetUqFkRefId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UQ_FK_REF_ID: {NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsWhiteUqFkWithoutPkRefCQ extends AbstractBsWhiteUqFkWithoutPkRefCQ
       return _fkToUqCode; }
     protected ConditionValue xgetCValueFkToUqCode() { return xdfgetFkToUqCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK_WITHOUT_PK}
      * @return this. (NotNull)

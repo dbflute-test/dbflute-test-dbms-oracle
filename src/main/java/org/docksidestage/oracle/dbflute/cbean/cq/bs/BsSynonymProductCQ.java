@@ -79,7 +79,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _productId; }
     protected ConditionValue xgetCValueProductId() { return xdfgetProductId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PRODUCT_ID: {PK, NotNull, NUMBER(9)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _productName; }
     protected ConditionValue xgetCValueProductName() { return xdfgetProductName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PRODUCT_NAME: {IX, NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _productHandleCode; }
     protected ConditionValue xgetCValueProductHandleCode() { return xdfgetProductHandleCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PRODUCT_HANDLE_CODE: {UQ, NotNull, VARCHAR2(100)}
      * @return this. (NotNull)
@@ -139,7 +139,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _productCategoryCode; }
     protected ConditionValue xgetCValueProductCategoryCode() { return xdfgetProductCategoryCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PRODUCT_CATEGORY_CODE: {NotNull, CHAR(3)}
      * @return this. (NotNull)
@@ -159,7 +159,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _productStatusCode; }
     protected ConditionValue xgetCValueProductStatusCode() { return xdfgetProductStatusCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PRODUCT_STATUS_CODE: {NotNull, CHAR(3), FK to SYNONYM_PRODUCT_STATUS}
      * @return this. (NotNull)
@@ -179,7 +179,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _regularPrice; }
     protected ConditionValue xgetCValueRegularPrice() { return xdfgetRegularPrice(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGULAR_PRICE: {NotNull, NUMBER(9)}
      * @return this. (NotNull)
@@ -199,7 +199,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _registerDatetime; }
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -219,7 +219,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _registerUser; }
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -239,7 +239,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _registerProcess; }
     protected ConditionValue xgetCValueRegisterProcess() { return xdfgetRegisterProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -259,7 +259,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _updateDatetime; }
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -279,7 +279,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _updateUser; }
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -299,7 +299,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _updateProcess; }
     protected ConditionValue xgetCValueUpdateProcess() { return xdfgetUpdateProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -319,7 +319,7 @@ public class BsSynonymProductCQ extends AbstractBsSynonymProductCQ {
       return _versionNo; }
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VERSION_NO: {NotNull, NUMBER(16)}
      * @return this. (NotNull)

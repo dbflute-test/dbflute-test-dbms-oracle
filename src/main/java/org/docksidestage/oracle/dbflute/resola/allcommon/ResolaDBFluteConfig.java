@@ -69,6 +69,7 @@ public class ResolaDBFluteConfig {
     protected boolean _specifyColumnRequired = false;
     protected boolean _columnNullObjectAllowed = false;
     protected boolean _columnNullObjectGearedToSpecify = false;
+    protected boolean _datetimePrecisionTruncationOfCondition = false;
     protected boolean _disableSelectIndex;
     protected boolean _queryUpdateCountPreCheck = false;
 
@@ -123,7 +124,7 @@ public class ResolaDBFluteConfig {
 
         if (isCurrentDBDef(DBDef.Oracle)) {
             // date formatting has two points:
-            //   o the DATE type of Oracle has seconds  
+            //   o the DATE type of Oracle has seconds
             //   o it uses a date literal of Oracle
             _logDatePattern = "timestamp $df:{yyyy-MM-dd HH:mm:ss}";
             _logTimestampPattern = "timestamp $df:{" + DisplaySqlBuilder.DEFAULT_TIMESTAMP_FORMAT + "}";
@@ -339,6 +340,26 @@ public class ResolaDBFluteConfig {
             _log.info("...Setting columnNullObjectGearedToSpecify: " + columnNullObjectGearedToSpecify);
         }
         _columnNullObjectGearedToSpecify = columnNullObjectGearedToSpecify;
+    }
+
+    // ===================================================================================
+    //                                                                 Date-time Precision
+    //                                                                 ===================
+    public boolean isDatetimePrecisionTruncationOfCondition() {
+        return _datetimePrecisionTruncationOfCondition;
+    }
+
+    /**
+     * Set whether it truncates date-time precision of condition value or not. <br>
+     * This configuration is only for ConditionBean.
+     * @param datetimePrecisionTruncationOfCondition The determination, true or false.
+     */
+    public void setDatetimePrecisionTruncationOfCondition(boolean datetimePrecisionTruncationOfCondition) {
+        assertUnlocked();
+        if (_log.isInfoEnabled()) {
+            _log.info("...Setting datetimePrecisionTruncationOfCondition: " + datetimePrecisionTruncationOfCondition);
+        }
+        _datetimePrecisionTruncationOfCondition = datetimePrecisionTruncationOfCondition;
     }
 
     // ===================================================================================
@@ -754,7 +775,7 @@ public class ResolaDBFluteConfig {
     //                                                                          ==========
     /**
      * Register the basic value type. <br>
-     * This setting is shared per DBMS in the same class loader. 
+     * This setting is shared per DBMS in the same class loader.
      * @param keyType The type as key. (NotNull)
      * @param valueType The basic value type. (NotNull)
      */

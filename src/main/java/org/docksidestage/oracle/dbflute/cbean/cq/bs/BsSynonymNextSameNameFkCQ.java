@@ -79,7 +79,7 @@ public class BsSynonymNextSameNameFkCQ extends AbstractBsSynonymNextSameNameFkCQ
       return _refId; }
     protected ConditionValue xgetCValueRefId() { return xdfgetRefId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSynonymNextSameNameFkCQ extends AbstractBsSynonymNextSameNameFkCQ
       return _refName; }
     protected ConditionValue xgetCValueRefName() { return xdfgetRefName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsSynonymNextSameNameFkCQ extends AbstractBsSynonymNextSameNameFkCQ
       return _sameNameId; }
     protected ConditionValue xgetCValueSameNameId() { return xdfgetSameNameId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SAME_NAME_ID: {NUMBER(16)}
      * @return this. (NotNull)

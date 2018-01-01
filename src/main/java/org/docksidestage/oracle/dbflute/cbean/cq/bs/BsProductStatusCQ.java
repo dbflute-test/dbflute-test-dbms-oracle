@@ -107,7 +107,7 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
     public Map<String, Object> xdfgetProductStatusCode_QueryDerivedReferrer_SummaryProductListParameter() { return xgetSQuePmMap("productStatusCode_QueryDerivedReferrer_SummaryProductList"); }
     public String keepProductStatusCode_QueryDerivedReferrer_SummaryProductListParameter(Object pm) { return xkeepSQuePm("productStatusCode_QueryDerivedReferrer_SummaryProductList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
      * @return this. (NotNull)
@@ -127,7 +127,7 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
       return _productStatusName; }
     protected ConditionValue xgetCValueProductStatusName() { return xdfgetProductStatusName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -147,7 +147,7 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
       return _displayOrder; }
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DISPLAY_ORDER: {NotNull, NUMBER(8)}
      * @return this. (NotNull)

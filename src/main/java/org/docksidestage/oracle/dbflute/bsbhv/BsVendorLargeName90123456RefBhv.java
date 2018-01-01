@@ -124,7 +124,7 @@ public abstract class BsVendorLargeName90123456RefBhv extends AbstractBehaviorWr
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">vendorLargeName90123456Ref</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">vendorLargeName90123456RefBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsVendorLargeName90123456RefBhv extends AbstractBehaviorWr
      * <pre>
      * VendorLargeName90123456RefCB cb = <span style="color: #70226C">new</span> VendorLargeName90123456RefCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">vendorLargeName90123456RefBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(vendorLargeName90123456Ref <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = vendorLargeName90123456Ref.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">vendorLargeName90123456RefBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(vendorLargeName90123456Ref <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1020,8 +1020,8 @@ public abstract class BsVendorLargeName90123456RefBhv extends AbstractBehaviorWr
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * vendorLargeName90123456RefBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * vendorLargeName90123456RefBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * vendorLargeName90123456RefBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * vendorLargeName90123456RefBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * vendorLargeName90123456RefBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1029,7 +1029,7 @@ public abstract class BsVendorLargeName90123456RefBhv extends AbstractBehaviorWr
      * vendorLargeName90123456RefBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * vendorLargeName90123456RefBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * vendorLargeName90123456RefBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * vendorLargeName90123456RefBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * vendorLargeName90123456RefBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1037,7 +1037,7 @@ public abstract class BsVendorLargeName90123456RefBhv extends AbstractBehaviorWr
      * vendorLargeName90123456RefBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * vendorLargeName90123456RefBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * vendorLargeName90123456RefBhv.outideSql().removeBlockComment().selectList()
      * vendorLargeName90123456RefBhv.outideSql().removeLineComment().selectList()
      * vendorLargeName90123456RefBhv.outideSql().formatSql().selectList()

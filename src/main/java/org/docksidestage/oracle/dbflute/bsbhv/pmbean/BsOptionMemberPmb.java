@@ -112,7 +112,7 @@ public class BsOptionMemberPmb implements ListHandlingPmb<MemberBhv, OptionMembe
     protected String filterStringParameter(String value) { return isEmptyStringParameterAllowed() ? value : convertEmptyToNull(value); }
     protected boolean isEmptyStringParameterAllowed() { return DBFluteConfig.getInstance().isEmptyStringParameterAllowed(); }
     protected String convertEmptyToNull(String value) { return PmbCustodial.convertEmptyToNull(value); }
-    
+
     protected String handleShortChar(String propertyName, String value, Integer size)
     { return PmbCustodial.handleShortChar(propertyName, value, size, chooseShortCharHandlingMode(propertyName, value, size)); }
 
@@ -290,6 +290,15 @@ public class BsOptionMemberPmb implements ListHandlingPmb<MemberBhv, OptionMembe
     }
 
     /**
+     * [set as MemberStatus] memberStatusCode:cls(MemberStatus) <br>
+     * status of member from entry to withdrawal
+     * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the property)
+     */
+    public void setMemberStatusCodeAsMemberStatus(CDef.MemberStatus cdef) {
+        _memberStatusCode = cdef != null ? cdef.code() : null;
+    }
+
+    /**
      * [set as Formalized] memberStatusCode:cls(MemberStatus) <br>
      * as formal member, allowed to use all service
      */
@@ -353,6 +362,15 @@ public class BsOptionMemberPmb implements ListHandlingPmb<MemberBhv, OptionMembe
         String filtered = filterStringParameter(_status);
         filtered = handleShortChar("status", filtered, 3);
         return filtered;
+    }
+
+    /**
+     * [set as MemberStatus] status:cls(MemberStatus)|ref(Member.MEMBER_STATUS_CODE) :: refers to (会員ステータスコード)MEMBER_STATUS_CODE: {NotNull, CHAR(3), FK to MEMBER_STATUS, classification=MemberStatus} <br>
+     * status of member from entry to withdrawal
+     * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the property)
+     */
+    public void setStatusAsMemberStatus(CDef.MemberStatus cdef) {
+        _status = cdef != null ? cdef.code() : null;
     }
 
     /**

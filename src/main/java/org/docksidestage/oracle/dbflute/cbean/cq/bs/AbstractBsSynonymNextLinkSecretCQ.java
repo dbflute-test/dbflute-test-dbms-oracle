@@ -46,7 +46,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
-     * @param secretCode The value of secretCode as equal. (NullAllowed: if null (or empty), no condition)
+     * @param secretCode The value of secretCode as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretCode_Equal(String secretCode) {
         doSetSecretCode_Equal(fRES(secretCode));
@@ -59,7 +59,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
-     * @param secretCode The value of secretCode as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param secretCode The value of secretCode as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretCode_NotEqual(String secretCode) {
         doSetSecretCode_NotEqual(fRES(secretCode));
@@ -72,7 +72,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
-     * @param secretCodeList The collection of secretCode as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param secretCodeList The collection of secretCode as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretCode_InScope(Collection<String> secretCodeList) {
         doSetSecretCode_InScope(secretCodeList);
@@ -85,7 +85,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
-     * @param secretCodeList The collection of secretCode as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param secretCodeList The collection of secretCode as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretCode_NotInScope(Collection<String> secretCodeList) {
         doSetSecretCode_NotInScope(secretCodeList);
@@ -99,7 +99,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)} <br>
      * <pre>e.g. setSecretCode_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param secretCode The value of secretCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretCode The value of secretCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSecretCode_LikeSearch(String secretCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -110,7 +110,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)} <br>
      * <pre>e.g. setSecretCode_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param secretCode The value of secretCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretCode The value of secretCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setSecretCode_LikeSearch(String secretCode, LikeSearchOption likeSearchOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
-     * @param secretCode The value of secretCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretCode The value of secretCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSecretCode_NotLikeSearch(String secretCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -132,7 +132,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
-     * @param secretCode The value of secretCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretCode The value of secretCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setSecretCode_NotLikeSearch(String secretCode, LikeSearchOption likeSearchOption) {
@@ -142,7 +142,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_CODE: {PK, NotNull, CHAR(3)}
-     * @param secretCode The value of secretCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretCode The value of secretCode as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretCode_PrefixSearch(String secretCode) {
         setSecretCode_LikeSearch(secretCode, xcLSOPPre());
@@ -166,7 +166,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param secretName The value of secretName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param secretName The value of secretName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretName_Equal(String secretName) {
         doSetSecretName_Equal(fRES(secretName));
@@ -179,7 +179,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param secretName The value of secretName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param secretName The value of secretName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretName_NotEqual(String secretName) {
         doSetSecretName_NotEqual(fRES(secretName));
@@ -192,7 +192,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param secretNameList The collection of secretName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param secretNameList The collection of secretName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretName_InScope(Collection<String> secretNameList) {
         doSetSecretName_InScope(secretNameList);
@@ -205,7 +205,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param secretNameList The collection of secretName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param secretNameList The collection of secretName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretName_NotInScope(Collection<String> secretNameList) {
         doSetSecretName_NotInScope(secretNameList);
@@ -219,7 +219,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setSecretName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param secretName The value of secretName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretName The value of secretName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSecretName_LikeSearch(String secretName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -230,7 +230,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setSecretName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param secretName The value of secretName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretName The value of secretName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setSecretName_LikeSearch(String secretName, LikeSearchOption likeSearchOption) {
@@ -241,7 +241,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param secretName The value of secretName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretName The value of secretName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSecretName_NotLikeSearch(String secretName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -252,7 +252,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param secretName The value of secretName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretName The value of secretName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setSecretName_NotLikeSearch(String secretName, LikeSearchOption likeSearchOption) {
@@ -262,7 +262,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param secretName The value of secretName as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretName The value of secretName as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretName_PrefixSearch(String secretName) {
         setSecretName_LikeSearch(secretName, xcLSOPPre());
@@ -274,7 +274,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
-     * @param secretAuthCode The value of secretAuthCode as equal. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCode The value of secretAuthCode as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretAuthCode_Equal(String secretAuthCode) {
         doSetSecretAuthCode_Equal(fRES(secretAuthCode));
@@ -287,7 +287,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
-     * @param secretAuthCode The value of secretAuthCode as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCode The value of secretAuthCode as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretAuthCode_NotEqual(String secretAuthCode) {
         doSetSecretAuthCode_NotEqual(fRES(secretAuthCode));
@@ -300,7 +300,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
-     * @param secretAuthCodeList The collection of secretAuthCode as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCodeList The collection of secretAuthCode as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretAuthCode_InScope(Collection<String> secretAuthCodeList) {
         doSetSecretAuthCode_InScope(secretAuthCodeList);
@@ -313,7 +313,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
-     * @param secretAuthCodeList The collection of secretAuthCode as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCodeList The collection of secretAuthCode as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretAuthCode_NotInScope(Collection<String> secretAuthCodeList) {
         doSetSecretAuthCode_NotInScope(secretAuthCodeList);
@@ -327,7 +327,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)} <br>
      * <pre>e.g. setSecretAuthCode_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param secretAuthCode The value of secretAuthCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCode The value of secretAuthCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSecretAuthCode_LikeSearch(String secretAuthCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -338,7 +338,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)} <br>
      * <pre>e.g. setSecretAuthCode_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param secretAuthCode The value of secretAuthCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCode The value of secretAuthCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setSecretAuthCode_LikeSearch(String secretAuthCode, LikeSearchOption likeSearchOption) {
@@ -349,7 +349,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
-     * @param secretAuthCode The value of secretAuthCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCode The value of secretAuthCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSecretAuthCode_NotLikeSearch(String secretAuthCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -360,7 +360,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
-     * @param secretAuthCode The value of secretAuthCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCode The value of secretAuthCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setSecretAuthCode_NotLikeSearch(String secretAuthCode, LikeSearchOption likeSearchOption) {
@@ -370,7 +370,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SECRET_AUTH_CODE: {CHAR(3)}
-     * @param secretAuthCode The value of secretAuthCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param secretAuthCode The value of secretAuthCode as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSecretAuthCode_PrefixSearch(String secretAuthCode) {
         setSecretAuthCode_LikeSearch(secretAuthCode, xcLSOPPre());
@@ -408,7 +408,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextLinkSecretCB> scalar_Equal() {
@@ -423,7 +423,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextLinkSecretCB> scalar_NotEqual() {
@@ -438,7 +438,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextLinkSecretCB> scalar_GreaterThan() {
@@ -453,7 +453,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextLinkSecretCB> scalar_LessThan() {
@@ -468,7 +468,7 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextLinkSecretCB> scalar_GreaterEqual() {
@@ -604,7 +604,6 @@ public abstract class AbstractBsSynonymNextLinkSecretCQ extends AbstractConditio
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

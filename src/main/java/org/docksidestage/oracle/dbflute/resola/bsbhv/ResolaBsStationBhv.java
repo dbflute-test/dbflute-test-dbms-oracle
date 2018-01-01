@@ -109,7 +109,7 @@ public abstract class ResolaBsStationBhv extends AbstractBehaviorWritable<Resola
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">station</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">stationBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -798,8 +798,8 @@ public abstract class ResolaBsStationBhv extends AbstractBehaviorWritable<Resola
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * stationBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * stationBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * stationBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * stationBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * stationBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -807,7 +807,7 @@ public abstract class ResolaBsStationBhv extends AbstractBehaviorWritable<Resola
      * stationBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * stationBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * stationBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * stationBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * stationBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -815,7 +815,7 @@ public abstract class ResolaBsStationBhv extends AbstractBehaviorWritable<Resola
      * stationBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * stationBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * stationBhv.outideSql().removeBlockComment().selectList()
      * stationBhv.outideSql().removeLineComment().selectList()
      * stationBhv.outideSql().formatSql().selectList()

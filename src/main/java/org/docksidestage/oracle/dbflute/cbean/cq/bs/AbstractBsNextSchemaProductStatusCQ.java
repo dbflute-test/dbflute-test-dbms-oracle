@@ -46,7 +46,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
-     * @param productStatusCode The value of productStatusCode as equal. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCode The value of productStatusCode as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusCode_Equal(String productStatusCode) {
         doSetProductStatusCode_Equal(fRES(productStatusCode));
@@ -59,7 +59,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
-     * @param productStatusCode The value of productStatusCode as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCode The value of productStatusCode as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusCode_NotEqual(String productStatusCode) {
         doSetProductStatusCode_NotEqual(fRES(productStatusCode));
@@ -72,7 +72,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
-     * @param productStatusCodeList The collection of productStatusCode as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCodeList The collection of productStatusCode as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusCode_InScope(Collection<String> productStatusCodeList) {
         doSetProductStatusCode_InScope(productStatusCodeList);
@@ -85,7 +85,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
-     * @param productStatusCodeList The collection of productStatusCode as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCodeList The collection of productStatusCode as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusCode_NotInScope(Collection<String> productStatusCodeList) {
         doSetProductStatusCode_NotInScope(productStatusCodeList);
@@ -99,7 +99,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)} <br>
      * <pre>e.g. setProductStatusCode_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param productStatusCode The value of productStatusCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCode The value of productStatusCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setProductStatusCode_LikeSearch(String productStatusCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -110,7 +110,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)} <br>
      * <pre>e.g. setProductStatusCode_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param productStatusCode The value of productStatusCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCode The value of productStatusCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setProductStatusCode_LikeSearch(String productStatusCode, LikeSearchOption likeSearchOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
-     * @param productStatusCode The value of productStatusCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCode The value of productStatusCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setProductStatusCode_NotLikeSearch(String productStatusCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -132,7 +132,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
-     * @param productStatusCode The value of productStatusCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCode The value of productStatusCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setProductStatusCode_NotLikeSearch(String productStatusCode, LikeSearchOption likeSearchOption) {
@@ -142,7 +142,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_CODE: {PK, NotNull, CHAR(3)}
-     * @param productStatusCode The value of productStatusCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusCode The value of productStatusCode as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusCode_PrefixSearch(String productStatusCode) {
         setProductStatusCode_LikeSearch(productStatusCode, xcLSOPPre());
@@ -312,7 +312,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param productStatusName The value of productStatusName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusName The value of productStatusName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusName_Equal(String productStatusName) {
         doSetProductStatusName_Equal(fRES(productStatusName));
@@ -325,7 +325,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param productStatusName The value of productStatusName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusName The value of productStatusName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusName_NotEqual(String productStatusName) {
         doSetProductStatusName_NotEqual(fRES(productStatusName));
@@ -338,7 +338,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param productStatusNameList The collection of productStatusName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusNameList The collection of productStatusName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusName_InScope(Collection<String> productStatusNameList) {
         doSetProductStatusName_InScope(productStatusNameList);
@@ -351,7 +351,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param productStatusNameList The collection of productStatusName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusNameList The collection of productStatusName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusName_NotInScope(Collection<String> productStatusNameList) {
         doSetProductStatusName_NotInScope(productStatusNameList);
@@ -365,7 +365,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setProductStatusName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param productStatusName The value of productStatusName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusName The value of productStatusName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setProductStatusName_LikeSearch(String productStatusName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -376,7 +376,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setProductStatusName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param productStatusName The value of productStatusName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusName The value of productStatusName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setProductStatusName_LikeSearch(String productStatusName, LikeSearchOption likeSearchOption) {
@@ -387,7 +387,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param productStatusName The value of productStatusName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusName The value of productStatusName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setProductStatusName_NotLikeSearch(String productStatusName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -398,7 +398,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param productStatusName The value of productStatusName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusName The value of productStatusName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setProductStatusName_NotLikeSearch(String productStatusName, LikeSearchOption likeSearchOption) {
@@ -408,7 +408,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * PRODUCT_STATUS_NAME: {UQ, NotNull, VARCHAR2(50)}
-     * @param productStatusName The value of productStatusName as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param productStatusName The value of productStatusName as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setProductStatusName_PrefixSearch(String productStatusName) {
         setProductStatusName_LikeSearch(productStatusName, xcLSOPPre());
@@ -428,7 +428,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<NextSchemaProductStatusCB> scalar_Equal() {
@@ -443,7 +443,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<NextSchemaProductStatusCB> scalar_NotEqual() {
@@ -458,7 +458,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<NextSchemaProductStatusCB> scalar_GreaterThan() {
@@ -473,7 +473,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<NextSchemaProductStatusCB> scalar_LessThan() {
@@ -488,7 +488,7 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<NextSchemaProductStatusCB> scalar_GreaterEqual() {
@@ -624,7 +624,6 @@ public abstract class AbstractBsNextSchemaProductStatusCQ extends AbstractCondit
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

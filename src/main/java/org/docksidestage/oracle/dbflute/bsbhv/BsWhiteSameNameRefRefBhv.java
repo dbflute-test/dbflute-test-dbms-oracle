@@ -124,7 +124,7 @@ public abstract class BsWhiteSameNameRefRefBhv extends AbstractBehaviorWritable<
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">whiteSameNameRefRef</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">whiteSameNameRefRefBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsWhiteSameNameRefRefBhv extends AbstractBehaviorWritable<
      * <pre>
      * WhiteSameNameRefRefCB cb = <span style="color: #70226C">new</span> WhiteSameNameRefRefCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">whiteSameNameRefRefBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(whiteSameNameRefRef <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = whiteSameNameRefRef.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">whiteSameNameRefRefBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(whiteSameNameRefRef <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1012,8 +1012,8 @@ public abstract class BsWhiteSameNameRefRefBhv extends AbstractBehaviorWritable<
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * whiteSameNameRefRefBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * whiteSameNameRefRefBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * whiteSameNameRefRefBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * whiteSameNameRefRefBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * whiteSameNameRefRefBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1021,7 +1021,7 @@ public abstract class BsWhiteSameNameRefRefBhv extends AbstractBehaviorWritable<
      * whiteSameNameRefRefBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * whiteSameNameRefRefBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * whiteSameNameRefRefBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * whiteSameNameRefRefBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * whiteSameNameRefRefBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1029,7 +1029,7 @@ public abstract class BsWhiteSameNameRefRefBhv extends AbstractBehaviorWritable<
      * whiteSameNameRefRefBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * whiteSameNameRefRefBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * whiteSameNameRefRefBhv.outideSql().removeBlockComment().selectList()
      * whiteSameNameRefRefBhv.outideSql().removeLineComment().selectList()
      * whiteSameNameRefRefBhv.outideSql().formatSql().selectList()

@@ -79,7 +79,7 @@ public class BsWhiteSameNameCQ extends AbstractBsWhiteSameNameCQ {
       return _sameNameId; }
     protected ConditionValue xgetCValueSameNameId() { return xdfgetSameNameId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SAME_NAME_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsWhiteSameNameCQ extends AbstractBsWhiteSameNameCQ {
       return _sameNameName; }
     protected ConditionValue xgetCValueSameNameName() { return xdfgetSameNameName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)

@@ -67,10 +67,10 @@ public class NestedBazBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnBazId = cci("BAZ_ID", "BAZ_ID", null, null, Integer.class, "bazId", null, false, false, false, "NUMBER", 8, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBazName = cci("BAZ_NAME", "BAZ_NAME", null, null, String.class, "bazName", null, false, false, false, "VARCHAR2", 20, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBazDate = cci("BAZ_DATE", "BAZ_DATE", null, null, java.time.LocalDate.class, "bazDate", null, false, false, false, "DATE", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBazList = cci("BAZ_LIST", "BAZ_LIST", null, null, List.class, "bazList", null, false, false, false, "BAZ_TABLE", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBazId = cci("BAZ_ID", "BAZ_ID", null, null, Integer.class, "bazId", null, false, false, false, "NUMBER", 8, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBazName = cci("BAZ_NAME", "BAZ_NAME", null, null, String.class, "bazName", null, false, false, false, "VARCHAR2", 20, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBazDate = cci("BAZ_DATE", "BAZ_DATE", null, null, java.time.LocalDate.class, "bazDate", null, false, false, false, "DATE", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBazList = cci("BAZ_LIST", "BAZ_LIST", null, null, List.class, "bazList", null, false, false, false, "BAZ_TABLE", null, null, null, null, false, null, null, null, null, null, false);
 
     /**
      * BAZ_ID: {NUMBER(8)}

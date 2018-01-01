@@ -79,7 +79,7 @@ public class BsSynonymMemberLoginCQ extends AbstractBsSynonymMemberLoginCQ {
       return _memberLoginId; }
     protected ConditionValue xgetCValueMemberLoginId() { return xdfgetMemberLoginId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_LOGIN_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSynonymMemberLoginCQ extends AbstractBsSynonymMemberLoginCQ {
       return _memberId; }
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_ID: {UQ+, NotNull, NUMBER(9), FK to MEMBER_VENDOR_SYNONYM}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsSynonymMemberLoginCQ extends AbstractBsSynonymMemberLoginCQ {
       return _loginDatetime; }
     protected ConditionValue xgetCValueLoginDatetime() { return xdfgetLoginDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * LOGIN_DATETIME: {+UQ, IX, NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -139,7 +139,7 @@ public class BsSynonymMemberLoginCQ extends AbstractBsSynonymMemberLoginCQ {
       return _mobileLoginFlg; }
     protected ConditionValue xgetCValueMobileLoginFlg() { return xdfgetMobileLoginFlg(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MOBILE_LOGIN_FLG: {NotNull, NUMBER(1), classification=Flg}
      * @return this. (NotNull)
@@ -159,7 +159,7 @@ public class BsSynonymMemberLoginCQ extends AbstractBsSynonymMemberLoginCQ {
       return _loginMemberStatusCode; }
     protected ConditionValue xgetCValueLoginMemberStatusCode() { return xdfgetLoginMemberStatusCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * LOGIN_MEMBER_STATUS_CODE: {NotNull, CHAR(3), FK to MEMBER_STATUS, classification=MemberStatus}
      * @return this. (NotNull)

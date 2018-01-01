@@ -97,8 +97,8 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setRefId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of refId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of refId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of refId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of refId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setRefId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refIdList The collection of refId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param refIdList The collection of refId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefId_InScope(Collection<Long> refIdList) {
         doSetRefId_InScope(refIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param refIdList The collection of refId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param refIdList The collection of refId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefId_NotInScope(Collection<Long> refIdList) {
         doSetRefId_NotInScope(refIdList);
@@ -162,7 +162,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
-     * @param refName The value of refName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param refName The value of refName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefName_Equal(String refName) {
         doSetRefName_Equal(fRES(refName));
@@ -175,7 +175,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
-     * @param refName The value of refName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param refName The value of refName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefName_NotEqual(String refName) {
         doSetRefName_NotEqual(fRES(refName));
@@ -188,7 +188,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
-     * @param refNameList The collection of refName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param refNameList The collection of refName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefName_InScope(Collection<String> refNameList) {
         doSetRefName_InScope(refNameList);
@@ -201,7 +201,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
-     * @param refNameList The collection of refName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param refNameList The collection of refName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefName_NotInScope(Collection<String> refNameList) {
         doSetRefName_NotInScope(refNameList);
@@ -215,7 +215,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setRefName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param refName The value of refName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refName The value of refName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setRefName_LikeSearch(String refName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -226,7 +226,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setRefName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param refName The value of refName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refName The value of refName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setRefName_LikeSearch(String refName, LikeSearchOption likeSearchOption) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
-     * @param refName The value of refName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refName The value of refName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setRefName_NotLikeSearch(String refName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -248,7 +248,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
-     * @param refName The value of refName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refName The value of refName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setRefName_NotLikeSearch(String refName, LikeSearchOption likeSearchOption) {
@@ -258,7 +258,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REF_NAME: {NotNull, VARCHAR2(50)}
-     * @param refName The value of refName as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param refName The value of refName as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRefName_PrefixSearch(String refName) {
         setRefName_LikeSearch(refName, xcLSOPPre());
@@ -321,8 +321,8 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param minNumber The min number of sameNameId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of sameNameId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setSameNameId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -334,8 +334,8 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param minNumber The min number of sameNameId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of sameNameId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setSameNameId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -345,7 +345,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param sameNameIdList The collection of sameNameId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameIdList The collection of sameNameId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameId_InScope(Collection<Long> sameNameIdList) {
         doSetSameNameId_InScope(sameNameIdList);
@@ -358,7 +358,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * SAME_NAME_ID: {NUMBER(16)}
-     * @param sameNameIdList The collection of sameNameId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameIdList The collection of sameNameId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameId_NotInScope(Collection<Long> sameNameIdList) {
         doSetSameNameId_NotInScope(sameNameIdList);
@@ -394,7 +394,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextSameNameFkCB> scalar_Equal() {
@@ -409,7 +409,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextSameNameFkCB> scalar_NotEqual() {
@@ -424,7 +424,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextSameNameFkCB> scalar_GreaterThan() {
@@ -439,7 +439,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextSameNameFkCB> scalar_LessThan() {
@@ -454,7 +454,7 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<SynonymNextSameNameFkCB> scalar_GreaterEqual() {
@@ -590,7 +590,6 @@ public abstract class AbstractBsSynonymNextSameNameFkCQ extends AbstractConditio
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

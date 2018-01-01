@@ -79,7 +79,7 @@ public class BsWhiteRefNextExceptCQ extends AbstractBsWhiteRefNextExceptCQ {
       return _refNextExceptId; }
     protected ConditionValue xgetCValueRefNextExceptId() { return xdfgetRefNextExceptId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_NEXT_EXCEPT_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsWhiteRefNextExceptCQ extends AbstractBsWhiteRefNextExceptCQ {
       return _nextExceptCode; }
     protected ConditionValue xgetCValueNextExceptCode() { return xdfgetNextExceptCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * NEXT_EXCEPT_CODE: {NotNull, CHAR(3)}
      * @return this. (NotNull)

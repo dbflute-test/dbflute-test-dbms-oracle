@@ -97,8 +97,8 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of uqFkRefId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of uqFkRefId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of uqFkRefId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of uqFkRefId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setUqFkRefId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * UQ_FK_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of uqFkRefId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of uqFkRefId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of uqFkRefId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of uqFkRefId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setUqFkRefId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * UQ_FK_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param uqFkRefIdList The collection of uqFkRefId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param uqFkRefIdList The collection of uqFkRefId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setUqFkRefId_InScope(Collection<Long> uqFkRefIdList) {
         doSetUqFkRefId_InScope(uqFkRefIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * UQ_FK_REF_ID: {PK, NotNull, NUMBER(16)}
-     * @param uqFkRefIdList The collection of uqFkRefId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param uqFkRefIdList The collection of uqFkRefId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setUqFkRefId_NotInScope(Collection<Long> uqFkRefIdList) {
         doSetUqFkRefId_NotInScope(uqFkRefIdList);
@@ -213,8 +213,8 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * FK_TO_PK_ID: {NotNull, NUMBER(16), FK to WHITE_UQ_FK}
-     * @param minNumber The min number of fkToPkId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of fkToPkId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of fkToPkId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of fkToPkId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setFkToPkId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -226,8 +226,8 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * FK_TO_PK_ID: {NotNull, NUMBER(16), FK to WHITE_UQ_FK}
-     * @param minNumber The min number of fkToPkId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of fkToPkId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of fkToPkId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of fkToPkId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setFkToPkId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * FK_TO_PK_ID: {NotNull, NUMBER(16), FK to WHITE_UQ_FK}
-     * @param fkToPkIdList The collection of fkToPkId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param fkToPkIdList The collection of fkToPkId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setFkToPkId_InScope(Collection<Long> fkToPkIdList) {
         doSetFkToPkId_InScope(fkToPkIdList);
@@ -250,7 +250,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * FK_TO_PK_ID: {NotNull, NUMBER(16), FK to WHITE_UQ_FK}
-     * @param fkToPkIdList The collection of fkToPkId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param fkToPkIdList The collection of fkToPkId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setFkToPkId_NotInScope(Collection<Long> fkToPkIdList) {
         doSetFkToPkId_NotInScope(fkToPkIdList);
@@ -266,7 +266,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK}
-     * @param fkToUqCode The value of fkToUqCode as equal. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCode The value of fkToUqCode as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setFkToUqCode_Equal(String fkToUqCode) {
         doSetFkToUqCode_Equal(fRES(fkToUqCode));
@@ -279,7 +279,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK}
-     * @param fkToUqCode The value of fkToUqCode as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCode The value of fkToUqCode as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setFkToUqCode_NotEqual(String fkToUqCode) {
         doSetFkToUqCode_NotEqual(fRES(fkToUqCode));
@@ -292,7 +292,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK}
-     * @param fkToUqCodeList The collection of fkToUqCode as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCodeList The collection of fkToUqCode as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setFkToUqCode_InScope(Collection<String> fkToUqCodeList) {
         doSetFkToUqCode_InScope(fkToUqCodeList);
@@ -305,7 +305,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK}
-     * @param fkToUqCodeList The collection of fkToUqCode as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCodeList The collection of fkToUqCode as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setFkToUqCode_NotInScope(Collection<String> fkToUqCodeList) {
         doSetFkToUqCode_NotInScope(fkToUqCodeList);
@@ -319,7 +319,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK} <br>
      * <pre>e.g. setFkToUqCode_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param fkToUqCode The value of fkToUqCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCode The value of fkToUqCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setFkToUqCode_LikeSearch(String fkToUqCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -330,7 +330,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK} <br>
      * <pre>e.g. setFkToUqCode_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param fkToUqCode The value of fkToUqCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCode The value of fkToUqCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setFkToUqCode_LikeSearch(String fkToUqCode, LikeSearchOption likeSearchOption) {
@@ -341,7 +341,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK}
-     * @param fkToUqCode The value of fkToUqCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCode The value of fkToUqCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setFkToUqCode_NotLikeSearch(String fkToUqCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -352,7 +352,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK}
-     * @param fkToUqCode The value of fkToUqCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCode The value of fkToUqCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setFkToUqCode_NotLikeSearch(String fkToUqCode, LikeSearchOption likeSearchOption) {
@@ -362,7 +362,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * FK_TO_UQ_CODE: {NotNull, CHAR(3), FK to WHITE_UQ_FK}
-     * @param fkToUqCode The value of fkToUqCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param fkToUqCode The value of fkToUqCode as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setFkToUqCode_PrefixSearch(String fkToUqCode) {
         setFkToUqCode_LikeSearch(fkToUqCode, xcLSOPPre());
@@ -374,7 +374,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)}
-     * @param compoundUqFirstCode The value of compoundUqFirstCode as equal. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCode The value of compoundUqFirstCode as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqFirstCode_Equal(String compoundUqFirstCode) {
         doSetCompoundUqFirstCode_Equal(fRES(compoundUqFirstCode));
@@ -387,7 +387,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)}
-     * @param compoundUqFirstCode The value of compoundUqFirstCode as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCode The value of compoundUqFirstCode as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqFirstCode_NotEqual(String compoundUqFirstCode) {
         doSetCompoundUqFirstCode_NotEqual(fRES(compoundUqFirstCode));
@@ -400,7 +400,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)}
-     * @param compoundUqFirstCodeList The collection of compoundUqFirstCode as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCodeList The collection of compoundUqFirstCode as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqFirstCode_InScope(Collection<String> compoundUqFirstCodeList) {
         doSetCompoundUqFirstCode_InScope(compoundUqFirstCodeList);
@@ -413,7 +413,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)}
-     * @param compoundUqFirstCodeList The collection of compoundUqFirstCode as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCodeList The collection of compoundUqFirstCode as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqFirstCode_NotInScope(Collection<String> compoundUqFirstCodeList) {
         doSetCompoundUqFirstCode_NotInScope(compoundUqFirstCodeList);
@@ -427,7 +427,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)} <br>
      * <pre>e.g. setCompoundUqFirstCode_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param compoundUqFirstCode The value of compoundUqFirstCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCode The value of compoundUqFirstCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setCompoundUqFirstCode_LikeSearch(String compoundUqFirstCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -438,7 +438,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)} <br>
      * <pre>e.g. setCompoundUqFirstCode_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param compoundUqFirstCode The value of compoundUqFirstCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCode The value of compoundUqFirstCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setCompoundUqFirstCode_LikeSearch(String compoundUqFirstCode, LikeSearchOption likeSearchOption) {
@@ -449,7 +449,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)}
-     * @param compoundUqFirstCode The value of compoundUqFirstCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCode The value of compoundUqFirstCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setCompoundUqFirstCode_NotLikeSearch(String compoundUqFirstCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -460,7 +460,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)}
-     * @param compoundUqFirstCode The value of compoundUqFirstCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCode The value of compoundUqFirstCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setCompoundUqFirstCode_NotLikeSearch(String compoundUqFirstCode, LikeSearchOption likeSearchOption) {
@@ -470,7 +470,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_FIRST_CODE: {UQ+, NotNull, CHAR(3)}
-     * @param compoundUqFirstCode The value of compoundUqFirstCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqFirstCode The value of compoundUqFirstCode as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqFirstCode_PrefixSearch(String compoundUqFirstCode) {
         setCompoundUqFirstCode_LikeSearch(compoundUqFirstCode, xcLSOPPre());
@@ -482,7 +482,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)}
-     * @param compoundUqSecondCode The value of compoundUqSecondCode as equal. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCode The value of compoundUqSecondCode as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqSecondCode_Equal(String compoundUqSecondCode) {
         doSetCompoundUqSecondCode_Equal(fRES(compoundUqSecondCode));
@@ -495,7 +495,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)}
-     * @param compoundUqSecondCode The value of compoundUqSecondCode as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCode The value of compoundUqSecondCode as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqSecondCode_NotEqual(String compoundUqSecondCode) {
         doSetCompoundUqSecondCode_NotEqual(fRES(compoundUqSecondCode));
@@ -508,7 +508,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)}
-     * @param compoundUqSecondCodeList The collection of compoundUqSecondCode as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCodeList The collection of compoundUqSecondCode as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqSecondCode_InScope(Collection<String> compoundUqSecondCodeList) {
         doSetCompoundUqSecondCode_InScope(compoundUqSecondCodeList);
@@ -521,7 +521,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)}
-     * @param compoundUqSecondCodeList The collection of compoundUqSecondCode as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCodeList The collection of compoundUqSecondCode as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqSecondCode_NotInScope(Collection<String> compoundUqSecondCodeList) {
         doSetCompoundUqSecondCode_NotInScope(compoundUqSecondCodeList);
@@ -535,7 +535,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)} <br>
      * <pre>e.g. setCompoundUqSecondCode_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param compoundUqSecondCode The value of compoundUqSecondCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCode The value of compoundUqSecondCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setCompoundUqSecondCode_LikeSearch(String compoundUqSecondCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -546,7 +546,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)} <br>
      * <pre>e.g. setCompoundUqSecondCode_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param compoundUqSecondCode The value of compoundUqSecondCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCode The value of compoundUqSecondCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setCompoundUqSecondCode_LikeSearch(String compoundUqSecondCode, LikeSearchOption likeSearchOption) {
@@ -557,7 +557,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)}
-     * @param compoundUqSecondCode The value of compoundUqSecondCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCode The value of compoundUqSecondCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setCompoundUqSecondCode_NotLikeSearch(String compoundUqSecondCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -568,7 +568,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)}
-     * @param compoundUqSecondCode The value of compoundUqSecondCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCode The value of compoundUqSecondCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setCompoundUqSecondCode_NotLikeSearch(String compoundUqSecondCode, LikeSearchOption likeSearchOption) {
@@ -578,7 +578,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * COMPOUND_UQ_SECOND_CODE: {+UQ, NotNull, CHAR(3)}
-     * @param compoundUqSecondCode The value of compoundUqSecondCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param compoundUqSecondCode The value of compoundUqSecondCode as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setCompoundUqSecondCode_PrefixSearch(String compoundUqSecondCode) {
         setCompoundUqSecondCode_LikeSearch(compoundUqSecondCode, xcLSOPPre());
@@ -598,7 +598,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteUqFkRefCB> scalar_Equal() {
@@ -613,7 +613,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteUqFkRefCB> scalar_NotEqual() {
@@ -628,7 +628,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteUqFkRefCB> scalar_GreaterThan() {
@@ -643,7 +643,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteUqFkRefCB> scalar_LessThan() {
@@ -658,7 +658,7 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteUqFkRefCB> scalar_GreaterEqual() {
@@ -794,7 +794,6 @@ public abstract class AbstractBsWhiteUqFkRefCQ extends AbstractConditionQuery {
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

@@ -64,8 +64,8 @@ public class WhiteUqFkWithoutPkDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnUqFkCode = cci("UQ_FK_CODE", "UQ_FK_CODE", null, null, String.class, "uqFkCode", null, false, false, true, "CHAR", 3, 0, null, false, null, null, null, "whiteUqFkWithoutPkRefList", null, false);
-    protected final ColumnInfo _columnUqFkName = cci("UQ_FK_NAME", "UQ_FK_NAME", null, null, String.class, "uqFkName", null, false, false, true, "VARCHAR2", 64, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnUqFkCode = cci("UQ_FK_CODE", "UQ_FK_CODE", null, null, String.class, "uqFkCode", null, false, false, true, "CHAR", 3, 0, null, null, false, null, null, null, "whiteUqFkWithoutPkRefList", null, false);
+    protected final ColumnInfo _columnUqFkName = cci("UQ_FK_NAME", "UQ_FK_NAME", null, null, String.class, "uqFkName", null, false, false, true, "VARCHAR2", 64, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * UQ_FK_CODE: {UQ, NotNull, CHAR(3)}

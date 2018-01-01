@@ -97,8 +97,8 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of targetId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of targetId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTargetId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of targetId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of targetId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of targetId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTargetId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param targetIdList The collection of targetId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param targetIdList The collection of targetId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetId_InScope(Collection<Long> targetIdList) {
         doSetTargetId_InScope(targetIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TARGET_ID: {PK, NotNull, NUMBER(16)}
-     * @param targetIdList The collection of targetId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param targetIdList The collection of targetId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetId_NotInScope(Collection<Long> targetIdList) {
         doSetTargetId_NotInScope(targetIdList);
@@ -235,7 +235,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)}
-     * @param targetName The value of targetName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param targetName The value of targetName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetName_Equal(String targetName) {
         doSetTargetName_Equal(fRES(targetName));
@@ -248,7 +248,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)}
-     * @param targetName The value of targetName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param targetName The value of targetName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetName_NotEqual(String targetName) {
         doSetTargetName_NotEqual(fRES(targetName));
@@ -261,7 +261,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)}
-     * @param targetNameList The collection of targetName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param targetNameList The collection of targetName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetName_InScope(Collection<String> targetNameList) {
         doSetTargetName_InScope(targetNameList);
@@ -274,7 +274,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)}
-     * @param targetNameList The collection of targetName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param targetNameList The collection of targetName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetName_NotInScope(Collection<String> targetNameList) {
         doSetTargetName_NotInScope(targetNameList);
@@ -288,7 +288,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)} <br>
      * <pre>e.g. setTargetName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param targetName The value of targetName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param targetName The value of targetName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTargetName_LikeSearch(String targetName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -299,7 +299,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)} <br>
      * <pre>e.g. setTargetName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param targetName The value of targetName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param targetName The value of targetName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTargetName_LikeSearch(String targetName, LikeSearchOption likeSearchOption) {
@@ -310,7 +310,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)}
-     * @param targetName The value of targetName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param targetName The value of targetName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTargetName_NotLikeSearch(String targetName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -321,7 +321,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)}
-     * @param targetName The value of targetName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param targetName The value of targetName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTargetName_NotLikeSearch(String targetName, LikeSearchOption likeSearchOption) {
@@ -331,7 +331,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TARGET_NAME: {VARCHAR2(256)}
-     * @param targetName The value of targetName as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param targetName The value of targetName as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTargetName_PrefixSearch(String targetName) {
         setTargetName_LikeSearch(targetName, xcLSOPPre());
@@ -369,7 +369,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteTargetCB> scalar_Equal() {
@@ -384,7 +384,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteTargetCB> scalar_NotEqual() {
@@ -399,7 +399,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteTargetCB> scalar_GreaterThan() {
@@ -414,7 +414,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteTargetCB> scalar_LessThan() {
@@ -429,7 +429,7 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteTargetCB> scalar_GreaterEqual() {
@@ -565,7 +565,6 @@ public abstract class AbstractBsWhiteTargetCQ extends AbstractConditionQuery {
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

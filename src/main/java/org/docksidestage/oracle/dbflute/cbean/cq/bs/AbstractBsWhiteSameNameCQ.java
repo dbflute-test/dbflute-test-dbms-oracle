@@ -97,8 +97,8 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of sameNameId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of sameNameId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setSameNameId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of sameNameId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of sameNameId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of sameNameId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setSameNameId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * SAME_NAME_ID: {PK, NotNull, NUMBER(16)}
-     * @param sameNameIdList The collection of sameNameId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameIdList The collection of sameNameId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameId_InScope(Collection<Long> sameNameIdList) {
         doSetSameNameId_InScope(sameNameIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * SAME_NAME_ID: {PK, NotNull, NUMBER(16)}
-     * @param sameNameIdList The collection of sameNameId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameIdList The collection of sameNameId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameId_NotInScope(Collection<Long> sameNameIdList) {
         doSetSameNameId_NotInScope(sameNameIdList);
@@ -162,7 +162,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
-     * @param sameNameName The value of sameNameName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameName The value of sameNameName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameName_Equal(String sameNameName) {
         doSetSameNameName_Equal(fRES(sameNameName));
@@ -175,7 +175,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
-     * @param sameNameName The value of sameNameName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameName The value of sameNameName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameName_NotEqual(String sameNameName) {
         doSetSameNameName_NotEqual(fRES(sameNameName));
@@ -188,7 +188,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
-     * @param sameNameNameList The collection of sameNameName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameNameList The collection of sameNameName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameName_InScope(Collection<String> sameNameNameList) {
         doSetSameNameName_InScope(sameNameNameList);
@@ -201,7 +201,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
-     * @param sameNameNameList The collection of sameNameName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameNameList The collection of sameNameName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameName_NotInScope(Collection<String> sameNameNameList) {
         doSetSameNameName_NotInScope(sameNameNameList);
@@ -215,7 +215,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setSameNameName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param sameNameName The value of sameNameName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameName The value of sameNameName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSameNameName_LikeSearch(String sameNameName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -226,7 +226,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setSameNameName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param sameNameName The value of sameNameName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameName The value of sameNameName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setSameNameName_LikeSearch(String sameNameName, LikeSearchOption likeSearchOption) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
-     * @param sameNameName The value of sameNameName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameName The value of sameNameName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setSameNameName_NotLikeSearch(String sameNameName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -248,7 +248,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
-     * @param sameNameName The value of sameNameName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameName The value of sameNameName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setSameNameName_NotLikeSearch(String sameNameName, LikeSearchOption likeSearchOption) {
@@ -258,7 +258,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * SAME_NAME_NAME: {NotNull, VARCHAR2(50)}
-     * @param sameNameName The value of sameNameName as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param sameNameName The value of sameNameName as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setSameNameName_PrefixSearch(String sameNameName) {
         setSameNameName_LikeSearch(sameNameName, xcLSOPPre());
@@ -278,7 +278,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameCB> scalar_Equal() {
@@ -293,7 +293,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameCB> scalar_NotEqual() {
@@ -308,7 +308,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameCB> scalar_GreaterThan() {
@@ -323,7 +323,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameCB> scalar_LessThan() {
@@ -338,7 +338,7 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteSameNameCB> scalar_GreaterEqual() {
@@ -474,7 +474,6 @@ public abstract class AbstractBsWhiteSameNameCQ extends AbstractConditionQuery {
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

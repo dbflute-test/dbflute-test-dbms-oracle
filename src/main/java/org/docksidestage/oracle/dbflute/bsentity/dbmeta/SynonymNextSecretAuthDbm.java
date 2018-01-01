@@ -68,8 +68,8 @@ public class SynonymNextSecretAuthDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnSecretAuthCode = cci("SECRET_AUTH_CODE", "SECRET_AUTH_CODE", null, "隣の秘密２コード", String.class, "secretAuthCode", null, true, false, true, "CHAR", 3, 0, null, false, null, "隣の商品を秘密するかもしれない", null, null, null, false);
-    protected final ColumnInfo _columnSecretAuthName = cci("SECRET_AUTH_NAME", "SECRET_AUTH_NAME", null, "隣の秘密２名称", String.class, "secretAuthName", null, false, false, true, "VARCHAR2", 50, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnSecretAuthCode = cci("SECRET_AUTH_CODE", "SECRET_AUTH_CODE", null, "隣の秘密２コード", String.class, "secretAuthCode", null, true, false, true, "CHAR", 3, 0, null, null, false, null, "隣の商品を秘密するかもしれない", null, null, null, false);
+    protected final ColumnInfo _columnSecretAuthName = cci("SECRET_AUTH_NAME", "SECRET_AUTH_NAME", null, "隣の秘密２名称", String.class, "secretAuthName", null, false, false, true, "VARCHAR2", 50, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * (隣の秘密２コード)SECRET_AUTH_CODE: {PK, NotNull, CHAR(3)}

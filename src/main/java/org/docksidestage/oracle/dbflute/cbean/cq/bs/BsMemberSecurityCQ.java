@@ -79,7 +79,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _memberId; }
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_ID: {PK, NotNull, NUMBER(9), FK to MEMBER}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _loginPassword; }
     protected ConditionValue xgetCValueLoginPassword() { return xdfgetLoginPassword(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * LOGIN_PASSWORD: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _reminderQuestion; }
     protected ConditionValue xgetCValueReminderQuestion() { return xdfgetReminderQuestion(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REMINDER_QUESTION: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -139,7 +139,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _reminderAnswer; }
     protected ConditionValue xgetCValueReminderAnswer() { return xdfgetReminderAnswer(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REMINDER_ANSWER: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -159,7 +159,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _reminderUseCount; }
     protected ConditionValue xgetCValueReminderUseCount() { return xdfgetReminderUseCount(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REMINDER_USE_COUNT: {NotNull, NUMBER(7)}
      * @return this. (NotNull)
@@ -179,7 +179,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _registerDatetime; }
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -199,7 +199,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _registerProcess; }
     protected ConditionValue xgetCValueRegisterProcess() { return xdfgetRegisterProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -219,7 +219,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _registerUser; }
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REGISTER_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -239,7 +239,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _updateDatetime; }
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -259,7 +259,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _updateProcess; }
     protected ConditionValue xgetCValueUpdateProcess() { return xdfgetUpdateProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -279,7 +279,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _updateUser; }
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * UPDATE_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -299,7 +299,7 @@ public class BsMemberSecurityCQ extends AbstractBsMemberSecurityCQ {
       return _versionNo; }
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * VERSION_NO: {NotNull, NUMBER(16)}
      * @return this. (NotNull)

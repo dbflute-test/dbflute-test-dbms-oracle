@@ -124,7 +124,7 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = <span style="color: #553000">memberSecurity</span>.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">memberSecurityBhv</span>.<span style="color: #CC4747">selectEntity</span>(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #553000">cb</span>.query().set...
@@ -153,13 +153,13 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
      * <pre>
      * MemberSecurityCB cb = <span style="color: #70226C">new</span> MemberSecurityCB();
      * cb.query().set...
-     * 
+     *
      * <span style="color: #3F7E5E">// if the data always exists as your business rule</span>
      * <span style="color: #0000C0">memberSecurityBhv</span>.<span style="color: #DD4747">selectEntity</span>(cb)}).<span style="color: #CC4747">alwaysPresent</span>(memberSecurity <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present, or exception</span>
      *     ... = memberSecurity.get...
      * });
-     * 
+     *
      * <span style="color: #3F7E5E">// if it might be no data, ...</span>
      * <span style="color: #0000C0">memberSecurityBhv</span>.<span style="color: #CC4747">selectEntity</span>(cb).<span style="color: #CC4747">ifPresent</span>(memberSecurity <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     <span style="color: #3F7E5E">// called if present</span>
@@ -1195,8 +1195,8 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * memberSecurityBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * memberSecurityBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * memberSecurityBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * memberSecurityBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * memberSecurityBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1204,7 +1204,7 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
      * memberSecurityBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * memberSecurityBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * memberSecurityBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * memberSecurityBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * memberSecurityBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1212,7 +1212,7 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
      * memberSecurityBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * memberSecurityBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * memberSecurityBhv.outideSql().removeBlockComment().selectList()
      * memberSecurityBhv.outideSql().removeLineComment().selectList()
      * memberSecurityBhv.outideSql().formatSql().selectList()

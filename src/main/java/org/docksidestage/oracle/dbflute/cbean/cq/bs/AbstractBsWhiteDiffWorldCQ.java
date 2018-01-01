@@ -97,8 +97,8 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of diffWorldId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of diffWorldId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of diffWorldId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of diffWorldId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setDiffWorldId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of diffWorldId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of diffWorldId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of diffWorldId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of diffWorldId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setDiffWorldId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param diffWorldIdList The collection of diffWorldId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldIdList The collection of diffWorldId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setDiffWorldId_InScope(Collection<Long> diffWorldIdList) {
         doSetDiffWorldId_InScope(diffWorldIdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_ID: {PK, NotNull, NUMBER(16)}
-     * @param diffWorldIdList The collection of diffWorldId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldIdList The collection of diffWorldId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setDiffWorldId_NotInScope(Collection<Long> diffWorldIdList) {
         doSetDiffWorldId_NotInScope(diffWorldIdList);
@@ -162,7 +162,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
-     * @param diffWorldName The value of diffWorldName as equal. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldName The value of diffWorldName as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setDiffWorldName_Equal(String diffWorldName) {
         doSetDiffWorldName_Equal(fRES(diffWorldName));
@@ -175,7 +175,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
-     * @param diffWorldName The value of diffWorldName as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldName The value of diffWorldName as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setDiffWorldName_NotEqual(String diffWorldName) {
         doSetDiffWorldName_NotEqual(fRES(diffWorldName));
@@ -188,7 +188,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
-     * @param diffWorldNameList The collection of diffWorldName as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldNameList The collection of diffWorldName as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setDiffWorldName_InScope(Collection<String> diffWorldNameList) {
         doSetDiffWorldName_InScope(diffWorldNameList);
@@ -201,7 +201,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
-     * @param diffWorldNameList The collection of diffWorldName as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldNameList The collection of diffWorldName as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setDiffWorldName_NotInScope(Collection<String> diffWorldNameList) {
         doSetDiffWorldName_NotInScope(diffWorldNameList);
@@ -215,7 +215,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setDiffWorldName_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param diffWorldName The value of diffWorldName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldName The value of diffWorldName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setDiffWorldName_LikeSearch(String diffWorldName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -226,7 +226,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)} <br>
      * <pre>e.g. setDiffWorldName_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param diffWorldName The value of diffWorldName as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldName The value of diffWorldName as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setDiffWorldName_LikeSearch(String diffWorldName, LikeSearchOption likeSearchOption) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
-     * @param diffWorldName The value of diffWorldName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldName The value of diffWorldName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setDiffWorldName_NotLikeSearch(String diffWorldName, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -248,7 +248,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
-     * @param diffWorldName The value of diffWorldName as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldName The value of diffWorldName as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setDiffWorldName_NotLikeSearch(String diffWorldName, LikeSearchOption likeSearchOption) {
@@ -258,7 +258,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * DIFF_WORLD_NAME: {NotNull, VARCHAR2(50)}
-     * @param diffWorldName The value of diffWorldName as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param diffWorldName The value of diffWorldName as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setDiffWorldName_PrefixSearch(String diffWorldName) {
         setDiffWorldName_LikeSearch(diffWorldName, xcLSOPPre());
@@ -278,7 +278,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteDiffWorldCB> scalar_Equal() {
@@ -293,7 +293,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteDiffWorldCB> scalar_NotEqual() {
@@ -308,7 +308,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteDiffWorldCB> scalar_GreaterThan() {
@@ -323,7 +323,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteDiffWorldCB> scalar_LessThan() {
@@ -338,7 +338,7 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<WhiteDiffWorldCB> scalar_GreaterEqual() {
@@ -474,7 +474,6 @@ public abstract class AbstractBsWhiteDiffWorldCQ extends AbstractConditionQuery 
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

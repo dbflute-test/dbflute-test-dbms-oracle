@@ -88,7 +88,7 @@ public class BsPurchaseSummaryMemberPmb implements CursorHandlingPmb<MemberBhv, 
     protected String filterStringParameter(String value) { return isEmptyStringParameterAllowed() ? value : convertEmptyToNull(value); }
     protected boolean isEmptyStringParameterAllowed() { return DBFluteConfig.getInstance().isEmptyStringParameterAllowed(); }
     protected String convertEmptyToNull(String value) { return PmbCustodial.convertEmptyToNull(value); }
-    
+
     protected void assertLikeSearchOptionValid(String name, LikeSearchOption option) { PmbCustodial.assertLikeSearchOptionValid(name, option); }
 
     // -----------------------------------------------------
@@ -173,6 +173,15 @@ public class BsPurchaseSummaryMemberPmb implements CursorHandlingPmb<MemberBhv, 
      */
     public String getMemberStatusCode() {
         return filterStringParameter(_memberStatusCode);
+    }
+
+    /**
+     * [set as MemberStatus] memberStatusCode:cls(MemberStatus) <br>
+     * status of member from entry to withdrawal
+     * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the property)
+     */
+    public void setMemberStatusCodeAsMemberStatus(CDef.MemberStatus cdef) {
+        _memberStatusCode = cdef != null ? cdef.code() : null;
     }
 
     /**

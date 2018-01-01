@@ -93,7 +93,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
     public Map<String, Object> xdfgetServiceRankCode_QueryDerivedReferrer_MemberServiceListParameter() { return xgetSQuePmMap("serviceRankCode_QueryDerivedReferrer_MemberServiceList"); }
     public String keepServiceRankCode_QueryDerivedReferrer_MemberServiceListParameter(Object pm) { return xkeepSQuePm("serviceRankCode_QueryDerivedReferrer_MemberServiceList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SERVICE_RANK_CODE: {PK, NotNull, CHAR(3), classification=ServiceRank}
      * @return this. (NotNull)
@@ -113,7 +113,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
       return _serviceRankName; }
     protected ConditionValue xgetCValueServiceRankName() { return xdfgetServiceRankName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SERVICE_RANK_NAME: {NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -133,7 +133,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
       return _servicePointIncidence; }
     protected ConditionValue xgetCValueServicePointIncidence() { return xdfgetServicePointIncidence(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * SERVICE_POINT_INCIDENCE: {NotNull, NUMBER(5, 3)}
      * @return this. (NotNull)
@@ -153,7 +153,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
       return _newAcceptableFlg; }
     protected ConditionValue xgetCValueNewAcceptableFlg() { return xdfgetNewAcceptableFlg(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg}
      * @return this. (NotNull)
@@ -173,7 +173,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
       return _description; }
     protected ConditionValue xgetCValueDescription() { return xdfgetDescription(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DESCRIPTION: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -193,7 +193,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
       return _displayOrder; }
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * DISPLAY_ORDER: {UQ, NotNull, NUMBER(8)}
      * @return this. (NotNull)

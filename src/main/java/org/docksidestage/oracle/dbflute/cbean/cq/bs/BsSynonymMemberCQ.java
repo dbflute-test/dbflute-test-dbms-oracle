@@ -93,7 +93,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
     public Map<String, Object> xdfgetMemberId_QueryDerivedReferrer_SynonymMemberLoginListParameter() { return xgetSQuePmMap("memberId_QueryDerivedReferrer_SynonymMemberLoginList"); }
     public String keepMemberId_QueryDerivedReferrer_SynonymMemberLoginListParameter(Object pm) { return xkeepSQuePm("memberId_QueryDerivedReferrer_SynonymMemberLoginList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (会員ID)MEMBER_ID: {PK, NotNull, NUMBER(9)}
      * @return this. (NotNull)
@@ -113,7 +113,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _memberName; }
     protected ConditionValue xgetCValueMemberName() { return xdfgetMemberName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (会員名称)MEMBER_NAME: {IX, NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -133,7 +133,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _memberAccount; }
     protected ConditionValue xgetCValueMemberAccount() { return xdfgetMemberAccount(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (会員アカウント)MEMBER_ACCOUNT: {UQ, NotNull, VARCHAR2(50)}
      * @return this. (NotNull)
@@ -153,7 +153,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _memberStatusCode; }
     protected ConditionValue xgetCValueMemberStatusCode() { return xdfgetMemberStatusCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (会員ステータスコード)MEMBER_STATUS_CODE: {NotNull, CHAR(3), FK to MEMBER_STATUS, classification=MemberStatus}
      * @return this. (NotNull)
@@ -173,7 +173,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _formalizedDatetime; }
     protected ConditionValue xgetCValueFormalizedDatetime() { return xdfgetFormalizedDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (正式会員日時)FORMALIZED_DATETIME: {IX, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -193,7 +193,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _birthdate; }
     protected ConditionValue xgetCValueBirthdate() { return xdfgetBirthdate(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (生年月日)BIRTHDATE: {DATE(7)}
      * @return this. (NotNull)
@@ -213,7 +213,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _registerDatetime; }
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (登録日時)REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -233,7 +233,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _registerUser; }
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (登録ユーザ)REGISTER_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -253,7 +253,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _registerProcess; }
     protected ConditionValue xgetCValueRegisterProcess() { return xdfgetRegisterProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (登録プロセス)REGISTER_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -273,7 +273,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _updateDatetime; }
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (更新日時)UPDATE_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -293,7 +293,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _updateUser; }
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (更新ユーザ)UPDATE_USER: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -313,7 +313,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _updateProcess; }
     protected ConditionValue xgetCValueUpdateProcess() { return xdfgetUpdateProcess(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (更新プロセス)UPDATE_PROCESS: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -333,7 +333,7 @@ public class BsSynonymMemberCQ extends AbstractBsSynonymMemberCQ {
       return _versionNo; }
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (バージョンNO)VERSION_NO: {NotNull, NUMBER(16)}
      * @return this. (NotNull)

@@ -70,13 +70,13 @@ public class NestedFooBeanDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnFooId = cci("FOO_ID", "FOO_ID", null, null, Integer.class, "fooId", null, false, false, false, "NUMBER", 8, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnFooName = cci("FOO_NAME", "FOO_NAME", null, null, String.class, "fooName", null, false, false, false, "VARCHAR2", 20, 0, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnFooDate = cci("FOO_DATE", "FOO_DATE", null, null, java.time.LocalDate.class, "fooDate", null, false, false, false, "DATE", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnBarBean = cci("BAR_BEAN", "BAR_BEAN", null, null, NestedBarBean.class, "barBean", null, false, false, false, "NESTED_BAR_BEAN", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnQuxList = cci("QUX_LIST", "QUX_LIST", null, null, List.class, "quxList", null, false, false, false, "QUX_TABLE", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnQuuxList = cci("QUUX_LIST", "QUUX_LIST", null, null, List.class, "quuxList", null, false, false, false, "QUUX_TABLE", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnCorgeList = cci("CORGE_LIST", "CORGE_LIST", null, null, List.class, "corgeList", null, false, false, false, "CORGE_TABLE", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnFooId = cci("FOO_ID", "FOO_ID", null, null, Integer.class, "fooId", null, false, false, false, "NUMBER", 8, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnFooName = cci("FOO_NAME", "FOO_NAME", null, null, String.class, "fooName", null, false, false, false, "VARCHAR2", 20, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnFooDate = cci("FOO_DATE", "FOO_DATE", null, null, java.time.LocalDate.class, "fooDate", null, false, false, false, "DATE", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnBarBean = cci("BAR_BEAN", "BAR_BEAN", null, null, NestedBarBean.class, "barBean", null, false, false, false, "NESTED_BAR_BEAN", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnQuxList = cci("QUX_LIST", "QUX_LIST", null, null, List.class, "quxList", null, false, false, false, "QUX_TABLE", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnQuuxList = cci("QUUX_LIST", "QUUX_LIST", null, null, List.class, "quuxList", null, false, false, false, "QUUX_TABLE", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnCorgeList = cci("CORGE_LIST", "CORGE_LIST", null, null, List.class, "corgeList", null, false, false, false, "CORGE_TABLE", null, null, null, null, false, null, null, null, null, null, false);
 
     /**
      * FOO_ID: {NUMBER(8)}

@@ -79,7 +79,7 @@ public class ResolaBsStationCQ extends ResolaAbstractBsStationCQ {
       return _stationId; }
     protected ConditionValue xgetCValueStationId() { return xdfgetStationId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * STATION_ID: {PK, NotNull, NUMBER(9)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class ResolaBsStationCQ extends ResolaAbstractBsStationCQ {
       return _stationName; }
     protected ConditionValue xgetCValueStationName() { return xdfgetStationName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * STATION_NAME: {NotNull, VARCHAR2(200)}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class ResolaBsStationCQ extends ResolaAbstractBsStationCQ {
       return _birthdate; }
     protected ConditionValue xgetCValueBirthdate() { return xdfgetBirthdate(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * BIRTHDATE: {DATE(7)}
      * @return this. (NotNull)
@@ -139,7 +139,7 @@ public class ResolaBsStationCQ extends ResolaAbstractBsStationCQ {
       return _formalizedDatetime; }
     protected ConditionValue xgetCValueFormalizedDatetime() { return xdfgetFormalizedDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * FORMALIZED_DATETIME: {TIMESTAMP(3)(11, 3)}
      * @return this. (NotNull)
@@ -159,7 +159,7 @@ public class ResolaBsStationCQ extends ResolaAbstractBsStationCQ {
       return _homeCount; }
     protected ConditionValue xgetCValueHomeCount() { return xdfgetHomeCount(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * HOME_COUNT: {NUMBER(9)}
      * @return this. (NotNull)
@@ -179,7 +179,7 @@ public class ResolaBsStationCQ extends ResolaAbstractBsStationCQ {
       return _workingKilometer; }
     protected ConditionValue xgetCValueWorkingKilometer() { return xdfgetWorkingKilometer(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * WORKING_KILOMETER: {NUMBER(4, 2)}
      * @return this. (NotNull)

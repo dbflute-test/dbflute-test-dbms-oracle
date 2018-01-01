@@ -97,8 +97,8 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of vendorLargeName901234567Id. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of vendorLargeName901234567Id. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of vendorLargeName901234567Id. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of vendorLargeName901234567Id. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setVendorLargeName901234567Id_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -110,8 +110,8 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param minNumber The min number of vendorLargeName901234567Id. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of vendorLargeName901234567Id. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of vendorLargeName901234567Id. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of vendorLargeName901234567Id. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setVendorLargeName901234567Id_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -121,7 +121,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param vendorLargeName901234567IdList The collection of vendorLargeName901234567Id as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName901234567IdList The collection of vendorLargeName901234567Id as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorLargeName901234567Id_InScope(Collection<Long> vendorLargeName901234567IdList) {
         doSetVendorLargeName901234567Id_InScope(vendorLargeName901234567IdList);
@@ -134,7 +134,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_901234567_ID: {PK, NotNull, NUMBER(16)}
-     * @param vendorLargeName901234567IdList The collection of vendorLargeName901234567Id as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName901234567IdList The collection of vendorLargeName901234567Id as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorLargeName901234567Id_NotInScope(Collection<Long> vendorLargeName901234567IdList) {
         doSetVendorLargeName901234567Id_NotInScope(vendorLargeName901234567IdList);
@@ -235,7 +235,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
-     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as equal. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorLargeName9012345Name_Equal(String vendorLargeName9012345Name) {
         doSetVendorLargeName9012345Name_Equal(fRES(vendorLargeName9012345Name));
@@ -248,7 +248,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
-     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorLargeName9012345Name_NotEqual(String vendorLargeName9012345Name) {
         doSetVendorLargeName9012345Name_NotEqual(fRES(vendorLargeName9012345Name));
@@ -261,7 +261,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
-     * @param vendorLargeName9012345NameList The collection of vendorLargeName9012345Name as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345NameList The collection of vendorLargeName9012345Name as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorLargeName9012345Name_InScope(Collection<String> vendorLargeName9012345NameList) {
         doSetVendorLargeName9012345Name_InScope(vendorLargeName9012345NameList);
@@ -274,7 +274,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
-     * @param vendorLargeName9012345NameList The collection of vendorLargeName9012345Name as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345NameList The collection of vendorLargeName9012345Name as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorLargeName9012345Name_NotInScope(Collection<String> vendorLargeName9012345NameList) {
         doSetVendorLargeName9012345Name_NotInScope(vendorLargeName9012345NameList);
@@ -288,7 +288,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)} <br>
      * <pre>e.g. setVendorLargeName9012345Name_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setVendorLargeName9012345Name_LikeSearch(String vendorLargeName9012345Name, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -299,7 +299,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)} <br>
      * <pre>e.g. setVendorLargeName9012345Name_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setVendorLargeName9012345Name_LikeSearch(String vendorLargeName9012345Name, LikeSearchOption likeSearchOption) {
@@ -310,7 +310,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
-     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setVendorLargeName9012345Name_NotLikeSearch(String vendorLargeName9012345Name, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -321,7 +321,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
-     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setVendorLargeName9012345Name_NotLikeSearch(String vendorLargeName9012345Name, LikeSearchOption likeSearchOption) {
@@ -331,7 +331,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * VENDOR_LARGE_NAME_9012345_NAME: {NotNull, VARCHAR2(32)}
-     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param vendorLargeName9012345Name The value of vendorLargeName9012345Name as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorLargeName9012345Name_PrefixSearch(String vendorLargeName9012345Name) {
         setVendorLargeName9012345Name_LikeSearch(vendorLargeName9012345Name, xcLSOPPre());
@@ -351,7 +351,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorLargeName901234567890CB> scalar_Equal() {
@@ -366,7 +366,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorLargeName901234567890CB> scalar_NotEqual() {
@@ -381,7 +381,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorLargeName901234567890CB> scalar_GreaterThan() {
@@ -396,7 +396,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorLargeName901234567890CB> scalar_LessThan() {
@@ -411,7 +411,7 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorLargeName901234567890CB> scalar_GreaterEqual() {
@@ -547,7 +547,6 @@ public abstract class AbstractBsVendorLargeName901234567890CQ extends AbstractCo
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

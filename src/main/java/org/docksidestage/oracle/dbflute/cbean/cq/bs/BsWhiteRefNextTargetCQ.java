@@ -79,7 +79,7 @@ public class BsWhiteRefNextTargetCQ extends AbstractBsWhiteRefNextTargetCQ {
       return _refNextTargetId; }
     protected ConditionValue xgetCValueRefNextTargetId() { return xdfgetRefNextTargetId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_NEXT_TARGET_ID: {PK, NotNull, NUMBER(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsWhiteRefNextTargetCQ extends AbstractBsWhiteRefNextTargetCQ {
       return _nextTargetCode; }
     protected ConditionValue xgetCValueNextTargetCode() { return xdfgetNextTargetCode(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * NEXT_TARGET_CODE: {NotNull, CHAR(3), FK to NEXT_SCHEMA_PRODUCT_STATUS}
      * @return this. (NotNull)
