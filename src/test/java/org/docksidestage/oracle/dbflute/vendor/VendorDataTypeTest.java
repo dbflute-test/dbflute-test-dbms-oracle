@@ -21,6 +21,7 @@ import org.dbflute.dbmeta.info.ColumnInfo;
 import org.dbflute.exception.EntityAlreadyDeletedException;
 import org.dbflute.exception.SQLFailureException;
 import org.dbflute.util.DfTypeUtil;
+import org.dbflute.util.Srl;
 import org.docksidestage.oracle.dbflute.bsentity.customize.dbmeta.SimpleVendorCheckDbm;
 import org.docksidestage.oracle.dbflute.bsentity.dbmeta.VendorCheckDbm;
 import org.docksidestage.oracle.dbflute.cbean.MemberCB;
@@ -261,8 +262,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         assertNotNull(columnDecimalDigits);
         assertNotSame(0, columnSize);
         assertNotSame(0, columnDecimalDigits);
-        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberDecimal().getPropertyAccessType(),
-                propertyType);
+        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberDecimal().getPropertyAccessType(), propertyType);
         final BigDecimal decimalDigit = new VendorCheck().getTypeOfNumberDecimal();
         assertNull(decimalDigit);
     }
@@ -281,8 +281,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         assertNotNull(columnDecimalDigits);
         assertNotSame(0, columnSize);
         assertNotSame(0, columnTypeOfNumberInteger);
-        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberInteger().getPropertyAccessType(),
-                propertyType);
+        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberInteger().getPropertyAccessType(), propertyType);
         final Integer integerNonDigit = new VendorCheck().getTypeOfNumberInteger();
         assertNull(integerNonDigit);
     }
@@ -301,8 +300,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         assertNotNull(columnDecimalDigits);
         assertNotSame(0, columnSize);
         assertNotSame(0, columnTypeOfNumberBigint);
-        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberBigint().getPropertyAccessType(),
-                propertyType);
+        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberBigint().getPropertyAccessType(), propertyType);
         final Long bigintNonDigit = new VendorCheck().getTypeOfNumberBigint();
         assertNull(bigintNonDigit);
     }
@@ -321,8 +319,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         assertNotNull(columnDecimalDigits);
         assertNotSame(0, columnSize);
         assertNotSame(0, columnTypeOfNumberSuperint);
-        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberSuperintMax().getPropertyAccessType(),
-                propertyType);
+        assertEquals(SimpleVendorCheckDbm.getInstance().columnTypeOfNumberSuperintMax().getPropertyAccessType(), propertyType);
         final BigDecimal bigintNonDigit = new VendorCheck().getTypeOfNumberSuperintMax();
         assertNull(bigintNonDigit);
     }
@@ -381,8 +378,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         final Class<SimpleVendorCheck> entityType = SimpleVendorCheck.class;
 
         // ## Act ##
-        final SimpleVendorCheck entity = vendorCheckBhv.outsideSql().traditionalStyle()
-                .selectEntity(path, null, entityType).get();
+        final SimpleVendorCheck entity = vendorCheckBhv.outsideSql().traditionalStyle().selectEntity(path, null, entityType).get();
 
         // ## Assert ##
         final BigDecimal actualDecimalDigit = entity.getTypeOfNumberDecimal();
@@ -402,8 +398,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         final Class<VendorCheckIntegerSum> entityType = VendorCheckIntegerSum.class;
 
         // ## Act ##
-        final VendorCheckIntegerSum sum = vendorCheckBhv.outsideSql().traditionalStyle()
-                .selectEntity(path, null, entityType).get();
+        final VendorCheckIntegerSum sum = vendorCheckBhv.outsideSql().traditionalStyle().selectEntity(path, null, entityType).get();
 
         // ## Assert ##
         assertNotNull(sum);
@@ -421,8 +416,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         final Class<VendorCheckDecimalSum> entityType = VendorCheckDecimalSum.class;
 
         // ## Act ##
-        final VendorCheckDecimalSum sum = vendorCheckBhv.outsideSql().traditionalStyle()
-                .selectEntity(path, null, entityType).get();
+        final VendorCheckDecimalSum sum = vendorCheckBhv.outsideSql().traditionalStyle().selectEntity(path, null, entityType).get();
 
         // ## Assert ##
         assertNotNull(sum);
@@ -441,8 +435,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         final Class<BigDecimal> entityType = BigDecimal.class;
 
         // ## Act ##
-        final BigDecimal sum = vendorCheckBhv.outsideSql().traditionalStyle().selectEntity(path, null, entityType)
-                .get();
+        final BigDecimal sum = vendorCheckBhv.outsideSql().traditionalStyle().selectEntity(path, null, entityType).get();
 
         // ## Assert ##
         assertNotNull(sum);
@@ -889,8 +882,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
             if (conn != null) {
                 try {
                     conn.close();
-                } catch (SQLException ignored) {
-                }
+                } catch (SQLException ignored) {}
             }
         }
     }
@@ -1091,6 +1083,36 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         Member deserialized = (Member) deserialize(bytes);
         log("deserialized=" + deserialized);
         assertEquals(expected, deserialized.getMemberName());
+    }
+
+    public void test_BLOB_large_handling() {
+        // ## Arrange ##
+        String expected = "foo";
+        Member member = memberBhv.selectByPK(3).get();
+        member.setMemberName(expected);
+        VendorCheck vendorCheck = createVendorCheck();
+        StringBuilder sb = new StringBuilder();
+        // large style
+        //for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < 1000; i++) {
+            sb.append("0123456789");
+        }
+        byte[] largeBytes = serialize(sb.toString());
+        vendorCheck.setTypeOfBlob(largeBytes);
+
+        // ## Act ##
+        vendorCheckBhv.insert(vendorCheck);
+        VendorCheckCB cb = new VendorCheckCB();
+        cb.query().setVendorCheckId_Equal(vendorCheck.getVendorCheckId());
+        VendorCheck selected = vendorCheckBhv.selectEntityWithDeletedCheck(cb);
+
+        // ## Assert ##
+        byte[] selectedBytes = selected.getTypeOfBlob();
+        assertNotNull(selectedBytes);
+        log("selectedBytes.length:{}", selectedBytes.length);
+        String deserialized = (String) deserialize(selectedBytes);
+        log("deserialized={}", Srl.cut(deserialized, 1000));
+        assertEquals(sb.length(), deserialized.length());
     }
 
     // ===================================================================================
