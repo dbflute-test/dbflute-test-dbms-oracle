@@ -60,6 +60,14 @@ create or replace procedure SP_VARIOUS_TYPE_PARAMETER(
   , vv_out_bigint out integer
   , vvv_in_date in date
   , vvv_out_timestamp out timestamp
+  -- cannot call
+  -- , vvvv_in_bfile in bfile
+  -- , vvvv_out_bfile out bfile
+  , vvvv_in_blob in blob
+  , vvvv_out_blob out blob
+  -- cannot call
+  , vvvv_in_raw in raw
+  , vvvv_out_raw out raw
 ) as
 begin
   v_out_nvarchar := v_in_varchar;
@@ -69,6 +77,10 @@ begin
   vv_out_bigint := vv_inout_integer;
   vv_inout_integer := 789;
   vvv_out_timestamp := sysdate;
+  -- cannot call
+  -- vvvv_out_bfile := vvvv_in_bfile;
+  vvvv_out_blob := vvvv_in_blob;
+  vvvv_out_raw := vvvv_in_raw;
 end SP_VARIOUS_TYPE_PARAMETER;
 /
 -- #df:end#

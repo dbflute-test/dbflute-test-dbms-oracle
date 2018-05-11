@@ -69,9 +69,9 @@ public class VendorCheckDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfTimestamp(), (et, vl) -> ((VendorCheck)et).setTypeOfTimestamp(ctldt(vl)), "typeOfTimestamp");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfIntervalYearToMonth(), (et, vl) -> ((VendorCheck)et).setTypeOfIntervalYearToMonth((String)vl), "typeOfIntervalYearToMonth");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfIntervalDayToSecond(), (et, vl) -> ((VendorCheck)et).setTypeOfIntervalDayToSecond((String)vl), "typeOfIntervalDayToSecond");
+        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfBfile(), (et, vl) -> ((VendorCheck)et).setTypeOfBfile((String)vl), "typeOfBfile");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfBlob(), (et, vl) -> ((VendorCheck)et).setTypeOfBlob((byte[])vl), "typeOfBlob");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfRaw(), (et, vl) -> ((VendorCheck)et).setTypeOfRaw((byte[])vl), "typeOfRaw");
-        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfBfile(), (et, vl) -> ((VendorCheck)et).setTypeOfBfile((String)vl), "typeOfBfile");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfRowid(), (et, vl) -> ((VendorCheck)et).setTypeOfRowid((String)vl), "typeOfRowid");
     }
     public PropertyGateway findPropertyGateway(String prop)
@@ -120,9 +120,9 @@ public class VendorCheckDbm extends AbstractDBMeta {
     protected final ColumnInfo _columnTypeOfTimestamp = cci("TYPE_OF_TIMESTAMP", "TYPE_OF_TIMESTAMP", null, null, java.time.LocalDateTime.class, "typeOfTimestamp", null, false, false, false, "TIMESTAMP(6)", 11, 6, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfIntervalYearToMonth = cci("TYPE_OF_INTERVAL_YEAR_TO_MONTH", "TYPE_OF_INTERVAL_YEAR_TO_MONTH", null, null, String.class, "typeOfIntervalYearToMonth", null, false, false, false, "INTERVAL YEAR(2) TO MONTH", 2, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfIntervalDayToSecond = cci("TYPE_OF_INTERVAL_DAY_TO_SECOND", "TYPE_OF_INTERVAL_DAY_TO_SECOND", null, null, String.class, "typeOfIntervalDayToSecond", null, false, false, false, "INTERVAL DAY(2) TO SECOND(6)", 2, 6, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnTypeOfBfile = cci("TYPE_OF_BFILE", "TYPE_OF_BFILE", null, null, String.class, "typeOfBfile", null, false, false, false, "BFILE", 530, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfBlob = cci("TYPE_OF_BLOB", "TYPE_OF_BLOB", null, null, byte[].class, "typeOfBlob", null, false, false, false, "BLOB", 4000, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfRaw = cci("TYPE_OF_RAW", "TYPE_OF_RAW", null, null, byte[].class, "typeOfRaw", null, false, false, false, "RAW", 512, 0, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnTypeOfBfile = cci("TYPE_OF_BFILE", "TYPE_OF_BFILE", null, null, String.class, "typeOfBfile", null, false, false, false, "BFILE", 530, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfRowid = cci("TYPE_OF_ROWID", "TYPE_OF_ROWID", null, null, String.class, "typeOfRowid", null, false, false, false, "ROWID", 10, 0, null, null, false, null, null, null, null, null, false);
 
     /**
@@ -261,6 +261,11 @@ public class VendorCheckDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnTypeOfIntervalDayToSecond() { return _columnTypeOfIntervalDayToSecond; }
     /**
+     * TYPE_OF_BFILE: {BFILE(530)}
+     * @return The information object of specified column. (NotNull)
+     */
+    public ColumnInfo columnTypeOfBfile() { return _columnTypeOfBfile; }
+    /**
      * TYPE_OF_BLOB: {BLOB(4000)}
      * @return The information object of specified column. (NotNull)
      */
@@ -270,11 +275,6 @@ public class VendorCheckDbm extends AbstractDBMeta {
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnTypeOfRaw() { return _columnTypeOfRaw; }
-    /**
-     * TYPE_OF_BFILE: {BFILE(530)}
-     * @return The information object of specified column. (NotNull)
-     */
-    public ColumnInfo columnTypeOfBfile() { return _columnTypeOfBfile; }
     /**
      * TYPE_OF_ROWID: {ROWID(10)}
      * @return The information object of specified column. (NotNull)
@@ -310,9 +310,9 @@ public class VendorCheckDbm extends AbstractDBMeta {
         ls.add(columnTypeOfTimestamp());
         ls.add(columnTypeOfIntervalYearToMonth());
         ls.add(columnTypeOfIntervalDayToSecond());
+        ls.add(columnTypeOfBfile());
         ls.add(columnTypeOfBlob());
         ls.add(columnTypeOfRaw());
-        ls.add(columnTypeOfBfile());
         ls.add(columnTypeOfRowid());
         return ls;
     }

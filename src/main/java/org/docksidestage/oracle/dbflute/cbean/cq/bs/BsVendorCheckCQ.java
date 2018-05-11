@@ -613,6 +613,26 @@ public class BsVendorCheckCQ extends AbstractBsVendorCheckCQ {
      */
     public BsVendorCheckCQ addOrderBy_TypeOfIntervalDayToSecond_Desc() { regOBD("TYPE_OF_INTERVAL_DAY_TO_SECOND"); return this; }
 
+    protected ConditionValue _typeOfBfile;
+    public ConditionValue xdfgetTypeOfBfile()
+    { if (_typeOfBfile == null) { _typeOfBfile = nCV(); }
+      return _typeOfBfile; }
+    protected ConditionValue xgetCValueTypeOfBfile() { return xdfgetTypeOfBfile(); }
+
+    /**
+     * Add order-by as ascend. <br>
+     * TYPE_OF_BFILE: {BFILE(530)}
+     * @return this. (NotNull)
+     */
+    public BsVendorCheckCQ addOrderBy_TypeOfBfile_Asc() { regOBA("TYPE_OF_BFILE"); return this; }
+
+    /**
+     * Add order-by as descend. <br>
+     * TYPE_OF_BFILE: {BFILE(530)}
+     * @return this. (NotNull)
+     */
+    public BsVendorCheckCQ addOrderBy_TypeOfBfile_Desc() { regOBD("TYPE_OF_BFILE"); return this; }
+
     protected ConditionValue _typeOfBlob;
     public ConditionValue xdfgetTypeOfBlob()
     { if (_typeOfBlob == null) { _typeOfBlob = nCV(); }
@@ -652,26 +672,6 @@ public class BsVendorCheckCQ extends AbstractBsVendorCheckCQ {
      * @return this. (NotNull)
      */
     public BsVendorCheckCQ addOrderBy_TypeOfRaw_Desc() { regOBD("TYPE_OF_RAW"); return this; }
-
-    protected ConditionValue _typeOfBfile;
-    public ConditionValue xdfgetTypeOfBfile()
-    { if (_typeOfBfile == null) { _typeOfBfile = nCV(); }
-      return _typeOfBfile; }
-    protected ConditionValue xgetCValueTypeOfBfile() { return xdfgetTypeOfBfile(); }
-
-    /**
-     * Add order-by as ascend. <br>
-     * TYPE_OF_BFILE: {BFILE(530)}
-     * @return this. (NotNull)
-     */
-    public BsVendorCheckCQ addOrderBy_TypeOfBfile_Asc() { regOBA("TYPE_OF_BFILE"); return this; }
-
-    /**
-     * Add order-by as descend. <br>
-     * TYPE_OF_BFILE: {BFILE(530)}
-     * @return this. (NotNull)
-     */
-    public BsVendorCheckCQ addOrderBy_TypeOfBfile_Desc() { regOBD("TYPE_OF_BFILE"); return this; }
 
     protected ConditionValue _typeOfRowid;
     public ConditionValue xdfgetTypeOfRowid()

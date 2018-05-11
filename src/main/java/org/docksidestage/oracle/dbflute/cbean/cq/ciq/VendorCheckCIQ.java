@@ -88,9 +88,9 @@ public class VendorCheckCIQ extends AbstractBsVendorCheckCQ {
     protected ConditionValue xgetCValueTypeOfTimestamp() { return _myCQ.xdfgetTypeOfTimestamp(); }
     protected ConditionValue xgetCValueTypeOfIntervalYearToMonth() { return _myCQ.xdfgetTypeOfIntervalYearToMonth(); }
     protected ConditionValue xgetCValueTypeOfIntervalDayToSecond() { return _myCQ.xdfgetTypeOfIntervalDayToSecond(); }
+    protected ConditionValue xgetCValueTypeOfBfile() { return _myCQ.xdfgetTypeOfBfile(); }
     protected ConditionValue xgetCValueTypeOfBlob() { return _myCQ.xdfgetTypeOfBlob(); }
     protected ConditionValue xgetCValueTypeOfRaw() { return _myCQ.xdfgetTypeOfRaw(); }
-    protected ConditionValue xgetCValueTypeOfBfile() { return _myCQ.xdfgetTypeOfBfile(); }
     protected ConditionValue xgetCValueTypeOfRowid() { return _myCQ.xdfgetTypeOfRowid(); }
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
     public String keepScalarCondition(VendorCheckCQ sq)

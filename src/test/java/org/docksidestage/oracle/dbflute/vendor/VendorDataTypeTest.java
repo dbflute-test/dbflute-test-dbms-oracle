@@ -33,6 +33,7 @@ import org.docksidestage.oracle.dbflute.exbhv.MemberWithdrawalBhv;
 import org.docksidestage.oracle.dbflute.exbhv.PurchaseBhv;
 import org.docksidestage.oracle.dbflute.exbhv.VendorCheckBhv;
 import org.docksidestage.oracle.dbflute.exbhv.pmbean.CompareDatePmb;
+import org.docksidestage.oracle.dbflute.exbhv.pmbean.SpVariousTypeParameterPmb;
 import org.docksidestage.oracle.dbflute.exentity.Member;
 import org.docksidestage.oracle.dbflute.exentity.MemberWithdrawal;
 import org.docksidestage.oracle.dbflute.exentity.Purchase;
@@ -1061,9 +1062,38 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
     //                                                                         Binary Type
     //                                                                         ===========
     // -----------------------------------------------------
+    //                                                 BFILE
+    //                                                 -----
+    // mapping to Object type, unsupported yet
+    //public void test_BFILE_procedure_basic() {
+    //    // ## Arrange ##
+    //    SpVariousTypeParameterPmb pmb = new SpVariousTypeParameterPmb();
+    //    pmb.setVInVarchar("foo");
+    //    pmb.setVOutNvarchar("bar");
+    //    pmb.setVOutChar("baz");
+    //    StringBuilder sb = new StringBuilder();
+    //    for (int i = 0; i < 10; i++) {
+    //        sb.append("0123456789");
+    //    }
+    //    byte[] largeBytes = serialize(sb.toString());
+    //    pmb.setVvvvInBfile(largeBytes);
+    //
+    //    // ## Act ##
+    //    vendorCheckBhv.outsideSql().call(pmb);
+    //
+    //    // ## Assert ##
+    //    byte[] selectedBytes = pmb.getVvvvOutBfile();
+    //    assertNotNull(selectedBytes);
+    //    log("selectedBytes.length:{}", selectedBytes.length);
+    //    String deserialized = (String) deserialize(selectedBytes);
+    //    log("deserialized={}", Srl.cut(deserialized, 1000));
+    //    assertEquals(sb.length(), deserialized.length());
+    //}
+
+    // -----------------------------------------------------
     //                                                  BLOB
     //                                                  ----
-    public void test_BLOB_insert_select() {
+    public void test_BLOB_insert_select_basic() {
         // ## Arrange ##
         String expected = "foo";
         Member member = memberBhv.selectByPK(3).get();
@@ -1085,16 +1115,13 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         assertEquals(expected, deserialized.getMemberName());
     }
 
-    public void test_BLOB_large_handling() {
+    public void test_BLOB_insert_select_large_handling() {
         // ## Arrange ##
-        String expected = "foo";
-        Member member = memberBhv.selectByPK(3).get();
-        member.setMemberName(expected);
         VendorCheck vendorCheck = createVendorCheck();
         StringBuilder sb = new StringBuilder();
         // large style
         //for (int i = 0; i < 10000000; i++) {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 4000; i++) {
             sb.append("0123456789");
         }
         byte[] largeBytes = serialize(sb.toString());
@@ -1108,6 +1135,59 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
 
         // ## Assert ##
         byte[] selectedBytes = selected.getTypeOfBlob();
+        assertNotNull(selectedBytes);
+        log("selectedBytes.length:{}", selectedBytes.length);
+        String deserialized = (String) deserialize(selectedBytes);
+        log("deserialized={}", Srl.cut(deserialized, 1000));
+        assertEquals(sb.length(), deserialized.length());
+    }
+
+    public void test_BLOB_procedure_large_handling() {
+        // ## Arrange ##
+        SpVariousTypeParameterPmb pmb = new SpVariousTypeParameterPmb();
+        pmb.setVInVarchar("foo");
+        pmb.setVOutNvarchar("bar");
+        pmb.setVOutChar("baz");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 3277; i++) { // border is 32kb if BinaryType
+            sb.append("0123456789");
+        }
+        byte[] largeBytes = serialize(sb.toString());
+        pmb.setVvvvInBlob(largeBytes);
+
+        // ## Act ##
+        vendorCheckBhv.outsideSql().call(pmb);
+
+        // ## Assert ##
+        byte[] selectedBytes = pmb.getVvvvOutBlob();
+        assertNotNull(selectedBytes);
+        log("selectedBytes.length:{}", selectedBytes.length);
+        String deserialized = (String) deserialize(selectedBytes);
+        log("deserialized={}", Srl.cut(deserialized, 1000));
+        assertEquals(sb.length(), deserialized.length());
+    }
+
+    // -----------------------------------------------------
+    //                                                  RAW
+    //                                                 -----
+    public void test_RAW_procedure() {
+        // ## Arrange ##
+        SpVariousTypeParameterPmb pmb = new SpVariousTypeParameterPmb();
+        pmb.setVInVarchar("foo");
+        pmb.setVOutNvarchar("bar");
+        pmb.setVOutChar("baz");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 10; i++) { // cannot large data for data type specification...?
+            sb.append("0123456789");
+        }
+        byte[] largeBytes = serialize(sb.toString());
+        pmb.setVvvvInRaw(largeBytes);
+
+        // ## Act ##
+        vendorCheckBhv.outsideSql().call(pmb);
+
+        // ## Assert ##
+        byte[] selectedBytes = pmb.getVvvvOutRaw();
         assertNotNull(selectedBytes);
         log("selectedBytes.length:{}", selectedBytes.length);
         String deserialized = (String) deserialize(selectedBytes);

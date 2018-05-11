@@ -17,7 +17,7 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  *     VENDOR_CHECK_ID
  *
  * [column]
- *     VENDOR_CHECK_ID, TYPE_OF_CHAR, TYPE_OF_NCHAR, TYPE_OF_VARCHAR2, TYPE_OF_VARCHAR2_MAX, TYPE_OF_NVARCHAR2, TYPE_OF_CLOB, TYPE_OF_NCLOB, TYPE_OF_LONG, TYPE_OF_XMLTYPE, TYPE_OF_NUMBER_INTEGER, TYPE_OF_NUMBER_BIGINT, TYPE_OF_NUMBER_DECIMAL, TYPE_OF_NUMBER_INTEGER_MIN, TYPE_OF_NUMBER_INTEGER_MAX, TYPE_OF_NUMBER_BIGINT_MIN, TYPE_OF_NUMBER_BIGINT_MAX, TYPE_OF_NUMBER_SUPERINT_MIN, TYPE_OF_NUMBER_SUPERINT_MAX, TYPE_OF_NUMBER_MAXDECIMAL, TYPE_OF_INTEGER, TYPE_OF_BINARY_FLOAT, TYPE_OF_BINARY_DOUBLE, TYPE_OF_DATE, TYPE_OF_TIMESTAMP, TYPE_OF_INTERVAL_YEAR_TO_MONTH, TYPE_OF_INTERVAL_DAY_TO_SECOND, TYPE_OF_BLOB, TYPE_OF_RAW, TYPE_OF_BFILE, TYPE_OF_ROWID
+ *     VENDOR_CHECK_ID, TYPE_OF_CHAR, TYPE_OF_NCHAR, TYPE_OF_VARCHAR2, TYPE_OF_VARCHAR2_MAX, TYPE_OF_NVARCHAR2, TYPE_OF_CLOB, TYPE_OF_NCLOB, TYPE_OF_LONG, TYPE_OF_XMLTYPE, TYPE_OF_NUMBER_INTEGER, TYPE_OF_NUMBER_BIGINT, TYPE_OF_NUMBER_DECIMAL, TYPE_OF_NUMBER_INTEGER_MIN, TYPE_OF_NUMBER_INTEGER_MAX, TYPE_OF_NUMBER_BIGINT_MIN, TYPE_OF_NUMBER_BIGINT_MAX, TYPE_OF_NUMBER_SUPERINT_MIN, TYPE_OF_NUMBER_SUPERINT_MAX, TYPE_OF_NUMBER_MAXDECIMAL, TYPE_OF_INTEGER, TYPE_OF_BINARY_FLOAT, TYPE_OF_BINARY_DOUBLE, TYPE_OF_DATE, TYPE_OF_TIMESTAMP, TYPE_OF_INTERVAL_YEAR_TO_MONTH, TYPE_OF_INTERVAL_DAY_TO_SECOND, TYPE_OF_BFILE, TYPE_OF_BLOB, TYPE_OF_RAW, TYPE_OF_ROWID
  *
  * [sequence]
  *     
@@ -69,9 +69,9 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * java.time.LocalDateTime typeOfTimestamp = entity.getTypeOfTimestamp();
  * String typeOfIntervalYearToMonth = entity.getTypeOfIntervalYearToMonth();
  * String typeOfIntervalDayToSecond = entity.getTypeOfIntervalDayToSecond();
+ * String typeOfBfile = entity.getTypeOfBfile();
  * byte[] typeOfBlob = entity.getTypeOfBlob();
  * byte[] typeOfRaw = entity.getTypeOfRaw();
- * String typeOfBfile = entity.getTypeOfBfile();
  * String typeOfRowid = entity.getTypeOfRowid();
  * entity.setVendorCheckId(vendorCheckId);
  * entity.setTypeOfChar(typeOfChar);
@@ -100,9 +100,9 @@ import org.docksidestage.oracle.dbflute.exentity.*;
  * entity.setTypeOfTimestamp(typeOfTimestamp);
  * entity.setTypeOfIntervalYearToMonth(typeOfIntervalYearToMonth);
  * entity.setTypeOfIntervalDayToSecond(typeOfIntervalDayToSecond);
+ * entity.setTypeOfBfile(typeOfBfile);
  * entity.setTypeOfBlob(typeOfBlob);
  * entity.setTypeOfRaw(typeOfRaw);
- * entity.setTypeOfBfile(typeOfBfile);
  * entity.setTypeOfRowid(typeOfRowid);
  * = = = = = = = = = =/
  * </pre>
@@ -200,14 +200,14 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     /** TYPE_OF_INTERVAL_DAY_TO_SECOND: {INTERVAL DAY(2) TO SECOND(6)(2, 6)} */
     protected String _typeOfIntervalDayToSecond;
 
+    /** TYPE_OF_BFILE: {BFILE(530)} */
+    protected String _typeOfBfile;
+
     /** TYPE_OF_BLOB: {BLOB(4000)} */
     protected byte[] _typeOfBlob;
 
     /** TYPE_OF_RAW: {RAW(512)} */
     protected byte[] _typeOfRaw;
-
-    /** TYPE_OF_BFILE: {BFILE(530)} */
-    protected String _typeOfBfile;
 
     /** TYPE_OF_ROWID: {ROWID(10)} */
     protected String _typeOfRowid;
@@ -301,9 +301,9 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
         sb.append(dm).append(xfND(_typeOfTimestamp));
         sb.append(dm).append(xfND(_typeOfIntervalYearToMonth));
         sb.append(dm).append(xfND(_typeOfIntervalDayToSecond));
+        sb.append(dm).append(xfND(_typeOfBfile));
         sb.append(dm).append(xfBA(_typeOfBlob));
         sb.append(dm).append(xfBA(_typeOfRaw));
-        sb.append(dm).append(xfND(_typeOfBfile));
         sb.append(dm).append(xfND(_typeOfRowid));
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length());
@@ -815,6 +815,24 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     }
 
     /**
+     * [get] TYPE_OF_BFILE: {BFILE(530)} <br>
+     * @return The value of the column 'TYPE_OF_BFILE'. (NullAllowed even if selected: for no constraint)
+     */
+    public String getTypeOfBfile() {
+        checkSpecifiedProperty("typeOfBfile");
+        return _typeOfBfile;
+    }
+
+    /**
+     * [set] TYPE_OF_BFILE: {BFILE(530)} <br>
+     * @param typeOfBfile The value of the column 'TYPE_OF_BFILE'. (NullAllowed: null update allowed for no constraint)
+     */
+    public void setTypeOfBfile(String typeOfBfile) {
+        registerModifiedProperty("typeOfBfile");
+        _typeOfBfile = typeOfBfile;
+    }
+
+    /**
      * [get] TYPE_OF_BLOB: {BLOB(4000)} <br>
      * @return The value of the column 'TYPE_OF_BLOB'. (NullAllowed even if selected: for no constraint)
      */
@@ -848,24 +866,6 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     public void setTypeOfRaw(byte[] typeOfRaw) {
         registerModifiedProperty("typeOfRaw");
         _typeOfRaw = typeOfRaw;
-    }
-
-    /**
-     * [get] TYPE_OF_BFILE: {BFILE(530)} <br>
-     * @return The value of the column 'TYPE_OF_BFILE'. (NullAllowed even if selected: for no constraint)
-     */
-    public String getTypeOfBfile() {
-        checkSpecifiedProperty("typeOfBfile");
-        return _typeOfBfile;
-    }
-
-    /**
-     * [set] TYPE_OF_BFILE: {BFILE(530)} <br>
-     * @param typeOfBfile The value of the column 'TYPE_OF_BFILE'. (NullAllowed: null update allowed for no constraint)
-     */
-    public void setTypeOfBfile(String typeOfBfile) {
-        registerModifiedProperty("typeOfBfile");
-        _typeOfBfile = typeOfBfile;
     }
 
     /**

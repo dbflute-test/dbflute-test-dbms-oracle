@@ -3265,38 +3265,6 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     protected void regTypeOfIntervalDayToSecond(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueTypeOfIntervalDayToSecond(), "TYPE_OF_INTERVAL_DAY_TO_SECOND"); }
     protected abstract ConditionValue xgetCValueTypeOfIntervalDayToSecond();
 
-
-    /**
-     * IsNull {is null}. And OnlyOnceRegistered. <br>
-     * TYPE_OF_BLOB: {BLOB(4000)}
-     */
-    public void setTypeOfBlob_IsNull() { regTypeOfBlob(CK_ISN, DOBJ); }
-
-    /**
-     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
-     * TYPE_OF_BLOB: {BLOB(4000)}
-     */
-    public void setTypeOfBlob_IsNotNull() { regTypeOfBlob(CK_ISNN, DOBJ); }
-
-    protected void regTypeOfBlob(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueTypeOfBlob(), "TYPE_OF_BLOB"); }
-    protected abstract ConditionValue xgetCValueTypeOfBlob();
-
-
-    /**
-     * IsNull {is null}. And OnlyOnceRegistered. <br>
-     * TYPE_OF_RAW: {RAW(512)}
-     */
-    public void setTypeOfRaw_IsNull() { regTypeOfRaw(CK_ISN, DOBJ); }
-
-    /**
-     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
-     * TYPE_OF_RAW: {RAW(512)}
-     */
-    public void setTypeOfRaw_IsNotNull() { regTypeOfRaw(CK_ISNN, DOBJ); }
-
-    protected void regTypeOfRaw(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueTypeOfRaw(), "TYPE_OF_RAW"); }
-    protected abstract ConditionValue xgetCValueTypeOfRaw();
-
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BFILE: {BFILE(530)}
@@ -3422,6 +3390,38 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     protected void regTypeOfBfile(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueTypeOfBfile(), "TYPE_OF_BFILE"); }
     protected abstract ConditionValue xgetCValueTypeOfBfile();
+
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * TYPE_OF_BLOB: {BLOB(4000)}
+     */
+    public void setTypeOfBlob_IsNull() { regTypeOfBlob(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * TYPE_OF_BLOB: {BLOB(4000)}
+     */
+    public void setTypeOfBlob_IsNotNull() { regTypeOfBlob(CK_ISNN, DOBJ); }
+
+    protected void regTypeOfBlob(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueTypeOfBlob(), "TYPE_OF_BLOB"); }
+    protected abstract ConditionValue xgetCValueTypeOfBlob();
+
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * TYPE_OF_RAW: {RAW(512)}
+     */
+    public void setTypeOfRaw_IsNull() { regTypeOfRaw(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * TYPE_OF_RAW: {RAW(512)}
+     */
+    public void setTypeOfRaw_IsNotNull() { regTypeOfRaw(CK_ISNN, DOBJ); }
+
+    protected void regTypeOfRaw(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueTypeOfRaw(), "TYPE_OF_RAW"); }
+    protected abstract ConditionValue xgetCValueTypeOfRaw();
 
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>

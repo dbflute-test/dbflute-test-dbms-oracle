@@ -36,6 +36,12 @@ public class BsSpVariousTypeParameterPmb implements ProcedurePmb, FetchBean {
     public static final String vvOutBigint_PROCEDURE_PARAMETER = "out, 10";
     public static final String vvvInDate_PROCEDURE_PARAMETER = "in, 11";
     public static final String vvvOutTimestamp_PROCEDURE_PARAMETER = "out, 12";
+    public static final String vvvvInBlob_PROCEDURE_PARAMETER = "in, 13";
+    public static final String vvvvInBlob_VALUE_TYPE = "bytesBlobType";
+    public static final String vvvvOutBlob_PROCEDURE_PARAMETER = "out, 14";
+    public static final String vvvvOutBlob_VALUE_TYPE = "bytesBlobType";
+    public static final String vvvvInRaw_PROCEDURE_PARAMETER = "in, 15";
+    public static final String vvvvOutRaw_PROCEDURE_PARAMETER = "out, 16";
 
     // ===================================================================================
     //                                                                           Attribute
@@ -78,6 +84,18 @@ public class BsSpVariousTypeParameterPmb implements ProcedurePmb, FetchBean {
 
     /** The parameter of vvvOutTimestamp: {TIMESTAMP(6) as Out}. */
     protected java.time.LocalDateTime _vvvOutTimestamp;
+
+    /** The parameter of vvvvInBlob: {BLOB as In}. */
+    protected byte[] _vvvvInBlob;
+
+    /** The parameter of vvvvOutBlob: {BLOB as Out}. */
+    protected byte[] _vvvvOutBlob;
+
+    /** The parameter of vvvvInRaw: {RAW as In}. */
+    protected byte[] _vvvvInRaw;
+
+    /** The parameter of vvvvOutRaw: {RAW as Out}. */
+    protected byte[] _vvvvOutRaw;
 
     /** The max size of safety result. */
     protected int _safetyMaxResultSize;
@@ -193,6 +211,10 @@ public class BsSpVariousTypeParameterPmb implements ProcedurePmb, FetchBean {
         sb.append(dm).append(_vvOutBigint);
         sb.append(dm).append(_vvvInDate);
         sb.append(dm).append(_vvvOutTimestamp);
+        sb.append(dm).append(PmbCustodial.formatByteArray(_vvvvInBlob));
+        sb.append(dm).append(PmbCustodial.formatByteArray(_vvvvOutBlob));
+        sb.append(dm).append(PmbCustodial.formatByteArray(_vvvvInRaw));
+        sb.append(dm).append(PmbCustodial.formatByteArray(_vvvvOutRaw));
         if (sb.length() > 0) { sb.delete(0, dm.length()); }
         sb.insert(0, "{").append("}");
         return sb.toString();
@@ -407,5 +429,69 @@ public class BsSpVariousTypeParameterPmb implements ProcedurePmb, FetchBean {
      */
     public void setVvvOutTimestamp(java.time.LocalDateTime vvvOutTimestamp) {
         _vvvOutTimestamp = vvvOutTimestamp;
+    }
+
+    /**
+     * [get] vvvvInBlob: {BLOB as In} <br>
+     * @return The value of vvvvInBlob. (NullAllowed, NotEmptyString(when String): if empty string, returns null)
+     */
+    public byte[] getVvvvInBlob() {
+        return _vvvvInBlob;
+    }
+
+    /**
+     * [set] vvvvInBlob: {BLOB as In} <br>
+     * @param vvvvInBlob The value of vvvvInBlob. (NullAllowed)
+     */
+    public void setVvvvInBlob(byte[] vvvvInBlob) {
+        _vvvvInBlob = vvvvInBlob;
+    }
+
+    /**
+     * [get] vvvvOutBlob: {BLOB as Out} <br>
+     * @return The value of vvvvOutBlob. (NullAllowed, NotEmptyString(when String): if empty string, returns null)
+     */
+    public byte[] getVvvvOutBlob() {
+        return _vvvvOutBlob;
+    }
+
+    /**
+     * [set] vvvvOutBlob: {BLOB as Out} <br>
+     * @param vvvvOutBlob The value of vvvvOutBlob. (NullAllowed)
+     */
+    public void setVvvvOutBlob(byte[] vvvvOutBlob) {
+        _vvvvOutBlob = vvvvOutBlob;
+    }
+
+    /**
+     * [get] vvvvInRaw: {RAW as In} <br>
+     * @return The value of vvvvInRaw. (NullAllowed, NotEmptyString(when String): if empty string, returns null)
+     */
+    public byte[] getVvvvInRaw() {
+        return _vvvvInRaw;
+    }
+
+    /**
+     * [set] vvvvInRaw: {RAW as In} <br>
+     * @param vvvvInRaw The value of vvvvInRaw. (NullAllowed)
+     */
+    public void setVvvvInRaw(byte[] vvvvInRaw) {
+        _vvvvInRaw = vvvvInRaw;
+    }
+
+    /**
+     * [get] vvvvOutRaw: {RAW as Out} <br>
+     * @return The value of vvvvOutRaw. (NullAllowed, NotEmptyString(when String): if empty string, returns null)
+     */
+    public byte[] getVvvvOutRaw() {
+        return _vvvvOutRaw;
+    }
+
+    /**
+     * [set] vvvvOutRaw: {RAW as Out} <br>
+     * @param vvvvOutRaw The value of vvvvOutRaw. (NullAllowed)
+     */
+    public void setVvvvOutRaw(byte[] vvvvOutRaw) {
+        _vvvvOutRaw = vvvvOutRaw;
     }
 }

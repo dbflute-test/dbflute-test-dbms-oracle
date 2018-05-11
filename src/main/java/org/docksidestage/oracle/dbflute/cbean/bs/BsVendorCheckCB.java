@@ -435,6 +435,11 @@ public class BsVendorCheckCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnTypeOfIntervalDayToSecond() { return doColumn("TYPE_OF_INTERVAL_DAY_TO_SECOND"); }
         /**
+         * TYPE_OF_BFILE: {BFILE(530)}
+         * @return The information object of specified column. (NotNull)
+         */
+        public SpecifiedColumn columnTypeOfBfile() { return doColumn("TYPE_OF_BFILE"); }
+        /**
          * TYPE_OF_BLOB: {BLOB(4000)}
          * @return The information object of specified column. (NotNull)
          */
@@ -444,11 +449,6 @@ public class BsVendorCheckCB extends AbstractConditionBean {
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnTypeOfRaw() { return doColumn("TYPE_OF_RAW"); }
-        /**
-         * TYPE_OF_BFILE: {BFILE(530)}
-         * @return The information object of specified column. (NotNull)
-         */
-        public SpecifiedColumn columnTypeOfBfile() { return doColumn("TYPE_OF_BFILE"); }
         /**
          * TYPE_OF_ROWID: {ROWID(10)}
          * @return The information object of specified column. (NotNull)
