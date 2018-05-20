@@ -56,6 +56,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
     //                                                                       Query Timeout
     //                                                                       =============
     public void test_QueryTimeout_insert() throws Exception {
+        // #thinking jflute test: Oracle, why ORA-01013? 
         cannonball(new CannonballRun() {
             public void drive(CannonballCar car) {
                 final long threadId = Thread.currentThread().getId();

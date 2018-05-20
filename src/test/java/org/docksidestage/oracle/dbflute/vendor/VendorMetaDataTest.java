@@ -140,7 +140,7 @@ public class VendorMetaDataTest extends UnitContainerTestCase {
     }
 
     public void test_DatabaseMetaData_getColumns_Synonym_basic() throws SQLException {
-        // TODO jflute test: Oracle, why failed? SYNONYM_MEMBER
+        // #thinking jflute test: Oracle, why failed? SYNONYM_MEMBER
         DatabaseMetaData metaData = _conn.getMetaData();
 
         ResultSet rs = metaData.getColumns(null, "MAIHAMADB", "SYNONYM_MEMBER", null);
