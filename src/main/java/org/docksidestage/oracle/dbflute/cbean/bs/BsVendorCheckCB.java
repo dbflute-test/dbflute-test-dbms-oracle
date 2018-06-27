@@ -400,7 +400,7 @@ public class BsVendorCheckCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnTypeOfNumberMaxdecimal() { return doColumn("TYPE_OF_NUMBER_MAXDECIMAL"); }
         /**
-         * TYPE_OF_INTEGER: {NUMBER(22)}
+         * TYPE_OF_INTEGER: {NUMBER(38)}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnTypeOfInteger() { return doColumn("TYPE_OF_INTEGER"); }

@@ -1,4 +1,25 @@
 map:{
+    ; 2018/06/28 01:54:42 = map:{
+        ; diffDate = 2018/06/28 01:54:42
+        ; diffAuthor = jflute
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; WHITE_SAME_NAME_REF_REF = map:{
+                ; tableName = WHITE_SAME_NAME_REF_REF
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; REF_REF_COUNT = map:{
+                        ; columnName = REF_REF_COUNT
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 38
+                            ; previous = 22
+                        }
+                    }
+                }
+            }
+        }
+    }
     ; 2014/11/02 18:52:35 = map:{
         ; diffDate = 2014/11/02 18:52:35
         ; tableDiff = map:{

@@ -390,7 +390,7 @@ public class BsMemberAddressCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnAddress() { return doColumn("ADDRESS"); }
         /**
-         * REGION_ID: {NotNull, NUMBER(22), FK to REGION, classification=Region}
+         * REGION_ID: {NotNull, NUMBER(38), FK to REGION, classification=Region}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnRegionId() { return doColumn("REGION_ID"); }

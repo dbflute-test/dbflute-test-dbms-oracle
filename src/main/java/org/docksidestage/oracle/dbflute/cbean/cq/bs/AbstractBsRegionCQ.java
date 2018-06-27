@@ -45,7 +45,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
     //                                                                               =====
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
      * @param regionId The value of regionId as equal. (basically NotNull: error as default, or no condition as option)
      */
     protected void setRegionId_Equal(java.math.BigDecimal regionId) {
@@ -54,7 +54,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
 
     /**
      * Equal(=). As Region. And NullIgnored, OnlyOnceRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region} <br>
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region} <br>
      * mainly region of member address
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
@@ -100,7 +100,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
      * @param regionIdList The collection of regionId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     protected void setRegionId_InScope(Collection<java.math.BigDecimal> regionIdList) {
@@ -109,7 +109,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in (1, 2)}. As Region. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region} <br>
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region} <br>
      * mainly region of member address
      * @param cdefList The list of classification definition (as ENUM type). (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
@@ -123,7 +123,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
      * @param regionIdList The collection of regionId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     protected void setRegionId_NotInScope(Collection<java.math.BigDecimal> regionIdList) {
@@ -132,7 +132,7 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in (1, 2)}. As Region. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region} <br>
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region} <br>
      * mainly region of member address
      * @param cdefList The list of classification definition (as ENUM type). (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
@@ -219,13 +219,13 @@ public abstract class AbstractBsRegionCQ extends AbstractConditionQuery {
 
     /**
      * IsNull {is null}. And OnlyOnceRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
      */
     public void setRegionId_IsNull() { regRegionId(CK_ISN, DOBJ); }
 
     /**
      * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
      */
     public void setRegionId_IsNotNull() { regRegionId(CK_ISNN, DOBJ); }
 

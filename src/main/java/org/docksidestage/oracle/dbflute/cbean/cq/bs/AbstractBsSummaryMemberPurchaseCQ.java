@@ -149,7 +149,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param allsumPurchasePrice The value of allsumPurchasePrice as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_Equal(java.math.BigDecimal allsumPurchasePrice) {
@@ -162,7 +162,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param allsumPurchasePrice The value of allsumPurchasePrice as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_GreaterThan(java.math.BigDecimal allsumPurchasePrice) {
@@ -171,7 +171,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param allsumPurchasePrice The value of allsumPurchasePrice as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_LessThan(java.math.BigDecimal allsumPurchasePrice) {
@@ -180,7 +180,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param allsumPurchasePrice The value of allsumPurchasePrice as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_GreaterEqual(java.math.BigDecimal allsumPurchasePrice) {
@@ -189,7 +189,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param allsumPurchasePrice The value of allsumPurchasePrice as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_LessEqual(java.math.BigDecimal allsumPurchasePrice) {
@@ -200,7 +200,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param minNumber The min number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
@@ -213,7 +213,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param minNumber The min number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of allsumPurchasePrice. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
@@ -224,7 +224,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param allsumPurchasePriceList The collection of allsumPurchasePrice as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_InScope(Collection<java.math.BigDecimal> allsumPurchasePriceList) {
@@ -237,7 +237,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @param allsumPurchasePriceList The collection of allsumPurchasePrice as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_NotInScope(Collection<java.math.BigDecimal> allsumPurchasePriceList) {
@@ -250,13 +250,13 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
 
     /**
      * IsNull {is null}. And OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      */
     public void setAllsumPurchasePrice_IsNull() { regAllsumPurchasePrice(CK_ISN, DOBJ); }
 
     /**
      * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      */
     public void setAllsumPurchasePrice_IsNotNull() { regAllsumPurchasePrice(CK_ISNN, DOBJ); }
 

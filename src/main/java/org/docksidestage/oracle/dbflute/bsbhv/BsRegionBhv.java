@@ -227,7 +227,7 @@ public abstract class BsRegionBhv extends AbstractBehaviorWritable<Region, Regio
 
     /**
      * Select the entity by the primary-key value.
-     * @param regionId : PK, NotNull, NUMBER(22), classification=Region. (NotNull)
+     * @param regionId : PK, NotNull, NUMBER(38), classification=Region. (NotNull)
      * @return The optional entity selected by the PK. (NotNull: if no data, empty entity)
      * @throws EntityAlreadyDeletedException When get(), required() of return value is called and the value is null, which means entity has already been deleted (not found).
      * @throws EntityDuplicatedException When the entity has been duplicated.

@@ -92,8 +92,8 @@ public class OptionMemberDbm extends AbstractDBMeta {
     protected final ColumnInfo _columnMemberStatusCode = cci("MEMBER_STATUS_CODE", "MEMBER_STATUS_CODE", null, null, String.class, "memberStatusCode", null, false, false, false, "CHAR", 3, 0, null, null, false, null, "// cls(MemberStatus)", null, null, CDef.DefMeta.MemberStatus, false);
     protected final ColumnInfo _columnMemberStatusName = cci("MEMBER_STATUS_NAME", "MEMBER_STATUS_NAME", null, null, String.class, "memberStatusName", null, false, false, false, "VARCHAR2", 50, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnStatusDisplayOrder = cci("STATUS_DISPLAY_ORDER", "STATUS_DISPLAY_ORDER", null, null, Integer.class, "statusDisplayOrder", null, false, false, false, "NUMBER", 8, 0, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnDummyFlg = cci("DUMMY_FLG", "DUMMY_FLG", null, null, java.math.BigDecimal.class, "dummyFlg", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, CDef.DefMeta.Flg, false);
-    protected final ColumnInfo _columnDummyNoflg = cci("DUMMY_NOFLG", "DUMMY_NOFLG", null, null, java.math.BigDecimal.class, "dummyNoflg", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnDummyFlg = cci("DUMMY_FLG", "DUMMY_FLG", null, null, java.math.BigDecimal.class, "dummyFlg", null, false, false, false, "NUMBER", 39, 0, null, null, false, null, null, null, null, CDef.DefMeta.Flg, false);
+    protected final ColumnInfo _columnDummyNoflg = cci("DUMMY_NOFLG", "DUMMY_NOFLG", null, null, java.math.BigDecimal.class, "dummyNoflg", null, false, false, false, "NUMBER", 39, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * MEMBER_ID: {NUMBER(9)}
@@ -131,12 +131,12 @@ public class OptionMemberDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnStatusDisplayOrder() { return _columnStatusDisplayOrder; }
     /**
-     * DUMMY_FLG: {NUMBER(22), classification=Flg}
+     * DUMMY_FLG: {NUMBER(39), classification=Flg}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnDummyFlg() { return _columnDummyFlg; }
     /**
-     * DUMMY_NOFLG: {NUMBER(22)}
+     * DUMMY_NOFLG: {NUMBER(39)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnDummyNoflg() { return _columnDummyNoflg; }

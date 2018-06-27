@@ -70,7 +70,7 @@ public abstract class BsUnpaidSummaryMember extends AbstractEntity implements Cu
     /** UNPAID_MAN_NAME: {VARCHAR2(200)} */
     protected String _unpaidManName;
 
-    /** UNPAID_PRICE_SUMMARY: {NUMBER(22)} */
+    /** UNPAID_PRICE_SUMMARY: {NUMBER(39)} */
     protected java.math.BigDecimal _unpaidPriceSummary;
 
     /** STATUS_NAME: {VARCHAR2(50)} */
@@ -253,7 +253,7 @@ public abstract class BsUnpaidSummaryMember extends AbstractEntity implements Cu
     }
 
     /**
-     * [get] UNPAID_PRICE_SUMMARY: {NUMBER(22)} <br>
+     * [get] UNPAID_PRICE_SUMMARY: {NUMBER(39)} <br>
      * @return The value of the column 'UNPAID_PRICE_SUMMARY'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getUnpaidPriceSummary() {
@@ -262,7 +262,7 @@ public abstract class BsUnpaidSummaryMember extends AbstractEntity implements Cu
     }
 
     /**
-     * [set] UNPAID_PRICE_SUMMARY: {NUMBER(22)} <br>
+     * [set] UNPAID_PRICE_SUMMARY: {NUMBER(39)} <br>
      * @param unpaidPriceSummary The value of the column 'UNPAID_PRICE_SUMMARY'. (NullAllowed: null update allowed for no constraint)
      */
     public void setUnpaidPriceSummary(java.math.BigDecimal unpaidPriceSummary) {

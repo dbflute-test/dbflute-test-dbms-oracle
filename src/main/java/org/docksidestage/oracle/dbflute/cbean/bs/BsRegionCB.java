@@ -82,7 +82,7 @@ public class BsRegionCB extends AbstractConditionBean {
     //                                                                 ===================
     /**
      * Accept the query condition of primary key as equal.
-     * @param regionId : PK, NotNull, NUMBER(22), classification=Region. (NotNull)
+     * @param regionId : PK, NotNull, NUMBER(38), classification=Region. (NotNull)
      * @return this. (NotNull)
      */
     public RegionCB acceptPK(CDef.Region regionId) {
@@ -301,7 +301,7 @@ public class BsRegionCB extends AbstractConditionBean {
                              , HpSDRFunctionFactory sdrFuncFactory)
         { super(baseCB, qyCall, purpose, dbmetaProvider, sdrFuncFactory); }
         /**
-         * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+         * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnRegionId() { return doColumn("REGION_ID"); }

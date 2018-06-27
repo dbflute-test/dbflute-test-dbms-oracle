@@ -45,6 +45,7 @@ import org.docksidestage.oracle.unit.UnitContainerTestCase;
  * @author jflute
  * @since 1.0.4D (2013/06/16 Sunday)
  */
+@SuppressWarnings("deprecation")
 public class VendorJDBCTest extends UnitContainerTestCase {
 
     // ===================================================================================

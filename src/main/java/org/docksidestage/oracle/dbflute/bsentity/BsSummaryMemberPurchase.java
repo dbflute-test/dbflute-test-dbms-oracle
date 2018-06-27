@@ -66,7 +66,7 @@ public abstract class BsSummaryMemberPurchase extends AbstractEntity implements 
     /** MEMBER_ID: {NotNull, NUMBER(9)} */
     protected Integer _memberId;
 
-    /** ALLSUM_PURCHASE_PRICE: {NUMBER(22)} */
+    /** ALLSUM_PURCHASE_PRICE: {NUMBER} */
     protected java.math.BigDecimal _allsumPurchasePrice;
 
     /** LATEST_PURCHASE_DATETIME: {TIMESTAMP(3)(11, 3)} */
@@ -179,7 +179,7 @@ public abstract class BsSummaryMemberPurchase extends AbstractEntity implements 
     }
 
     /**
-     * [get] ALLSUM_PURCHASE_PRICE: {NUMBER(22)} <br>
+     * [get] ALLSUM_PURCHASE_PRICE: {NUMBER} <br>
      * @return The value of the column 'ALLSUM_PURCHASE_PRICE'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getAllsumPurchasePrice() {
@@ -188,7 +188,7 @@ public abstract class BsSummaryMemberPurchase extends AbstractEntity implements 
     }
 
     /**
-     * [set] ALLSUM_PURCHASE_PRICE: {NUMBER(22)} <br>
+     * [set] ALLSUM_PURCHASE_PRICE: {NUMBER} <br>
      * @param allsumPurchasePrice The value of the column 'ALLSUM_PURCHASE_PRICE'. (NullAllowed: null update allowed for no constraint)
      */
     public void setAllsumPurchasePrice(java.math.BigDecimal allsumPurchasePrice) {

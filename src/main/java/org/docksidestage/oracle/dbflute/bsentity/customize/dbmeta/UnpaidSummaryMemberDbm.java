@@ -68,7 +68,7 @@ public class UnpaidSummaryMemberDbm extends AbstractDBMeta {
     //                                                                         ===========
     protected final ColumnInfo _columnUnpaidManId = cci("UNPAID_MAN_ID", "UNPAID_MAN_ID", null, null, Integer.class, "unpaidManId", null, true, false, false, "NUMBER", 9, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnUnpaidManName = cci("UNPAID_MAN_NAME", "UNPAID_MAN_NAME", null, null, String.class, "unpaidManName", null, false, false, false, "VARCHAR2", 200, 0, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnUnpaidPriceSummary = cci("UNPAID_PRICE_SUMMARY", "UNPAID_PRICE_SUMMARY", null, null, java.math.BigDecimal.class, "unpaidPriceSummary", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnUnpaidPriceSummary = cci("UNPAID_PRICE_SUMMARY", "UNPAID_PRICE_SUMMARY", null, null, java.math.BigDecimal.class, "unpaidPriceSummary", null, false, false, false, "NUMBER", 39, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnStatusName = cci("STATUS_NAME", "STATUS_NAME", null, null, String.class, "statusName", null, false, false, false, "VARCHAR2", 50, 0, null, null, false, null, null, null, null, null, false);
 
     /**
@@ -82,7 +82,7 @@ public class UnpaidSummaryMemberDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnUnpaidManName() { return _columnUnpaidManName; }
     /**
-     * UNPAID_PRICE_SUMMARY: {NUMBER(22)}
+     * UNPAID_PRICE_SUMMARY: {NUMBER(39)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnUnpaidPriceSummary() { return _columnUnpaidPriceSummary; }

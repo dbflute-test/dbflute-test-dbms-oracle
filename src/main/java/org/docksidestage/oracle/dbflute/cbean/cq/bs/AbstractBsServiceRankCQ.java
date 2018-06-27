@@ -519,7 +519,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg}
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg}
      * @param newAcceptableFlg The value of newAcceptableFlg as equal. (basically NotNull: error as default, or no condition as option)
      */
     protected void setNewAcceptableFlg_Equal(java.math.BigDecimal newAcceptableFlg) {
@@ -528,7 +528,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
 
     /**
      * Equal(=). As Flg. And NullIgnored, OnlyOnceRegistered. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} <br>
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} <br>
      * general boolean classification for every flg-column
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
@@ -558,7 +558,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg}
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg}
      * @param newAcceptableFlgList The collection of newAcceptableFlg as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     protected void setNewAcceptableFlg_InScope(Collection<java.math.BigDecimal> newAcceptableFlgList) {
@@ -567,7 +567,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in (1, 2)}. As Flg. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} <br>
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} <br>
      * general boolean classification for every flg-column
      * @param cdefList The list of classification definition (as ENUM type). (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
@@ -581,7 +581,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg}
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg}
      * @param newAcceptableFlgList The collection of newAcceptableFlg as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     protected void setNewAcceptableFlg_NotInScope(Collection<java.math.BigDecimal> newAcceptableFlgList) {
@@ -590,7 +590,7 @@ public abstract class AbstractBsServiceRankCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in (1, 2)}. As Flg. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} <br>
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} <br>
      * general boolean classification for every flg-column
      * @param cdefList The list of classification definition (as ENUM type). (basically NotNull, NotEmpty: error as default, or no condition as option)
      */

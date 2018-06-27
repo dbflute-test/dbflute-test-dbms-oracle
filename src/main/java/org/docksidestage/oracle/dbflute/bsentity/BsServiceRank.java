@@ -78,7 +78,7 @@ public abstract class BsServiceRank extends AbstractEntity implements DomainEnti
     /** SERVICE_POINT_INCIDENCE: {NotNull, NUMBER(5, 3)} */
     protected java.math.BigDecimal _servicePointIncidence;
 
-    /** NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} */
+    /** NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} */
     protected java.math.BigDecimal _newAcceptableFlg;
 
     /** DESCRIPTION: {NotNull, VARCHAR2(200)} */
@@ -146,7 +146,7 @@ public abstract class BsServiceRank extends AbstractEntity implements DomainEnti
 
     /**
      * Get the value of newAcceptableFlg as the classification of Flg. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} <br>
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} <br>
      * general boolean classification for every flg-column
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
@@ -157,7 +157,7 @@ public abstract class BsServiceRank extends AbstractEntity implements DomainEnti
 
     /**
      * Set the value of newAcceptableFlg as the classification of Flg. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} <br>
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} <br>
      * general boolean classification for every flg-column
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
@@ -478,7 +478,7 @@ public abstract class BsServiceRank extends AbstractEntity implements DomainEnti
     }
 
     /**
-     * [get] NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} <br>
+     * [get] NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} <br>
      * @return The value of the column 'NEW_ACCEPTABLE_FLG'. (basically NotNull if selected: for the constraint)
      */
     public java.math.BigDecimal getNewAcceptableFlg() {
@@ -487,7 +487,7 @@ public abstract class BsServiceRank extends AbstractEntity implements DomainEnti
     }
 
     /**
-     * [set] NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg} <br>
+     * [set] NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg} <br>
      * @param newAcceptableFlg The value of the column 'NEW_ACCEPTABLE_FLG'. (basically NotNull if update: for the constraint)
      */
     protected void setNewAcceptableFlg(java.math.BigDecimal newAcceptableFlg) {

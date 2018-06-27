@@ -95,14 +95,14 @@ public class BsRegionCQ extends AbstractBsRegionCQ {
 
     /**
      * Add order-by as ascend. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
      * @return this. (NotNull)
      */
     public BsRegionCQ addOrderBy_RegionId_Asc() { regOBA("REGION_ID"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * REGION_ID: {PK, NotNull, NUMBER(22), classification=Region}
+     * REGION_ID: {PK, NotNull, NUMBER(38), classification=Region}
      * @return this. (NotNull)
      */
     public BsRegionCQ addOrderBy_RegionId_Desc() { regOBD("REGION_ID"); return this; }

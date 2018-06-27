@@ -71,13 +71,13 @@ public abstract class BsPurchaseMaxPriceMember extends AbstractEntity implements
     /** MEMBER_NAME: {VARCHAR2(200)} */
     protected String _memberName;
 
-    /** PURCHASE_MAX_PRICE: {NUMBER(22)} */
+    /** PURCHASE_MAX_PRICE: {NUMBER(39)} */
     protected java.math.BigDecimal _purchaseMaxPrice;
 
     /** MEMBER_STATUS_NAME: {VARCHAR2(50)} */
     protected String _memberStatusName;
 
-    /** RN: {NUMBER(22)} */
+    /** RN: {NUMBER(39)} */
     protected java.math.BigDecimal _rn;
 
     // ===================================================================================
@@ -211,7 +211,7 @@ public abstract class BsPurchaseMaxPriceMember extends AbstractEntity implements
     }
 
     /**
-     * [get] PURCHASE_MAX_PRICE: {NUMBER(22)} <br>
+     * [get] PURCHASE_MAX_PRICE: {NUMBER(39)} <br>
      * @return The value of the column 'PURCHASE_MAX_PRICE'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getPurchaseMaxPrice() {
@@ -220,7 +220,7 @@ public abstract class BsPurchaseMaxPriceMember extends AbstractEntity implements
     }
 
     /**
-     * [set] PURCHASE_MAX_PRICE: {NUMBER(22)} <br>
+     * [set] PURCHASE_MAX_PRICE: {NUMBER(39)} <br>
      * @param purchaseMaxPrice The value of the column 'PURCHASE_MAX_PRICE'. (NullAllowed: null update allowed for no constraint)
      */
     public void setPurchaseMaxPrice(java.math.BigDecimal purchaseMaxPrice) {
@@ -247,7 +247,7 @@ public abstract class BsPurchaseMaxPriceMember extends AbstractEntity implements
     }
 
     /**
-     * [get] RN: {NUMBER(22)} <br>
+     * [get] RN: {NUMBER(39)} <br>
      * @return The value of the column 'RN'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getRn() {
@@ -256,7 +256,7 @@ public abstract class BsPurchaseMaxPriceMember extends AbstractEntity implements
     }
 
     /**
-     * [set] RN: {NUMBER(22)} <br>
+     * [set] RN: {NUMBER(39)} <br>
      * @param rn The value of the column 'RN'. (NullAllowed: null update allowed for no constraint)
      */
     public void setRn(java.math.BigDecimal rn) {

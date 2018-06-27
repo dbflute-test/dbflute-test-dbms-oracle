@@ -96,10 +96,10 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
     /** STATUS_DISPLAY_ORDER: {NUMBER(8)} */
     protected Integer _statusDisplayOrder;
 
-    /** DUMMY_FLG: {NUMBER(22), classification=Flg} */
+    /** DUMMY_FLG: {NUMBER(39), classification=Flg} */
     protected java.math.BigDecimal _dummyFlg;
 
-    /** DUMMY_NOFLG: {NUMBER(22)} */
+    /** DUMMY_NOFLG: {NUMBER(39)} */
     protected java.math.BigDecimal _dummyNoflg;
 
     // ===================================================================================
@@ -149,7 +149,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
 
     /**
      * Get the value of dummyFlg as the classification of Flg. <br>
-     * DUMMY_FLG: {NUMBER(22), classification=Flg} <br>
+     * DUMMY_FLG: {NUMBER(39), classification=Flg} <br>
      * general boolean classification for every flg-column
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
@@ -160,7 +160,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
 
     /**
      * Set the value of dummyFlg as the classification of Flg. <br>
-     * DUMMY_FLG: {NUMBER(22), classification=Flg} <br>
+     * DUMMY_FLG: {NUMBER(39), classification=Flg} <br>
      * general boolean classification for every flg-column
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
@@ -506,7 +506,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
     }
 
     /**
-     * [get] DUMMY_FLG: {NUMBER(22), classification=Flg} <br>
+     * [get] DUMMY_FLG: {NUMBER(39), classification=Flg} <br>
      * @return The value of the column 'DUMMY_FLG'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getDummyFlg() {
@@ -515,7 +515,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
     }
 
     /**
-     * [set] DUMMY_FLG: {NUMBER(22), classification=Flg} <br>
+     * [set] DUMMY_FLG: {NUMBER(39), classification=Flg} <br>
      * @param dummyFlg The value of the column 'DUMMY_FLG'. (NullAllowed: null update allowed for no constraint)
      */
     protected void setDummyFlg(java.math.BigDecimal dummyFlg) {
@@ -525,7 +525,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
     }
 
     /**
-     * [get] DUMMY_NOFLG: {NUMBER(22)} <br>
+     * [get] DUMMY_NOFLG: {NUMBER(39)} <br>
      * @return The value of the column 'DUMMY_NOFLG'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getDummyNoflg() {
@@ -534,7 +534,7 @@ public abstract class BsOptionMember extends AbstractEntity implements Customize
     }
 
     /**
-     * [set] DUMMY_NOFLG: {NUMBER(22)} <br>
+     * [set] DUMMY_NOFLG: {NUMBER(39)} <br>
      * @param dummyNoflg The value of the column 'DUMMY_NOFLG'. (NullAllowed: null update allowed for no constraint)
      */
     public void setDummyNoflg(java.math.BigDecimal dummyNoflg) {

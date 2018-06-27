@@ -179,7 +179,7 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     /** TYPE_OF_NUMBER_MAXDECIMAL: {NUMBER(38, 127)} */
     protected java.math.BigDecimal _typeOfNumberMaxdecimal;
 
-    /** TYPE_OF_INTEGER: {NUMBER(22)} */
+    /** TYPE_OF_INTEGER: {NUMBER(38)} */
     protected java.math.BigDecimal _typeOfInteger;
 
     /** TYPE_OF_BINARY_FLOAT: {BINARY_FLOAT(4)} */
@@ -688,7 +688,7 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     }
 
     /**
-     * [get] TYPE_OF_INTEGER: {NUMBER(22)} <br>
+     * [get] TYPE_OF_INTEGER: {NUMBER(38)} <br>
      * @return The value of the column 'TYPE_OF_INTEGER'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getTypeOfInteger() {
@@ -697,7 +697,7 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     }
 
     /**
-     * [set] TYPE_OF_INTEGER: {NUMBER(22)} <br>
+     * [set] TYPE_OF_INTEGER: {NUMBER(38)} <br>
      * @param typeOfInteger The value of the column 'TYPE_OF_INTEGER'. (NullAllowed: null update allowed for no constraint)
      */
     public void setTypeOfInteger(java.math.BigDecimal typeOfInteger) {

@@ -70,7 +70,7 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     //                                                                         Column Info
     //                                                                         ===========
     protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, false, false, true, "NUMBER", 9, 0, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnAllsumPurchasePrice = cci("ALLSUM_PURCHASE_PRICE", "ALLSUM_PURCHASE_PRICE", null, null, java.math.BigDecimal.class, "allsumPurchasePrice", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnAllsumPurchasePrice = cci("ALLSUM_PURCHASE_PRICE", "ALLSUM_PURCHASE_PRICE", null, null, java.math.BigDecimal.class, "allsumPurchasePrice", null, false, false, false, "NUMBER", null, null, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnLatestPurchaseDatetime = cci("LATEST_PURCHASE_DATETIME", "LATEST_PURCHASE_DATETIME", null, null, java.time.LocalDateTime.class, "latestPurchaseDatetime", null, false, false, false, "TIMESTAMP(3)", 11, 3, null, null, false, null, null, null, null, null, false);
 
     /**
@@ -79,7 +79,7 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnMemberId() { return _columnMemberId; }
     /**
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnAllsumPurchasePrice() { return _columnAllsumPurchasePrice; }

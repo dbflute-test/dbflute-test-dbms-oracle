@@ -57,7 +57,7 @@ public abstract class BsVendorCheckIntegerSum extends AbstractEntity implements 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    /** INTEGER_NON_DIGIT_SUM: {NUMBER(22)} */
+    /** INTEGER_NON_DIGIT_SUM: {NUMBER(39)} */
     protected java.math.BigDecimal _integerNonDigitSum;
 
     // ===================================================================================
@@ -143,7 +143,7 @@ public abstract class BsVendorCheckIntegerSum extends AbstractEntity implements 
     //                                                                            Accessor
     //                                                                            ========
     /**
-     * [get] INTEGER_NON_DIGIT_SUM: {NUMBER(22)} <br>
+     * [get] INTEGER_NON_DIGIT_SUM: {NUMBER(39)} <br>
      * @return The value of the column 'INTEGER_NON_DIGIT_SUM'. (NullAllowed even if selected: for no constraint)
      */
     public java.math.BigDecimal getIntegerNonDigitSum() {
@@ -152,7 +152,7 @@ public abstract class BsVendorCheckIntegerSum extends AbstractEntity implements 
     }
 
     /**
-     * [set] INTEGER_NON_DIGIT_SUM: {NUMBER(22)} <br>
+     * [set] INTEGER_NON_DIGIT_SUM: {NUMBER(39)} <br>
      * @param integerNonDigitSum The value of the column 'INTEGER_NON_DIGIT_SUM'. (NullAllowed: null update allowed for no constraint)
      */
     public void setIntegerNonDigitSum(java.math.BigDecimal integerNonDigitSum) {

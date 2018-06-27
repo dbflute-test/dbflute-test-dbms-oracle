@@ -293,7 +293,7 @@ public class BsSummaryMemberPurchaseCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnMemberId() { return doColumn("MEMBER_ID"); }
         /**
-         * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+         * ALLSUM_PURCHASE_PRICE: {NUMBER}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnAllsumPurchasePrice() { return doColumn("ALLSUM_PURCHASE_PRICE"); }

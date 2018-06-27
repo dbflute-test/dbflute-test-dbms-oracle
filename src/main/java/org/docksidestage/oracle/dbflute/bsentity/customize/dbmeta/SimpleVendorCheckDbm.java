@@ -94,12 +94,12 @@ public class SimpleVendorCheckDbm extends AbstractDBMeta {
     //                                                                         ===========
     protected final ColumnInfo _columnVendorCheckId = cci("VENDOR_CHECK_ID", "VENDOR_CHECK_ID", null, null, Long.class, "vendorCheckId", null, false, false, false, "NUMBER", 16, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfChar = cci("TYPE_OF_CHAR", "TYPE_OF_CHAR", null, null, String.class, "typeOfChar", null, false, false, false, "CHAR", 3, 0, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnTypeOfNchar = cci("TYPE_OF_NCHAR", "TYPE_OF_NCHAR", null, null, String.class, "typeOfNchar", null, false, false, false, "CHAR", 3, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnTypeOfNchar = cci("TYPE_OF_NCHAR", "TYPE_OF_NCHAR", null, null, String.class, "typeOfNchar", null, false, false, false, "NCHAR", 3, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfVarchar2 = cci("TYPE_OF_VARCHAR2", "TYPE_OF_VARCHAR2", null, null, String.class, "typeOfVarchar2", null, false, false, false, "VARCHAR2", 32, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfVarchar2Max = cci("TYPE_OF_VARCHAR2_MAX", "TYPE_OF_VARCHAR2_MAX", null, null, String.class, "typeOfVarchar2Max", null, false, false, false, "VARCHAR2", 4000, 0, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnTypeOfNvarchar2 = cci("TYPE_OF_NVARCHAR2", "TYPE_OF_NVARCHAR2", null, null, String.class, "typeOfNvarchar2", null, false, false, false, "VARCHAR2", 32, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnTypeOfNvarchar2 = cci("TYPE_OF_NVARCHAR2", "TYPE_OF_NVARCHAR2", null, null, String.class, "typeOfNvarchar2", null, false, false, false, "NVARCHAR2", 32, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfClob = cci("TYPE_OF_CLOB", "TYPE_OF_CLOB", null, null, String.class, "typeOfClob", null, false, false, false, "CLOB", 4000, 0, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnTypeOfNclob = cci("TYPE_OF_NCLOB", "TYPE_OF_NCLOB", null, null, String.class, "typeOfNclob", null, false, false, false, "CLOB", 4000, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnTypeOfNclob = cci("TYPE_OF_NCLOB", "TYPE_OF_NCLOB", null, null, String.class, "typeOfNclob", null, false, false, false, "NCLOB", 4000, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfLong = cci("TYPE_OF_LONG", "TYPE_OF_LONG", null, null, String.class, "typeOfLong", null, false, false, false, "LONG", 2147483647, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfInteger = cci("TYPE_OF_INTEGER", "TYPE_OF_INTEGER", null, null, java.math.BigDecimal.class, "typeOfInteger", null, false, false, false, "NUMBER", 38, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTypeOfNumberInteger = cci("TYPE_OF_NUMBER_INTEGER", "TYPE_OF_NUMBER_INTEGER", null, null, Integer.class, "typeOfNumberInteger", null, false, false, false, "NUMBER", 5, 0, null, null, false, null, null, null, null, null, false);
@@ -134,7 +134,7 @@ public class SimpleVendorCheckDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnTypeOfChar() { return _columnTypeOfChar; }
     /**
-     * TYPE_OF_NCHAR: {CHAR(3)}
+     * TYPE_OF_NCHAR: {NCHAR(3)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnTypeOfNchar() { return _columnTypeOfNchar; }
@@ -149,7 +149,7 @@ public class SimpleVendorCheckDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnTypeOfVarchar2Max() { return _columnTypeOfVarchar2Max; }
     /**
-     * TYPE_OF_NVARCHAR2: {VARCHAR2(32)}
+     * TYPE_OF_NVARCHAR2: {NVARCHAR2(32)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnTypeOfNvarchar2() { return _columnTypeOfNvarchar2; }
@@ -159,7 +159,7 @@ public class SimpleVendorCheckDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnTypeOfClob() { return _columnTypeOfClob; }
     /**
-     * TYPE_OF_NCLOB: {CLOB(4000)}
+     * TYPE_OF_NCLOB: {NCLOB(4000)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnTypeOfNclob() { return _columnTypeOfNclob; }

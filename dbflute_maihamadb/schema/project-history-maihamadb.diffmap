@@ -1,4 +1,81 @@
 map:{
+    ; 2018/06/28 02:05:34 = map:{
+        ; diffDate = 2018/06/28 02:05:34
+        ; diffAuthor = jflute
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; MEMBER_ADDRESS = map:{
+                ; tableName = MEMBER_ADDRESS
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; REGION_ID = map:{
+                        ; columnName = REGION_ID
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 38
+                            ; previous = 22
+                        }
+                    }
+                }
+            }
+            ; REGION = map:{
+                ; tableName = REGION
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; REGION_ID = map:{
+                        ; columnName = REGION_ID
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 38
+                            ; previous = 22
+                        }
+                    }
+                }
+            }
+            ; SERVICE_RANK = map:{
+                ; tableName = SERVICE_RANK
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; NEW_ACCEPTABLE_FLG = map:{
+                        ; columnName = NEW_ACCEPTABLE_FLG
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 38
+                            ; previous = 22
+                        }
+                    }
+                }
+            }
+            ; SUMMARY_MEMBER_PURCHASE = map:{
+                ; tableName = SUMMARY_MEMBER_PURCHASE
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; ALLSUM_PURCHASE_PRICE = map:{
+                        ; columnName = ALLSUM_PURCHASE_PRICE
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = null
+                            ; previous = 22
+                        }
+                    }
+                }
+            }
+            ; VENDOR_CHECK = map:{
+                ; tableName = VENDOR_CHECK
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; TYPE_OF_INTEGER = map:{
+                        ; columnName = TYPE_OF_INTEGER
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 38
+                            ; previous = 22
+                        }
+                    }
+                }
+            }
+        }
+    }
     ; 2018/05/11 03:15:11 = map:{
         ; diffDate = 2018/05/11 03:15:11
         ; procedureDiff = map:{

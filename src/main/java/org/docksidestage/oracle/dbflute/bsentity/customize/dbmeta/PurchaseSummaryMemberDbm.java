@@ -71,7 +71,7 @@ public class PurchaseSummaryMemberDbm extends AbstractDBMeta {
     protected final ColumnInfo _columnMemberName = cci("MEMBER_NAME", "MEMBER_NAME", null, null, String.class, "memberName", null, false, false, false, "VARCHAR2", 200, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnBirthdate = cci("BIRTHDATE", "BIRTHDATE", null, null, java.time.LocalDate.class, "birthdate", null, false, false, false, "DATE", 7, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnFormalizedDatetime = cci("FORMALIZED_DATETIME", "FORMALIZED_DATETIME", null, null, java.time.LocalDateTime.class, "formalizedDatetime", null, false, false, false, "TIMESTAMP", 11, 3, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnPurchaseSummary = cci("PURCHASE_SUMMARY", "PURCHASE_SUMMARY", null, null, Long.class, "purchaseSummary", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnPurchaseSummary = cci("PURCHASE_SUMMARY", "PURCHASE_SUMMARY", null, null, Long.class, "purchaseSummary", null, false, false, false, "NUMBER", 39, 0, null, null, false, null, null, null, null, null, false);
 
     /**
      * MEMBER_ID: {NUMBER(9)}
@@ -94,7 +94,7 @@ public class PurchaseSummaryMemberDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnFormalizedDatetime() { return _columnFormalizedDatetime; }
     /**
-     * PURCHASE_SUMMARY: {NUMBER(22)}
+     * PURCHASE_SUMMARY: {NUMBER(39)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnPurchaseSummary() { return _columnPurchaseSummary; }

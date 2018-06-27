@@ -481,14 +481,14 @@ public class BsVendorCheckCQ extends AbstractBsVendorCheckCQ {
 
     /**
      * Add order-by as ascend. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @return this. (NotNull)
      */
     public BsVendorCheckCQ addOrderBy_TypeOfInteger_Asc() { regOBA("TYPE_OF_INTEGER"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @return this. (NotNull)
      */
     public BsVendorCheckCQ addOrderBy_TypeOfInteger_Desc() { regOBD("TYPE_OF_INTEGER"); return this; }

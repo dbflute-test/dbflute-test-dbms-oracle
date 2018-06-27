@@ -101,14 +101,14 @@ public class BsSummaryMemberPurchaseCQ extends AbstractBsSummaryMemberPurchaseCQ
 
     /**
      * Add order-by as ascend. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @return this. (NotNull)
      */
     public BsSummaryMemberPurchaseCQ addOrderBy_AllsumPurchasePrice_Asc() { regOBA("ALLSUM_PURCHASE_PRICE"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * ALLSUM_PURCHASE_PRICE: {NUMBER(22)}
+     * ALLSUM_PURCHASE_PRICE: {NUMBER}
      * @return this. (NotNull)
      */
     public BsSummaryMemberPurchaseCQ addOrderBy_AllsumPurchasePrice_Desc() { regOBD("ALLSUM_PURCHASE_PRICE"); return this; }

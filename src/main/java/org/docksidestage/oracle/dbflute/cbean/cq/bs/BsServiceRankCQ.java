@@ -155,14 +155,14 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
 
     /**
      * Add order-by as ascend. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg}
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg}
      * @return this. (NotNull)
      */
     public BsServiceRankCQ addOrderBy_NewAcceptableFlg_Asc() { regOBA("NEW_ACCEPTABLE_FLG"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(22), classification=Flg}
+     * NEW_ACCEPTABLE_FLG: {NotNull, NUMBER(38), classification=Flg}
      * @return this. (NotNull)
      */
     public BsServiceRankCQ addOrderBy_NewAcceptableFlg_Desc() { regOBD("NEW_ACCEPTABLE_FLG"); return this; }

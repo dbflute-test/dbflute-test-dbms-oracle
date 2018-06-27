@@ -102,7 +102,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     /** ADDRESS: {NotNull, VARCHAR2(200)} */
     protected String _address;
 
-    /** REGION_ID: {NotNull, NUMBER(22), FK to REGION, classification=Region} */
+    /** REGION_ID: {NotNull, NUMBER(38), FK to REGION, classification=Region} */
     protected java.math.BigDecimal _regionId;
 
     /** REGISTER_DATETIME: {NotNull, TIMESTAMP(3)(11, 3)} */
@@ -166,7 +166,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     //                                                             =======================
     /**
      * Get the value of regionId as the classification of Region. <br>
-     * REGION_ID: {NotNull, NUMBER(22), FK to REGION, classification=Region} <br>
+     * REGION_ID: {NotNull, NUMBER(38), FK to REGION, classification=Region} <br>
      * mainly region of member address
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
@@ -177,7 +177,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
 
     /**
      * Set the value of regionId as the classification of Region. <br>
-     * REGION_ID: {NotNull, NUMBER(22), FK to REGION, classification=Region} <br>
+     * REGION_ID: {NotNull, NUMBER(38), FK to REGION, classification=Region} <br>
      * mainly region of member address
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
@@ -491,7 +491,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     }
 
     /**
-     * [get] REGION_ID: {NotNull, NUMBER(22), FK to REGION, classification=Region} <br>
+     * [get] REGION_ID: {NotNull, NUMBER(38), FK to REGION, classification=Region} <br>
      * @return The value of the column 'REGION_ID'. (basically NotNull if selected: for the constraint)
      */
     public java.math.BigDecimal getRegionId() {
@@ -500,7 +500,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     }
 
     /**
-     * [set] REGION_ID: {NotNull, NUMBER(22), FK to REGION, classification=Region} <br>
+     * [set] REGION_ID: {NotNull, NUMBER(38), FK to REGION, classification=Region} <br>
      * @param regionId The value of the column 'REGION_ID'. (basically NotNull if update: for the constraint)
      */
     protected void setRegionId(java.math.BigDecimal regionId) {

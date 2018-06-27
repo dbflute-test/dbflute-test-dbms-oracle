@@ -1,5 +1,5 @@
 map:{
-    ; schemaHtmlFileName = schema-nexteaxmpledb.html
-    ; historyHtmlFileName = history-nexteaxmpledb.html
+    ; schemaHtmlFileName = schema-newurayasudb.html
+    ; historyHtmlFileName = history-newurayasudb.html
     ; coreCraftMetaDirPath = $$DEFAULT$$/nextschema
 }

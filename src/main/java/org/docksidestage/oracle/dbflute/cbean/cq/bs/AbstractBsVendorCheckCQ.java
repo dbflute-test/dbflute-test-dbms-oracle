@@ -2443,7 +2443,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param typeOfInteger The value of typeOfInteger as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_Equal(java.math.BigDecimal typeOfInteger) {
@@ -2456,7 +2456,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param typeOfInteger The value of typeOfInteger as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_GreaterThan(java.math.BigDecimal typeOfInteger) {
@@ -2465,7 +2465,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param typeOfInteger The value of typeOfInteger as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_LessThan(java.math.BigDecimal typeOfInteger) {
@@ -2474,7 +2474,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param typeOfInteger The value of typeOfInteger as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_GreaterEqual(java.math.BigDecimal typeOfInteger) {
@@ -2483,7 +2483,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param typeOfInteger The value of typeOfInteger as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_LessEqual(java.math.BigDecimal typeOfInteger) {
@@ -2494,7 +2494,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param minNumber The min number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
@@ -2507,7 +2507,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param minNumber The min number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
@@ -2518,7 +2518,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param typeOfIntegerList The collection of typeOfInteger as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfInteger_InScope(Collection<java.math.BigDecimal> typeOfIntegerList) {
@@ -2531,7 +2531,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      * @param typeOfIntegerList The collection of typeOfInteger as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfInteger_NotInScope(Collection<java.math.BigDecimal> typeOfIntegerList) {
@@ -2544,13 +2544,13 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
 
     /**
      * IsNull {is null}. And OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      */
     public void setTypeOfInteger_IsNull() { regTypeOfInteger(CK_ISN, DOBJ); }
 
     /**
      * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
-     * TYPE_OF_INTEGER: {NUMBER(22)}
+     * TYPE_OF_INTEGER: {NUMBER(38)}
      */
     public void setTypeOfInteger_IsNotNull() { regTypeOfInteger(CK_ISNN, DOBJ); }
 

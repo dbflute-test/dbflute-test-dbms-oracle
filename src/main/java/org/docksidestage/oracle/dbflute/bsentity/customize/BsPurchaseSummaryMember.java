@@ -78,7 +78,7 @@ public abstract class BsPurchaseSummaryMember extends AbstractEntity implements 
     /** FORMALIZED_DATETIME: {TIMESTAMP(11, 3)} */
     protected java.time.LocalDateTime _formalizedDatetime;
 
-    /** PURCHASE_SUMMARY: {NUMBER(22)} */
+    /** PURCHASE_SUMMARY: {NUMBER(39)} */
     protected Long _purchaseSummary;
 
     // ===================================================================================
@@ -249,7 +249,7 @@ public abstract class BsPurchaseSummaryMember extends AbstractEntity implements 
     }
 
     /**
-     * [get] PURCHASE_SUMMARY: {NUMBER(22)} <br>
+     * [get] PURCHASE_SUMMARY: {NUMBER(39)} <br>
      * @return The value of the column 'PURCHASE_SUMMARY'. (NullAllowed even if selected: for no constraint)
      */
     public Long getPurchaseSummary() {
@@ -258,7 +258,7 @@ public abstract class BsPurchaseSummaryMember extends AbstractEntity implements 
     }
 
     /**
-     * [set] PURCHASE_SUMMARY: {NUMBER(22)} <br>
+     * [set] PURCHASE_SUMMARY: {NUMBER(39)} <br>
      * @param purchaseSummary The value of the column 'PURCHASE_SUMMARY'. (NullAllowed: null update allowed for no constraint)
      */
     public void setPurchaseSummary(Long purchaseSummary) {

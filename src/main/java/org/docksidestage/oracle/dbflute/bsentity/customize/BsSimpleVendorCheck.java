@@ -122,7 +122,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     /** TYPE_OF_CHAR: {CHAR(3)} */
     protected String _typeOfChar;
 
-    /** TYPE_OF_NCHAR: {CHAR(3)} */
+    /** TYPE_OF_NCHAR: {NCHAR(3)} */
     protected String _typeOfNchar;
 
     /** TYPE_OF_VARCHAR2: {VARCHAR2(32)} */
@@ -131,13 +131,13 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     /** TYPE_OF_VARCHAR2_MAX: {VARCHAR2(4000)} */
     protected String _typeOfVarchar2Max;
 
-    /** TYPE_OF_NVARCHAR2: {VARCHAR2(32)} */
+    /** TYPE_OF_NVARCHAR2: {NVARCHAR2(32)} */
     protected String _typeOfNvarchar2;
 
     /** TYPE_OF_CLOB: {CLOB(4000)} */
     protected String _typeOfClob;
 
-    /** TYPE_OF_NCLOB: {CLOB(4000)} */
+    /** TYPE_OF_NCLOB: {NCLOB(4000)} */
     protected String _typeOfNclob;
 
     /** TYPE_OF_LONG: {LONG(2147483647)} */
@@ -412,7 +412,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     }
 
     /**
-     * [get] TYPE_OF_NCHAR: {CHAR(3)} <br>
+     * [get] TYPE_OF_NCHAR: {NCHAR(3)} <br>
      * @return The value of the column 'TYPE_OF_NCHAR'. (NullAllowed even if selected: for no constraint)
      */
     public String getTypeOfNchar() {
@@ -421,7 +421,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     }
 
     /**
-     * [set] TYPE_OF_NCHAR: {CHAR(3)} <br>
+     * [set] TYPE_OF_NCHAR: {NCHAR(3)} <br>
      * @param typeOfNchar The value of the column 'TYPE_OF_NCHAR'. (NullAllowed: null update allowed for no constraint)
      */
     public void setTypeOfNchar(String typeOfNchar) {
@@ -466,7 +466,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     }
 
     /**
-     * [get] TYPE_OF_NVARCHAR2: {VARCHAR2(32)} <br>
+     * [get] TYPE_OF_NVARCHAR2: {NVARCHAR2(32)} <br>
      * @return The value of the column 'TYPE_OF_NVARCHAR2'. (NullAllowed even if selected: for no constraint)
      */
     public String getTypeOfNvarchar2() {
@@ -475,7 +475,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     }
 
     /**
-     * [set] TYPE_OF_NVARCHAR2: {VARCHAR2(32)} <br>
+     * [set] TYPE_OF_NVARCHAR2: {NVARCHAR2(32)} <br>
      * @param typeOfNvarchar2 The value of the column 'TYPE_OF_NVARCHAR2'. (NullAllowed: null update allowed for no constraint)
      */
     public void setTypeOfNvarchar2(String typeOfNvarchar2) {
@@ -503,7 +503,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     }
 
     /**
-     * [get] TYPE_OF_NCLOB: {CLOB(4000)} <br>
+     * [get] TYPE_OF_NCLOB: {NCLOB(4000)} <br>
      * @return The value of the column 'TYPE_OF_NCLOB'. (NullAllowed even if selected: for no constraint)
      */
     @MappingValueType(keyName = "stringClobType")
@@ -513,7 +513,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     }
 
     /**
-     * [set] TYPE_OF_NCLOB: {CLOB(4000)} <br>
+     * [set] TYPE_OF_NCLOB: {NCLOB(4000)} <br>
      * @param typeOfNclob The value of the column 'TYPE_OF_NCLOB'. (NullAllowed: null update allowed for no constraint)
      */
     public void setTypeOfNclob(String typeOfNclob) {

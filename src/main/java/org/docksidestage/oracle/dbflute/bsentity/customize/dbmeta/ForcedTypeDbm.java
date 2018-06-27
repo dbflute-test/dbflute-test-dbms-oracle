@@ -63,10 +63,10 @@ public class ForcedTypeDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnMaxMemberId = cci("MAX_MEMBER_ID", "MAX_MEMBER_ID", null, null, java.math.BigInteger.class, "maxMemberId", null, false, false, false, "NUMBER", 22, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnMaxMemberId = cci("MAX_MEMBER_ID", "MAX_MEMBER_ID", null, null, java.math.BigInteger.class, "maxMemberId", null, false, false, false, "NUMBER", 39, 0, null, null, false, null, null, null, null, null, false);
 
     /**
-     * MAX_MEMBER_ID: {NUMBER(22)}
+     * MAX_MEMBER_ID: {NUMBER(39)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnMaxMemberId() { return _columnMaxMemberId; }
