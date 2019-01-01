@@ -119,7 +119,7 @@ public class ThreadSafeTest extends UnitContainerTestCase {
         final Long versionNo = before.getVersionNo();
         final Set<String> markSet = DfCollectionUtil.newHashSet();
         ExecutionCreator<List<Member>> creator = () -> () -> {
-            xprepareAccessContext();
+            initializeTestCaseAccessContext();
             TransactionResource transaction = beginNewTransaction();
             try {
                 final long threadId = Thread.currentThread().getId();

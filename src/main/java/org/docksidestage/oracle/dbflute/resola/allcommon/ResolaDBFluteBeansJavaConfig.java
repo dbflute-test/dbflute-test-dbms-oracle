@@ -1,9 +1,9 @@
 package org.docksidestage.oracle.dbflute.resola.allcommon;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,7 +27,8 @@ public class ResolaDBFluteBeansJavaConfig {
     @Autowired
     protected ApplicationContext _container;
 
-    @Resource(name="resolaDataSource")
+    @Autowired
+    @Qualifier("resolaDataSource")
     protected DataSource _dataSource; // name basis here for multiple DB
 
     // ===================================================================================
