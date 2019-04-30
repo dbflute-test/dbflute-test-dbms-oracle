@@ -828,7 +828,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         log(birthdate, birthdate.getYear(), birthdate.getMonth(), birthdate.getDayOfMonth());
         assertTrue(DfTypeUtil.isDateBC(toUtilDate(birthdate))); // can handle BC date
         String formatted = toString(birthdate, "yyyy/MM/dd");
-        assertEquals("1235/12/25", formatted); // 1235? why?
+        assertEquals("1234/12/25", formatted);
     }
 
     public void test_DATE_BC_datetime() {
@@ -849,7 +849,7 @@ public class VendorDataTypeTest extends UnitContainerTestCase {
         log(formalizedDatetime);
         assertTrue(DfTypeUtil.isDateBC(toUtilDate(formalizedDatetime))); // can handle BC date
         String formatted = toString(formalizedDatetime, "yyyy/MM/dd");
-        assertEquals("1235/12/25", formatted); // 1235 why?
+        assertEquals("1234/12/25", formatted);
     }
 
     public void test_BC_test_JDBC_direct() {
