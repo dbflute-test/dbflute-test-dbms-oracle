@@ -47,6 +47,9 @@ public class ResolaBsStationCB extends AbstractConditionBean {
             enableSpecifyColumnRequired();
         }
         xsetSpecifyColumnRequiredExceptDeterminer(ResolaDBFluteConfig.getInstance().getSpecifyColumnRequiredExceptDeterminer());
+        if (ResolaDBFluteConfig.getInstance().isSpecifyColumnRequiredWarningOnly()) {
+            xenableSpecifyColumnRequiredWarningOnly();
+        }
         if (ResolaDBFluteConfig.getInstance().isQueryUpdateCountPreCheck()) {
             enableQueryUpdateCountPreCheck();
         }
