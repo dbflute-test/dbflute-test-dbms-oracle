@@ -7,11 +7,23 @@
 # map: {
 #     [classification-name] = list:{
 #         ; map:{
-#             ; topComment=[comment]; codeType=[String(default) or Number or Boolean]}
-#             ; isCheckImplicitSet=[true or false(default)]
+#             ; topComment=[comment]; codeType=[String(default) or Number or Boolean]
+#             ; undefinedHandlingType=[EXCEPTION or LOGGING(default) or ALLOWED]
 #             ; isUseDocumentOnly=[true or false(default)]
 #             ; isSuppressAutoDeploy=[true or false(default)]
-#         ; map:{code=[code]; name=[name]; alias=[alias]; comment=[comment]}
+#             ; groupingMap = map:{
+#                 ; [group-name] = map:{
+#                     ; groupComment=[comment]
+#                     ; elementList=list:{[the list of classification element's name]}
+#                 }
+#             }
+#         }
+#         # classification elements for implicit classification
+#         ; map:{
+#             ; code=[code]; name=[name]; alias=[alias]; comment=[comment]
+#             ; sisterCode=[code or code-list]; subItemMap=map:{[free-map]}
+#         }
+#         # settings for table classification
 #         ; map:{
 #             ; table=[table-name]
 #             ; code=[column-name for code]; name=[column-name for name]
